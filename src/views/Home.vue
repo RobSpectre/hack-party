@@ -20,7 +20,7 @@ Reveal
       h2.fragment.pb-10 Oneder Challenge
     PlayerBoard
     Slide(class='darkgray')
-      h2 Let's Go!
+      h2.text-white Let's Go!
     VideoSlide(
       background='/video/vanilla_ice.mp4'
       :muted='false'
@@ -313,3 +313,9 @@ export default {
   }
 }
 </script>
+
+<style lang='scss'>
+html {
+  font-size: 36px;
+}
+</style>

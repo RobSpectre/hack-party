@@ -11,7 +11,7 @@ section
             span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
               | How much is {{ celebrity }}&apos;s rate on Cameo?
             .my-4.text-center
-              input.shadow.appearance-none.border.rounded.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-none focus:shadow-outline' type='text' placeholder='Guess' v-model='guess' v-on:keydown.enter='addGuess(currentPlayer, guess)')
+              input.shadow.appearance-none.border.rounded.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-none focus:shadow-outline' type='text' placeholder='Guess' v-on:keydown.enter='addGuess(currentPlayer, guess)')
         .flex-1.bg-green.p-6.flex.flex-col.justify-between
           span.text-2xl.leading-7.font-semibold.text-white
             | {{ currentPlayer }}
