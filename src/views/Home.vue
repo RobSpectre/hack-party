@@ -51,14 +51,14 @@ Reveal
     )
     VideoWagerRound(
       :items='items',
-      video='/video/chairbreak.mp4',
-      :limit='8',
+      video='/video/anthill.mp4',
+      :limit='14',
       :winnerIndex='1'
     )
     VideoWagerRound(
       :items='items',
-      video='/video/arsonist.mp4',
-      :limit='5',
+      video='/video/gator.mp4',
+      :limit='i7',
       :winnerIndex='1'
     )
     PlayerBoard
@@ -209,7 +209,7 @@ export default {
     },
     rebuy () {
       this.game.players.forEach((player) => {
-        if (player.score <= 0) {
+        if (player.score <= 50) {
           this.increasePlayerScore(player.name, 500)
         }
       })
