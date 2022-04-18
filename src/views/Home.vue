@@ -18,7 +18,7 @@ Reveal
       h2.fragment Contrarians win big
       h2.fragment Rebuys available
     PlayerBoard
-      ActionButton(label='Charge Players' @clicked='chargePlayers')
+      ActionButton(v-if='game.players.length > 0' label='Charge Players' @clicked='chargePlayers')
     VideoWagerRound(
       :items='items',
       video='/video/stove_fire.mp4',
@@ -58,7 +58,7 @@ Reveal
     VideoWagerRound(
       :items='items',
       video='/video/gator.mp4',
-      :limit='i7',
+      :limit='7',
       :winnerIndex='1'
     )
     PlayerBoard
@@ -67,7 +67,7 @@ Reveal
       :muted='false'
     )
     PlayerBoard
-      ActionButton(label='Rebuy' @clicked='rebuy')
+      ActionButton(v-if='game.players.length > 0' label='Rebuy' @clicked='rebuy')
     VideoWagerRound(
       :items='items',
       video='/video/penguin.mp4',
@@ -89,7 +89,7 @@ Reveal
     VideoWagerRound(
       :items='items',
       video='/video/motorcycle_flip.mp4',
-      :limit='2',
+      :limit='3',
       :winnerIndex='0'
     )
     VideoWagerRound(
@@ -116,7 +116,7 @@ Reveal
       :muted='false'
     )
     PlayerBoard
-      ActionButton(label='Rebuy' @clicked='rebuy')
+      ActionButton(v-if='game.players.length > 0' label='Rebuy' @clicked='rebuy')
     VideoWagerRound(
       :items='items',
       video='/video/justdoit.mp4',
@@ -159,6 +159,7 @@ Reveal
       :limit='14',
       :winnerIndex='0'
     )
+    PlayerBoard
 </template>
 
 <script>
