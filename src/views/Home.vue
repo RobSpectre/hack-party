@@ -2,6 +2,23 @@
 Reveal
   .slides
     Title
+    VideoSlide(background='/video/capitol.mp4')
+    VideoSlide(background='/video/meadows.mp4')
+    BackgroundImageSlide(background='/images/dc_trip.jpg')
+    VideoSlide(background='/video/steal_phones_cut.mp4')
+    VideoSlide(background='/video/phone_jack.mp4')
+    Title(
+      background='/video/whose_line.mp4'
+      heading='/images/whose_text_is_it_anyway.png'
+    )
+    Slide
+      h2.fragment Solo
+      h2.fragment Conversation from Mark Meadows' phone
+      h2.fragment Three MAGA Personalities
+      h2.fragment Choose Who Sent The Text
+      h2.fragment Contrarian Bonus!
+      h2.fragment 2x each round
+      h1 Rules
     PlayerBoard
     Slide(class='darkgray')
       h2.text-white 6 January 2021
