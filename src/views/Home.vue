@@ -32,6 +32,9 @@ Reveal
       :winnerIndex='1'
       :prize='1'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -43,6 +46,9 @@ Reveal
       :winnerIndex='0'
       :prize='1'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -54,6 +60,9 @@ Reveal
       :winnerIndex='2'
       :prize='1'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -65,6 +74,9 @@ Reveal
       :winnerIndex='0'
       :prize='1'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -76,6 +88,9 @@ Reveal
       :winnerIndex='1'
       :prize='1'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     PlayerBoard
     VideoSlide(
@@ -97,6 +112,9 @@ Reveal
       :winnerIndex='2'
       :prize='2'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -108,6 +126,9 @@ Reveal
       :winnerIndex='1'
       :prize='2'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -119,6 +140,9 @@ Reveal
       :winnerIndex='0'
       :prize='2'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -130,6 +154,9 @@ Reveal
       :winnerIndex='2'
       :prize='2'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -141,10 +168,13 @@ Reveal
       :winnerIndex='1'
       :prize='2'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     PlayerBoard
     VideoSlide(
-      background='/video/new_york_pizza.mp4'
+      background='/video/biden_wh_correspondents_dinner.webm'
       :muted='false'
     )
     PlayerBoard
@@ -162,6 +192,9 @@ Reveal
       :winnerIndex='1'
       :prize='3'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -173,6 +206,9 @@ Reveal
       :winnerIndex='0'
       :prize='3'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -184,6 +220,9 @@ Reveal
       :winnerIndex='2'
       :prize='3'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -195,6 +234,9 @@ Reveal
       :winnerIndex='1'
       :prize='3'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
     GameChatMessages(
       currentUser='Marky Mead'
@@ -206,6 +248,9 @@ Reveal
       :winnerIndex='0'
       :prize='3'
       denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
     )
 </template>
 
