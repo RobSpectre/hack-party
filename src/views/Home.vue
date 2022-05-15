@@ -92,6 +92,20 @@ Reveal
       :fragmentItemReveal='true'
       question='Whose text is it anyway?'
     )
+    GameChatMessages(
+      currentUser='Marky Mead'
+      :messages='jim_jordan.messages'
+      :rooms='jim_jordan.rooms'
+    )
+    ItemGuess(
+      :items='jim_jordan.items'
+      :winnerIndex='2'
+      :prize='1'
+      denomination=''
+      headerImage='/images/qanon_shaman-720x500.png'
+      :fragmentItemReveal='true'
+      question='Whose text is it anyway?'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/billburr_fenway.mp4'
@@ -341,6 +355,19 @@ export default {
         rooms: ['Jake Tapper', 'Chuck Todd', 'Andrea Mitchell', 'Mike Schmidt',
           'Fucking Chuck', 'Fucking Nancy', "Dick's Daughter", 'AOC',
           'Ilham Omaha', 'Capitol Police', 'Rashskin', 'WH Switch', 'Mom']
+      },
+      jim_jordan: {
+        items: [
+          { name: 'Sean Hannity', emoji: '🦊️' },
+          { name: 'Reince Priebus', emoji: '🐸️' },
+          { name: 'Jim Jordan', emoji: '🌾️', value: 'the texter' }
+        ],
+        messages: [
+          { username: '???', content: 'Pence should call out all electoral votes that he believes are unconstitutional as no electoral votes at all' },
+          { username: 'Marky Mead', content: 'I have pushed for this.' },
+          { username: 'Marky Mead', content: 'Not sure it is going to happen' }
+        ],
+        rooms: ['Joe Manchin', 'Kristin Senemea', 'D from K?']
       },
       rick_perry: {
         items: [
