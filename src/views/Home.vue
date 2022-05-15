@@ -57,6 +57,33 @@ Reveal
       template(v-slot:content)
         img(src='/images/putin.png')
     ChooseWinner(headerImage='/images/sorry1.jpg')
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/dylan.mp4')
+    Slide
+      h2.fragment Solo
+      h2.fragment Present with something someone lost
+      h2.fragment Guess how many Dylans it cost
+      h2.fragment Price is Right rules
+      h2.fragment 3 points
+      h2.fragment 2x for dead one
+      h1 Rules
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment This is a beautiful Italian property
+        h2.fragment Owned by Dmitry Mazepin
+        h2.fragment Son is former F1 driver Nikita Mazepin
+        h2.fragment Seized by Italian authorities after Ukrainian invasion
+      template(v-slot:content)
+        img.fragment(src='/images/mazepin_villa.png')
+      template(v-slot:footer)
+        h1.fragment Mazepin's Italian Villa
+    CelebrityGuess(
+      celebrity="Mazepin's Sardinian Villa"
+      image='/images/mazepin_villa.png'
+      :price='0.25'
+      :prize='3'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/viral_apology_video.mp4'
@@ -104,6 +131,23 @@ Reveal
       template(v-slot:content)
         img(src='/images/sleepover.png')
     ChooseWinner(:prize='2' headerImage='/images/sorry2.webp')
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment Eclipsed all other business news this week
+        h2.fragment Elon claimed deal is "on hold"
+        h2.fragment Wriggling out of a breakup fee
+      template(v-slot:content)
+        img.fragment(src='/images/elon.png')
+      template(v-slot:footer)
+        h1.fragment Twitter breakup fee
+    CelebrityGuess(
+      celebrity="Twitter breakup fee"
+      image='/images/elon.png'
+      :price='2'
+      :prize='5'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/sorry.mp4'
@@ -154,6 +198,24 @@ Reveal
       :muted='false'
     )
     ChooseWinner(:prize='3' headerImage='/images/sorry.webp')
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment Cryptocurrency markets ate shit this week
+        h2.fragment All major coins experienced at least 20% drops
+        h2.fragment Stablecoin ecosystem $UST went to zero
+        h2.fragment On Monday it was 4th most valuable coin
+      template(v-slot:content)
+        img.fragment(src='/images/luna_graph.png')
+      template(v-slot:footer)
+        h1.fragment Luna Market Cap Loss
+    CelebrityGuess(
+      celebrity='Luna Market Cap Loss'
+      image='/images/luna_graph.png'
+      :price='78.79'
+      :prize='10'
+    )
     PlayerBoard
 </template>
 
@@ -170,6 +232,7 @@ import ChooseWinner from '@/components/Players/ChooseWinner.vue'
 
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
+import CelebrityGuess from '@/components/CameoPriceIsRight/CelebrityGuess.vue'
 
 import Tweet from 'vue-tweet'
 
@@ -186,13 +249,15 @@ export default {
     GameVideo,
     ChooseWinner,
     GameContentWithSidebar,
-    Tweet
+    Tweet,
+    CelebrityGuess
   }
 }
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poiret+One&display=swap');
+@import
+url('https://fonts.googleapis.com/css2?family=Monoton&family=Poiret+One&family=Press+Start+2P&display=swap');
 
 html {
   font-size: 36px;
@@ -204,5 +269,9 @@ html {
 
 .monoton {
   font-family: 'Monoton', cursive !important;
+}
+
+.nintendo {
+  font-family: 'Press Start 2P', cursive !important;
 }
 </style>
