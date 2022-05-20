@@ -2,8 +2,42 @@
 Reveal
   .slides
     Title
+    BackgroundImageSlide(
+      background='/images/heardle.png'
+    )
+    VideoSlide(
+      background='/video/traffas_auctioning.mp4'
+    )
+    BackgroundImageSlide(
+      background='/images/supermax.gif'
+    )
+      h1 Super Max
+    BackgroundImageSlide(
+      background='/images/namethattune.gif'
+    )
+    Slide
+      h2.fragment Solo
+      h2.fragment 3 rounds / 3 genres
+      h2.fragment Each song broken into 5 chunks
+      h2.fragment Bid for position on each chunk
+      h2.fragment ☝️  more listening, more risk
+      h2.fragment 👇️ less risk, less opportunity
+      h2.fragment Hear the chunk, guess the tune
+      h2.fragment One repeat per chunk
+      h2.fragment Wrong answer, bid goes into the pot
+      h2.fragment Winner takes all
+      h1 Gameplay
     PlayerBoard
       ActionButton(v-if='game.players.length > 0' label='Charge Players' @clicked='chargePlayers')
+    Slide(class='green')
+      h2.text-white DEMO
+    AuctionEarRound(
+      src='/sounds/pretty_fly_for_a_white_guy_cut.mp3'
+      answer='"Pretty Fly for a White Guy" by The Offspring'
+      :chunks='5'
+    )
+    PlayerBoard
+      ActionButton(v-if='game.players.length > 0' label='Reset Players' @clicked='resetPlayers')
     Slide(class='darkgray')
       h2.text-white Grunge
     AuctionEarRound(
@@ -37,6 +71,10 @@ Reveal
       :chunks='5'
     )
     PlayerBoard
+    VideoSlide(
+      background='/video/wrapping_cables.mp4'
+      :muted='false'
+    )
     PlayerBoard
       ActionButton(v-if='game.players.length > 0' label='Rebuy' @clicked='rebuy')
     Slide(class='darkgray')
@@ -72,6 +110,10 @@ Reveal
       :chunks='5'
     )
     PlayerBoard
+    VideoSlide(
+      background='/video/the_emo_test.mp4'
+      :muted='false'
+    )
     PlayerBoard
       ActionButton(v-if='game.players.length > 0' label='Rebuy' @clicked='rebuy')
     Slide(class='darkgray')
@@ -155,7 +197,14 @@ export default {
         }
       })
     },
-    ...mapActions(useGameStore, ['increasePlayerScore'])
+    resetPlayers () {
+      this.game.players.forEach((player) => {
+        this.changeAttributeOfPlayer(player.name, 'score', 100)
+      })
+    },
+    ...mapActions(useGameStore,
+      ['increasePlayerScore',
+        'changeAttributeOfPlayer'])
   }
 }
 </script>
