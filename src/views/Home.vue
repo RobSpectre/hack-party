@@ -15,6 +15,10 @@ Reveal
     BackgroundImageSlide(
       background='/images/namethattune.gif'
     )
+    BackgroundImageSlide(
+      background='/images/auction.gif'
+    )
+      .mt-60.text-9xl 👨‍⚖️️👂️
     Slide
       h2.fragment Solo
       h2.fragment 3 rounds / 3 genres
