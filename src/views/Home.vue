@@ -7,6 +7,8 @@ Reveal
       heading='/images/cameo_price_is_right.png'
     )
     PlayerBoard
+    Slide(class='darkgray')
+      h2.text-white One Star Reviews
     GameVideo(
       video='/video/brandon_cut.mp4'
     )
@@ -237,7 +239,7 @@ Reveal
       video='https://cdn.cameo.com/video/62869739ca477a9f7e5fef1c-processed-redo-C39cN6Xg5.mp4'
       image='https://d31wcbk3iidrjq.cloudfront.net/mYNtVv8ml_PerryHeadshot.JPG'
       :price='60.0'
-      :prize='1'
+      :prize='3'
     )
     CameoPriceIsRightRound(
       celebrity='James McCoy Taylor'
@@ -277,7 +279,7 @@ Reveal
       video='https://cdn.cameo.com/video/627c3b3ba8875578cdd72131-processed.mp4'
       image='https://d31wcbk3iidrjq.cloudfront.net/QcMD4L9_d_avatar-hYcRlL__c.jpg'
       :price='9.0'
-      :prize='1'
+      :prize='3'
     )
     CameoPriceIsRightRound(
       celebrity='Brad Marchand'
