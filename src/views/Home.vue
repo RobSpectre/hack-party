@@ -16,7 +16,10 @@ Reveal
       h2.text-white /r/nottheonion
     GameContentWithSidebar
       template(v-slot:content)
-        img(src='/images/thehardtimes.jpg')
+        h-screen.flex.items-center.items-justify
+          img(src='/images/thehardtimes.jpg')
+          img(src='/images/clickhole.jpg')
+          img(src='/images/newsthump.jpg')
     VideoSlide(
       background='/video/thisisfine_loop.mp4'
     )
@@ -113,6 +116,10 @@ Reveal
       headerImage='https://i.pcmag.com/imagery/reviews/05mF8sOiSR8xktyu3Zfan5D-1..v1610564943.png'
     )
     PlayerBoard
+    VideoSlide(
+      background='/video/the_fridge.mp4'
+      :muted='false'
+    )
     PlayerBoard
     Slide(class='blue')
       h2.text-white Pandemic Enters Dangerous Phase as Dave Matthews Concerts Spread
@@ -206,6 +213,10 @@ Reveal
       headerImage='https://i.pcmag.com/imagery/reviews/05mF8sOiSR8xktyu3Zfan5D-1..v1610564943.png'
     )
     PlayerBoard
+    VideoSlide(
+      background='/video/mona_lisa.mp4'
+      :muted='false'
+    )
     PlayerBoard
     Slide(class='blue')
       h2.text-white 'We Gave Up Our Guns And It Turned Out Fine For Us,' Says Australian Man Who Couldn't Leave His House For Two Years
@@ -342,7 +353,7 @@ export default {
       cameospeed: [
         { name: 'Kurt Angle', emoji: '🤼️' },
         { name: 'Perez Hilton', emoji: '🍾️', value: ' responds within 4.3 minutes on average' },
-        { name: 'Antoine Doson', emoji: '😶️' },
+        { name: 'Antoine Dodson', emoji: '😶️' },
         { name: 'John Randle', emoji: '🏈️' }
       ],
       cameocategory: [
