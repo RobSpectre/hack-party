@@ -96,6 +96,16 @@ Reveal
       :ascending='false'
       image='/images/richard_cheese.png'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    Slide(class='green')
+      h2.text-white Reddit Roulette
+    VideoWagerRound(
+      :items='bossfight',
+      video='/video/impress.mp4',
+      :limit='4',
+      :winnerIndex='1'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/wrong_gig.mp4'
@@ -172,6 +182,14 @@ Reveal
       :ascending='false'
       image='/images/gimme_gimmes.png'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoWagerRound(
+      :items='bossfight',
+      video='/video/sheep.mp4',
+      :limit='2',
+      :winnerIndex='0'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/me_first_full.mp4'
@@ -245,6 +263,14 @@ Reveal
       :ascending='false'
       image='/images/karaoke.png'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoWagerRound(
+      :items='bossfight',
+      video='/video/backflip.mp4',
+      :limit='2',
+      :winnerIndex='0'
+    )
     PlayerBoard
 </template>
 
@@ -260,6 +286,8 @@ import GameVideo from '@/components/base/GameVideo.vue'
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
 import AuctionEarRound from '@/components/AuctionEar/AuctionEarRound.vue'
+import VideoWagerRound from '@/components/Wager/VideoWagerRound.vue'
+
 import { useGameStore } from '@/store'
 import { mapState, mapActions } from 'pinia'
 
@@ -274,10 +302,19 @@ export default {
     VideoSlide,
     ActionButton,
     GameVideo,
-    AuctionEarRound
+    AuctionEarRound,
+    VideoWagerRound
   },
   computed: {
     ...mapState(useGameStore, ['game'])
+  },
+  data () {
+    return {
+      bossfight: [
+        { name: 'Win', emoji: '👍️' },
+        { name: 'Fail', emoji: '👎️' }
+      ]
+    }
   },
   methods: {
     chargePlayers () {
