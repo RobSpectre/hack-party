@@ -2,6 +2,120 @@
 Reveal
   .slides
     Title
+    VideoSlide(background='/video/goodfellas_cut.mp4')
+    VideoSlide(
+      background='/video/wordle_tutorial_cut.mp4'
+    )
+      h2.title I Ripped Off Wordle
+    VideoSlide(background='/video/wordle_tutorial_cut.mp4')
+    Slide
+      h2.fragment Solo
+      h2.fragment Poker progression
+      h2.fragment Guess a word
+      h2.fragment 1 point for present letter
+      h2.fragment 2 points for correct letter
+      h2.fragment Bonus points for correct guess
+      h1 Game Play
+    PlayerBoard
+    WordleRipoffRound
+    WordleRipoffRound
+    WordleRipoffRound
+    WordleRipoffRound
+    WordleRipoffRound
+    WordleRipoffRound
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/late_stage_capitalism_cut.mp4')
+      h2.handwriting(style='margin-top: 24 rem;') Winners of Late Stage Capitalism
+    BackgroundImageSlide(background='/images/housing_market.png')
+    ItemGuess(
+      :items='homes'
+      :winnerIndex='2'
+      denomination=''
+      headerImage='/images/housing_header.png'
+      question='Who won the housing boom from 2015?'
+      :prize='10'
+      :fragmentItemReveal='true'
+    )
+    PlayerBoard
+    VideoSlide(
+      background='/video/surfin_Bird.mp4'
+      :muted='false'
+    )
+    PlayerBoard
+    Slide(class='darkgray')
+      h2.text-white Each letter is 2x!
+    WordleRipoffRound(
+      :prize='2'
+    )
+    WordleRipoffRound(
+      :prize='2'
+    )
+    WordleRipoffRound(
+      :prize='2'
+    )
+    WordleRipoffRound(
+      :prize='2'
+    )
+    WordleRipoffRound(
+      :prize='2'
+    )
+    WordleRipoffRound(
+      :prize='2'
+    )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/late_stage_capitalism_cut.mp4')
+      h2.handwriting(style='margin-top: 24 rem;') Winners of Late Stage Capitalism
+    ItemGuess(
+      :items='education'
+      :winnerIndex='0'
+      denomination=''
+      headerImage='/images/education_header.png'
+      question='Who has the higher average salary in NYC?'
+      :prize='20'
+      :fragmentItemReveal='true'
+    )
+    PlayerBoard
+    VideoSlide(
+      background='/video/wordle_sketch.mp4'
+      :muted='false'
+    )
+    PlayerBoard
+    Slide(class='darkgray')
+      h2.text-white Each letter is 3x!
+    WordleRipoffRound(
+      :prize='3'
+    )
+    WordleRipoffRound(
+      :prize='3'
+    )
+    WordleRipoffRound(
+      :prize='3'
+    )
+    WordleRipoffRound(
+      :prize='3'
+    )
+    WordleRipoffRound(
+      :prize='3'
+    )
+    WordleRipoffRound(
+      :prize='3'
+    )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/late_stage_capitalism_cut.mp4')
+      h2.handwriting(style='margin-top: 24 rem;') Winners of Late Stage Capitalism
+    ItemGuess(
+      :items='finance'
+      :winnerIndex='2'
+      denomination=''
+      headerImage='/images/finance_header.png'
+      question='Which is the bigger market in the US?'
+      :prize='30'
+      :fragmentItemReveal='true'
+    )
+    PlayerBoard
 </template>
 
 <script>
@@ -15,6 +129,10 @@ import GameVideo from '@/components/base/GameVideo.vue'
 
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
+import WordleRipoffRound from '@/components/WordleRipoff/WordleRipoffRound.vue'
+
+import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -25,12 +143,52 @@ export default {
     BackgroundImageSlide,
     VideoSlide,
     ActionButton,
-    GameVideo
+    GameVideo,
+    WordleRipoffRound,
+    ItemGuess
+  },
+  data () {
+    return {
+      education: [
+        { name: 'Juris doctorate', emoji: '⚖️️' },
+        { name: 'MAS-II', emoji: '⚖️️' },
+        { name: 'Doctor of Dental Medicine', emoji: '😁️', value: ' the answer' },
+        { name: 'Skip', emoji: '💩️' }
+      ],
+      homes: [
+        { name: 'Homeowner in Canada', emoji: '🏔️', value: ' the answer' },
+        { name: 'Homeowner in US', emoji: '🏘️' },
+        { name: 'Homeowner in Ireland', emoji: '☘️' },
+        { name: 'Skip', emoji: '💩️' }
+      ],
+      finance: [
+        { name: 'Debt Collection', emoji: '🏦️' },
+        { name: 'Payday Loans', emoji: '💵️' },
+        { name: 'Subprime Auto Loans', emoji: '🏎️', value: ' the answer' },
+        { name: 'Skip', emoji: '💩️' }
+      ]
+    }
   }
 }
 </script>
 
 <style lang='scss'>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Berkshire+Swash&family=Roboto:wght@700&display=swap');
+.nintendo {
+  font-family: 'Press Start 2P', cursive !important;
+  @apply mt-72 text-9xl text-white #{!important};
+}
+
+.title {
+  font-family: 'Roboto', cursive !important;
+  @apply mt-64 text-9xl text-white #{!important};
+}
+
+.handwriting {
+  font-family: 'Berkshire Swash', cursive !important;
+  @apply mt-32 text-9xl text-white normal-case #{!important};
+}
+
 html {
   font-size: 36px;
 }
