@@ -14,6 +14,11 @@ Reveal
       h2.fragment Solo
       h1 Game Play
     PlayerBoard
+    Slide(class="green")
+      h2.text-white Old Rivals
+    VideoSlide(
+      background='/video/mariovslink_cut.mp4'
+    )
     AudioChoiceRound(
       src='/sounds/smb_fireworks.wav'
       :items='nintendo'
@@ -69,6 +74,10 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Nerd Fight
+    Slide(class='darkgray')
+      h2.text-white Each round is worth 2x
     AudioChoiceRound(
       src='/sounds/star_trek_nomad_beam.mp3'
       :items='space'
@@ -131,6 +140,10 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Dueling Composers
+    Slide(class='darkgray')
+      h2.text-white Each round is worth 3x
     AudioChoiceRound(
       src='/sounds/pee_wee.mp3'
       :items='composers'
