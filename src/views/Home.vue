@@ -256,7 +256,7 @@ Reveal
       image='/images/karaoke.png'
     )
     AuctionEarRound(
-      src='/sounds/fuck_her_gently.mp3'
+      src='/sounds/fuck_her_gently_fucked.mp3'
       answer='"Fuck Her Gently" by Tenacious D'
       :chunks='game.players.length'
       gameType='bidForChunk'
