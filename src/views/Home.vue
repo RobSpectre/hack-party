@@ -68,6 +68,24 @@ Reveal
       question='From which franchise did this sound effect originate?'
       headerImage='/images/nintendo_header.png'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment Elon Musk announced he's wriggling out of the Twitter deal
+        h2.fragment Expensive week and it's not just the $1B breakup fee
+        h2.fragment Paternity test evidenced Elon fathered twins this year
+      template(v-slot:content)
+        img.fragment(src='/images/elon.jpg')
+      template(v-slot:footer)
+        h1.fragment How many kids does Elon have?
+    CelebrityGuess(
+      celebrity="Elon children total"
+      image='/images/elon.jpg'
+      :price='9'
+      :prize='5'
+      question='How many kids does Elon have?'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/star_trek_vs_wars.mp4'
@@ -133,6 +151,24 @@ Reveal
       :prize='2'
       question='From which franchise did this sound effect originate?'
       headerImage='/images/star_trek_vs_star_wars.jpg'
+    )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment Two more 6 Jan hearing are scheduled this week
+        h2.fragment Stephen Bannon announced he wants to testify live
+        h2.fragment Comes after over a year of interviewing witnesses
+      template(v-slot:content)
+        img.fragment(src='/images/6_jan.png')
+      template(v-slot:footer)
+        h1.fragment How many witnesses have they interviewed?
+    CelebrityGuess(
+      celebrity="6 Jan witness total"
+      image='/images/6_jan.png'
+      :price='1036'
+      :prize='10'
+      question='How many witnesses have they interviewed?'
     )
     PlayerBoard
     VideoSlide(
@@ -208,6 +244,24 @@ Reveal
       question='Which composer wrote this song?'
       headerImage='/images/elfman_vs_williams.png'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    GameContentWithSidebar
+      template(v-slot:header)
+        h2.fragment Tuesday we finally see images from James Webb telescope
+        h2.fragment Four images will be introduced
+        h2.fragment Comes after a $10 billion NASA program
+      template(v-slot:content)
+        img.fragment(src='/images/webb.png')
+      template(v-slot:footer)
+        h1.fragment How many years did it take to make?
+    CelebrityGuess(
+      celebrity="Webb telescope years"
+      image='/images/webb.png'
+      :price='26'
+      :prize='20'
+      question='How many years did it take to make?'
+    )
     PlayerBoard
 </template>
 
@@ -224,6 +278,9 @@ import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
 import AudioChoiceRound from '@/components/AudioChoice/AudioChoiceRound.vue'
 
+import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
+import CelebrityGuess from '@/components/CameoPriceIsRight/CelebrityGuess.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -235,7 +292,9 @@ export default {
     VideoSlide,
     ActionButton,
     GameVideo,
-    AudioChoiceRound
+    AudioChoiceRound,
+    CelebrityGuess,
+    GameContentWithSidebar
   },
   data () {
     return {
