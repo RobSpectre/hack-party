@@ -2,6 +2,17 @@
 Reveal
   .slides
     Title
+    BackgroundImageSlide(
+      background='/images/maz_kanata.gif'
+    )
+      h2.title LASIK Racing
+    Slide
+      h2.fragment Solo
+      h2.fragment Blurry image
+      h2.fragment With each guess the image will get less blurry
+      h2.fragment First to guess gets the points
+      h2.fragment Bonus point for an impression!
+      h1 Game Play
     PlayerBoard
     Slide(class="darkgray")
       h2.text-white Video Game Characters
@@ -46,7 +57,13 @@ Reveal
       :answer="{ name: 'Sonic the Hedgehog', value: 'the character' }"
     )
     PlayerBoard
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    Slide(class='green')
+      h2.text-white GO FIND THE DINOSAURS!
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are 2x!
     Slide(class="darkgray")
       h2.text-white Animated Villains
     LasikRacingRound(
@@ -90,7 +107,13 @@ Reveal
       :prize='2'
     )
     PlayerBoard
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    Slide(class='green')
+      h2.text-white Teach a grownup how to floss!
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are 3x!
     Slide(class="darkgray")
       h2.text-white Grownups
     LasikRacingRound(
@@ -174,6 +197,18 @@ export default {
 </script>
 
 <style lang='scss'>
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&family=Press+Start+2P&display=swap');
+
+.nintendo {
+  font-family: 'Press Start 2P', cursive !important;
+  @apply mt-72 text-9xl text-white #{!important};
+}
+
+.title {
+  font-family: 'Turret Road', cursive !important;
+  @apply mt-60 text-8xl text-white #{!important};
+}
+
 html {
   font-size: 36px;
 }
