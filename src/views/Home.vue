@@ -107,7 +107,7 @@ Reveal
     AudioChoiceRound(
       src='/sounds/super_battle_droid_blaster.mp3'
       :items='space'
-      :winnerIndex='1'
+      :winnerIndex='0'
       :prize='2'
       question='From which franchise did this sound effect originate?'
       headerImage='/images/star_trek_vs_star_wars.jpg'
@@ -115,7 +115,7 @@ Reveal
     AudioChoiceRound(
       src='/sounds/shield_impact_tsfs_cut.mp3'
       :items='space'
-      :winnerIndex='0'
+      :winnerIndex='1'
       :prize='2'
       question='From which franchise did this sound effect originate?'
       headerImage='/images/star_trek_vs_star_wars.jpg'
@@ -123,7 +123,7 @@ Reveal
     AudioChoiceRound(
       src='/sounds/hull_hit_cut.mp3'
       :items='space'
-      :winnerIndex='0'
+      :winnerIndex='1'
       :prize='2'
       question='From which franchise did this sound effect originate?'
       headerImage='/images/star_trek_vs_star_wars.jpg'
@@ -131,7 +131,7 @@ Reveal
     AudioChoiceRound(
       src='/sounds/star_trek_blaster.mp3'
       :items='space'
-      :winnerIndex='0'
+      :winnerIndex='1'
       :prize='2'
       question='From which franchise did this sound effect originate?'
       headerImage='/images/star_trek_vs_star_wars.jpg'
