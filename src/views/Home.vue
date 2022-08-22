@@ -114,7 +114,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/cokeprank.mp4'
+      background='/video/snl_nft.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -223,7 +223,7 @@ Reveal
       price='-20'
       denomination=''
       question='What percent up or down is this NFT since minting?'
-      prize='3'
+      :prize='3'
     )
     CelebrityIntro(
       hint1='This project ties in two insanely markets'
@@ -253,7 +253,7 @@ Reveal
       price='-75'
       denomination=''
       question='What percent up or down is this NFT since minting?'
-      prize='3'
+      :prize='3'
     )
     CelebrityIntro(
       hint1='This celeb appeared in our last NFT game'
@@ -269,7 +269,7 @@ Reveal
       price='-97'
       denomination=''
       question='What percent up or down is this NFT since minting?'
-      prize='3'
+      :prize='3'
     )
     CelebrityIntro(
       hint1='One of the best actors from Mr. Robot'
@@ -284,7 +284,7 @@ Reveal
       price='-80'
       denomination=''
       question='What percent up or down is this NFT since minting?'
-      prize='3'
+      :prize='3'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
