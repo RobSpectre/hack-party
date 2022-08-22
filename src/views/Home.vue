@@ -141,7 +141,7 @@ Reveal
       celebrity="Floyd Mayweather's Floyd's World"
       image='/images/floydsworld.png'
     )
-    GameVideo(video='/video/floydsworld.mp4')
+    GameVideo(video='/video/floydsworld_cut.mp4')
     CelebrityGuess(
       celebrity="Floyd Mayweather's Floyd's World"
       image='/images/floydsworld.png'
