@@ -29,6 +29,7 @@ Reveal
       h2.fragment Closest by consensus
       h2.fragment Extra points for unintentional comedy
       h1 Game Play
+    PlayerBoard
     Slide(class='darkgray')
       h2.text-white Getting started with grandpa rock
     HelpComputerRound(
@@ -46,14 +47,6 @@ Reveal
     HelpComputerRound(
       image='/images/fleetwoodmac_rumours.jpg'
       title='Rumours by Fleetwood Mac'
-    )
-    HelpComputerRound(
-      image='/images/the_beatles_abbey_road.webp'
-      title='Abbey Road by The Beatles'
-    )
-    HelpComputerRound(
-      image='/images/david_bowie_ziggy_stardust.jpg'
-      title='Ziggy Stardust by David Bowie'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
@@ -94,18 +87,8 @@ Reveal
       :prize='2'
     )
     HelpComputerRound(
-      image='/images/variousartists_forrestgump.jpg'
-      title='Forrest Gump OST'
-      :prize='2'
-    )
-    HelpComputerRound(
       image='/images/matchboxtwentymatchb_yourselforsomeonelik.jpg'
       title='You or Someone Like You by Matchbox 20'
-      :prize='2'
-    )
-    HelpComputerRound(
-      image='/images/alanismorissette_jaggedlittlepill.jpg'
-      title='Jagged Little Pill by Alanis Morissette'
       :prize='2'
     )
     HelpComputerRound(
@@ -151,11 +134,6 @@ Reveal
     HelpComputerRound(
       image='/images/metallica_ridethelightning.jpg'
       title='Ride the Lightning by Metallica'
-      :prize='3'
-    )
-    HelpComputerRound(
-      image='/images/motrhead_noremorse.jpg'
-      title='No Remorse by Motorhead'
       :prize='3'
     )
     HelpComputerRound(
