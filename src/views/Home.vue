@@ -63,7 +63,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/beetlejuice.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -125,7 +125,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/still_alive.mp4'
       :muted='false'
     )
     PlayerBoard
