@@ -49,7 +49,7 @@ Reveal
       h2.text-white Dungeons & Dragons publisher apologizes for _____ _____ in Spelljammer
     GameContentWithSidebar
       template(v-slot:content)
-      img(src='/images/wizards.png')
+        img(src='/images/wizards.png')
     ChooseWinner(headerImage='/images/sorry2.webp')
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
@@ -63,7 +63,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/beetlejuice.mp4'
+      background='/video/staten_island.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -176,7 +176,6 @@ Reveal
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    VideoSlide(background='/video/queen_hoon.mp4')
     CelebrityGuess(
       celebrity="How many bailed?"
       image='/images/queen.png'
@@ -198,6 +197,12 @@ import GameVideo from '@/components/base/GameVideo.vue'
 
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
+import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
+
+import ChooseWinner from '@/components/Players/ChooseWinner.vue'
+
+import CelebrityGuess from '@/components/CameoPriceIsRight/CelebrityGuess.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -208,7 +213,10 @@ export default {
     BackgroundImageSlide,
     VideoSlide,
     ActionButton,
-    GameVideo
+    GameVideo,
+    GameContentWithSidebar,
+    ChooseWinner,
+    CelebrityGuess
   }
 }
 </script>
