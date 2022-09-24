@@ -98,9 +98,20 @@ Reveal
       headerImage='/images/dmb.png'
       question='Is the lyric DMB or Phish?'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/phantom.mp4')
+      h1 13,517 Performances
+    CelebrityGuess(
+      celebrity="Total performances for Chicago?"
+      image='/images/phantom.png'
+      :price='10098'
+      :prize='3'
+      question='How many performances of Chicago on Broadway?'
+    )
     PlayerBoard
     VideoSlide(
-      background='/videos/'
+      background='/video/dmb_poop.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -166,9 +177,20 @@ Reveal
       question='Is the line Taylor Swift or Shakespeare?'
       :prize='2'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/phantom.mp4')
+      h1 13,517 Performances
+    CelebrityGuess(
+      celebrity="Total performances for Cats?"
+      image='/images/phantom.png'
+      :price='7485'
+      :prize='5'
+      question='How many performances of Cats on Broadway?'
+    )
     PlayerBoard
     VideoSlide(
-      background='/videos/'
+      background='/video/drum_styles.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -251,6 +273,17 @@ Reveal
       question='Is the line Kid Rock or Nickelback?'
       :prize='3'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/phantom.mp4')
+      h1 13,517 Performances
+    CelebrityGuess(
+      celebrity="Total performances for Rent?"
+      image='/images/phantom.png'
+      :price='5123'
+      :prize='10'
+      question='How many performances of Rent on Broadway?'
+    )
     PlayerBoard
 </template>
 
@@ -269,6 +302,8 @@ import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
 
 import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
 
+import CelebrityGuess from '@/components/CameoPriceIsRight/CelebrityGuess.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -281,7 +316,8 @@ export default {
     ActionButton,
     GameVideo,
     ItemGuess,
-    GameContentWithSidebar
+    GameContentWithSidebar,
+    CelebrityGuess
   },
   data () {
     return {
