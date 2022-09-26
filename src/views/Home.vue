@@ -17,6 +17,7 @@ Reveal
       h2.fragment ... or Phish
       h2.fragment Contrarian bonus!
       h1 Game Play
+    PlayerBoard
     Slide(class='darkgray')
       h2.text-white.fragment Caught you just then, hands were in the cookie jar
       h2.text-white.fragment How can we share when you sneak up and go?
