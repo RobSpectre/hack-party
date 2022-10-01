@@ -66,6 +66,7 @@ Reveal
       headerImage='/images/oligarchs.png'
       question='Which is not a way an oligarch mysteriously died?'
       :prize='3'
+      :fragmentItemReveal='true'
     )
     PlayerBoard
     VideoSlide(
@@ -119,6 +120,7 @@ Reveal
       headerImage='/images/oligarchs.png'
       question='Which is not a way an oligarch mysteriously died?'
       :prize='5'
+      :fragmentItemReveal='true'
     )
     PlayerBoard
     VideoSlide(
@@ -179,6 +181,7 @@ Reveal
       headerImage='/images/oligarchs.png'
       question='Which is not a way an oligarch mysteriously died?'
       :prize='10'
+      :fragmentItemReveal='true'
     )
     PlayerBoard
 </template>
