@@ -29,7 +29,7 @@ Reveal
       answer="I'll Make Love To You by Boyz II Men"
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -37,7 +37,7 @@ Reveal
       answer='"Back and Forth" by Aaliyah'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -45,7 +45,7 @@ Reveal
       answer='"Any Time, Any Place" by Janet Jackson'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -53,7 +53,7 @@ Reveal
       answer='"Creep" by TLC'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -61,7 +61,7 @@ Reveal
       answer='"I Wanna Be Down" by Brandy'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     VideoSlide(background='/video/bossfight.mp4')
@@ -78,7 +78,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/geoguessr.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -89,7 +89,7 @@ Reveal
       answer='"Summertime Blues" by Alan Jackson'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -97,7 +97,7 @@ Reveal
       answer="Don't Take The Girl by Tim McGraw"
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -105,7 +105,7 @@ Reveal
       answer='"Third Rock From The Sun" by Joe Diffie'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -113,7 +113,7 @@ Reveal
       answer='"Piece Of My Heart" by Faith Hill'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -121,7 +121,7 @@ Reveal
       answer='"Shut Up and Kiss Me" by Mary Chapin Carpenter'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -129,7 +129,7 @@ Reveal
       answer='"If The Good Die Young" by Tracy Lawrence'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     VideoSlide(background='/video/bossfight.mp4')
@@ -142,7 +142,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/lfb.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -153,7 +153,7 @@ Reveal
       answer='"Can You Feel The Love Tonight?" by Elton John'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -161,7 +161,7 @@ Reveal
       answer='"Wild Night" by John Cougar Mellencamp'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -169,7 +169,7 @@ Reveal
       answer='"All I Wanna Do" by Sheryl Crow'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -177,7 +177,7 @@ Reveal
       answer="I'll Remember by Madonna"
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -185,7 +185,7 @@ Reveal
       answer='"Now and Forever" by Richard Marx'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     AuctionEarRound(
@@ -193,7 +193,7 @@ Reveal
       answer='"Come To My Window" by Melissa Etheridge'
       :chunks='game.players.length',
       gameType='bidForChunk',
-      :ascending='true'
+      :ascending='false'
       image='/images/auctionear_header.png'
     )
     PlayerBoard
