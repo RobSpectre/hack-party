@@ -161,7 +161,7 @@ Reveal
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     GameContentWithSidebar
       template(v-slot:content)
-        img(src='/video/t72.mp4')
+        video(src='/video/t72.mp4' controls)
     ItemGuess(
       :items='items'
       :winnerIndex='0'
