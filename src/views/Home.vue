@@ -70,12 +70,15 @@ Reveal
       celebrity='Survival Shield X3'
       hint1='This appears to be the product anchoring th store'
       hint2='Nascent tri-iodine - but some quality control problems?'
-      hint3="The X-3 turning clear is purely cosmetic and does not negatively impact the product's efficacy."
+      hint3="Unusual disclaimer"
       image='/images/ssx3updateforsomereason.jpg'
       question='How much is this thing on InfoWars?'
       :price='19.95'
       :prize='1'
     )
+      template(v-slot:post-intro)
+        BackgroundImageSlide(background='/images/x3_disclaimer.png')
+          h1.fragment ssx3updateforsomereason.jpg
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     VideoSlide(background='/video/ukraine_offensive_cut.mp4')
@@ -117,6 +120,9 @@ Reveal
       :price='89.95'
       :prize='2'
     )
+      template(v-slot:post-intro)
+        Slide(class='darkgray')
+          h2.text-white $4,192,488.33 per ounce
     CameoPriceIsRightRound(
       celebrity='Faraday Bag for 13 inch Laptop'
       hint1='Weatherproof nylon computer back with... velcro seal?'
@@ -180,7 +186,7 @@ Reveal
       celebrity='Limited Edition Face Mask'
       hint1='Prob the most curious thing I found in the catalog'
       hint2='Denying COVID is kind of Jones whole thing'
-      hint3='Shield yourself and stay safe from incoming germs'
+      hint3='"Shield yourself and stay safe from incoming germs"'
       image='/images/img_1741-newmask.jpg'
       question='How much is this thing on InfoWars?'
       :price='6.95'
@@ -231,13 +237,15 @@ Reveal
     CameoPriceIsRightRound(
       celebrity='Ultimate Bone Broth Plus 5-Pack'
       hint1='Primal Human Nutrition'
-      hint2='This one is just every powder they got in one tub'
-      hint3='Bone broth, tumeric root, chaga mushroom, bee pollen, goji berries'
+      hint2='"In ancient times, man roamed the Earth in a constant state of hunting and being hunted."'
+      hint3='This one is just every powder they got in one tub'
       image='/images/ultimate-bone-broth_5.jpg'
       question='How much is this thing on InfoWars?'
       :price='124.85'
       :prize='3'
     )
+      template(v-slot:post-intro)
+        BackgroundImageSlide(background='/images/bone_broth_ingredients.png')
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     PlayerBoard
