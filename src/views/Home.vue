@@ -3,6 +3,7 @@ Reveal
   .slides
     Title
     BackgroundImageSlide(background='/images/damages_headline.png')
+    BackgroundImageSlide(background='/images/KF.png')
     BackgroundImageSlide(background='/images/jones_crying.gif')
     BackgroundImageSlide(background='/images/infowars_fire_sale.png')
     BackgroundImageSlide(background='/images/infowars_fire_sale.png')
@@ -79,7 +80,9 @@ Reveal
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     VideoSlide(background='/video/ukraine_offensive_cut.mp4')
       h1 Ukraine Offensive
-    BackgroundImageSlide(background='/images/bmp-2.jpeg')
+    GameContentWithSidebar
+      template(v-slot:content)
+        img(src='/images/bmp-2.jpeg')
     ItemGuess(
       :items='items'
       :winnerIndex='0'
@@ -156,7 +159,9 @@ Reveal
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    VideoSlide(background='/video/t72.mp4')
+    GameContentWithSidebar
+      template(v-slot:content)
+        img(src='/video/t72.mp4')
     ItemGuess(
       :items='items'
       :winnerIndex='0'
@@ -184,13 +189,15 @@ Reveal
     CameoPriceIsRightRound(
       celebrity='DNA Force Plus'
       hint1='InfoWars marketing are big fans of the words Force and Plus'
-      hint2='"The products on this site are not intended for use in the cure, treatment, prevention or mitigation of any disease"'
-      hint3='"Any suggestion to the contrary is false and is expressly disavowed."'
+      hint2='Contains "Cordyceps sinensis" which is a fungus growing out of caterpillars'
+      hint3='Pretty spooky disclaimer'
       image='/images/dnathumbnail-og.png'
       question='How much is this thing on InfoWars?'
       :price='74.95'
       :prize='3'
     )
+      template(v-slot:post-intro)
+        BackgroundImageSlide(background='/images/disclaimer.png')
     CameoPriceIsRightRound(
       celebrity='President Emoji Shirt'
       hint1='There is not a ton of stuff in this store'
@@ -234,14 +241,16 @@ Reveal
     VideoSlide(background='/video/bossfight.mp4')
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     PlayerBoard
-    BackgroundImageSlide(background='mt-lb.jpeg')
+    GameContentWithSidebar
+      template(v-slot:content)
+        img(src='/images/mt-lb.jpeg')
     ItemGuess(
       :items='items'
       :winnerIndex='0'
       denomination=''
       headerImage='/images/ukraine_flag.png'
       question='Is this Soviet or newer?'
-      :prize='5'
+      :prize='10'
     )
     PlayerBoard
 </template>
@@ -259,7 +268,7 @@ import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
 import CameoPriceIsRightRound from '@/components/CameoPriceIsRight/CameoPriceIsRightRound.vue'
 import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
-import BackgroundImageSlide1 from '../components/base/BackgroundImageSlide.vue'
+import GameContentWithSidebar from '../components/base/GameContentWithSidebar.vue'
 
 export default {
   name: 'Home',
@@ -274,7 +283,7 @@ export default {
     GameVideo,
     CameoPriceIsRightRound,
     ItemGuess,
-    BackgroundImageSlide1
+    GameContentWithSidebar
   },
   data () {
     return {
