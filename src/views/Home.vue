@@ -142,7 +142,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/lfb.mp4'
+      background='/video/commodordion.mp4'
       :muted='false'
     )
     PlayerBoard
