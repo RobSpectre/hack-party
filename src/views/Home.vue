@@ -77,14 +77,25 @@ Reveal
     VideoSlide(background='/video/crypto_sponsors_cut.mp4')
       h2.nintendo Bear Market
     CameoPriceIsRightRound(
-      celebrity='Solana'
-      hint1='Crypto.com dropped $100M on a series-wide F1 sponsorship'
-      hint2='Plugged by Matt Damon at the Super Bowl'
-      hint3='The firm halted trade of this on Wednesday'
-      image='/images/solana.png'
-      question="By what percentage did this crypto value decline this week?"
+      celebrity='Velas'
+      hint1='Official crypto sponsor for Ferrari Scuderia'
+      hint2='Bills itself as the fasted EVM chain'
+      hint3='I still do not understand what that is.'
+      image='/images/velas.png'
+      question="By what percentage did this crypto value decline since joining Formula 1?"
       denomination='%'
-      :price='45.16'
+      :price='95'
+      :prize='3'
+    )
+    CameoPriceIsRightRound(
+      celebrity='Binance'
+      hint1='Official token sponsor for Scuderia Alpha Tauri'
+      hint2='Binance is now the only liquid exchange left in crypto'
+      hint3='This fan token they made lost 25% in a day this week'
+      image='/images/binance.png'
+      question="By what percentage did this crypto value decline since joining Formula 1?"
+      denomination='%'
+      :price='77'
       :prize='3'
     )
     PlayerBoard
@@ -149,14 +160,25 @@ Reveal
       h2.nintendo Bear Market
     BackgroundImageSlide(background='/images/bybit.png')
     CameoPriceIsRightRound(
-      celebrity='Bitcoin'
-      hint1='Started in 2008 - the granddaddy of them all'
-      hint2='Primary coin in most of the trading pairs out there'
-      hint3='Consumes more electricity than Denmark, Chile and Finland'
-      image='/images/bitcoin.png'
-      question="By what percentage did this crypto value decline this week?"
+      celebrity='Crypto.com '
+      hint1='Official crypto sponsor of Aston Martin F1 Racing Team'
+      hint2='Also did a $100M deal with all of F1 last year'
+      hint3='Matt Damon'
+      image='/images/cryptocom.png'
+      question="By what percentage did this crypto value decline since they joined Formula 1?"
       denomination='%'
-      :price='21.11'
+      :price='91'
+      :prize='5'
+    )
+    CameoPriceIsRightRound(
+      celebrity='Tezos'
+      hint1='Official crypto sponsor of McLaren F1 team'
+      hint2='Slogan is "A blockchain designed to evolve" and "built to last"'
+      hint3='Best performing crypto sponsor in Formula 1!'
+      image='/images/'
+      question="By what percentage did this crypto value decline since they joined Formula 1?"
+      denomination='%'
+      :price='85'
       :prize='5'
     )
     PlayerBoard
@@ -223,13 +245,13 @@ Reveal
     BackgroundImageSlide(background='/images/ftt.png')
     CameoPriceIsRightRound(
       celebrity='FTT'
-      hint1='At the core of this crash is the token for FTX'
+      hint1='Official crypto sponsor of Mercedes AMG Petronas F1 Team'
       hint2='Evidently FTX loaned this token out and word of that leaked'
-      hint3='Merc sponsor - prob not coming back next week'
-      image='/images/ftt.png'
-      question="By what percentage did this crypto value decline this week?"
+      hint3='Contagion coninues to destroy the crypto markets as we speak'
+      image='/images/ftx.png'
+      question="By what percentage did this crypto value decline since they joined Formula 1?"
       denomination='%'
-      :price='58.43'
+      :price='97'
       :prize='10'
     )
     PlayerBoard
