@@ -251,7 +251,7 @@ Reveal
       image='/images/ftx.png'
       question="By what percentage did this crypto value decline since they joined Formula 1?"
       denomination='%'
-      :price='97'
+      :price='100'
       :prize='10'
     )
     PlayerBoard
