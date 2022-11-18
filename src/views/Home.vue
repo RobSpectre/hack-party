@@ -100,7 +100,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/rocket_monaco.mp4'
+      background='/video/rocket_zandvoort_cut.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -183,13 +183,13 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/rocket_austria.mp4'
+      background='/video/rocket_austria_cut.mp4'
       :muted='false'
     )
     PlayerBoard
     CameoPriceIsRightRound(
       celebrity='Transmission'
-      hint1='Converts the 1000HP powerunit into drive'
+      hint1='Converts the 1000HP from the powerunit into drive'
       hint2='Carbon titanium box mounted directly to the engine'
       hint3='Whole thing weighs 88 pounds'
       image='/images/gearbox.png'
