@@ -138,7 +138,7 @@ Reveal
       :items='bossfight',
       video='/video/exploding_hammer_2_0.mov',
       :limit='1',
-      :winnerIndex='0'
+      :winnerIndex='1'
     )
     PlayerBoard
     VideoSlide(
