@@ -158,7 +158,6 @@ Reveal
       h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
     VideoSlide(background='/video/crypto_sponsors_cut.mp4')
       h2.nintendo Bear Market
-    BackgroundImageSlide(background='/images/bybit.png')
     CameoPriceIsRightRound(
       celebrity='Crypto.com '
       hint1='Official crypto sponsor of Aston Martin F1 Racing Team'
@@ -175,7 +174,7 @@ Reveal
       hint1='Official crypto sponsor of McLaren F1 team'
       hint2='Slogan is "A blockchain designed to evolve" and "built to last"'
       hint3='Best performing crypto sponsor in Formula 1!'
-      image='/images/'
+      image='/images/tezos.png'
       question="By what percentage did this crypto value decline since they joined Formula 1?"
       denomination='%'
       :price='85'
