@@ -84,6 +84,7 @@ export default {
       losers: []
     }
   },
+  emits: ['winners', 'losers'],
   computed: {
     currentPlayer () {
       if (this.game.players.length > 0) {
@@ -148,18 +149,24 @@ export default {
         audio.play()
 
         this.winners = winners
+
+        this.$emit('winners', this.winners)
       } else if (winners.length > 0) {
         const audio = new Audio('/sounds/fanfare.mp3')
         audio.volume = 0.2
         audio.play()
 
         this.winners = winners
+
+        this.$emit('winners', this.winners)
       } else {
         const audio = new Audio('/sounds/loser_sound.mp3')
         audio.volume = 0.2
         audio.play()
 
         this.losers = this.players.map(player => player.name)
+
+        this.$emit('losers', this.losers)
       }
 
       this.increasePlayerButton()
