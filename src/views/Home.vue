@@ -24,47 +24,71 @@ Reveal
     PlayerBoard
     Slide(class='darkgray')
       h2.text-white Let's go!
+    Slide(class='green')
+      h2.text-white Which of the following refers to the ability of a person or organism to function at a higher level than would be possible without the use of artificial body parts or other technological enhancements?
     ItemGuess(
       :items='bionic_2'
       :winnerIndex='2'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following refers to a type of machine learning algorithm that is based on the structure and function of the human brain and is capable of learning from data inputs and making predictions or decisions without being explicitly programmed?
     ItemGuess(
       :items='neural_network_3'
       :winnerIndex='3'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following refers to the ability of an organism or machine to move from one place to another?
     ItemGuess(
       :items='locomotion_2'
       :winnerIndex='2'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following is the company that dominates the market for industrial robotics and has the largest market share of all the major players in the industry?
     ItemGuess(
       :items='siemens_3'
       :winnerIndex='3'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following movies, featuring robots as significant characters, has earned the most money at the box office worldwide?
     ItemGuess(
       :items='dark_of_the_moon_0'
       :winnerIndex='0'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following is a type of robot that is designed to work alongside humans and is typically characterized by its lightweight construction, ease of programming, and safety features?
     ItemGuess(
       :items='collaborative_3'
       :winnerIndex='3'
       question='What is the answer the AI generated?'
       :prize='1'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo Boss Fight!!
@@ -82,6 +106,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='books_3'
@@ -89,6 +115,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='boston_dynamics_3'
@@ -96,6 +124,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='voight_kampf_1'
@@ -103,6 +133,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='droid_3'
@@ -110,6 +142,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='reinforcement_3'
@@ -117,6 +151,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='walle_2'
@@ -124,6 +160,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='2'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     PlayerBoard
     VideoSlide(
@@ -139,6 +177,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='hoarders_4'
@@ -146,6 +186,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='da_vinci_0'
@@ -153,6 +195,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='zoomer_0'
@@ -160,6 +204,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='r2d2_0'
@@ -167,6 +213,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     ItemGuess(
       :items='styx_0'
@@ -174,6 +222,8 @@ Reveal
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
     )
     PlayerBoard
 </template>
@@ -329,7 +379,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Press+Start+2P&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
