@@ -94,12 +94,27 @@ Reveal
       h2.nintendo Boss Fight!!
     Slide(class='darkgray')
       img(src='/images/boss_fight_idea.png')
+    Slide
+      h2.fragment 3 question showdown
+      h2.fragment 2 points per correct answer
+      h2.fragment 5 points for last players standing
+      h2.fragment 2x if only one player remains!
+      h1 Game Play
+    KnockoutRound(
+      :questions='boss_fight_1'
+      :prize='2'
+      headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/flight_of_the_conchords.mp4'
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white What is the punchline of the joke, "Why couldn't the robot open the juice box?"
     ItemGuess(
       :items='dad_joke_3'
       :winnerIndex='3'
@@ -109,6 +124,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white Which of the following is considered one of the most important science fiction novels about robots and artificial intelligence, and is credited with popularizing the term "robotics"?
     ItemGuess(
       :items='books_3'
       :winnerIndex='3'
@@ -118,6 +135,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white How many times has Boston Dynamics been sold?
     ItemGuess(
       :items='boston_dynamics_3'
       :winnerIndex='3'
@@ -127,6 +146,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What test do blade runners use to distinguish replicants from humans?
     ItemGuess(
       :items='voight_kampf_1'
       :winnerIndex='1'
@@ -136,6 +157,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the name of a droid that was not used in the Star Wars franchise?
     ItemGuess(
       :items='droid_3'
       :winnerIndex='3'
@@ -145,6 +168,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the process in which a robot is able to improve its performance on a specific task through repeated practice and experience?
     ItemGuess(
       :items='reinforcement_3'
       :winnerIndex='3'
@@ -154,11 +179,23 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the mission for the robot probe in the movie WALL-E?
     ItemGuess(
       :items='walle_2'
       :winnerIndex='2'
       question='What is the answer the AI generated?'
       :prize='2'
+      headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
+    )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.nintendo Boss Fight!!
+    KnockoutRound(
+      :questions='boss_fight_2'
+      :prize='3'
+      :bonus='10'
       headerImage='/images/gameHeader.png'
       denomination=''
       :fragmentItemReveal='true'
@@ -171,6 +208,8 @@ Reveal
     PlayerBoard
     BackgroundImageSlide(background='/images/robot_take_the_wheel.jpeg')
       h1 Robot take the wheel!
+    Slide(class='green')
+      h2.text-white What is the robot equivalent of the "five second rule"?
     ItemGuess(
       :items='five_second_rule_3'
       :winnerIndex='3'
@@ -180,6 +219,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the "guilty pleasure" TV show for robots?
     ItemGuess(
       :items='hoarders_4'
       :winnerIndex='4'
@@ -189,6 +230,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the first robot to be used in a surgical procedure?
     ItemGuess(
       :items='da_vinci_0'
       :winnerIndex='0'
@@ -198,6 +241,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the most popular robot pet?
     ItemGuess(
       :items='zoomer_0'
       :winnerIndex='0'
@@ -207,6 +252,8 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the most lovable robot in a film?
     ItemGuess(
       :items='r2d2_0'
       :winnerIndex='0'
@@ -216,11 +263,24 @@ Reveal
       denomination=''
       :fragmentItemReveal='true'
     )
+    Slide(class='green')
+      h2.text-white What is the most popular robot-related song?
     ItemGuess(
       :items='styx_0'
       :winnerIndex='0'
       question='What is the answer the AI generated?'
       :prize='3'
+      headerImage='/images/gameHeader.png'
+      denomination=''
+      :fragmentItemReveal='true'
+    )
+    PlayerBoard
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.nintendo Boss Fight!!
+    KnockoutRound(
+      :questions='boss_fight_2'
+      :prize='5'
+      :bonus='20'
       headerImage='/images/gameHeader.png'
       denomination=''
       :fragmentItemReveal='true'
@@ -243,6 +303,8 @@ import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
 
 import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
 
+import KnockoutRound from '@/components/KnockoutRound/KnockoutRound.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -255,7 +317,8 @@ export default {
     ActionButton,
     GameVideo,
     ItemGuess,
-    GameContentWithSidebar
+    GameContentWithSidebar,
+    KnockoutRound
   },
   data () {
     return {
@@ -372,6 +435,160 @@ export default {
         { name: 'Robot Rock', emoji: '🤖', value: 'the AI generated answer' },
         { name: 'Robots', emoji: '🎵', value: 'the AI generated answer' },
         { name: 'Robot City', emoji: '🌆', value: 'the AI generated answer' }
+      ],
+      boss_fight_1: [{
+        text: 'What is the name of the famous red-suited Christmas figure?',
+        answers: [{ name: 'Rudolph the Red-Nosed Reindeer', emoji: '🦌', value: 'the AI generated answer' }, { name: 'Frosty the Snowman', emoji: '❄️', value: 'the AI generated answer' }, { name: 'Santa Claus', emoji: '🎅', value: 'the AI generated answer' }, { name: 'The Grinch', emoji: '🧑', value: 'the AI generated answer' }],
+        winnerIndex: 2
+      },
+      {
+        text: 'In what country did the tradition of the Christmas tree originate?',
+        answers: [
+          {
+            name: 'Germany',
+            emoji: '🇩🇪',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Austria',
+            emoji: '🇦🇹',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Sweden',
+            emoji: '🇸🇪',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'France',
+            emoji: '🇫🇷',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 0
+      },
+      {
+        text: "In the song 'The 12 Days of Christmas,' how many total gifts does the true love give to the singer?",
+        answers: [
+          {
+            name: '12',
+            emoji: '🎁',
+            value: 'the AI generated answer'
+          },
+          {
+            name: '36',
+            emoji: '🎁🎁🎁',
+            value: 'the AI generated answer'
+          },
+          {
+            name: '42',
+            emoji: '🎁🎁🎁🎁🎁',
+            value: 'the AI generated answer'
+          },
+          {
+            name: '144',
+            emoji: '🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 3
+      }
+      ],
+      boss_fight_2: [{
+        text: 'What is the scientific name for the species of deer that includes reindeer?',
+        answers: [{ name: 'Odocoileus virginianus', emoji: '🌲', value: 'the AI generated answer' }, { name: 'Rangifer tarandus', emoji: '❄️', value: 'the AI generated answer' }, { name: 'Ovis aries', emoji: '🐏', value: 'the AI generated answer' }],
+        winnerIndex: 1
+      },
+      {
+        text: 'What is the name of the condition in which reindeer lose their fur?',
+        answers: [
+          {
+            name: 'Alopecia',
+            emoji: '🐇',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Hypothermia',
+            emoji: '❄️',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Ecdysis',
+            emoji: '🐛',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 2
+      },
+      {
+        text: 'What is the name of the hollow hair that insulates reindeer against the cold?',
+        answers: [
+          {
+            name: 'Down',
+            emoji: '🦆',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Guard hairs',
+            emoji: '🐻',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Underfur',
+            emoji: '🐿',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 2
+      }
+      ],
+      boss_fight_3: [{
+        text: 'Which of these carols was originally a poem written by Clement Clarke Moore?',
+        answers: [{ name: 'Hark! The Herald Angels Sing', emoji: '🎄', value: 'the AI generated answer' }, { name: 'Jingle Bells', emoji: '🎅', value: 'the AI generated answer' }, { name: 'The Night Before Christmas', emoji: '🎁', value: 'the AI generated answer' }],
+        winnerIndex: 2
+      },
+      {
+        text: 'Which of these carols was originally a hymn written by Charles Wesley?',
+        answers: [
+          {
+            name: 'O Come, All Ye Faithful',
+            emoji: '🎁',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'We Wish You a Merry Christmas',
+            emoji: '🎄',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'Silent Night',
+            emoji: '🎅',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 0
+      },
+      {
+        text: 'Which of these carols was originally a 16th century English folk song?',
+        answers: [
+          {
+            name: 'Deck the Halls',
+            emoji: '🎄',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'O Little Town of Bethlehem',
+            emoji: '🎅',
+            value: 'the AI generated answer'
+          },
+          {
+            name: 'The Twelve Days of Christmas',
+            emoji: '🎁',
+            value: 'the AI generated answer'
+          }
+        ],
+        winnerIndex: 2
+      }
       ]
     }
   }
