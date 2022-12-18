@@ -104,7 +104,7 @@ Reveal
       :prize='3'
     )
     PlayerBoard
-    BackgroundVideoSlide(
+    VideoSlide(
       background='/video/snl_trump_nfts.mp4'
       :muted='false'
     )
@@ -182,8 +182,8 @@ Reveal
       :prize='5'
     )
     PlayerBoard
-    BackgroundVideoSlide(
-      background='/video/'
+    VideoSlide(
+      background='/video/stab_into_christmas.mp4'
       :muted='false'
     )
     PlayerBoard
