@@ -223,7 +223,7 @@ Reveal
       h2.text-white What is the "guilty pleasure" TV show for robots?
     ItemGuess(
       :items='hoarders_4'
-      :winnerIndex='4'
+      :winnerIndex='3'
       question='What is the answer the AI generated?'
       :prize='3'
       headerImage='/images/gameHeader.png'
@@ -278,7 +278,7 @@ Reveal
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo Boss Fight!!
     KnockoutRound(
-      :questions='boss_fight_2'
+      :questions='boss_fight_3'
       :prize='5'
       :bonus='20'
       headerImage='/images/gameHeader.png'
@@ -287,7 +287,7 @@ Reveal
     )
     PlayerBoard
 </template>
-
+https://youtu.be/LYQM1NESLsc
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
@@ -450,11 +450,6 @@ export default {
             value: 'the AI generated answer'
           },
           {
-            name: 'Austria',
-            emoji: '🇦🇹',
-            value: 'the AI generated answer'
-          },
-          {
             name: 'Sweden',
             emoji: '🇸🇪',
             value: 'the AI generated answer'
@@ -463,6 +458,11 @@ export default {
             name: 'France',
             emoji: '🇫🇷',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
         winnerIndex: 0
@@ -470,11 +470,6 @@ export default {
       {
         text: "In the song 'The 12 Days of Christmas,' how many total gifts does the true love give to the singer?",
         answers: [
-          {
-            name: '12',
-            emoji: '🎁',
-            value: 'the AI generated answer'
-          },
           {
             name: '36',
             emoji: '🎁🎁🎁',
@@ -489,9 +484,14 @@ export default {
             name: '144',
             emoji: '🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁🎁',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
-        winnerIndex: 3
+        winnerIndex: 2
       }
       ],
       boss_fight_2: [{
@@ -516,6 +516,11 @@ export default {
             name: 'Ecdysis',
             emoji: '🐛',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
         winnerIndex: 2
@@ -537,6 +542,11 @@ export default {
             name: 'Underfur',
             emoji: '🐿',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
         winnerIndex: 2
@@ -564,6 +574,11 @@ export default {
             name: 'Silent Night',
             emoji: '🎅',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
         winnerIndex: 0
@@ -585,6 +600,11 @@ export default {
             name: 'The Twelve Days of Christmas',
             emoji: '🎁',
             value: 'the AI generated answer'
+          },
+          {
+            name: 'skip',
+            emoji: '⏭️',
+            value: 'I am skipping this player'
           }
         ],
         winnerIndex: 2
