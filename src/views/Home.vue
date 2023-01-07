@@ -47,8 +47,15 @@ Reveal
       answer='Every Sperm Is Sacred by Monty Python'
     )
     PlayerBoard
+    BackgroundImageSlide(background='/images/ken_block_obit.png')
+    BackgroundImageSlide(background='/images/dc_shoes.jpg')
+    VideoSlide(background='/video/gymkhan_5_cut.mp4')
+    BackgroundImageSlide(background='/images/hoonigan.jpg')
+    BackgroundImageSlide(background='/images/ken_block_redefined.png')
+    BackgroundImageSlide(background='/images/43_retired.png')
+    BackgroundImageSlide(background='/video/dakar_tribute.mp4')
     VideoSlide(
-      background='/video/'
+      background='/video/gymkhana_7.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -59,46 +66,53 @@ Reveal
       :items='items'
       :winnerIndex='0'
       answer='99 Luftballons by Nena'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='jump_around_by_house_of_pain'
       :items='items'
       :winnerIndex='0'
       answer='Jump Around by House of Pain'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='bitch_by_meredith_brooks'
       :items='items'
       :winnerIndex='0'
       answer='Bitch by Meredith Brooks'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='hell_by_squirrel_nut_zippers'
       :items='items'
       :winnerIndex='0'
       answer='Hell by Squirrel Nut Zippers'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='mmm_mmm_mmm_mmm_by_crash_test_dummies'
       :items='items'
       :winnerIndex='0'
       answer='Mmm mmm mmm mmm by Crash Test Dummies'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='how_do_you_talk_to_an_angel_by_the_heights'
       :items='items'
       :winnerIndex='0'
       answer='How Do You Talk To An Angel by The Heights'
+      :prize='2'
     )
     SnackTrackRound(
       :tracks='eat_it_by_weird_al_yankovic'
       :items='items'
       :winnerIndex='0'
       answer='Eat It by Weird Al Yankovic'
+      :prize='2'
     )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/zac_learns_pace_notes.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -109,36 +123,42 @@ Reveal
       :items='items'
       :winnerIndex='0'
       answer='Sea Level by Dan Andriano and the Bygones'
+      :prize='3'
     )
     SnackTrackRound(
       :tracks='daytona_sand_by_orville_peck'
       :items='items'
       :winnerIndex='0'
       answer='Daytona Sand by Orville Peck'
+      :prize='3'
     )
     SnackTrackRound(
       :tracks='the_devils_swing_by_bridge_city_sinners'
       :items='items'
       :winnerIndex='0'
       answer='The Devils Swing by Bridge City Sinners'
+      :prize='3'
     )
     SnackTrackRound(
       :tracks='roll_away_like_a_stone_by_butch_walker_as_glenn'
       :items='items'
       :winnerIndex='0'
       answer='Roll Away Like A Stone By Butch Walker As Glenn'
+      :prize='3'
     )
     SnackTrackRound(
       :tracks='on_the_dark_side_by_corey_taylor'
       :items='items'
       :winnerIndex='0'
       answer='On The Dark Side by Corey Taylor'
+      :prize='3'
     )
     SnackTrackRound(
       :tracks='here_i_go_again_by_whitesnake'
       :items='items'
       :winnerIndex='0'
       answer='Here I Go Again By Whitesnake'
+      :prize='3'
     )
 </template>
 
