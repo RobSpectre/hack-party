@@ -2,6 +2,15 @@
 Reveal
   .slides
     Title
+    Slide
+      h2.fragment Solo
+      h2.fragment You will be fed a song track by track
+      h2.fragment With each incorrect answer, more tracks are added
+      h2.fragment Drums, bass, guitars, other stuff and vocals
+      h2.fragment Guess artist and title to score points
+      h2.fragment Highest points goes first
+      h1 Game Play
+    PlayerBoard
     Slide(class='darkgray')
       h2.text-white Pop Tunes In Big Flicks
     SnackTrackRound(
