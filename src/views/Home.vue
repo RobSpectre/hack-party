@@ -181,6 +181,7 @@ Reveal
       :tracks='wherever_you_will_go_by_the_calling'
       :items='items'
       :winnerIndex='0'
+      playerOrder='lowestScoreFirst'
       answer='Wherever You Will Go by The Calling'
       :prize='3'
     )
@@ -188,6 +189,7 @@ Reveal
       :tracks='kiss_me_by_sixpence_none_the_richer'
       :items='items'
       :winnerIndex='0'
+      playerOrder='lowestScoreFirst'
       answer='Kiss Me by Sixpence None The Richer'
       :prize='3'
     )
@@ -195,6 +197,7 @@ Reveal
       :tracks='dont_speak_by_no_doubt'
       :items='items'
       :winnerIndex='0'
+      playerOrder='lowestScoreFirst'
       answer='Dont Speak by No Doubt'
       :prize='3'
     )
@@ -202,6 +205,7 @@ Reveal
       :tracks='believe_by_lenny_kravitz'
       :items='items'
       :winnerIndex='0'
+      playerOrder='lowestScoreFirst'
       answer='Believe by Lenny Kravitz'
       :prize='3'
     )
