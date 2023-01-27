@@ -9,7 +9,7 @@ Reveal
     Slide
       h2.fragment Solo
       h2.fragment You will be presented with an artist one statue away from an EGOT
-      h2.fragment You guess whether the artists is missing...
+      h2.fragment You guess whether the artist is missing...
       h2.fragment An Emmy...
       h2.fragment A Grammy...
       h2.fragment An Oscar...
@@ -121,6 +121,8 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are worth 2x!
     CelebrityIntro(
       celebrity='Trent Reznor'
       image='/images/trent_reznor.png'
@@ -229,6 +231,8 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are worth 3x!
     CelebrityIntro(
       celebrity='Common'
       image='/images/common.png'
@@ -315,6 +319,7 @@ Reveal
       background='/video/bosscocked.mp4'
       :muted='false'
     )
+      .bangers.fragment BOSSCOCKED!
     ItemGuess(
       :items='items'
       question='What is Bruce Springsteen missing?'
@@ -329,9 +334,9 @@ Reveal
     BackgroundImageSlide(background='/images/mtg_vpotus.png')
       .bossfight OVER AND UNDER
     ItemGuess(
-      :items='porter_pelosi'
+      :items='schiff_porter'
       question='Who raised more money last cycle?'
-      headerImage='/images/porter_pelosi.png'
+      headerImage='/images/schiff_porter.png'
       :winnerIndex='1'
       denomination=''
       :prize='10'
@@ -377,16 +382,16 @@ export default {
         { name: 'Tony', emoji: '🎭️', value: ' the missing hardware' }
       ],
       mtg_aoc: [
-        { name: 'Marjorie Taylor Greene', emoji: '🐘️', value: ' the over' },
+        { name: 'Marjorie Taylor Greene', emoji: '🐘️', value: ' outraised AOC by $400k' },
         { name: 'Alexandria Ocasio-Cortez', emoji: '🐎️', value: ' the over' }
       ],
       crenshaw_jordan: [
-        { name: 'Dan Crenshaw', emoji: '🏴‍☠️️', value: ' the over' },
+        { name: 'Dan Crenshaw', emoji: '🏴‍☠️️', value: ' outraised Jordan by $2M' },
         { name: 'Jim Jordan', emoji: '😵‍💫️', value: ' the over' }
       ],
-      porter_pelosi: [
-        { name: 'Nancy Pelosi', emoji: '👵️', value: ' the over' },
-        { name: 'Katie Porter', emoji: '👩️', value: ' the over' }
+      schiff_porter: [
+        { name: 'Adam Schiff', emoji: '👨️', value: ' outraised Schiff by $1M' },
+        { name: 'Katie Porter', emoji: '👩️', value: ' outraised Schiff by $1M' }
       ]
     }
   }
@@ -394,7 +399,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Black+Ops+One&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bangers&family=Black+Ops+One&family=Press+Start+2P&display=swap');
 
 html {
   font-size: 36px;
@@ -407,6 +412,11 @@ html {
 
 .bossfight {
   font-family: 'Black Ops One', cursive !important;
+  @apply mt-64 text-9xl text-white #{!important};
+}
+
+.bangers {
+  font-family: 'Bangers', cursive !important;
   @apply mt-64 text-9xl text-white #{!important};
 }
 
