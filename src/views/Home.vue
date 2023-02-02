@@ -2,6 +2,7 @@
 Reveal
   .slides
     Title
+    Scoreboard(question='Who answered the question correctly?')
 </template>
 
 <script>
@@ -15,6 +16,8 @@ import GameVideo from '@/components/base/GameVideo.vue'
 
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 
+import Scoreboard from '@/components/Scoreboard/Scoreboard.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -25,7 +28,8 @@ export default {
     BackgroundImageSlide,
     VideoSlide,
     ActionButton,
-    GameVideo
+    GameVideo,
+    Scoreboard
   }
 }
 </script>
