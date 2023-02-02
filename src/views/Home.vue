@@ -18,6 +18,7 @@ Reveal
       h1 Game Play
     Slide(class='darkgray')
       h2.text-white Let's Go!
+    PlayerBoard
     CelebrityIntro(
       celebrity='Bette Midler'
       image='/images/bette_midler.png'
