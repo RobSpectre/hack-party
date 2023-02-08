@@ -2,7 +2,11 @@
 Reveal
   .slides
     Title
-    Scoreboard(question='Who answered the question correctly?')
+    PlayerBoard
+    Scoreboard(
+      question='Who answered the question correctly?'
+      :prize='1'
+    )
 </template>
 
 <script>
