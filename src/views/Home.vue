@@ -2,6 +2,18 @@
 Reveal
   .slides
     Title
+    BackgroundImageSlide(background='/images/pureflix_website.png')
+      h1 Thanks Keegan!
+    VideoSlide(background='/video/tammy_faye_cut.mp4')
+      h2.text-white.text-9xl.monoton(style='margin-top: 24rem;') Pureflix or Netflix?
+    Slide
+      h2.fragment Solo
+      h2.fragment You will be presented with the title and description of some content
+      h2.fragment Is it Pureflix?
+      h2.fragment Netflix?
+      h2.fragment Notflix?
+      h2.fragment Contrarian bonus is in effect!
+      h1 Game Play
     PlayerBoard
     Slide(class='green')
       h2.text-white Let's go!
@@ -116,7 +128,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/streams_of_whiskey.mp4'
+      background='/video/rockin_on_heavens_door.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -222,7 +234,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/honor.mp4'
+      background='/video/what_if.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -373,11 +385,16 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import
+url('https://fonts.googleapis.com/css2?family=Monoton&family=Press+Start+2P&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
   @apply mt-72 text-9xl text-white #{!important};
+}
+
+.monoton {
+  font-family: 'Monoton', cursive !important;
 }
 
 html {
