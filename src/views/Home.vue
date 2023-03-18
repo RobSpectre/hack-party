@@ -340,6 +340,10 @@ Reveal
       headerImage='/images/simpsons_header.webp'
     )
     PlayerBoard
+    VideoSlide(
+      background='/video/revelation_road.mp4'
+      :muted='false'
+    )
 </template>
 
 <script>
