@@ -15,6 +15,7 @@ Reveal
       h1 Game Play
     Slide(class='green')
       h2.text-white Let's Go!
+    PlayerBoard
     ImageCarousel(:images='barbie')
       template(v-slot:header)
         h2 Ann Arbor, Michigan
@@ -62,7 +63,7 @@ Reveal
     )
     PlayerBoard
     VideoSlide(
-      background='/video/cunts.mp4'
+      background='/video/snl_real_estate.mp4'
       :muted='false'
     )
     PlayerBoard
