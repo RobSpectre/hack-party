@@ -11,7 +11,7 @@ Reveal
       h2.fragment You will be presented with the title and description of some content
       h2.fragment Is it Pureflix?
       h2.fragment Netflix?
-      h2.fragment Notflix?
+      h2.fragment Nyetflix?
       h2.fragment Contrarian bonus is in effect!
       h1 Game Play
     PlayerBoard
@@ -381,7 +381,7 @@ export default {
       items: [
         { name: 'Pureflix', emoji: '😇️', value: ' the streaming service' },
         { name: 'Netflix', emoji: '📺️', value: ' the streaming service' },
-        { name: 'Notflix', emoji: '💻️', value: ' the streaming service' }
+        { name: 'Nyetflix', emoji: '💻️', value: ' the streaming service' }
       ]
     }
   }
