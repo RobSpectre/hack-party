@@ -5,6 +5,16 @@ Reveal
     BackgroundImageSlide(background='/images/mtg_store.png')
     BackgroundImageSlide(background='/images/mtg_store.png')
       .title MAGA Merch Stand
+    Slide
+      h2.fragment Solo
+      h2.fragment Merch from Winred.com
+      h2.fragment Guess the price!
+      h2.fragment Lowest without going over wins
+      h2.fragment On the money doubles your points!
+      h1 Game Play
+    PlayerBoard
+    Slide(class='green')
+      h2.text-white Let's go!
     GameContentWithSidebar
       template(v-slot:content)
         .flex.items-center.justify-center.h-screen
@@ -14,6 +24,7 @@ Reveal
       image='/images/mtg_enemy_hat.png'
       :price='30'
       question='How much is this MAGA merch?'
+      :prize='1'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -24,6 +35,7 @@ Reveal
       image='/images/mtg_christian_nationalist.png'
       :price='30'
       question='How much is this MAGA merch?'
+      :prize='1'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -34,6 +46,7 @@ Reveal
       image='/images/mtg_solo_cup.png'
       :price='20'
       question='How much is this MAGA merch?'
+      :prize='1'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -44,6 +57,7 @@ Reveal
       image='/images/mtg_monkeypox_shirt.png'
       :price='34'
       question='How much is this MAGA merch?'
+      :prize='1'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -54,6 +68,7 @@ Reveal
       image='/images/mtg_button.png'
       :price='10'
       question='How much is this MAGA merch?'
+      :prize='1'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
@@ -82,6 +97,8 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are doubled!
     GameContentWithSidebar
       template(v-slot:content)
         .flex.flex-grow.flex-col
@@ -91,6 +108,7 @@ Reveal
       image='/images/boebert_non_bidenary.png'
       :price='30'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -101,6 +119,7 @@ Reveal
       image='/images/boebert_membership_card.png'
       :price='30'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -111,6 +130,7 @@ Reveal
       image='/images/boebert_beanie.png'
       :price='20'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -121,6 +141,7 @@ Reveal
       image='/images/haley_koozie.png'
       :price='7'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -131,6 +152,7 @@ Reveal
       image='/images/rubio_sticker.png'
       :price='10'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -141,6 +163,7 @@ Reveal
       image='/images/vance_american_flag.png'
       :price='30'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -151,6 +174,7 @@ Reveal
       image='/images/johnson_beer_sticker.png'
       :price='15'
       question='How much is this MAGA merch?'
+      :prize='2'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
@@ -175,6 +199,8 @@ Reveal
       :muted='false'
     )
     PlayerBoard
+    Slide(class='green')
+      h2.text-white Points are tripled!
     GameContentWithSidebar
       template(v-slot:content)
         .flex.flex-grow.flex-col
@@ -184,6 +210,7 @@ Reveal
       image='/images/trump_was_right.png'
       :price='13'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -194,6 +221,7 @@ Reveal
       image='/images/trump_beer_koozie.png'
       :price='15'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -204,6 +232,7 @@ Reveal
       image='/images/trump_waco_shirt.png'
       :price='36'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -214,6 +243,7 @@ Reveal
       image='/images/trump_maga_hat.png'
       :price='40'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -224,6 +254,7 @@ Reveal
       image='/images/trump_unfinished_business.png'
       :price='36'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:content)
@@ -234,6 +265,7 @@ Reveal
       image='/images/trump_flag.png'
       :price='43'
       question='How much is this MAGA merch?'
+      :prize='3'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
