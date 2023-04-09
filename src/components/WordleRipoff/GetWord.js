@@ -3,6 +3,9 @@ export function getWord () {
 }
 
 const words = [
+  'oasis', 'queen', 'mrbig', 'kinks', 'spoon', 'cream', 'vines', 'zztop',
+  'wilco', 'doors', 'byrds', 'clash', 'keane', 'slits', 'verve', 'wings',
+  'bread', 'creed', 'adele', 'nsync', 'train', 'heart', 'usher', 'jewel',
   'cigar', 'rebut', 'sissy', 'humph', 'awake', 'blush', 'focal',
   'evade', 'naval', 'serve', 'heath', 'dwarf', 'model', 'karma', 'stink',
   'grade', 'quiet', 'bench', 'abate', 'feign', 'major', 'death', 'fresh',
