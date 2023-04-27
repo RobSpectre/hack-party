@@ -54,7 +54,7 @@ Reveal
         AudioPlayer(src='/sounds/b-orbison.mp3')
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/every_scifi_show.mp4'
       :muted='false'
     )
     PlayerBoard
@@ -95,7 +95,7 @@ Reveal
         AudioPlayer(src='/sounds/d-thicke.mp3')
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/xo.mp4'
       :muted='false'
     )
     PlayerBoard
