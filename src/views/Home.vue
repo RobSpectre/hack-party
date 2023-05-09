@@ -71,11 +71,15 @@ Reveal
       src='/sounds/godsmack.mp3'
       answer='Godsmack is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='false'
     )
     AuctionEarRound(
       src='/sounds/cherrypie.mp3'
       answer='Warrant is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='false'
     )
     PlayerBoard
     VideoSlide(
@@ -139,11 +143,15 @@ Reveal
       src='/sounds/limpbizkit.mp3'
       answer='Limp Bizkit is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='false'
     )
     AuctionEarRound(
       src='/sounds/pantera.mp3'
       answer='Pantera is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='false'
     )
     PlayerBoard
     VideoSlide(
@@ -208,11 +216,15 @@ Reveal
       src='/sounds/daughtry.mp3'
       answer='Daughtry is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='true'
     )
     AuctionEarRound(
       src='/sounds/buckcherry.mp3'
       answer='Buckcherry is the crappy band!'
       :chunks='5'
+      gameType='bidForChunk',
+      :ascending='true'
     )
     PlayerBoard
 </template>
