@@ -4,10 +4,10 @@ GameSlide(v-if='game.players.length > 0')
   GameContent
     template(v-slot:header)
       slot(name='header')
+        AudioPlayer(
+          :src='src'
+        )
     template(v-slot:content)
-      AudioPlayer(
-        :src='src'
-      )
       .relative.mt-12.mx-auto(class='w-3/5' v-if='!complete')
         .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
           .flex-shrink-0

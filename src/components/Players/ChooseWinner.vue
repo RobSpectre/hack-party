@@ -1,28 +1,35 @@
 <template lang='pug'>
 GameSlide
   PlayersSidebar(:players='players')
-  .relative.mt-12.mx-auto(v-if='players')
-    .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
-      .flex-shrink-0
-        img.m-0.w-full.clear-reveal.object-cover(:src='headerImage' alt='')
-      .flex-1.bg-white.p-6.flex.flex-col.justify-between
-        .flex-1
-          span.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase
-          | {{ heading }}
-          .my-2.text-center.flex.flex-col
-            button.actionButton(
-              v-for='player in players'
-              @click='chooseWinner(player.name)'
-              ) {{ player.name }}
-      .flex-1.bg-green.p-6.flex.flex-col.justify-between
-        span.text-2xl.uppercase.leading-7.font-semibold.text-white
-          | Who was closest?
-  WinnerCard(
-    v-if='winners.length > 0'
-    :winners='winners'
-    :answerName='winners[0].name'
-    :answerValue='winnerSuffix'
-  )
+  GameContent
+    template(v-slot:header)
+      slot(name='header')
+    template(v-slot:content)
+      .relative.mt-12.mx-auto(v-if='players')
+        .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
+          .flex-shrink-0
+            img.m-0.w-full.clear-reveal.object-cover(:src='headerImage' alt='')
+          .flex-1.bg-white.p-6.flex.flex-col.justify-between
+            .flex-1
+              span.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase
+              | {{ heading }}
+              .my-2.text-center.flex.flex-col
+                button.actionButton(
+                  v-for='player in players'
+                  @click='chooseWinner(player.name)'
+                  ) {{ player.name }}
+          .flex-1.bg-green.p-6.flex.flex-col.justify-between
+            span.text-2xl.uppercase.leading-7.font-semibold.text-white
+              | Who was closest?
+      slot(name='content')
+    template(v-slot:footer)
+      WinnerCard(
+        v-if='winners.length > 0'
+        :winners='winners'
+        :answerName='winners[0].name'
+        :answerValue='winnerSuffix'
+      )
+      slot(name='footer')
 </template>
 
 <script>
@@ -34,11 +41,14 @@ import WinnerCard from '@/components/base/WinnerCard.vue'
 
 import PlayersSidebar from '@/components/Players/PlayersSidebar.vue'
 
+import GameContent from '@/components/base/GameContent.vue'
+
 export default {
   name: 'ChooseWinner',
   components: {
     GameSlide,
     PlayersSidebar,
+    GameContent,
     WinnerCard
   },
   props: {
