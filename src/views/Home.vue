@@ -2,24 +2,44 @@
 Reveal
   .slides
     Title
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/re.mp4')
+      .title Raise The Dead
+    Slide
+      h2.fragment Solo
+      h2.fragment A large language model will impersonate a famous dead writer
+      h2.fragment Ask questions to uncover who the model is impersonating
+      h2.fragment Person who gets the model to confirm identity wins
+      h2.fragment Clever questions get bonus points
+      h1 Game Play
+    PlayerBoard
+    Scoreboard(
+      question='Who identified the writer?'
+      :prize='1'
+    )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/doucheoff.mp4'
       :muted='false'
     )
     PlayerBoard
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    Slide(class='green')
+      h2.text-white Points are 2x!
+    Scoreboard(
+      question='Who identified the writer?'
+      :prize='2'
+    )
     PlayerBoard
     VideoSlide(
-      background='/video/'
+      background='/video/totk.mp4'
       :muted='false'
     )
     PlayerBoard
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    Slide(class='green')
+      h2.text-white Points are 3x!
+    Scoreboard(
+      question='Who identified the writer?'
+      :prize='3'
+    )
     PlayerBoard
 </template>
 
@@ -33,6 +53,7 @@ import ActionButton from '@/components/base/ActionButton.vue'
 import GameVideo from '@/components/base/GameVideo.vue'
 
 import PlayerBoard from '@/components/Players/PlayerBoard.vue'
+import Scoreboard from '../components/Scoreboard/Scoreboard.vue'
 
 export default {
   name: 'Home',
@@ -44,16 +65,22 @@ export default {
     BackgroundImageSlide,
     VideoSlide,
     ActionButton,
-    GameVideo
+    GameVideo,
+    Scoreboard
   }
 }
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Creepster&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
+  @apply mt-72 text-9xl text-white #{!important};
+}
+
+.title {
+  font-family: 'Creepster', cursive !important;
   @apply mt-72 text-9xl text-white #{!important};
 }
 
