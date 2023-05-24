@@ -8,6 +8,7 @@ Reveal
       h2.fragment Solo
       h2.fragment A large language model will impersonate a famous dead writer
       h2.fragment Ask questions to uncover who the model is impersonating
+      h2.fragment You cannot ask the same question twice
       h2.fragment Person who gets the model to confirm identity wins
       h2.fragment Clever questions get bonus points
       h1 Game Play
