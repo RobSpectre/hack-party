@@ -51,6 +51,23 @@ Reveal
       winnerSuffix='was closest to failing to register as an agent of a foreign intelligence service.'
       :prize='1'
     )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/maga_rap.mp4')
+      .bossfight Over / Under In Magaverse
+    Slide
+      h2.fragment Solo
+      h2.fragment MAGA Personality
+      h2.fragment Who has the better rating on Cameo?
+      h2.fragment Contrarian bonus in effect!
+      h1 Game Play
+    WhichIsWhichRound(
+      :items='round_one'
+      :winnerIndex='round_one[0].value > round_one[1].value ? 0 : 1'
+      question='Who has the higher rating on Cameo?'
+      headerImage='/images/header_space.png'
+      :prize='3'
+    )
     PlayerBoard
     VideoSlide(
       background='/video/aliens.mp4'
@@ -96,6 +113,17 @@ Reveal
       headerImage='/images/cartoon_criminals_header.png'
       winnerSuffix='was closest to doing a hit and run'
       :prize='2'
+    )
+    VideoSlide(background='/video/bossfight.mp4')
+      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/maga_rap.mp4')
+      .bossfight Over / Under In Magaverse
+    WhichIsWhichRound(
+      :items='round_two'
+      :winnerIndex='round_two[0].value > round_two[1].value ? 0 : 1'
+      question='Who has the higher rating on Cameo?'
+      headerImage='/images/header_space.png'
+      :prize='5'
     )
     PlayerBoard
     VideoSlide(
@@ -145,6 +173,15 @@ Reveal
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/maga_rap.mp4')
+      .bossfight Over / Under In Magaverse
+    WhichIsWhichRound(
+      :items='round_three'
+      :winnerIndex='round_three[0].value > round_three[1].value ? 0 : 1'
+      question='Who has the higher rating on Cameo?'
+      headerImage='/images/header_space.png'
+      :prize='10'
+    )
     PlayerBoard
 </template>
 
@@ -162,6 +199,8 @@ import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
 import ChooseWinner from '@/components/Players/ChooseWinner.vue'
 
+import WhichIsWhichRound from '@/components/WhichIsWhich/WhichIsWhichRound.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -174,13 +213,66 @@ export default {
     ActionButton,
     GameVideo,
     GameContentWithSidebar,
-    ChooseWinner
+    ChooseWinner,
+    WhichIsWhichRound
+  },
+  data () {
+    return {
+      round_one: [
+        {
+          name: 'Rudy Guiliani',
+          hints: ["Donald Trump's personal lawyer", 'Known for his stunning press conferences', 'Former mayor of New York'],
+          value: 4.68,
+          image: 'https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=800,height=800/https://cdn.cameo.com/resizer/~Y8fbmY_B_RWGHeadshot.jpg',
+          emoji: '💄️'
+        },
+        {
+          name: 'Michael Cohen',
+          hints: ["Donald Trump's personal lawyer", 'Known for his stunning press conferences', 'Said he would take a bullet for Trump'],
+          value: 4.99,
+          image: 'https://www.cameo.com/cdn-cgi/image/format=auto,width=800,height=800/https://cdn.cameo.com/resizer/8CaAARC31_avatar-iXH3TtDW_.jpg',
+          emoji: '🚅️'
+        }
+      ],
+      round_two: [
+        {
+          name: 'Roger Stone',
+          hints: ["Donald Trump's personal advisor", 'Known for his stunning crimes', 'Tattoo of Richard Nixon on his back'],
+          value: 4.87,
+          image: 'https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=800,height=800/https://cdn.cameo.com/resizer/knMwUsX7P_BD0A7F27-C051-42B7-AB85-C74430D8F7C1.jpeg',
+          emoji: '🕵️'
+        },
+        {
+          name: 'Anthony Scaramucci',
+          hints: ["Donald Trump's personal advisor", 'Known for his stunning crimes', 'After the White House, he got deep into FTX'],
+          value: 4.85,
+          image: 'https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=800,height=800/https://cdn.cameo.com/resizer/avatar-Ukk6mnYcw.jpg',
+          emoji: '💱️'
+        }
+      ],
+      round_three: [
+        {
+          name: 'George Papadopoulos',
+          hints: ["Donald Trump's National Security Advisor", 'Known for his relationship with Russia', 'Plead guilty for lying to the FBI'],
+          value: 3.67,
+          image: 'https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=800,height=800/https://cdn.cameo.com/resizer/KkvUqR78b_zoS_UMCp-F26F4AF2-AFD0-4A8C-BFE8-E5F26430ACC1.jpg',
+          emoji: '🇷🇺️'
+        },
+        {
+          name: 'Michael Flynn',
+          hints: ["Donald Trump's National Security Advisor", 'Known for his relationship with Russia', 'Plead guilty for lying to the FBI'],
+          value: 5.00,
+          image: 'https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=800,height=800/https://cdn.cameo.com/resizer/Oc5BBnU96Y_avatar-1683578116274.jpg',
+          emoji: '🎖️'
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Black+Ops+One&family=Bruno+Ace&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
@@ -190,6 +282,11 @@ export default {
 .title {
   font-family: 'Black Ops One', cursive !important;
   @apply mt-36 origin-bottom-right skew-x-6 skew-y-6 text-9xl text-rose-600 text-shadow-lg tracking-tight shadow-black #{!important};
+}
+
+.bossfight {
+  font-family: 'Bruno Ace', cursive !important;
+  @apply mt-72 text-9xl text-white #{!important};
 }
 
 html {
