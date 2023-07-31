@@ -14,6 +14,7 @@ Reveal
       h2.fragment Guess which country was used to generate the image
       h2.fragment 2x points for getting the city
       h1 Game Play
+    PlayerBoard
     GameContentWithSidebar
       template(v-slot:content)
         img(src='/images/gonzo_in_anchorage.png')
