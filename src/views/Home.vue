@@ -152,6 +152,7 @@ Reveal
       headerImage='/images/the_picture_of_dorian_gray.png'
       :winnerIndex='1'
       denomination=''
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -168,6 +169,7 @@ Reveal
       headerImage='/images/catcher_in_the_rye.png'
       :winnerIndex='0'
       denomination=''
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -184,6 +186,7 @@ Reveal
       headerImage='/images/fahrenheit_451.png'
       :winnerIndex='1'
       denomination=''
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -200,6 +203,7 @@ Reveal
       headerImage='/images/hamlet.png'
       :winnerIndex='1'
       denomination=''
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -216,6 +220,7 @@ Reveal
       headerImage='/images/ulysses.png'
       :winnerIndex='0'
       denomination=''
+      :prize='2'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -232,6 +237,7 @@ Reveal
       headerImage='/images/go_tell_it_on_the_mountain.png'
       :winnerIndex='0'
       denomination=''
+      :prize='2'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
@@ -266,13 +272,13 @@ Reveal
         img.fragment(src='/images/lady_chatterlys_lover.png')
       template(v-slot:footer)
         h1.fragment Lady Chatterly's Lover
-      ItemGuess(
-        :items='items'
-        question='Is this book banned in Iowa?'
-        headerImage='/images/lady_chatterlys_lover.png'
-        :winnerIndex='1'
-        denomination=''
-      )
+    ItemGuess(
+      :items='items'
+      question='Is this book banned in Iowa?'
+      headerImage='/images/lady_chatterlys_lover.png'
+      :winnerIndex='1'
+      denomination=''
+    )
     GameContentWithSidebar
       template(v-slot:header)
         h2.text-white.fragment This book was written during UK Prime Minister William Pitt's era of strict censorship
@@ -288,6 +294,7 @@ Reveal
       headerImage='/images/pride_and_prejudice.png'
       :winnerIndex='1'
       denomination=''
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -304,6 +311,7 @@ Reveal
       headerImage='/images/the_fault_of_our_stars.png'
       :winnerIndex='0'
       denomination=''
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -320,6 +328,7 @@ Reveal
       headerImage='/images/my_antonia.png'
       :winnerIndex='1'
       denomination=''
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -336,6 +345,7 @@ Reveal
       headerImage='/images/brave_new_world.png'
       :winnerIndex='0'
       denomination=''
+      :prize='3'
     )
     GameContentWithSidebar
       template(v-slot:header)
@@ -352,6 +362,7 @@ Reveal
       headerImage='/images/date_rape.png'
       :winnerIndex='0'
       denomination=''
+      :prize='3'
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
