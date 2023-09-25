@@ -2,6 +2,13 @@
 Reveal
   .slides
     Title
+    Slide
+      h2.fragment Tournament of Game Show Champions
+      h2.fragment You will be presented with two game show hosts
+      h2.fragment Choose which has more nominations for Daytime Emmy for Game Show Host
+      h2.fragment Single elimination
+      h2.fragment Contrarian bonus is in effect
+      h1 Game Play
     PlayerBoard
     WhichIsWhichRound(
       :items='hosts.slice(0, 2)'
@@ -85,7 +92,7 @@ Reveal
     )
     ItemGuess(
       :items='[hosts[4], hosts[6]]'
-      :winnerIndex='0'
+      :winnerIndex='1'
       question='Which hosts has more Emmy nominations?'
       headerImage='/images/showcase_showdown_header.png'
       :prize='2'
