@@ -2,6 +2,13 @@
 Reveal
   .slides
     Title
+    VideoSlide(
+      background='/video/traffas_auctioning.mp4'
+    )
+      .mt-60.text-9xl 👨‍⚖️️👂️
+    VideoSlide(background='/video/syndicated_cut.mp4')
+    VideoSlide(background='/video/syndicated_cut.mp4')
+      .title Cut The Cord
     PlayerBoard
     Slide
       h2.fragment Solo
