@@ -2,6 +2,7 @@
 Reveal
   .slides
     Title
+    PlayerBoard
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
     PlayerBoard
