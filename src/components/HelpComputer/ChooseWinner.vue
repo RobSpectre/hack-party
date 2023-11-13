@@ -10,7 +10,7 @@ GameContentWithSidebar
           @click.prevent.stop='chooseWinner(image)'
         )
           img(
-            :src='/images/ + image.imagePath'
+            :src='image.imagePath'
           )
   template(v-slot:footer)
     h1 {{ title }}
@@ -51,7 +51,7 @@ export default {
     chooseWinner (image) {
       this.increasePlayerScore(image.playerName, this.prize)
 
-      this.winningImage = '/images/' + image.imagePath
+      this.winningImage = image.imagePath
       this.winners.push(image.playerName)
 
       const audio = new Audio('/sounds/fanfare.mp3')

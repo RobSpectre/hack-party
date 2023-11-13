@@ -89,15 +89,32 @@ export default {
   },
   methods: {
     handleInput (input) {
-      this.connection.send(JSON.stringify({
-        name: 'Image Request',
-        prompt: input.text,
-        playerName: this.playerName,
-        id: this.id
-      }))
+      if (input.text === '') {
+        this.connection = new WebSocket('ws://localhost:8000/ws')
+
+        this.connection.addEventListener('open', () => {
+          this.connected = true
+        })
+
+        this.connection.addEventListener('close', () => {
+          this.connected = false
+        })
+
+        this.connection.addEventListener('message', this.handleMessage)
+
+        this.id = uuidv4()
+      } else {
+        this.connection.send(JSON.stringify({
+          name: 'Image Request',
+          prompt: input.text,
+          playerName: this.playerName,
+          id: this.id
+        }))
+      }
     },
     handleMessage (event) {
       event = JSON.parse(event.data)
+      console.log(event)
 
       if (event.id === this.id) {
         if (event.name === 'Loading') {
@@ -107,7 +124,7 @@ export default {
           this.generated = true
 
           this.prompt = event.prompt
-          this.image = '/images/' + event.imagePath
+          this.image = event.imagePath
 
           this.playerConfirmed = event.playerName
           this.$emit('imageGenerated', event)

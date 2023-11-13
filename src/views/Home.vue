@@ -2,22 +2,11 @@
 Reveal
   .slides
     Title
-    BackgroundImageSlide(
-      background='/images/album_cover.png'
-    )
-      h1 DALL-E > Album Covers
-    BackgroundImageSlide(
-      background='/images/thats_impossible.gif'
-    )
-      h1 Rob Said It Wouldn't Work
-    BackgroundImageSlide(
-      background='/images/diffusion_release.png'
-    )
-      h1 By Tuesday He Was Wrong
     VideoSlide(
-      background='/video/help_computer.mp4'
-      :muted='false'
+      background='/video/openai.mp4'
     )
+    BackgroundImageSlide(background='/images/dalle_api.png')
+    VideoSlide(background='/video/dalle3.mp4')
     BackgroundImageSlide(
       background='/images/help_computer.png'
     )
@@ -31,145 +20,96 @@ Reveal
       h1 Game Play
     PlayerBoard
     Slide(class='darkgray')
-      h2.text-white Getting started with grandpa rock
+      h2.text-white Rolling Stone's Top 5
     HelpComputerRound(
-      image='/images/led_zeppelin_1.jpg'
-      title='Led Zeppelin by Led Zeppelin'
-    )
-    HelpComputerRound(
-      image='/images/rolling_stones_sticky_fingers.webp'
-      title='Sticky Fingers by The Rolling Stones'
+      image='/images/abbey_road.jpg'
+      title='Abbey Road by The Beatles'
     )
     HelpComputerRound(
-      image='/images/acdc_high_voltage.jpg'
-      title='High Voltage by ACDC'
+      image='/images/sounds_in_the_key_of_life.jpg'
+      title='Sounds in the Key of Life by Stevie Wonder'
     )
     HelpComputerRound(
-      image='/images/fleetwoodmac_rumours.jpg'
-      title='Rumours by Fleetwood Mac'
+      image='/images/blue.jpg'
+      title='Blue by Joni Mitchell'
     )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    VideoSlide(background='/video/boss_fight_intro_falsehoods_cut.mp4')
-      h2.text-white.text-9xl.cursive The Thin Veneer of Legitimacy
-    Slide(class='green')
-      h2.text-white Each are 3 points
-    AudioChoiceRound(
-      src='/sounds/devin_nunes.mp3'
-      :items='items'
-      :winnerIndex='1'
-      :prize='3'
-      :fragmentItemReveal='true'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
+    HelpComputerRound(
+      image='/images/pet_sounds.jpg'
+      title='Pet Sounds by The Beach Boys'
     )
-    AudioChoiceRound(
-      src='/sounds/tudor_dixon.mp3'
-      :items='items'
-      :winnerIndex='0'
-      :prize='3'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
+    HelpComputerRound(
+      image='/images/whats_going_on.jpg'
+      title="What's Going On by Marvin Gaye"
     )
     PlayerBoard
     VideoSlide(
-      background='/video/aunty_donna_kiln.mp4'
+      background='/video/washington_dream.mp4'
       :muted='false'
     )
     PlayerBoard
     Slide(class='darkgray')
-      h2.text-white Intermediate Difficulty with 90's pop
+      h2.text-white $600 tickets
     Slide(class='green')
       h2.text-white Points are 2X
     HelpComputerRound(
-      image='/images/shania_twain_self_titled.png'
-      title='Shania Twain by Shania Twain'
+      image='/images/american_idiot.jpg'
+      title='American Idiot by Green Day'
       :prize='2'
     )
     HelpComputerRound(
-      image='/images/matchboxtwentymatchb_yourselforsomeonelik.jpg'
-      title='You or Someone Like You by Matchbox 20'
+      image='/images/songs_of_innocence.jpg'
+      title='Songs of Innocence by U2'
       :prize='2'
     )
     HelpComputerRound(
-      image='/images/garthbrooks_sevens.jpg'
-      title='Sevens by Garth Brooks'
+      image='/images/1989.jpg'
+      title='1989 by Taylor Swift'
       :prize='2'
     )
     HelpComputerRound(
-      image='/images/creed_humanclay.jpg'
-      title='Human Clay by Creed'
+      image='/images/un_verano_sin_ti.jpg'
+      title='Un Verano Sin Ti by Bad Bunny'
       :prize='2'
     )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    Slide(class='green')
-      h2.text-white Each are 5 points
-    AudioChoiceRound(
-      src='/sounds/kari_lake.mp3'
-      :items='items'
-      :winnerIndex='0'
-      :prize='5'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
-    )
-    AudioChoiceRound(
-      src='/sounds/seb_gorka.mp3'
-      :items='items'
-      :winnerIndex='1'
-      :prize='5'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
+    HelpComputerRound(
+      image='/images/one_of_these_nights.jpg'
+      title='One of These Nights by Eagles'
+      :prize='2'
     )
     PlayerBoard
     VideoSlide(
-      background='/video/aunty_donna_cheese.mp4'
+      background='/video/gop_debate.mp4'
       :muted='false'
     )
     PlayerBoard
     Slide(class='darkgray')
-      h2.text-white Full Send with the Classics of Metal
+      h2.text-white Nashville Is Hell For Music
     Slide(class='green')
       h2.text-white Points are 3X
     HelpComputerRound(
-      image='/images/metallica_ridethelightning.jpg'
-      title='Ride the Lightning by Metallica'
+      image='/images/whitsitt_chapel.jpg'
+      title='Whitsitt Chapel by Jelly Roll'
       :prize='3'
     )
     HelpComputerRound(
-      image='/images/mastodon_leviathan.jpg'
-      title='Leviathan by Mastodon'
+      image='/images/bell_bottom_country.jpg'
+      title='Bell Bottom Country by Lainey Wilson'
       :prize='3'
     )
     HelpComputerRound(
-      image='/images/ironmaiden_thetrooper.jpg'
-      title='The Trooper by Iron Maiden'
+      image='/images/gettin_old.jpg'
+      title="Gettin' Old by Luke Combs"
       :prize='3'
     )
     HelpComputerRound(
-      image='/images/metallica_masterofpuppets.jpg'
-      title='Master of Puppets by Metallica'
+      image='/images/reboot.jpg'
+      title='Reboot by Brooks and Dunn'
       :prize='3'
     )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.text-white.text-9xl.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    Slide(class='green')
-      h2.text-white Each are 10 points
-    AudioChoiceRound(
-      src='/sounds/trump_jr.mp3'
-      :items='items'
-      :winnerIndex='1'
-      :prize='10'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
-    )
-    AudioChoiceRound(
-      src='/sounds/tucker.mp3'
-      :items='items'
-      :winnerIndex='0'
-      :prize='10'
-      question='Was this guest on Fox News or an even more crazy right wing "news" station?'
-      headerImage='/images/boss_fight_header_fox_news.png'
+    HelpComputerRound(
+      image='/images/old_dominion.jpg'
+      title='Memory Lane by Old Dominion'
+      :prize='3'
     )
     PlayerBoard
 </template>
