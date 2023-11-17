@@ -18,7 +18,7 @@ Reveal
       celebrity='Steering Wheel'
       hint1='F2 and F3 drivers say this part of the car is the hardest to understand'
       hint2='11 buttons, 9 dials and a LCD screen'
-      hint3='Molded to the hands of each driver'
+      hint3='Custom molded to the hands of each driver'
       image='/images/steering_wheel.png'
       question='How much does this component cost (in thousands USD)?'
       :price='70'
@@ -34,7 +34,7 @@ Reveal
     )
     CameoPriceIsRightRound(
       celebrity='Hydraulics'
-      hint1='Essential system that has caused 5 DNFs this season'
+      hint1="Essential system that caused Leclerc's DNS this season"
       hint2='Controls brakes, throttle, clutch, diff, wastegate and DRS'
       hint3='One actuator dies, whole system is inoperable'
       image='/images/MT_Hydraulics_actuators.jpg'
@@ -45,7 +45,7 @@ Reveal
       celebrity='Four Tires'
       hint1='These you never hear about on DTS and almost only hear about during a race'
       hint2='Teams get 13 sets of these for each race and must use two compounds during the race'
-      hint3='Ferrari act like these only seen these for the first time this year'
+      hint3="The Ferrari pit crew act like they've seen these for the first time every race"
       image='/images/tires.png'
       question='How much does this component cost (in thousands USD)?'
       :price='5'
@@ -61,6 +61,24 @@ Reveal
     )
     VideoSlide(background='/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
+    VideoSlide(background='/video/drive_to_survive_cut.mp4')
+    VideoSlide(background='/video/drive_to_survive_cut.mp4')
+      .lightsout Lights Out, and away we go!
+    Slide
+      h2.fragment Solo
+      h2.fragment Reproduction of Formula 1 light system
+      h2.fragment Five lights go on...
+      h2.fragment A random delay between 0.2 and 3 seconds occurs...
+      h2.fragment Press the button!
+      h2.fragment Sprint points stylee
+      h2.fragment Jump == DSQ
+      h1 Game Play
+    VideoSlide(
+      background='/video/you_get_nothing.mp4'
+      :muted='false'
+    )
+    LightsOutRound(:demoMode='true')
+    LightsOutRound
     PlayerBoard
     VideoSlide(
       background='/video/conor.mp4'
@@ -252,6 +270,8 @@ import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
 
 import AudioChoiceRound from '@/components/AudioChoice/AudioChoiceRound.vue'
 
+import LightsOutRound from '@/components/LightsOut/LightsOutRound.vue'
+
 export default {
   name: 'Home',
   components: {
@@ -266,7 +286,8 @@ export default {
     CameoPriceIsRightRound,
     ClimbTheLadderRound,
     ItemGuess,
-    AudioChoiceRound
+    AudioChoiceRound,
+    LightsOutRound
   },
   data () {
     return {
@@ -290,7 +311,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Frederick+the+Great&family=Silkscreen&family=Zen+Dots&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Press+Start+2P&family=Frederick+the+Great&family=Silkscreen&family=Zen+Dots&family=Monoton&display=swap');
 
 .title {
   font-family: 'Silkscreen', cursive !important;
@@ -315,6 +336,11 @@ export default {
 .engines {
   font-family: 'Monoton', cursive !important;
   @apply mt-72 text-7xl text-white tracking-tight uppercase text-shadow shadow-black #{!important};
+}
+
+.lightsout {
+  font-family: 'Faster One', cursive !important;
+  @apply mt-96 skew-x-6 skew-y-12 text-9xl text-white tracking-tight text-shadow shadow-black #{!important};
 }
 
 html {
