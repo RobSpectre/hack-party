@@ -22,7 +22,7 @@ GameContentWithSidebar(:players='formattedPlayers')
       h1(v-if="demoMode") Demo
       h1(v-else) {{ currentPlayer }}
   template(v-slot:footer)
-    div(:id="uuid")
+    #lightsout
     WinnerCard(
       v-if='winners.length > 0'
       :winners='winners'
@@ -93,7 +93,7 @@ export default {
         const slide = window.deck.getCurrentSlide()
         console.log(slide)
 
-        if (slide.querySelector('#' + this.uuid) && !this.complete) {
+        if (slide.querySelector('#lightsout') && !this.complete) {
           this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
           this.tap(event)
         }
@@ -104,7 +104,7 @@ export default {
       if (event.key === ' ') {
         const slide = window.deck.getCurrentSlide()
 
-        if (slide.querySelector('#' + this.uuid) && !this.complete) {
+        if (slide.querySelector('#lightsout') && !this.complete) {
           this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
           this.tap(event)
         }

@@ -77,7 +77,6 @@ Reveal
       background='/video/you_get_nothing.mp4'
       :muted='false'
     )
-    LightsOutRound(:demoMode='true')
     LightsOutRound
     PlayerBoard
     VideoSlide(
