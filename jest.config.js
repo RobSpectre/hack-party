@@ -2,10 +2,14 @@ module.exports = {
   moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
   transform: {
     '^.+\\.vue$': '@vue/vue3-jest',
-    '^.+\\js$': 'babel-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest'
   },
+  transformIgnorePatterns: [
+    '/node_modules/(?!node-fetch)/', //  **CRITICAL:  Allow node-fetch to be transformed**
+  ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@vue/test-utils$': '<rootDir>/node_modules/@vue/test-utils/dist/vue-test-utils.cjs.js',
   },
   testEnvironment: 'jsdom',
   setupFiles: [

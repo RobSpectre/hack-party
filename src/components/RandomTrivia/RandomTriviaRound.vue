@@ -1,5 +1,6 @@
 <template lang="pug">
 ItemGuess(
+  v-if='game.players.length > 0'
   v-for='round in rounds'
   :items='round.items'
   :winnerIndex='round.winnerIndex'
@@ -12,6 +13,10 @@ ItemGuess(
 </template>
 
 <script>
+import { mapState } from 'pinia'
+
+import { useGameStore } from '@/store'
+
 import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
 
 export default {
@@ -45,6 +50,7 @@ export default {
     }
   },
   computed: {
+    ...mapState(useGameStore, ['game']),
     rounds () {
       const rounds = []
       const shuffledRightAnswers = this.shuffle(this.rightAnswers)

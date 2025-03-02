@@ -87,7 +87,7 @@ export default {
     ...mapState(useGameStore, ['game']),
     guessesByPrice () {
       if (this.guesses.length > 0) {
-        return this.guesses.sort((a, b) => a.guess - b.guess).reverse()
+        return [...this.guesses].sort((a, b) => b.guess - a.guess)
       } else {
         return []
       }
@@ -100,14 +100,11 @@ export default {
       }
     },
     players () {
-      const players = this.guessesByPrice
-
-      players.forEach((player) => {
-        player.name = player.playerName
-        player.value = '$' + player.guess
-      })
-
-      return players
+      return this.guessesByPrice.map(player => ({
+        ...player,
+        name: player.playerName,
+        value: '$' + player.guess
+      }))
     }
   },
   methods: {

@@ -9,6 +9,7 @@
     "lint": "eslint --ext .js,.vue --ignore-pattern .gitignore ./",
     "lint:fix": "eslint --ext .js,.vue --ignore-pattern .gitignore --fix ./",
     "test": "jest --maxWorkers=2",
+    "test:clearCache": "jest --clearCache",
     "test:inspect": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "engines": {
@@ -52,6 +53,7 @@
     "fake-indexeddb": "^3.1.7",
     "flush-promises": "^1.0.2",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.4.3",
     "node-fetch": "^3.3.2",
     "postcss": "^8.5.3",

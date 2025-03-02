@@ -10,7 +10,7 @@
           button(
             @click='resetTimer'
           )
-            RefreshIcon(
+            ArrowPathIcon(
               class='w-12 h-12 text-stone-200 hover:text-white'
             )
 
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { PlayIcon, PauseIcon, RefreshIcon } from '@heroicons/vue/24/solid'
+import { PlayIcon, PauseIcon, ArrowPathIcon } from '@heroicons/vue/24/solid'
 
 import CounterBox from '@/components/base/CounterBox.vue'
 
@@ -39,7 +39,7 @@ export default {
     CounterBox,
     PlayIcon,
     PauseIcon,
-    RefreshIcon
+    ArrowPathIcon
   },
   props: {
     timer: {
