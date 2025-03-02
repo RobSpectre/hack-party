@@ -25,7 +25,7 @@
 import { mapGetters, mapActions } from 'pinia'
 import { useGameStore } from '@/store'
 
-import { TrashIcon } from '@heroicons/vue/solid'
+import { TrashIcon } from '@heroicons/vue/24/solid'
 
 import PointsController from '@/components/Players/PointsController.vue'
 

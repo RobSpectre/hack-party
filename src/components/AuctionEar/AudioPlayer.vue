@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { PlayIcon, PauseIcon } from '@heroicons/vue/solid'
+import { PlayIcon, PauseIcon } from '@heroicons/vue/24/solid'
 
 export default {
   name: 'AudioPlayer',

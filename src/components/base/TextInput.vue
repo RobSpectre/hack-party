@@ -19,7 +19,7 @@ div
 </template>
 
 <script>
-import { SaveIcon, ChatAltIcon } from '@heroicons/vue/solid'
+import { SaveIcon, ChatAltIcon } from '@heroicons/vue/24/solid'
 
 export default {
   name: 'TextInput',

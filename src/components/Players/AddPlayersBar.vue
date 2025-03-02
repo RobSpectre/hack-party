@@ -8,11 +8,11 @@ div
       input.my-2.outline-none.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' placeholder='Shrimply Pibbles' v-model='inputName' v-on:keydown.enter='handleAddPlayer(inputName)')
     button.rounded-r-md(v-if='addPlayersAllowed && !addTeamsAllowed'
                         v-on:click='handleAddPlayer(inputName)')
-      UserAddIcon.h-5.w-5.text-gray-400
+      UserPlusIcon.h-5.w-5.text-gray-400
       span.ml-2 Add
     button(v-else-if='addPlayersAllowed'
            v-on:click='handleAddPlayer(inputName)')
-      UserAddIcon.h-5.w-5.text-gray-400
+      UserPlusIcon.h-5.w-5.text-gray-400
       span.ml-2 Add
     button.rounded-r-md(v-if='addTeamsAllowed'
                         v-on:click='handleAddTeam(inputName)')
@@ -24,13 +24,13 @@ div
 import { mapActions } from 'pinia'
 import { useGameStore } from '@/store'
 
-import { UserIcon, UserAddIcon, UserGroupIcon } from '@heroicons/vue/solid'
+import { UserIcon, UserPlusIcon, UserGroupIcon } from '@heroicons/vue/24/solid'
 
 export default {
   name: 'AddPlayersBar',
   components: {
     UserIcon,
-    UserAddIcon,
+    UserPlusIcon,
     UserGroupIcon
   },
   data: function () {

@@ -1,5 +1,10 @@
-@import 'reveal_mixins';
-@import 'reveal_settings';
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+
+// Use @use for reveal.js files, and give them a namespace
+@use '/node_modules/reveal.js/css/theme/template/mixins' as reveal-mixins;
+@use '/node_modules/reveal.js/css/theme/template/settings' as reveal-settings;
 @import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
 
 @tailwind base;
@@ -29,15 +34,15 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
 $linkColor: $childsafeBlue;
-$linkColorHover: lighten( $linkColor, 15% );
-$selectionBackgroundColor: lighten( $linkColor, 25% );
+$linkColorHover: color.scale($linkColor, $lightness: 15%);  // Use color.scale
+$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%); // Use color.scale
+$blockMargin: 0;
+$headingMargin: 0;
 
 $heading1Size: 2.3em;
 $heading2Size: 2.3em;
 $heading3Size: 1.9em;
 $heading4Size: 1.0em;
-
-@import 'reveal_base';
 
 .reveal .green {
     background-color: $childsafeGreen;
@@ -56,7 +61,7 @@ $heading4Size: 1.0em;
 }
 
 .reveal .white {
-    background-color: $childsafeWhite; 
+    background-color: $childsafeWhite;
 }
 
 .reveal .darkgray {
@@ -212,3 +217,8 @@ html.img-top div.slide-background.present {
 .secondary-button:focus {
   @apply border-none;
 }
+
+
+// Use @use for reveal.js files.
+// You might need to adjust the path depending on how reveal.js is structured.
+//@import '/node_modules/reveal.js/css/theme/template/theme';

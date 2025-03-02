@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { PlayIcon, PauseIcon, RefreshIcon } from '@heroicons/vue/solid'
+import { PlayIcon, PauseIcon, RefreshIcon } from '@heroicons/vue/24/solid'
 
 import CounterBox from '@/components/base/CounterBox.vue'
 

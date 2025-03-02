@@ -4,25 +4,25 @@
     :class="darkBackground ? 'dark' : 'light'"
     v-on:click='incrementPlayerScore(playerName)'
   )
-    ArrowNarrowUpIcon
+    ArrowUpIcon
   .h-5.w-5.down-arrow(
     :class="darkBackground ? 'dark' : 'light'"
     v-on:click='decrementPlayerScore(playerName)'
   )
-    ArrowNarrowDownIcon
+    ArrowDownIcon
 </template>
 
 <script>
 import { mapActions } from 'pinia'
 import { useGameStore } from '@/store'
 
-import { ArrowNarrowUpIcon, ArrowNarrowDownIcon } from '@heroicons/vue/solid'
+import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/vue/24/solid'
 
 export default {
   name: 'PointsController',
   components: {
-    ArrowNarrowUpIcon,
-    ArrowNarrowDownIcon
+    ArrowUpIcon,
+    ArrowDownIcon
   },
   props: {
     playerName: String,

@@ -194,8 +194,7 @@ const actions = {
   }
 }
 
-export const useGameStore = defineStore({
-  id: 'hack.party game board',
+export const useGameStore = defineStore('hack.party game board', {
   state: state,
   getters: getters,
   actions: actions,
