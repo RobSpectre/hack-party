@@ -116,9 +116,9 @@ describe('VideoWagerRound', () => {
     const winnerCard = await wrapper.findComponent({ name: 'WinnerCard' })
 
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).nthCalledWith(1, 'Rick', 30)
-    expect(store.increasePlayerScore).nthCalledWith(2, 'Morty', 30)
-    expect(store.increasePlayerScore).nthCalledWith(3, 'noob noob', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(1, 'Rick', 30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(2, 'Morty', 30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(3, 'noob noob', -30)
     expect(mocks.Audio.play).toHaveBeenCalled()
   })
 
@@ -131,10 +131,10 @@ describe('VideoWagerRound', () => {
     const winnerCard = await wrapper.findComponent({ name: 'WinnerCard' })
 
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).nthCalledWith(1, 'Rick', 30)
-    expect(store.increasePlayerScore).nthCalledWith(2, 'Morty', -30)
-    expect(store.increasePlayerScore).nthCalledWith(3, 'noob noob', -30)
-    expect(store.increasePlayerScore).nthCalledWith(4, 'Rick', 30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(1, 'Rick', 30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(2, 'Morty', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(3, 'noob noob', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(4, 'Rick', 30)
     expect(mocks.Audio.play).toHaveBeenCalled()
   })
 
@@ -147,9 +147,9 @@ describe('VideoWagerRound', () => {
     const loserCard = await wrapper.findComponent({ name: 'LoserCard' })
 
     expect(loserCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).nthCalledWith(1, 'Rick', -30)
-    expect(store.increasePlayerScore).nthCalledWith(2, 'Morty', -30)
-    expect(store.increasePlayerScore).nthCalledWith(3, 'noob noob', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(1, 'Rick', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(2, 'Morty', -30)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(3, 'noob noob', -30)
     expect(mocks.Audio.play).toHaveBeenCalled()
   })
 })

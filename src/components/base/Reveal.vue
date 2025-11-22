@@ -4,6 +4,7 @@
 </template>
 
 <script>
+/* eslint-disable vue/multi-word-component-names */
 import Reveal from 'reveal.js'
 
 export default {

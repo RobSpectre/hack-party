@@ -34,6 +34,7 @@ GameSlide
 
 <script>
 /* eslint vue/no-side-effects-in-computed-properties: "off" */
+/* eslint-disable vue/multi-word-component-names */
 import { mapState, mapActions } from 'pinia'
 import { useGameStore } from '@/store'
 

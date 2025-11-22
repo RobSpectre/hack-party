@@ -199,7 +199,7 @@ describe('ItemMultiSelect', () => {
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
 
-    expect(store.increasePlayerScore).nthCalledWith(1, 'Morty', 1)
-    expect(store.increasePlayerScore).nthCalledWith(2, 'Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(1, 'Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenNthCalledWith(2, 'Morty', 1)
   })
 })

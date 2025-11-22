@@ -25,7 +25,7 @@ import VideoSlide from '@/components/base/VideoSlide.vue'
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 
 export default {
-  name: 'Title',
+  name: 'GameTitle',
   components: {
     VideoSlide,
     BackgroundImageSlide

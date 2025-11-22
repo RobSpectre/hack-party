@@ -18,6 +18,7 @@ import { useGameStore } from '@/store'
 import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
 import ChooseItemModal from '@/components/base/ChooseItemModal.vue'
 
+/* eslint-disable vue/multi-word-component-names */
 export default {
   name: 'Scoreboard',
   components: {

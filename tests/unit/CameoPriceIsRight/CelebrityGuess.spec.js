@@ -135,7 +135,7 @@ describe('CelebrityGuess', () => {
     expect(spy).toHaveBeenCalled()
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).toBeCalledWith('Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Morty', 1)
   })
 
   it('presents WinnerCard and adds bonus if player gets the price exactly right', async () => {
@@ -160,7 +160,7 @@ describe('CelebrityGuess', () => {
     expect(spy).toHaveBeenCalled()
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).toBeCalledWith('Morty', 2)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Morty', 2)
   })
 
   it('presents LoserCard if all players are over the correct price', async () => {
@@ -258,7 +258,7 @@ describe('CelebrityGuess', () => {
     expect(spy).toHaveBeenCalled()
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).toBeCalledWith('Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Morty', 1)
   })
 
   it('awards the correct winner with negative values when positive numbers are close', async () => {
@@ -283,7 +283,7 @@ describe('CelebrityGuess', () => {
     expect(spy).toHaveBeenCalled()
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).toBeCalledWith('Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Morty', 1)
   })
 
   it('presents LoserCard if all players are all under a negative price', async () => {
@@ -332,6 +332,6 @@ describe('CelebrityGuess', () => {
     expect(spy).toHaveBeenCalled()
     expect(mocks.Audio.play).toHaveBeenCalled()
     expect(winnerCard.exists()).toBe(true)
-    expect(store.increasePlayerScore).toBeCalledWith('Morty', 1)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Morty', 1)
   })
 })

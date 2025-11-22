@@ -2,6 +2,7 @@ import eslintPluginVue from 'eslint-plugin-vue'
 import vueParser from 'vue-eslint-parser'
 
 export default [
+  ...eslintPluginVue.configs['flat/recommended'],
   {
     files: ['**/*.{js,vue}'],
     ignores: [
@@ -24,12 +25,7 @@ export default [
         fetch: 'readonly'
       }
     },
-    plugins: {
-      vue: eslintPluginVue
-    },
     rules: {
-      ...eslintPluginVue.configs.base.rules,
-      ...eslintPluginVue.configs['vue3-recommended'].rules,
       "vue/comment-directive": "off"
     }
   }

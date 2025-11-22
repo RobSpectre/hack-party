@@ -33,6 +33,7 @@ import { PlayIcon, PauseIcon, ArrowPathIcon } from '@heroicons/vue/24/solid'
 
 import CounterBox from '@/components/base/CounterBox.vue'
 
+/* eslint-disable vue/multi-word-component-names */
 export default {
   name: 'Countdown',
   components: {

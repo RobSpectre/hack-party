@@ -27,13 +27,13 @@ describe('PointsController UX', () => {
     const button = wrapper.find('.up-arrow')
     await button.trigger('click')
 
-    expect(store.increasePlayerScore).toBeCalledWith('Rick')
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Rick')
   })
 
   it('Press down arrow and player score decrements', async () => {
     const button = wrapper.find('.down-arrow')
     await button.trigger('click')
 
-    expect(store.increasePlayerScore).toBeCalledWith('Rick', -1)
+    expect(store.increasePlayerScore).toHaveBeenCalledWith('Rick', -1)
   })
 })

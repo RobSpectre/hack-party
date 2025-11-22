@@ -11,6 +11,7 @@ span.text-2xl.font-semibold.uppercase.text-white.bg-green.rounded-t-md {{ ladder
 </template>
 
 <script>
+/* eslint-disable vue/multi-word-component-names */
 export default {
   name: 'Ladder',
   props: {
