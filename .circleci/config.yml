@@ -8,11 +8,11 @@ jobs:
     steps:
       - checkout
       - node/install:
-          install-yarn: false 
-          node-version: lts/gallium 
+          install-yarn: false
+          node-version: '20.11'
       - node/install-packages:
           cache-path: ~/hack-party/node_modules
-          override-ci-command: npm install
+          override-ci-command: npm install --legacy-peer-deps
       - run: npm run test
       - codecov/upload
 workflows:
