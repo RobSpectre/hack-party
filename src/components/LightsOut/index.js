@@ -1,0 +1,1 @@
+export { default as LightsOutRound } from './LightsOutRound.vue'

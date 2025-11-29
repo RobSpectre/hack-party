@@ -27,8 +27,8 @@ $mainColor: $childsafeBlack;
 $headingColor: $childsafeBlack;
 
 $mainFontSize: 38px;
-$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
-$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
@@ -43,6 +43,20 @@ $heading1Size: 2.3em;
 $heading2Size: 2.3em;
 $heading3Size: 1.9em;
 $heading4Size: 1.0em;
+
+// Apply base font settings for Reveal.js slides
+.reveal {
+    font-family: $mainFont;
+    font-size: $mainFontSize;
+    font-weight: normal;
+    color: $mainColor;
+}
+
+.reveal .slides {
+    font-size: 1em;
+    line-height: 1.3;
+    font-weight: inherit;
+}
 
 .reveal .green {
     background-color: $childsafeGreen;
@@ -76,6 +90,52 @@ $heading4Size: 1.0em;
     color: $childsafeBlue;
 }
 
+// Apply heading sizes from variables
+.reveal h1,
+.reveal .slides h1,
+h1 {
+    font-family: $headingFont;
+    font-size: $heading1Size;
+    font-weight: $headingFontWeight;
+    text-transform: $headingTextTransform;
+    line-height: 1.2;
+    margin: $headingMargin;
+}
+
+.reveal h2,
+.reveal .slides h2,
+h2 {
+    font-family: $headingFont;
+    font-size: $heading2Size;
+    font-weight: $headingFontWeight;
+    text-transform: $headingTextTransform;
+    line-height: 1.2;
+    margin: $headingMargin;
+}
+
+.reveal h3,
+.reveal .slides h3,
+h3 {
+    font-family: $headingFont;
+    font-size: $heading3Size;
+    font-weight: $headingFontWeight;
+    text-transform: $headingTextTransform;
+    line-height: 1.2;
+    margin: $headingMargin;
+}
+
+.reveal h4,
+.reveal .slides h4,
+h4 {
+    font-family: $headingFont;
+    font-size: $heading4Size;
+    font-weight: $headingFontWeight;
+    text-transform: $headingTextTransform;
+    line-height: 1.2;
+    margin: $headingMargin;
+}
+
+// Special styling for h1 with background
 .reveal h1 {
     background: $childsafeGreen;
     color: #fff;

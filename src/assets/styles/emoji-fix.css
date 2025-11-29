@@ -1,0 +1,49 @@
+/* Emoji Font Support - Ensures proper emoji rendering across all platforms */
+
+/* Global emoji font stack for better compatibility */
+:root {
+  --emoji-font: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", sans-serif;
+}
+
+/* Apply emoji fonts to all elements */
+* {
+  font-family: inherit, var(--emoji-font);
+}
+
+/* Specific fixes for elements that commonly display emojis */
+.emoji,
+[data-emoji],
+.actionButton,
+.item-emoji,
+button {
+  font-family: inherit, var(--emoji-font) !important;
+}
+
+/* Fix for emoji display in specific game components */
+.reveal * {
+  font-family: inherit, var(--emoji-font);
+}
+
+/* Ensure emojis in text content display properly */
+p, span, div, h1, h2, h3, h4, h5, h6, button, a, li {
+  font-family: inherit, var(--emoji-font);
+}
+
+/* Override for specific font declarations to include emoji support */
+.nintendo {
+  font-family: 'Press Start 2P', var(--emoji-font) !important;
+}
+
+/* Better emoji rendering settings */
+.emoji,
+[data-emoji] {
+  font-size: 1.2em;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -9,6 +9,7 @@ import Toast from 'vue-toastification'
 import 'vue-toastification/dist/index.css'
 
 import '@/assets/styles/reveal_theme.scss'
+import '@/assets/styles/emoji-fix.css'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)

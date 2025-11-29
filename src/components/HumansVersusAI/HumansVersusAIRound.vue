@@ -1,5 +1,5 @@
 <template lang="pug">
-GameContentWithSidebar
+GameContentWithSidebar(:players='players')
   template(v-slot:header)
     .py-5.text-white.text-3xl.fragment {{ question }}
   template(v-slot:content)
@@ -39,10 +39,29 @@ GameContentWithSidebar
             )
               // Optional: Add content inside if needed, e.g., overlay on hover
 
-            // Placeholder for the timer div below the icon
-            .timer-div.mt-2.text-xs.text-center.text-gray-500
-              // Add timer logic/display here if needed
-              span {{ model.model_key.split('/')[1] }}
+            // Show model name and status
+            .mt-2.text-center
+              .text-sm.font-semibold {{ model.model_key.split('/')[1] }}
+              .text-xs.text-gray-500(v-if='getModelResponse(model.model_key)')
+                | {{ getModelResponse(model.model_key).answer }}
+              .text-xs.text-gray-400(v-else-if='complete')
+                | Thinking...
+
+      // Results section
+      .w-full.mt-8.text-center(v-if='complete && winners.length > 0')
+        .text-2xl.font-bold.mb-4
+          span(v-if='winners.includes("Human Team")') 🎉 Humans Win! 🎉
+          span(v-else) 🤖 AI Wins! 🤖
+        .text-lg
+          | Correct answer: {{ answer }}
+        .text-sm.text-gray-600.mt-2
+          | Winners: {{ winners.join(', ') }}
+
+      // No winners message
+      .w-full.mt-8.text-center(v-if='complete && winners.length === 0')
+        .text-2xl.font-bold.mb-4 No correct answers! 😅
+        .text-lg
+          | Correct answer: {{ answer }}
 </template>
 
 <script>
@@ -78,11 +97,152 @@ export default {
   },
   data () {
     return {
-      answerInput: ''
+      answerInput: '',
+      humanAnswer: '',
+      modelResponses: [],
+      complete: false,
+      winners: []
     }
   },
   computed: {
-    ...mapState(useGameStore, ['game'])
+    ...mapState(useGameStore, ['game']),
+    players () {
+      const players = []
+
+      // Add human player
+      if (this.humanAnswer) {
+        players.push({
+          name: 'Human Team',
+          value: this.humanAnswer,
+          correct: this.isCorrect(this.humanAnswer) ? '✅' : '❌'
+        })
+      }
+
+      // Add AI model responses
+      this.modelResponses.forEach((response) => {
+        players.push({
+          name: response.modelName,
+          value: response.answer,
+          correct: this.isCorrect(response.answer) ? '✅' : '❌'
+        })
+      })
+
+      return players
+    }
+  },
+  methods: {
+    answerQuestion (userAnswer) {
+      if (!userAnswer || this.complete) return
+
+      this.humanAnswer = userAnswer
+      this.answerInput = '' // Clear input
+
+      // Simulate AI model responses (in production, these would come from API calls)
+      this.simulateAIResponses()
+
+      // Mark round as complete
+      this.complete = true
+
+      // Determine winners after a short delay
+      setTimeout(() => {
+        this.determineWinners()
+      }, 2000)
+    },
+
+    simulateAIResponses () {
+      // In a real implementation, this would call AI APIs
+      // For now, we'll simulate responses based on the question
+      const simulatedAnswers = this.generateSimulatedAnswers()
+
+      this.models.forEach((model, index) => {
+        // Simulate thinking time with staggered responses
+        setTimeout(() => {
+          this.modelResponses.push({
+            modelName: model.model_key.split('/')[1],
+            answer: simulatedAnswers[index] || 'Thinking...',
+            responseTime: Math.random() * 2000 + 500 // 0.5-2.5 seconds
+          })
+        }, Math.random() * 1500 + 500) // Stagger responses 0.5-2 seconds
+      })
+    },
+
+    generateSimulatedAnswers () {
+      // Generate plausible answers based on question type
+      // In production, these would be actual AI responses
+      const questionLower = this.question.toLowerCase()
+
+      if (questionLower.includes('capital')) {
+        return ['Paris', 'London', 'Paris', 'Paris, France']
+      } else if (questionLower.includes('year')) {
+        return ['1969', '1969', '1969', '1969']
+      } else if (questionLower.includes('who')) {
+        return ['Albert Einstein', 'Einstein', 'Albert Einstein', 'Einstein']
+      } else {
+        // Default responses
+        return ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4']
+      }
+    },
+
+    isCorrect (answer) {
+      if (!this.answer) return false
+
+      // Case-insensitive comparison with some flexibility
+      const normalizedAnswer = answer.toLowerCase().trim()
+      const normalizedCorrect = this.answer.toLowerCase().trim()
+
+      // Exact match
+      if (normalizedAnswer === normalizedCorrect) return true
+
+      // Check if the answer contains the correct answer
+      if (normalizedAnswer.includes(normalizedCorrect) ||
+          normalizedCorrect.includes(normalizedAnswer)) {
+        return true
+      }
+
+      return false
+    },
+
+    determineWinners () {
+      const winners = []
+
+      // Check human answer
+      if (this.isCorrect(this.humanAnswer)) {
+        winners.push('Human Team')
+      }
+
+      // Check AI answers
+      this.modelResponses.forEach((response) => {
+        if (this.isCorrect(response.answer)) {
+          winners.push(response.modelName)
+        }
+      })
+
+      this.winners = winners
+
+      // Play appropriate sound
+      if (winners.includes('Human Team')) {
+        const audio = new Audio('/sounds/fanfare.mp3')
+        audio.volume = 0.2
+        audio.play()
+      } else if (winners.length > 0) {
+        const audio = new Audio('/sounds/loser_sound.mp3')
+        audio.volume = 0.2
+        audio.play()
+      }
+    },
+
+    resetRound () {
+      this.humanAnswer = ''
+      this.answerInput = ''
+      this.modelResponses = []
+      this.complete = false
+      this.winners = []
+    },
+
+    getModelResponse (modelKey) {
+      const modelName = modelKey.split('/')[1]
+      return this.modelResponses.find(r => r.modelName === modelName)
+    }
   }
 }
 </script>
