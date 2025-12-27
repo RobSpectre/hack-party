@@ -1,273 +1,151 @@
 <template lang="pug">
-Reveal
+Reveal(@slide-changed="handleSlideChange")
   .slides
-    GameTitle
-    PlayerBoard
-    BackgroundImageSlide(background='/images/podium.png')
-      .monotitle Real or Slop?
-    VideoSlide(
-      background='/video/chokeslam.mp4'
-      :muted='false'
-    )
-    Slide
-      h2.fragment Solo
-      h2.fragment Presented with an image
-      h2.fragment is it slop?
-      h2.fragment or is it real?
-      h2.fragment Contrarians bonus in effect
-      h1 Game Play
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/tyrell_p41.webp')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='0'
-      denomination=''
-      headerImage='/images/tyrell_p41.webp'
-      question='Is this car real or slop?'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/mclaren.jpeg')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='1'
-      denomination=''
-      headerImage='/images/mclaren.jpeg'
-      question='Is this car real or slop?'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/brabham_bt64b.webp')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='0'
-      denomination=''
-      headerImage='/images/brabham_bt64b.webp'
-      question='Is this car real or slop?'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/march_711.webp')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='0'
-      denomination=''
-      headerImage='/images/march_711.webp'
-      question='Is this car real or slop?'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/ferrari.jpeg')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='1'
-      denomination=''
-      headerImage='/images/ferrari.jpeg'
-      question='Is this car real or slop?'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/tyrell_x_wing.jpg')
-    ItemGuess(
-      :items='car_choices'
-      :winnerIndex='0'
-      denomination=''
-      headerImage='/images/tyrell_x_wing.jpg'
-      question='Is this car real or slop?'
-    )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    LightsOutRound(isDemo='true')
-    PlayerBoard
-    VideoSlide(
-      background='/video/hoonitron.webm'
-      :muted='false'
-    )
-    PlayerBoard
-    BackgroundImageSlide(background='/images/yuki.png')
-      .title Guess That Scream
-    VideoSlide(
-      background='/video/yuki_rage.mp4'
-      :muted='false'
-    )
-    Slide
-      h2.fragment Solo
-      h2.fragment Presented with a radio message
-      h2.fragment Guess the driver! 
-      h2.fragment Points are 2x
-      h1 Game Play
-    AudioInputRound(
-      src='/sounds/daniel.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Ricciardo'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/pierre.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Gasly'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/charles.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Leclerc'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/nico.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Rosberg'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/valterri.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Bottas'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/vettel.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Vettel'
-      :prize='2'
-    )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    PlayerBoard
-    VideoSlide(
-      background='/video/battlebots.webm'
-      :muted='false'
-    )
-    PlayerBoard
-    BackgroundImageSlide(background='/images/guess_that_track.jpg')
-      .title What's that track?
-    VideoSlide(
-      background='/video/track.mp4'
-      :muted='false'
-    )
-    Slide
-      h2.fragment Solo
-      h2.fragment Presented with a track layout
-      h2.fragment Name the track!
-      h2.fragment Points are 3x!
-      h1 Game Play
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/vegas.png')
-    StringGuess(
-      answer='Vegas'
-      question='What is this track?'
-      headerImage='/images/vegas.png'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/monza.jpg')
-    StringGuess(
-      answer='Monza'
-      question='What is this track?'
-      headerImage='/images/monza.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/redbullring.jpg')
-    StringGuess(
-      answer='Red Bull Ring'
-      question='What is this track?'
-      headerImage='/images/redbullring.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/spa.jpg')
-    StringGuess(
-      answer='Spa'
-      question='What is this track?'
-      headerImage='/images/spa.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/monaco.png')
-    StringGuess(
-      answer='Monaco'
-      question='What is this track?'
-      headerImage='/images/monaco.png'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/baku.jpg')
-    StringGuess(
-      answer='Baku'
-      question='What is this track?'
-      headerImage='/images/baku.jpg'
-      :prize='3'
-    )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    PlayerBoard
+    DnDScene(name="ten_forward")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Ten Forward" src="/docs/ten_forward.md")
+    DnDScene(name="bridge")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Bridge" src="/docs/bridge.md")
+    DnDScene(name="away_party")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Away Party" src="/docs/away_party.md")
+    DnDScene(name="bridge_2")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Bridge" src="/docs/bridge_2.md")
+    DnDScene(name="space")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Space" src="/docs/space.md")
+    DnDScene(name="engineering")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Engineering" src="/docs/engineering.md")
+    DnDScene(name="hive_core")
+      template(v-slot:col1)
+        InitiativeTracker
+      template(v-slot:col2)
+        Mobs
+      template(v-slot:col3)
+        PlayerTracker
+      template(v-slot:col4)
+        NPCs
+      template(v-slot:col5)
+        .flex.flex-col.gap-4.h-full
+          QuickNotes.h-1_2
+          Elements.h-1_2
+            Element(label="Hive Core" src="/docs/hive_core.md")
 </template>
 
 <script>
-import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import GameTitle from '@/components/base/GameTitle.vue'
-import Slide from '@/components/base/Slide.vue'
-import VideoSlide from '@/components/base/VideoSlide.vue'
-import ActionButton from '@/components/base/ActionButton.vue'
-import GameVideo from '@/components/base/GameVideo.vue'
 
-import PlayerBoard from '@/components/Players/PlayerBoard.vue'
-
-import ItemGuess from '@/components/WhichIsWhich/ItemGuess.vue'
-
-import GameContentWithSidebar from '@/components/base/GameContentWithSidebar.vue'
-
-import AudioChoiceRound from '@/components/AudioChoice/AudioChoiceRound.vue'
-import AudioInputRound from '@/components/AudioInput/AudioInputRound.vue'
-
-import StringGuess from '@/components/base/StringGuess.vue'
+import DnDScene from '@/components/DnD/DnDScene.vue'
+import StatBlock from '@/components/DnD/StatBlock.vue'
+import InitiativeTracker from '@/components/DnD/InitiativeTracker.vue'
+import QuickNotes from '@/components/DnD/QuickNotes.vue'
+import PlayerTracker from '@/components/DnD/PlayerTracker.vue'
+import Mobs from '@/components/DnD/Mobs.vue'
+import NPCs from '@/components/DnD/NPCs.vue'
+import Elements from '@/components/DnD/Elements.vue'
+import Element from '@/components/DnD/Element.vue'
+import { useCampaignStore } from '@/store/campaign'
 
 /* eslint-disable vue/multi-word-component-names */
 export default {
   name: 'Home',
-  components: {
-    PlayerBoard,
-    GameTitle,
-    Slide,
-    Reveal,
-    BackgroundImageSlide,
-    VideoSlide,
-    ActionButton,
-    GameVideo,
-    ItemGuess,
-    GameContentWithSidebar,
-    AudioInputRound,
-    StringGuess
-  },
-  data () {
-    return {
-      car_choices: [
-        { name: 'Real', emoji: '🏎️', value: '' },
-        { name: 'Slop', emoji: '🪣', value: '' }
-      ]
+  setup() {
+    const store = useCampaignStore()
+    
+    // Set initial scene based on first slide or default
+    store.setActiveScene('ten_forward')
+
+    const handleSlideChange = (event) => {
+      // Find the DnDScene component inside the current slide
+      // Since DnDScene renders a section with data-scene, checking currentSlide dataset directly:
+      const sceneName = event.currentSlide.dataset.scene
+      if (sceneName) {
+        store.setActiveScene(sceneName)
+      }
     }
+
+    return { handleSlideChange }
+  },
+  components: {
+    Reveal,
+    DnDScene,
+    StatBlock,
+    InitiativeTracker,
+    QuickNotes,
+    PlayerTracker,
+    Mobs,
+    NPCs,
+    Elements,
+    Element
   }
 }
 </script>

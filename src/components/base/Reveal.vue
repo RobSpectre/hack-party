@@ -65,6 +65,7 @@ export default {
     },
     setShortcutListener () {
       window.deck.on('slidechanged', event => {
+        this.$emit('slide-changed', event)
         this.setShortcuts(event.currentSlide)
       })
     },

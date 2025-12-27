@@ -23,6 +23,7 @@
     "gsap": "^3.13.0",
     "jest-websocket-mock": "^2.5.0",
     "linkifyjs": "^4.3.2",
+    "marked": "^17.0.1",
     "mock-socket": "^9.3.1",
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
