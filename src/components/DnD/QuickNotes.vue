@@ -1,7 +1,7 @@
 <template lang="pug">
-.quick-notes.bg-gray-700.p-4.rounded.border.border-gray-600.h-full.flex.flex-col
-  h3.text-xl.font-bold.mb-2 Notes
-  textarea.w-full.flex-1.bg-gray-800.text-white.p-2.rounded.resize-none(
+.quick-notes.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+  h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold.border-b.border-cyan-900.mb-2.pb-1 Notes
+  textarea.w-full.flex-1.bg-black.border.border-gray-800.text-gray-300.font-mono.text-xs.p-2.rounded-sm.resize-none.focus_border-cyan-500.outline-none(
     v-model="notes"
     @input="updateNotes"
     placeholder="DM Notes..."

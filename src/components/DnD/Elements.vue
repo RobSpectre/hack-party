@@ -1,6 +1,6 @@
 <template lang="pug">
-.elements-container.bg-gray-700.p-4.rounded.border.border-gray-600.h-full.flex.flex-col
-  h3.text-xl.font-bold.mb-2 Elements
+.elements-container.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+  h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold.border-b.border-cyan-900.mb-2.pb-1 Elements
   .flex.flex-col.gap-1.flex-1.overflow-y-auto
     slot
 
@@ -52,21 +52,28 @@ export default {
 <style>
 .markdown-body {
   color: #e5e7eb;
-  font-size: 0.875rem; /* text-sm */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem; /* Even smaller, document-dense */
+  line-height: 1.5;
+  text-align: left;
 }
 .markdown-body h1 {
-  @apply text-xl font-bold mb-2 border-b border-gray-600 pb-1;
+  display: none;
 }
 .markdown-body h2 {
-  @apply text-lg font-bold mb-2 mt-4;
+  @apply text-xl font-bold mb-3 mt-6;
+  color: #a78bfa; /* purple-400 */
 }
 .markdown-body p {
-  @apply mb-2;
+  @apply mb-4 leading-relaxed;
 }
 .markdown-body ul {
-  @apply list-disc list-inside mb-2;
+  @apply list-disc list-outside mb-4 ml-6;
 }
 .markdown-body li {
-  @apply mb-0.5;
+  @apply mb-1;
+}
+.markdown-body strong {
+  @apply text-cyan-200;
 }
 </style>

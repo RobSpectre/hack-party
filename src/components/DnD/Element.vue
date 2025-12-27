@@ -1,8 +1,8 @@
 <template lang="pug">
-.element-card.bg-gray-800.hover_bg-gray-600.p-2.rounded.cursor-pointer.flex.items-center.justify-center.text-center.border.border-gray-500.transition-colors.text-xs(
+.element-card.bg-black.border.border-gray-700.hover_border-cyan-500.hover_shadow-lg.hover_shadow-cyan-500_20.p-2.rounded-sm.cursor-pointer.flex.items-center.justify-center.text-center.transition-all.text-xs.text-cyan-300(
   @click="handleClick"
 )
-  span.font-bold {{ label }}
+  span.font-mono.tracking-wider {{ label }}
 </template>
 
 <script>

@@ -1,57 +1,67 @@
 <template lang="pug">
-.npcs-tracker.bg-gray-700.p-4.rounded.border.border-gray-600.h-full.flex.flex-col
-  h3.text-xl.font-bold.mb-2 NPCs
+.npcs-tracker.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+  h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold.border-b.border-cyan-900.mb-2.pb-1 NPCs
   
   // Add NPC Form
-  .mb-4.grid.grid-cols-2.gap-2
+  .mb-2.grid.grid-cols-2.gap-1
     .col-span-2
-      label.block.text-xs.font-bold.mb-1.text-gray-400 Name
-      input.bg-gray-800.p-1.rounded.text-white.text-sm.w-full(
+      label.block.text-xs.font-bold.mb-0_5.text-cyan-700 Name
+      input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
         v-model="newNPC.name"
         placeholder="Name"
       )
-    .col-span-2.grid.grid-cols-2.gap-2
+    .col-span-2.grid.grid-cols-2.gap-1
       div
-        label.block.text-xs.font-bold.mb-1.text-gray-400 AC
-        input.bg-gray-800.p-1.rounded.text-white.text-sm.w-full(
+        label.block.text-xs.font-bold.mb-0_5.text-cyan-700 AC
+        input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
           type="number"
           v-model.number="newNPC.ac"
           placeholder="AC"
         )
       div
-        label.block.text-xs.font-bold.mb-1.text-gray-400 HP
-        input.bg-gray-800.p-1.rounded.text-white.text-sm.w-full(
+        label.block.text-xs.font-bold.mb-0_5.text-cyan-700 HP
+        input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
           type="number"
           v-model.number="newNPC.hp"
           placeholder="HP"
         )
-    button.bg-yellow-600.hover_bg-yellow-500.text-white.font-bold.p-1.rounded.col-span-2(
+    button.border.border-yellow-600.text-yellow-300.hover_bg-yellow-900_50.text-xs.font-bold.p-1.rounded-sm.col-span-2.mt-1(
       @click="addNPC"
     ) Add NPC
 
   // NPC List
-  ul.flex-1.overflow-y-auto
-    li.flex.justify-between.items-center.p-2.mb-1.bg-gray-800.rounded(
+  ul.flex-1.overflow-y-auto.space-y-1
+    li.flex.justify-between.items-center.p-1.bg-black.border.border-gray-800.rounded-sm(
       v-for="n in npcs"
       :key="n.id"
     )
       div
-        .font-bold {{ n.name }}
-        .text-xs.text-gray-400 NPC
-      .text-right.text-sm
-        span.mr-2 AC: {{ n.ac }}
-        span.cursor-pointer.hover_text-blue-300(
-          v-if="editingId !== n.id"
-          @click="startEdit(n)"
-        ) HP: {{ n.hp }}/{{ n.maxHp }}
-        input.bg-gray-900.text-white.text-xs.p-1.rounded.w-16(
-          v-else
+        .font-bold.text-sm.text-gray-300.cursor-pointer.hover_text-cyan-300(
+          v-if="editingId !== n.id || editingField !== 'name'"
+          @click="startEdit(n, 'name')"
+        ) {{ n.name }}
+        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-sm.w-32.border.border-gray-700(
+          v-else-if="editingId === n.id && editingField === 'name'"
           v-model="editValue"
           @blur="saveEdit"
           @keyup.enter="saveEdit"
           ref="editInput"
         )
-        button.ml-2.text-red-400.hover_text-red-300(@click="remove(n.id)") ✕
+        .text-xs.text-cyan-900 NPC
+      .text-right.text-xs.text-gray-400
+        span.mr-2 AC: {{ n.ac }}
+        span.cursor-pointer.hover_text-cyan-300.font-mono(
+          v-if="editingId !== n.id || editingField !== 'hp'"
+          @click="startEdit(n, 'hp')"
+        ) HP: {{ n.hp }}/{{ n.maxHp }}
+        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-sm.w-12.border.border-gray-700(
+          v-else-if="editingId === n.id && editingField === 'hp'"
+          v-model="editValue"
+          @blur="saveEdit"
+          @keyup.enter="saveEdit"
+          ref="editInput"
+        )
+        button.ml-2.text-red-600.hover_text-red-400(@click="remove(n.id)") ✕
 </template>
 
 <script>
@@ -64,6 +74,7 @@ export default {
     const store = useCampaignStore()
     const editInput = ref(null)
     const editingId = ref(null)
+    const editingField = ref(null)
     const editValue = ref('')
     
     const newNPC = reactive({
@@ -73,20 +84,19 @@ export default {
     })
 
     const npcs = computed(() => {
-      return store.entities.filter(e => {
-        return e.type === 'npc' && (e.scene === store.activeScene || !e.scene)
-      })
+      // Filter by active scene
+      return store.entities.filter(e => 
+        e.type === 'npc' && 
+        (e.scene === store.activeScene || !e.scene)
+      )
     })
 
     const addNPC = () => {
       if (!newNPC.name) return
       
       store.addEntity({
-        name: newNPC.name,
-        ac: newNPC.ac,
-        hp: newNPC.hp,
+        ...newNPC,
         maxHp: newNPC.hp,
-        initiative: 0, // NPCs don't need initiative
         type: 'npc'
       })
       
@@ -95,14 +105,18 @@ export default {
       newNPC.ac = 10
       newNPC.hp = 10
     }
-    
-    const startEdit = (npc) => {
+
+    const startEdit = (npc, field) => {
       editingId.value = npc.id
-      editValue.value = npc.hp
+      editingField.value = field
+      editValue.value = npc[field]
+      
       nextTick(() => {
         if (editInput.value && editInput.value[0]) {
           editInput.value[0].focus()
-          editInput.value[0].select()
+          if (field === 'name') {
+            editInput.value[0].select()
+          }
         }
       })
     }
@@ -112,22 +126,28 @@ export default {
 
       const npc = store.entities.find(e => e.id === editingId.value)
       if (npc) {
-        const valStr = String(editValue.value).trim()
-        let newHp = npc.hp
-
-        if (valStr.startsWith('+') || valStr.startsWith('-')) {
-          newHp = npc.hp + parseInt(valStr)
-        } else {
-          const parsed = parseInt(valStr)
-          if (!isNaN(parsed)) {
-            newHp = parsed
+        if (editingField.value === 'name') {
+          if (editValue.value.trim()) {
+            store.updateEntity(npc.id, { name: editValue.value.trim() })
           }
+        } else if (editingField.value === 'hp') {
+          const valStr = String(editValue.value).trim()
+          let newHp = npc.hp
+
+          if (valStr.startsWith('+') || valStr.startsWith('-')) {
+            newHp = npc.hp + parseInt(valStr)
+          } else {
+            const parsed = parseInt(valStr)
+            if (!isNaN(parsed)) {
+              newHp = parsed
+            }
+          }
+          store.updateEntity(npc.id, { hp: newHp })
         }
-        
-        store.updateEntity(npc.id, { hp: newHp })
       }
 
       editingId.value = null
+      editingField.value = null
       editValue.value = ''
     }
 
