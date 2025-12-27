@@ -82,146 +82,21 @@ Reveal
       headerImage='/images/tyrell_x_wing.jpg'
       question='Is this car real or slop?'
     )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    LightsOutRound(isDemo='true')
     PlayerBoard
     VideoSlide(
-      background='/video/hoonitron.webm'
+      background='/video/first_break.mp4'
       :muted='false'
     )
     PlayerBoard
-    BackgroundImageSlide(background='/images/yuki.png')
-      .title Guess That Scream
     VideoSlide(
-      background='/video/yuki_rage.mp4'
-      :muted='false'
-    )
-    Slide
-      h2.fragment Solo
-      h2.fragment Presented with a radio message
-      h2.fragment Guess the driver! 
-      h2.fragment Points are 2x
-      h1 Game Play
-    AudioInputRound(
-      src='/sounds/daniel.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Ricciardo'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/pierre.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Gasly'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/charles.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Leclerc'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/nico.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Rosberg'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/valterri.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Bottas'
-      :prize='2'
-    )
-    AudioInputRound(
-      src='/sounds/vettel.wav'
-      headerImage='/images/guess_the_scream.jpeg'
-      correctAnswer='Vettel'
-      :prize='2'
-    )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    PlayerBoard
-    VideoSlide(
-      background='/video/battlebots.webm'
+      background='/video/second_break.mp4'
       :muted='false'
     )
     PlayerBoard
-    BackgroundImageSlide(background='/images/guess_that_track.jpg')
-      .title What's that track?
     VideoSlide(
-      background='/video/track.mp4'
+      background='/video/third_break.mp4'
       :muted='false'
     )
-    Slide
-      h2.fragment Solo
-      h2.fragment Presented with a track layout
-      h2.fragment Name the track!
-      h2.fragment Points are 3x!
-      h1 Game Play
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/vegas.png')
-    StringGuess(
-      answer='Vegas'
-      question='What is this track?'
-      headerImage='/images/vegas.png'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/monza.jpg')
-    StringGuess(
-      answer='Monza'
-      question='What is this track?'
-      headerImage='/images/monza.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/redbullring.jpg')
-    StringGuess(
-      answer='Red Bull Ring'
-      question='What is this track?'
-      headerImage='/images/redbullring.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/spa.jpg')
-    StringGuess(
-      answer='Spa'
-      question='What is this track?'
-      headerImage='/images/spa.jpg'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/monaco.png')
-    StringGuess(
-      answer='Monaco'
-      question='What is this track?'
-      headerImage='/images/monaco.png'
-      :prize='3'
-    )
-    GameContentWithSidebar
-      template(v-slot:content)
-        .h-full.flex.items-center.justify-center
-          img.max-h-full.max-w-full.object-contain(src='/images/baku.jpg')
-    StringGuess(
-      answer='Baku'
-      question='What is this track?'
-      headerImage='/images/baku.jpg'
-      :prize='3'
-    )
-    VideoSlide(background='/video/bossfight.mp4')
-      h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    PlayerBoard
 </template>
 
 <script>
