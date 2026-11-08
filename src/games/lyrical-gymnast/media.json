@@ -1,0 +1,21 @@
+{
+  "tag": "archive/lyrical-gymnast",
+  "branch": "lyrical-gymnast",
+  "files": {
+    "images/chansley.png": "public/images/chansley.png",
+    "images/chansley_coffee_mug.png": "public/images/chansley_coffee_mug.png",
+    "images/chansley_suppressed.png": "public/images/chansley_suppressed.png",
+    "images/chansley_web_store.png": "public/images/chansley_web_store.png",
+    "images/kidzbop.jpg": "public/images/kidzbop.jpg",
+    "images/lyrical-gymnast-header.png": "public/images/lyrical-gymnast-header.png",
+    "images/mbmbam.jpg": "public/images/mbmbam.jpg",
+    "images/qbacca.png": "public/images/qbacca.png",
+    "images/skater_dress.png": "public/images/skater_dress.png",
+    "video/aliens.mp4": "public/video/aliens.mp4",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/chansley_intro.mp4": "public/video/chansley_intro.mp4",
+    "video/kidz-bop-wap.mp4": "public/video/kidz-bop-wap.mp4",
+    "video/totk.mp4": "public/video/totk.mp4",
+    "video/wap.mp4": "public/video/wap.mp4"
+  }
+}

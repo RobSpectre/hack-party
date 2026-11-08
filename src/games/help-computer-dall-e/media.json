@@ -1,0 +1,27 @@
+{
+  "tag": "archive/help-computer-dall-e",
+  "branch": "help-computer-dall-e",
+  "files": {
+    "images/1989.jpg": "public/images/1989.jpg",
+    "images/abbey_road.jpg": "public/images/abbey_road.jpg",
+    "images/american_idiot.jpg": "public/images/american_idiot.jpg",
+    "images/bell_bottom_country.jpg": "public/images/bell_bottom_country.jpg",
+    "images/blue.jpg": "public/images/blue.jpg",
+    "images/dalle_api.png": "public/images/dalle_api.png",
+    "images/gettin_old.jpg": "public/images/gettin_old.jpg",
+    "images/help_computer.png": "public/images/help_computer.png",
+    "images/old_dominion.jpg": "public/images/old_dominion.jpg",
+    "images/one_of_these_nights.jpg": "public/images/one_of_these_nights.jpg",
+    "images/pet_sounds.jpg": "public/images/pet_sounds.jpg",
+    "images/reboot.jpg": "public/images/reboot.jpg",
+    "images/songs_of_innocence.jpg": "public/images/songs_of_innocence.jpg",
+    "images/sounds_in_the_key_of_life.jpg": "public/images/sounds_in_the_key_of_life.jpg",
+    "images/un_verano_sin_ti.jpg": "public/images/un_verano_sin_ti.jpg",
+    "images/whats_going_on.jpg": "public/images/whats_going_on.jpg",
+    "images/whitsitt_chapel.jpg": "public/images/whitsitt_chapel.jpg",
+    "video/dalle3.mp4": "public/video/dalle3.mp4",
+    "video/gop_debate.mp4": "public/video/gop_debate.mp4",
+    "video/openai.mp4": "public/video/openai.mp4",
+    "video/washington_dream.mp4": "public/video/washington_dream.mp4"
+  }
+}

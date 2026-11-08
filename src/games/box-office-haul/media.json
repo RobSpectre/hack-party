@@ -1,0 +1,33 @@
+{
+  "tag": "archive/box-office-haul",
+  "branch": "box-office-haul",
+  "files": {
+    "images/Konami-logo.png": "public/images/Konami-logo.png",
+    "images/assassins_creed.webp": "public/images/assassins_creed.webp",
+    "images/detective.webp": "public/images/detective.webp",
+    "images/final_fantasy.webp": "public/images/final_fantasy.webp",
+    "images/game_genie.png": "public/images/game_genie.png",
+    "images/lara_croft.webp": "public/images/lara_croft.webp",
+    "images/mortal_kombat.webp": "public/images/mortal_kombat.webp",
+    "images/mortal_kombat_reboot.webp": "public/images/mortal_kombat_reboot.webp",
+    "images/need_for_speed.jpg": "public/images/need_for_speed.jpg",
+    "images/pokemon.jpg": "public/images/pokemon.jpg",
+    "images/pokemon_logo.webp": "public/images/pokemon_logo.webp",
+    "images/prince_of_persia.webp": "public/images/prince_of_persia.webp",
+    "images/rampage.jpg": "public/images/rampage.jpg",
+    "images/resident_evil.webp": "public/images/resident_evil.webp",
+    "images/smb.jpg": "public/images/smb.jpg",
+    "images/smb_headline.png": "public/images/smb_headline.png",
+    "images/smb_headline_2.png": "public/images/smb_headline_2.png",
+    "images/sonic_the_hedgehog.webp": "public/images/sonic_the_hedgehog.webp",
+    "images/street_fighter.png": "public/images/street_fighter.png",
+    "images/tails.webp": "public/images/tails.webp",
+    "images/the_final_chapter.jpg": "public/images/the_final_chapter.jpg",
+    "images/tomb_raider.webp": "public/images/tomb_raider.webp",
+    "images/warcraft.webp": "public/images/warcraft.webp",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/ff.mp4": "public/video/ff.mp4",
+    "video/rampage.mp4": "public/video/rampage.mp4",
+    "video/smb3.mp4": "public/video/smb3.mp4"
+  }
+}

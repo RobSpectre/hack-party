@@ -22,12 +22,19 @@ export default {
     this.waitToRenderReveal()
   },
   beforeUnmount () {
+    this.presentation = null
+
     if (this.deck) {
       this.deck.destroy()
     }
   },
   methods: {
     waitToRenderReveal () {
+      // Stop waiting if the deck was unmounted before it ever got a size.
+      if (!this.presentation || !this.presentation.parentElement) {
+        return
+      }
+
       if (!(this.presentation.parentElement.clientWidth > 0)) {
         setTimeout(() => window.requestAnimationFrame(this.waitToRenderReveal),
           500)

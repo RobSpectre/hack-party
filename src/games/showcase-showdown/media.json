@@ -1,0 +1,27 @@
+{
+  "tag": "archive/showcase-showdown",
+  "branch": "showcase-showdown",
+  "files": {
+    "images/alex_trebek.png": "public/images/alex_trebek.png",
+    "images/alfonso_ribeiro.png": "public/images/alfonso_ribeiro.png",
+    "images/ben_bailey.png": "public/images/ben_bailey.png",
+    "images/betty_white.png": "public/images/betty_white.png",
+    "images/bob_barker.png": "public/images/bob_barker.png",
+    "images/craig_ferguson.png": "public/images/craig_ferguson.png",
+    "images/dick_clark.png": "public/images/dick_clark.png",
+    "images/franchise.png": "public/images/franchise.png",
+    "images/jimmy_kimmel.png": "public/images/jimmy_kimmel.png",
+    "images/louie_anderson.png": "public/images/louie_anderson.png",
+    "images/meredith_vieira.png": "public/images/meredith_vieira.png",
+    "images/nasa_header.png": "public/images/nasa_header.png",
+    "images/pat_sajak.png": "public/images/pat_sajak.png",
+    "images/regis_philbin.png": "public/images/regis_philbin.png",
+    "images/showcase_showdown_header.png": "public/images/showcase_showdown_header.png",
+    "images/steve_harvey.png": "public/images/steve_harvey.png",
+    "images/vicki_lawrence.png": "public/images/vicki_lawrence.png",
+    "images/wayne_brady.png": "public/images/wayne_brady.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/career_venn_diagram.mp4": "public/video/career_venn_diagram.mp4",
+    "video/robot_goalie.mp4": "public/video/robot_goalie.mp4"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "tag": "archive/tournament-of-simps",
+  "branch": "tournament-of-simps",
+  "files": {
+    "images/bracket_round_final.png": "public/images/bracket_round_final.png",
+    "images/bracket_round_four.png": "public/images/bracket_round_four.png",
+    "images/bracket_round_one.png": "public/images/bracket_round_one.png",
+    "images/bracket_round_three.png": "public/images/bracket_round_three.png",
+    "images/bracket_round_two.png": "public/images/bracket_round_two.png",
+    "images/game_header.png": "public/images/game_header.png",
+    "video/bracket.mp4": "public/video/bracket.mp4",
+    "video/doofus.mp4": "public/video/doofus.mp4",
+    "video/vermin.mp4": "public/video/vermin.mp4"
+  }
+}

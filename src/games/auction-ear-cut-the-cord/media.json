@@ -1,0 +1,27 @@
+{
+  "tag": "archive/auction-ear-cut-the-cord",
+  "branch": "auction-ear-cut-the-cord",
+  "files": {
+    "images/cut_the_cord_header.png": "public/images/cut_the_cord_header.png",
+    "sounds/breaking_bad_cut.mp3": "public/sounds/breaking_bad_cut.mp3",
+    "sounds/buffy_cut.mp3": "public/sounds/buffy_cut.mp3",
+    "sounds/game_of_thrones_cut.mp3": "public/sounds/game_of_thrones_cut.mp3",
+    "sounds/hee_haw_cut.mp3": "public/sounds/hee_haw_cut.mp3",
+    "sounds/kimmy_schmidt_cut.mp3": "public/sounds/kimmy_schmidt_cut.mp3",
+    "sounds/letterkenny_cut.mp3": "public/sounds/letterkenny_cut.mp3",
+    "sounds/lost_cut.mp3": "public/sounds/lost_cut.mp3",
+    "sounds/mad_men_cut.mp3": "public/sounds/mad_men_cut.mp3",
+    "sounds/malcolm_in_the_middle_cut.mp3": "public/sounds/malcolm_in_the_middle_cut.mp3",
+    "sounds/star_trek_cut.mp3": "public/sounds/star_trek_cut.mp3",
+    "sounds/stranger_things_cut.mp3": "public/sounds/stranger_things_cut.mp3",
+    "sounds/succession_cut.mp3": "public/sounds/succession_cut.mp3",
+    "sounds/the_simpsons_cut.mp3": "public/sounds/the_simpsons_cut.mp3",
+    "sounds/the_wire_cut.mp3": "public/sounds/the_wire_cut.mp3",
+    "sounds/too_many_cooks_cut.mp3": "public/sounds/too_many_cooks_cut.mp3",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/debate.mp4": "public/video/debate.mp4",
+    "video/hell.mp4": "public/video/hell.mp4",
+    "video/syndicated_cut.mp4": "public/video/syndicated_cut.mp4",
+    "video/traffas_auctioning.mp4": "public/video/traffas_auctioning.mp4"
+  }
+}

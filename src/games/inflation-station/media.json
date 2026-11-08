@@ -1,0 +1,14 @@
+{
+  "tag": "archive/inflation-station",
+  "branch": "inflation-station",
+  "files": {
+    "images/content/bob_dylan.png": "public/images/content/bob_dylan.png",
+    "images/content/elvis_presley_profile.png": "public/images/content/elvis_presley_profile.png",
+    "images/content/gene_simmons_blowing_fire.png": "public/images/content/gene_simmons_blowing_fire.png",
+    "images/inflation_station.png": "public/images/inflation_station.png",
+    "video/price_is_right.mp4": "public/video/price_is_right.mp4",
+    "video/snl_fox_and_friends.mp4": "public/video/snl_fox_and_friends.mp4",
+    "video/snowpiercer_cut.mp4": "public/video/snowpiercer_cut.mp4",
+    "video/wordle.mp4": "public/video/wordle.mp4"
+  }
+}

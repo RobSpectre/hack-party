@@ -12,3 +12,15 @@ global.Audio = vi.fn().mockImplementation(function () {
     duration: 16
   }
 })
+
+// jsdom has no matchMedia; vue-tweet reads it for the color scheme
+window.matchMedia = window.matchMedia || vi.fn().mockImplementation(function (query) {
+  return {
+    matches: false,
+    media: query,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    addListener: vi.fn(),
+    removeListener: vi.fn()
+  }
+})

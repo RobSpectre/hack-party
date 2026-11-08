@@ -1,0 +1,15 @@
+{
+  "tag": "archive/two-lies-and-one-more-lie",
+  "branch": "two-lies-and-one-more-lie",
+  "files": {
+    "images/bono_and_mike_mills.png": "public/images/bono_and_mike_mills.png",
+    "images/madonna_and_snoop_dogg.png": "public/images/madonna_and_snoop_dogg.png",
+    "images/santos_header.png": "public/images/santos_header.png",
+    "images/vedder_and_cuomo.png": "public/images/vedder_and_cuomo.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/burgers.mp4": "public/video/burgers.mp4",
+    "video/subtitles.mp4": "public/video/subtitles.mp4",
+    "video/supergroup.mp4": "public/video/supergroup.mp4",
+    "video/title_video_cut.mp4": "public/video/title_video_cut.mp4"
+  }
+}

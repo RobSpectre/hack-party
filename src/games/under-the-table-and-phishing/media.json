@@ -1,0 +1,17 @@
+{
+  "tag": "archive/under-the-table-and-phishing",
+  "branch": "under-the-table-and-phishing",
+  "files": {
+    "images/dmb.png": "public/images/dmb.png",
+    "images/kidrock.png": "public/images/kidrock.png",
+    "images/phantom.png": "public/images/phantom.png",
+    "images/podcast.png": "public/images/podcast.png",
+    "images/swift.png": "public/images/swift.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/dmb_poop.mp4": "public/video/dmb_poop.mp4",
+    "video/drum_styles.mp4": "public/video/drum_styles.mp4",
+    "video/mbmbam_cut.mp4": "public/video/mbmbam_cut.mp4",
+    "video/phantom.mp4": "public/video/phantom.mp4",
+    "video/tripping_billies_cut.mp4": "public/video/tripping_billies_cut.mp4"
+  }
+}

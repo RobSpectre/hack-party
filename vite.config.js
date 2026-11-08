@@ -17,6 +17,16 @@ export default defineConfig({
       transformAssetUrls: { includeAbsolute: false }
     }
   })],
+  // The vendored vue-advanced-chat build is CommonJS outside node_modules,
+  // so tell Vite to convert it like a regular dependency.
+  optimizeDeps: {
+    include: ['vue-advanced-chat']
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/, /vendor\/vue-advanced-chat/]
+    }
+  },
   css: {
     preprocessorOptions: {
       scss: {

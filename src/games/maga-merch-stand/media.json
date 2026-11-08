@@ -1,0 +1,31 @@
+{
+  "tag": "archive/maga-merch-stand",
+  "branch": "maga-merch-stand",
+  "files": {
+    "images/boebert_beanie.png": "public/images/boebert_beanie.png",
+    "images/boebert_membership_card.png": "public/images/boebert_membership_card.png",
+    "images/boebert_non_bidenary.png": "public/images/boebert_non_bidenary.png",
+    "images/haley_koozie.png": "public/images/haley_koozie.png",
+    "images/header_dominion_lawsuit.webp": "public/images/header_dominion_lawsuit.webp",
+    "images/johnson_beer_sticker.png": "public/images/johnson_beer_sticker.png",
+    "images/mtg_button.png": "public/images/mtg_button.png",
+    "images/mtg_christian_nationalist.png": "public/images/mtg_christian_nationalist.png",
+    "images/mtg_enemy_hat.png": "public/images/mtg_enemy_hat.png",
+    "images/mtg_monkeypox_shirt.png": "public/images/mtg_monkeypox_shirt.png",
+    "images/mtg_solo_cup.png": "public/images/mtg_solo_cup.png",
+    "images/mtg_store.png": "public/images/mtg_store.png",
+    "images/rubio_sticker.png": "public/images/rubio_sticker.png",
+    "images/trump_beer_koozie.png": "public/images/trump_beer_koozie.png",
+    "images/trump_flag.png": "public/images/trump_flag.png",
+    "images/trump_maga_hat.png": "public/images/trump_maga_hat.png",
+    "images/trump_unfinished_business.png": "public/images/trump_unfinished_business.png",
+    "images/trump_waco_shirt.png": "public/images/trump_waco_shirt.png",
+    "images/trump_was_right.png": "public/images/trump_was_right.png",
+    "images/vance_american_flag.png": "public/images/vance_american_flag.png",
+    "images/whose_text_is_it_anyway.png": "public/images/whose_text_is_it_anyway.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/dominion_lawsuit.mp4": "public/video/dominion_lawsuit.mp4",
+    "video/klepper_trump_indictment.mp4": "public/video/klepper_trump_indictment.mp4",
+    "video/whose_line.mp4": "public/video/whose_line.mp4"
+  }
+}

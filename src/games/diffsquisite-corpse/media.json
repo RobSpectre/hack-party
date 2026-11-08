@@ -1,0 +1,20 @@
+{
+  "tag": "archive/diffsquisite-corpse",
+  "branch": "diffsquisite-corpse",
+  "files": {
+    "data/maga.json": "public/data/maga.json",
+    "data/service.json": "public/data/service.json",
+    "data/trek.json": "public/data/trek.json",
+    "images/bart_simpon_wearing_a_bat_man_suit_while_riding_an_elephant_in_a_parade.png": "public/images/bart_simpon_wearing_a_bat_man_suit_while_riding_an_elephant_in_a_parade.png",
+    "images/bart_simpson_wearing_a_batman_suit.png": "public/images/bart_simpson_wearing_a_batman_suit.png",
+    "images/bart_simpson_wearing_a_batman_suit_riding_an_elephant_while_a_helicopter.png": "public/images/bart_simpson_wearing_a_batman_suit_riding_an_elephant_while_a_helicopter.png",
+    "images/diffusion_release.png": "public/images/diffusion_release.png",
+    "images/exquisite_corpse.png": "public/images/exquisite_corpse.png",
+    "images/queen.png": "public/images/queen.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/corpse_bride_cut.mp4": "public/video/corpse_bride_cut.mp4",
+    "video/queen_hoon.mp4": "public/video/queen_hoon.mp4",
+    "video/still_alive.mp4": "public/video/still_alive.mp4",
+    "video/voldemort.mp4": "public/video/voldemort.mp4"
+  }
+}

@@ -389,7 +389,7 @@ export default {
 }
 
 .actionButton {
-  @apply px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all duration-200 text-lg;
+  @apply px-6 py-3 bg-blue text-white font-bold rounded-lg hover:bg-orange transition-all duration-200 text-lg;
 }
 
 // Results styling

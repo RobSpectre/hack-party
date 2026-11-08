@@ -1,0 +1,25 @@
+{
+  "tag": "archive/am-i-the-asshole",
+  "branch": "am-i-the-asshole",
+  "files": {
+    "images/aita_header.jpeg": "public/images/aita_header.jpeg",
+    "sounds/alex_jones_clothes.mp3": "public/sounds/alex_jones_clothes.mp3",
+    "sounds/barack_obama_rehome.mp3": "public/sounds/barack_obama_rehome.mp3",
+    "sounds/biden_treadmill.mp3": "public/sounds/biden_treadmill.mp3",
+    "sounds/brett_kavanaugh_daughter.mp3": "public/sounds/brett_kavanaugh_daughter.mp3",
+    "sounds/david_attenborough_nyc.mp3": "public/sounds/david_attenborough_nyc.mp3",
+    "sounds/elizabeth_warren_grandpa.mp3": "public/sounds/elizabeth_warren_grandpa.mp3",
+    "sounds/kimberly_guilfoyle_gift.mp3": "public/sounds/kimberly_guilfoyle_gift.mp3",
+    "sounds/mcconaughey_girlfriend.mp3": "public/sounds/mcconaughey_girlfriend.mp3",
+    "sounds/michael_cohen_cookie.mp3": "public/sounds/michael_cohen_cookie.mp3",
+    "sounds/mike_pence_religion.mp3": "public/sounds/mike_pence_religion.mp3",
+    "sounds/sanders_dog_sleeping.mp3": "public/sounds/sanders_dog_sleeping.mp3",
+    "sounds/sarah_palin_snowstorm.mp3": "public/sounds/sarah_palin_snowstorm.mp3",
+    "sounds/trump_donuts.mp3": "public/sounds/trump_donuts.mp3",
+    "sounds/trump_package.mp3": "public/sounds/trump_package.mp3",
+    "sounds/tucker_carlson_wife.mp3": "public/sounds/tucker_carlson_wife.mp3",
+    "video/lebowski_cut.mp4": "public/video/lebowski_cut.mp4",
+    "video/mclaughlin_group.mp4": "public/video/mclaughlin_group.mp4",
+    "video/seinfeld_fiction.mp4": "public/video/seinfeld_fiction.mp4"
+  }
+}

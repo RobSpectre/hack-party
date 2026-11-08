@@ -1,0 +1,31 @@
+{
+  "tag": "archive/ganimating-inference",
+  "branch": "ganimating-inference",
+  "files": {
+    "images/a_banana_competing_in_a_steeplchase.png": "public/images/a_banana_competing_in_a_steeplchase.png",
+    "images/a_cat_driving_a_combine_harvesting_fish.png": "public/images/a_cat_driving_a_combine_harvesting_fish.png",
+    "images/a_teenage_mutant_ninja_turtle_delivering_an_oration_to_the_house_of_commons.png": "public/images/a_teenage_mutant_ninja_turtle_delivering_an_oration_to_the_house_of_commons.png",
+    "images/barney_the_dinosaur_receiving_communion_from_oscar_the_grouch.png": "public/images/barney_the_dinosaur_receiving_communion_from_oscar_the_grouch.png",
+    "images/dalle-mini.png": "public/images/dalle-mini.png",
+    "images/dalle.png": "public/images/dalle.png",
+    "images/feral_pigs_throwing_bitcoin_at_each_other_in_an_empty_swimming_pool.png": "public/images/feral_pigs_throwing_bitcoin_at_each_other_in_an_empty_swimming_pool.png",
+    "images/gan_diagram.webp": "public/images/gan_diagram.webp",
+    "images/grave_dancers_union.png": "public/images/grave_dancers_union.png",
+    "images/header_for_winner_modal.png": "public/images/header_for_winner_modal.png",
+    "images/houses_of_the_holy.png": "public/images/houses_of_the_holy.png",
+    "images/i_drink_from_the_keg_of_glory_bring_me_the_finest_muffins_and_bagels_in_all_the_land.png": "public/images/i_drink_from_the_keg_of_glory_bring_me_the_finest_muffins_and_bagels_in_all_the_land.png",
+    "images/i_will_wait_in_the_tall_grass_for_you_senator.png": "public/images/i_will_wait_in_the_tall_grass_for_you_senator.png",
+    "images/if_you_were_in_an_accident_i_wouldnt_stop_for_red_lights.png": "public/images/if_you_were_in_an_accident_i_wouldnt_stop_for_red_lights.png",
+    "images/its_not_the_battles_we_lose_that_bother_me_its_the_ones_we_dont_suit_up_for.png": "public/images/its_not_the_battles_we_lose_that_bother_me_its_the_ones_we_dont_suit_up_for.png",
+    "images/punk_rock_band_doing_laundry_in_a_river.png": "public/images/punk_rock_band_doing_laundry_in_a_river.png",
+    "images/recovering_the_satellites.png": "public/images/recovering_the_satellites.png",
+    "images/ropin_the_wind.png": "public/images/ropin_the_wind.png",
+    "images/sgt_peppers_lonely_hearts_club_band.png": "public/images/sgt_peppers_lonely_hearts_club_band.png",
+    "images/that_much_further_west.png": "public/images/that_much_further_west.png",
+    "images/this_guys_walkin_down_a_street_when_he_falls_into_a_hole_the_Walls_are_so_steep_he_cant_get_out.png": "public/images/this_guys_walkin_down_a_street_when_he_falls_into_a_hole_the_Walls_are_so_steep_he_cant_get_out.png",
+    "images/this_is_a_time_for_american_heroes_and_we_reach_for_the_stars.png": "public/images/this_is_a_time_for_american_heroes_and_we_reach_for_the_stars.png",
+    "video/mitch.mp4": "public/video/mitch.mp4",
+    "video/skynet_cut.mp4": "public/video/skynet_cut.mp4",
+    "video/westwingtrump.mp4": "public/video/westwingtrump.mp4"
+  }
+}

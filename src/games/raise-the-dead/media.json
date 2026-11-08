@@ -1,0 +1,9 @@
+{
+  "tag": "archive/raise-the-dead",
+  "branch": "raise-the-dead",
+  "files": {
+    "video/doucheoff.mp4": "public/video/doucheoff.mp4",
+    "video/re.mp4": "public/video/re.mp4",
+    "video/totk.mp4": "public/video/totk.mp4"
+  }
+}

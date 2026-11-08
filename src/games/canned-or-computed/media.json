@@ -1,0 +1,30 @@
+{
+  "tag": "archive/canned-or-computed",
+  "branch": "canned-or-computed",
+  "files": {
+    "images/canned.gif": "public/images/canned.gif",
+    "images/canned_or_computed_header.png": "public/images/canned_or_computed_header.png",
+    "images/motionarray_website.png": "public/images/motionarray_website.png",
+    "images/musiclm_website.png": "public/images/musiclm_website.png",
+    "sounds/motion_capture_this.mp3": "public/sounds/motion_capture_this.mp3",
+    "sounds/motion_cyberlove.mp3": "public/sounds/motion_cyberlove.mp3",
+    "sounds/motion_fiery_latin_nights.mp3": "public/sounds/motion_fiery_latin_nights.mp3",
+    "sounds/motion_funny_little_parrots.mp3": "public/sounds/motion_funny_little_parrots.mp3",
+    "sounds/motion_lets_go.mp3": "public/sounds/motion_lets_go.mp3",
+    "sounds/motion_our_homeland.mp3": "public/sounds/motion_our_homeland.mp3",
+    "sounds/motion_sky_eyes.mp3": "public/sounds/motion_sky_eyes.mp3",
+    "sounds/motion_slow_down.mp3": "public/sounds/motion_slow_down.mp3",
+    "sounds/motion_this_fire.mp3": "public/sounds/motion_this_fire.mp3",
+    "sounds/musiclm_dubstep_with_a_high_bpm_and_thundering_bass.mp3": "public/sounds/musiclm_dubstep_with_a_high_bpm_and_thundering_bass.mp3",
+    "sounds/musiclm_instrumental_interlude_from_an_upbeat_jam_band_from_the_70_s.mp3": "public/sounds/musiclm_instrumental_interlude_from_an_upbeat_jam_band_from_the_70_s.mp3",
+    "sounds/musiclm_instrumental_intro_music_for_a_late_night_talk_show_hosted_by_a_large_language_model.mp3": "public/sounds/musiclm_instrumental_intro_music_for_a_late_night_talk_show_hosted_by_a_large_language_model.mp3",
+    "sounds/musiclm_instrumental_intro_to_a_grunge_song_from_the_90_s_featuring_guitar_and_kicking_drums.mp3": "public/sounds/musiclm_instrumental_intro_to_a_grunge_song_from_the_90_s_featuring_guitar_and_kicking_drums.mp3",
+    "sounds/musiclm_irish_folk_music_with_fiddle_and_bagpipes_serving_as_intro_music_for_a_star_pitcher_in_baseball.mp3": "public/sounds/musiclm_irish_folk_music_with_fiddle_and_bagpipes_serving_as_intro_music_for_a_star_pitcher_in_baseball.mp3",
+    "sounds/musiclm_repetitive_melody_that_creates_an_eerie_unsettling_atmosphere.mp3": "public/sounds/musiclm_repetitive_melody_that_creates_an_eerie_unsettling_atmosphere.mp3",
+    "sounds/musiclm_songs_that_would_play_in_a_poolside_party_with_light_summer_vibes.mp3": "public/sounds/musiclm_songs_that_would_play_in_a_poolside_party_with_light_summer_vibes.mp3",
+    "sounds/musiclm_sorrowful_instrumental_string_arrangement_playing_for_a_cancelled_political_rally.mp3": "public/sounds/musiclm_sorrowful_instrumental_string_arrangement_playing_for_a_cancelled_political_rally.mp3",
+    "sounds/musiclm_soulful_jazz_for_a_dinner_party.mp3": "public/sounds/musiclm_soulful_jazz_for_a_dinner_party.mp3",
+    "video/electroboom.mp4": "public/video/electroboom.mp4",
+    "video/video_games.mp4": "public/video/video_games.mp4"
+  }
+}
