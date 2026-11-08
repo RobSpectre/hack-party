@@ -1,0 +1,14 @@
+{
+  "name": "vue-advanced-chat",
+  "version": "1.5.7",
+  "description": "Vendored build of vue-advanced-chat 'next' branch (Vue 3), commit df1e81b09253eeeac2a728aea8ebd44b87405d86 (2022-07-20). The npm 1.x releases target Vue 2; 2.x is a web component. Kept here so installs are reproducible until GameChatMessages moves to 2.x.",
+  "license": "MIT",
+  "main": "./dist/vue-advanced-chat.common.js",
+  "files": [
+    "dist/*"
+  ],
+  "peerDependencies": {
+    "vue": "^3.2.22"
+  },
+  "repository": "https://github.com/antoine92190/vue-advanced-chat/tree/df1e81b09253eeeac2a728aea8ebd44b87405d86"
+}
