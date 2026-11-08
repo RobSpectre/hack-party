@@ -1,0 +1,1139 @@
+// The stage: everything Uplink, Brutal, Ben-Day and Stadium share. Each
+// theme file sets the semantic --hp-* tokens below and adds its own world on
+// top; this file never names a color. Classic never sees any of it.
+//
+// Sizing: hack.party is played over Zoom, a 4K window sent as a 1080p feed.
+// --u is one pixel of a 1920x1080 frame, so 40u reads the same on a laptop,
+// a 4K screen and the stream. Nothing on a deck is smaller than 22u.
+
+// Theme files use :root[data-theme][data-theme='…'], the same weight as this
+// selector, and load after it, so a theme's own rule always wins.
+$s: ":root[data-theme]:not([data-theme='classic'])";
+
+@property --hp-dot {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+#{$s} {
+  --u: min(calc(100vw / 1920), calc(100vh / 1080));
+  // The home page is read on a laptop or phone too, so it never shrinks below px.
+  --gu: max(1px, var(--u));
+
+  // Classic names, re-lit by each theme.
+  --hp-text: var(--hp-fg);
+  --hp-heading: var(--hp-fg);
+  --hp-link: var(--hp-data);
+  --hp-progress: var(--hp-accent);
+  --hp-label-bg: var(--hp-surface);
+  --hp-label-text: var(--hp-fg);
+  --hp-white: var(--hp-fg);
+  --hp-gray: var(--hp-muted);
+  --hp-black: var(--hp-bg);
+
+  accent-color: var(--hp-accent);
+  caret-color: var(--hp-accent);
+  scrollbar-color: var(--hp-line) var(--hp-bg);
+  background: var(--hp-bg);
+}
+
+// On a deck, the games' own html { font-size: 36px } becomes 36 stream pixels.
+#{$s}.hp-deck {
+  font-size: calc(36 * var(--u));
+}
+
+#{$s} body {
+  background: var(--hp-bg);
+  color: var(--hp-fg);
+  font-family: var(--hp-font-body);
+}
+
+#{$s} ::selection {
+  background: var(--hp-accent);
+  color: var(--hp-on-accent);
+}
+
+#{$s} ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+#{$s} ::-webkit-scrollbar-track {
+  background: var(--hp-bg);
+}
+
+#{$s} ::-webkit-scrollbar-thumb {
+  background: var(--hp-line);
+  border: 3px solid var(--hp-bg);
+  border-radius: 999px;
+}
+
+#{$s} :focus-visible {
+  outline: max(3px, calc(4 * var(--u))) solid var(--hp-focus, var(--hp-accent));
+  outline-offset: max(3px, calc(4 * var(--u)));
+}
+
+#{$s} a {
+  text-underline-offset: 0.2em;
+}
+
+// ── The deck ────────────────────────────────────────────────────────────
+
+#{$s} .reveal {
+  font-size: calc(44 * var(--u));
+  color: var(--hp-fg);
+  background: var(--hp-stage-bg, var(--hp-bg));
+}
+
+#{$s} .reveal .slides {
+  line-height: 1.25;
+}
+
+// Words over a photo or video stay light whatever the theme.
+#{$s} .reveal section[data-background-video],
+#{$s} .reveal section[data-background-image] {
+  color: #fff;
+}
+
+#{$s} .reveal h2,
+#{$s} .reveal h3 {
+  letter-spacing: var(--hp-heading-tracking);
+  text-wrap: balance;
+  line-height: var(--hp-heading-leading, 1.08);
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+#{$s} .reveal h2 {
+  font-size: var(--hp-h2, 1.6em);
+}
+
+#{$s} .reveal h3 {
+  font-size: var(--hp-h3, 1.3em);
+}
+
+#{$s} .reveal h4 {
+  letter-spacing: 0.04em;
+}
+
+// Slide labels (h1) become a lower third.
+#{$s} .reveal h1 {
+  left: calc(64 * var(--u));
+  right: auto;
+  bottom: calc(80 * var(--u));
+  max-width: calc(1400 * var(--u));
+  padding: 0.32em 0.8em 0.36em;
+  font-size: calc(64 * var(--u));
+  letter-spacing: var(--hp-heading-tracking);
+  line-height: 1.05;
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-label-radius, var(--hp-radius-control));
+  box-shadow: var(--hp-shadow);
+  text-align: left;
+}
+
+#{$s} .reveal h1::before {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * var(--hp-stripe-h, 0px)) 0 auto 0;
+  height: var(--hp-stripe-h, 0px);
+  border-radius: var(--hp-radius-control) var(--hp-radius-control) 0 0;
+  background: var(--hp-stripe);
+}
+
+#{$s} .reveal .present h1 {
+  animation: var(--hp-label-in, hp-lower-third) 640ms var(--hp-ease) 120ms both;
+}
+
+@keyframes hp-lower-third {
+  from {
+    clip-path: inset(-40% 100% -40% 0);
+    transform: translateX(calc(-24 * var(--u)));
+  }
+
+  to {
+    clip-path: inset(-40% 0 -40% 0);
+    transform: none;
+  }
+}
+
+#{$s} .reveal .progress {
+  height: calc(8 * var(--u));
+  background: var(--hp-progress-track, var(--hp-line));
+  z-index: 30;
+}
+
+#{$s} .reveal .progress span {
+  background: var(--hp-stripe);
+  background-size: 100vw 100%;
+  transition: transform 500ms var(--hp-ease);
+}
+
+// ── Tailwind neutrals, re-lit by the theme ─────────────────────────────
+// Rounds were built for white cards with dark text. Inside a deck, light
+// neutrals become the theme's surfaces and gray text its text colors.
+
+#{$s} .reveal {
+  .bg-white,
+  .bg-gray-50,
+  .bg-gray-100 {
+    background-color: var(--hp-surface);
+  }
+
+  .bg-gray-200,
+  .bg-gray-300,
+  .bg-slate-300,
+  .bg-slate-400,
+  .bg-gray-500 {
+    background-color: var(--hp-surface-2);
+  }
+
+  .text-black,
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-slate-700 {
+    color: var(--hp-fg);
+  }
+
+  .text-gray-600,
+  .text-gray-500 {
+    color: var(--hp-muted);
+  }
+
+  .text-gray-400,
+  .text-slate-400 {
+    color: var(--hp-dim);
+  }
+
+  .border-gray-200,
+  .border-gray-300,
+  .border-slate-300 {
+    border-color: var(--hp-line);
+  }
+
+  .shadow-lg,
+  .shadow-xl {
+    box-shadow: var(--hp-shadow);
+  }
+
+  .rounded-lg {
+    border-radius: var(--hp-radius);
+  }
+
+  input,
+  textarea {
+    color: var(--hp-fg);
+    background-color: var(--hp-bg-2);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--hp-dim);
+  }
+}
+
+// ── Controls ────────────────────────────────────────────────────────────
+
+#{$s} .actionButton {
+  position: relative;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.45em 1em 0.45em 1.1em;
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius-control);
+  background: var(--hp-surface-2);
+  color: var(--hp-on-surface-2, var(--hp-fg));
+  box-shadow: var(--hp-shadow-sm, none);
+  font-family: var(--hp-font-control, var(--hp-font-body));
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  letter-spacing: var(--hp-control-tracking, 0.02em);
+  transition: background-color 120ms var(--hp-ease), color 120ms var(--hp-ease), transform 120ms var(--hp-ease), box-shadow 120ms var(--hp-ease);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--hp-accent);
+    color: var(--hp-on-accent);
+  }
+
+  &:active {
+    transform: var(--hp-press, scale(0.97));
+    box-shadow: var(--hp-shadow-press, none);
+    background: var(--hp-accent);
+    color: var(--hp-on-accent);
+  }
+
+  // Reveal gives every button on a slide a keyboard shortcut; show it.
+  &[accesskey]::after {
+    content: attr(accesskey);
+    margin-left: auto;
+    min-width: 1.5em;
+    padding: 0.05em 0.35em;
+    border-radius: calc(var(--hp-radius-control) * 0.6);
+    font-family: var(--hp-font-data);
+    font-size: 0.62em;
+    font-weight: 700;
+    line-height: 1.45;
+    color: inherit;
+    background: var(--hp-keycap, rgb(0 0 0 / 0.25));
+    text-transform: uppercase;
+  }
+}
+
+#{$s} .primary-button,
+#{$s} .secondary-button {
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius-control);
+  font-family: var(--hp-font-control, var(--hp-font-body));
+  font-weight: 700;
+}
+
+#{$s} .primary-button {
+  background: var(--hp-accent);
+  color: var(--hp-on-accent);
+}
+
+#{$s} .secondary-button {
+  background: var(--hp-surface-2);
+  color: var(--hp-on-surface-2, var(--hp-fg));
+}
+
+#{$s} .primary-button:hover,
+#{$s} .secondary-button:hover {
+  background: var(--hp-data);
+  color: var(--hp-on-data, var(--hp-bg));
+}
+
+// ── Question cards ──────────────────────────────────────────────────────
+
+#{$s} .hp-card {
+  width: min(calc(1040 * var(--u)), 62vw);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--hp-surface);
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  box-shadow: var(--hp-shadow);
+  border-radius: var(--hp-radius);
+  animation: var(--hp-card-in, hp-card-in) 520ms var(--hp-ease) 80ms both;
+}
+
+#{$s} .hp-card > .flex-shrink-0 img {
+  width: 100%;
+  max-height: 32vh;
+  object-fit: cover;
+}
+
+#{$s} .hp-card-body {
+  padding: calc(36 * var(--u)) calc(48 * var(--u)) calc(32 * var(--u));
+}
+
+// The question is loose text in the body's first column.
+#{$s} .hp-card-body > .flex-1 {
+  font-family: var(--hp-font-display);
+  font-size: calc(50 * var(--u));
+  font-weight: var(--hp-heading-weight);
+  line-height: 1.12;
+  letter-spacing: var(--hp-heading-tracking);
+  color: var(--hp-fg);
+  text-wrap: balance;
+}
+
+#{$s} .hp-card-question {
+  font-family: var(--hp-font-display);
+  color: var(--hp-fg);
+}
+
+#{$s} .hp-card-foot {
+  padding: calc(20 * var(--u)) calc(48 * var(--u));
+  background: var(--hp-accent);
+  color: var(--hp-on-accent);
+  border-top: var(--hp-stroke) solid var(--hp-stroke-color);
+
+  span {
+    color: var(--hp-on-accent);
+    font-family: var(--hp-font-display);
+    font-size: calc(44 * var(--u));
+    line-height: 1.1;
+    letter-spacing: var(--hp-heading-tracking);
+  }
+}
+
+@keyframes hp-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(18 * var(--u))) scale(0.985);
+    filter: blur(6px);
+  }
+}
+
+// ── Players rail ────────────────────────────────────────────────────────
+
+#{$s} .hp-rail {
+  width: calc(420 * var(--u));
+  background: var(--hp-bg-2);
+  border-right: var(--hp-stroke) solid var(--hp-stroke-color);
+  box-shadow: var(--hp-rail-edge, 1px 0 0 var(--hp-line));
+}
+
+#{$s} .hp-rail-head {
+  height: calc(120 * var(--u));
+  padding: 0 calc(28 * var(--u));
+  background: transparent;
+  align-items: center;
+}
+
+#{$s} .reveal .hp-rail-title {
+  margin: 0;
+  font-family: var(--hp-font-display);
+  font-size: calc(36 * var(--u));
+  font-weight: var(--hp-heading-weight);
+  letter-spacing: var(--hp-heading-tracking);
+  color: var(--hp-rail-title, var(--hp-accent));
+}
+
+#{$s} .hp-rail-list {
+  padding: calc(8 * var(--u)) calc(14 * var(--u));
+  background: transparent;
+  counter-reset: rank;
+}
+
+#{$s} .hp-rail-row {
+  counter-increment: rank;
+  color: var(--hp-fg);
+  gap: calc(14 * var(--u));
+  padding: calc(14 * var(--u)) calc(16 * var(--u));
+  margin-top: calc(6 * var(--u));
+  border-radius: var(--hp-radius-control);
+
+  &::before {
+    content: counter(rank);
+    min-width: 1.2em;
+    font-family: var(--hp-font-data);
+    font-size: calc(28 * var(--u));
+    font-weight: 700;
+    color: var(--hp-dim);
+  }
+
+  &:first-child::before {
+    color: var(--hp-accent-text, var(--hp-accent));
+  }
+
+  &:hover {
+    background: var(--hp-surface);
+    color: var(--hp-fg);
+  }
+
+  svg {
+    width: calc(26 * var(--u));
+    height: calc(26 * var(--u));
+  }
+}
+
+#{$s} .hp-rail-name {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: calc(36 * var(--u));
+  font-weight: 700;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#{$s} .hp-rail-row .hp-score {
+  font-size: calc(40 * var(--u));
+}
+
+#{$s} .hp-score {
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: calc(4 * var(--u));
+  padding: 0 calc(4 * var(--u));
+  border-radius: 0;
+  background: transparent;
+  color: var(--hp-data);
+  font-family: var(--hp-font-data);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+
+  .hp-score-value {
+    display: block;
+    line-height: 1;
+    animation: hp-tick 320ms var(--hp-ease);
+  }
+}
+
+#{$s} .hp-hex {
+  display: block;
+  font-family: var(--hp-font-data);
+  font-size: calc(22 * var(--u));
+  font-weight: 600;
+  line-height: 1;
+  color: var(--hp-dim);
+  text-align: right;
+}
+
+#{$s} .hp-points {
+  .light,
+  .dark {
+    color: var(--hp-dim);
+    cursor: pointer;
+    transition: color 120ms var(--hp-ease), transform 120ms var(--hp-ease);
+  }
+
+  .light:hover,
+  .dark:hover {
+    color: var(--hp-accent-text, var(--hp-accent));
+  }
+
+  .light:active,
+  .dark:active {
+    transform: scale(0.85);
+  }
+}
+
+// ── The player board (between rounds) ─────────────────────────────────
+
+#{$s} .hp-board {
+  margin-top: calc(32 * var(--u));
+  overflow: hidden;
+  background: var(--hp-surface);
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius);
+  box-shadow: var(--hp-shadow);
+}
+
+#{$s} .hp-board-head {
+  padding: calc(18 * var(--u)) calc(32 * var(--u));
+  background: var(--hp-board-head-bg, transparent);
+  border-color: var(--hp-line);
+
+  span {
+    font-family: var(--hp-font-display);
+    font-size: calc(32 * var(--u));
+    font-weight: var(--hp-heading-weight);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--hp-board-head-text, var(--hp-accent-text, var(--hp-accent)));
+  }
+}
+
+#{$s} .hp-board-row {
+  background: transparent;
+  border-top: max(1px, var(--hp-stroke)) solid var(--hp-line);
+
+  > .px-6 {
+    padding: calc(22 * var(--u)) calc(32 * var(--u));
+  }
+
+  .text-5xl {
+    font-family: var(--hp-font-display);
+    font-size: calc(60 * var(--u));
+    font-weight: var(--hp-heading-weight);
+    letter-spacing: var(--hp-heading-tracking);
+    line-height: 1.1;
+  }
+
+  .hp-score {
+    min-width: 2.2em;
+    font-size: calc(64 * var(--u));
+    line-height: 1;
+    text-align: right;
+  }
+
+  .hp-points svg {
+    width: calc(34 * var(--u));
+    height: calc(34 * var(--u));
+  }
+
+  .hp-points > div {
+    width: calc(38 * var(--u));
+    height: calc(38 * var(--u));
+  }
+
+  .ml-5 svg {
+    width: calc(40 * var(--u));
+    height: calc(40 * var(--u));
+    color: var(--hp-dim);
+    transition: color 120ms var(--hp-ease);
+  }
+
+  .ml-5 svg:hover {
+    color: var(--hp-alert);
+  }
+}
+
+#{$s} .hp-prompt {
+  overflow: hidden;
+  background: var(--hp-bg-2);
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius-control);
+  box-shadow: var(--hp-prompt-edge, inset 0 0 0 1px var(--hp-line));
+
+  &:focus-within {
+    box-shadow: inset 0 0 0 calc(3 * var(--u)) var(--hp-accent);
+  }
+
+  input {
+    padding-top: calc(16 * var(--u));
+    padding-bottom: calc(16 * var(--u));
+    padding-left: calc(64 * var(--u));
+    background: transparent;
+    color: var(--hp-fg);
+    font-family: var(--hp-font-data);
+    font-size: calc(34 * var(--u));
+  }
+
+  input::placeholder {
+    color: var(--hp-dim);
+  }
+
+  .absolute {
+    padding-left: calc(22 * var(--u));
+  }
+
+  button {
+    padding: 0 calc(24 * var(--u));
+    background: var(--hp-surface-2);
+    color: var(--hp-on-surface-2, var(--hp-fg));
+    border: 0;
+    border-left: var(--hp-stroke) solid var(--hp-stroke-color);
+    font-family: var(--hp-font-control, var(--hp-font-body));
+    font-size: calc(28 * var(--u));
+    font-weight: 700;
+    transition: background-color 120ms var(--hp-ease), color 120ms var(--hp-ease);
+
+    svg {
+      width: calc(30 * var(--u));
+      height: calc(30 * var(--u));
+      color: currentcolor;
+    }
+  }
+
+  button:hover,
+  button:focus-visible {
+    background: var(--hp-accent);
+    color: var(--hp-on-accent);
+  }
+}
+
+#{$s} .hp-prompt-sigil {
+  font-family: var(--hp-font-data);
+  font-size: calc(36 * var(--u));
+  font-weight: 800;
+  color: var(--hp-ok);
+}
+
+// ── Countdown ───────────────────────────────────────────────────────────
+
+#{$s} .hp-counter {
+  min-width: 4.4em;
+  padding: calc(14 * var(--u)) calc(28 * var(--u)) 0;
+  background: var(--hp-surface);
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius);
+  box-shadow: var(--hp-shadow);
+  transition: background-color 300ms var(--hp-ease);
+
+  .hp-counter-label {
+    font-family: var(--hp-font-data);
+    font-size: calc(26 * var(--u));
+    letter-spacing: 0.08em;
+    color: var(--hp-muted);
+  }
+
+  .counter {
+    font-family: var(--hp-font-data);
+    font-size: calc(120 * var(--u));
+    font-weight: 800;
+    line-height: 1.05;
+    font-variant-numeric: tabular-nums;
+    color: var(--hp-data);
+    animation: hp-tick 260ms var(--hp-ease);
+  }
+
+  .bg-darkgray {
+    margin: calc(10 * var(--u)) calc(-28 * var(--u)) 0;
+    padding: calc(6 * var(--u)) calc(16 * var(--u));
+    background: transparent;
+    border-top: max(1px, var(--hp-stroke)) solid var(--hp-line);
+
+    svg {
+      width: calc(52 * var(--u));
+      height: calc(52 * var(--u));
+      color: var(--hp-muted);
+    }
+  }
+}
+
+#{$s} .hp-hurry .hp-counter {
+  background: var(--hp-alert-bg);
+
+  .counter {
+    color: var(--hp-alert);
+  }
+}
+
+#{$s} .hp-hurry {
+  animation: hp-alarm 600ms var(--hp-ease) 1;
+}
+
+@keyframes hp-tick {
+  from {
+    opacity: 0.2;
+    transform: translateY(-0.18em);
+    filter: blur(3px);
+  }
+}
+
+@keyframes hp-alarm {
+  30% {
+    transform: scale(1.06);
+  }
+}
+
+#{$s} .hp-content-header {
+  background: transparent;
+}
+
+// ── Wordmark ────────────────────────────────────────────────────────────
+
+.hp-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--hp-font-wordmark, var(--hp-font-display));
+  font-weight: var(--hp-wordmark-weight, 800);
+  font-style: var(--hp-wordmark-style, normal);
+  letter-spacing: var(--hp-wordmark-tracking, -0.03em);
+  line-height: 1;
+  color: var(--hp-wordmark-color, var(--hp-fg));
+  text-transform: var(--hp-wordmark-transform, none);
+  white-space: nowrap;
+}
+
+.hp-wordmark--small {
+  font-size: calc(32 * var(--u));
+}
+
+.hp-wordmark--medium {
+  font-size: calc(48 * var(--u));
+}
+
+.hp-wordmark--large {
+  font-size: calc(220 * var(--u));
+}
+
+.hp-wordmark-cursor {
+  display: var(--hp-cursor, none);
+  width: 0.42em;
+  height: 0.7em;
+  margin-left: 0.08em;
+  background: var(--hp-accent);
+  animation: hp-cursor 1.06s steps(1, end) infinite;
+}
+
+@keyframes hp-cursor {
+  50% {
+    opacity: 0;
+  }
+}
+
+// ── Title card ──────────────────────────────────────────────────────────
+
+.hp-title-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(24 * var(--u));
+  max-width: 92vw;
+  padding: calc(64 * var(--u)) calc(80 * var(--u)) calc(56 * var(--u));
+  background: var(--hp-title-bg, var(--hp-surface));
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: calc(var(--hp-radius) * 1.3);
+  box-shadow: var(--hp-shadow);
+  color: var(--hp-fg);
+  text-align: left;
+  animation: var(--hp-title-in, none) 800ms var(--hp-ease) both;
+}
+
+.reveal .hp-title-lines,
+.hp-title-lines {
+  display: grid !important;
+  gap: calc(6 * var(--u));
+  margin: 0 !important;
+  padding: 0;
+  list-style: none;
+  font-family: var(--hp-font-data);
+  font-size: calc(30 * var(--u));
+  color: var(--hp-muted);
+
+  li {
+    display: flex;
+    gap: 1.2em;
+    justify-content: space-between;
+    min-width: 24ch;
+    animation: hp-title-line 1ms steps(1, end) both;
+  }
+}
+
+.hp-title-ok {
+  color: var(--hp-ok);
+}
+
+.reveal .hp-title-mark,
+.hp-title-mark {
+  margin: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+.hp-title-tagline {
+  margin: 0;
+  font-family: var(--hp-font-body);
+  font-size: calc(44 * var(--u));
+  font-weight: var(--hp-tagline-weight, 500);
+  line-height: 1.2;
+  color: var(--hp-muted);
+  animation: hp-title-rise 700ms var(--hp-ease) 1300ms both;
+}
+
+@keyframes hp-title-line {
+  from {
+    visibility: hidden;
+  }
+}
+
+@keyframes hp-title-rise {
+  from {
+    opacity: 0;
+    transform: translateY(calc(14 * var(--u)));
+  }
+}
+
+// ── Station bug and the slide-change wipe ──────────────────────────────
+
+.hp-chrome {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  text-transform: none;
+}
+
+.hp-bug {
+  position: absolute;
+  right: calc(28 * var(--u));
+  bottom: calc(30 * var(--u));
+  display: flex;
+  align-items: center;
+  gap: calc(18 * var(--u));
+  padding: calc(12 * var(--u)) calc(22 * var(--u));
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius-control);
+  background: var(--hp-bug-bg, var(--hp-surface));
+  box-shadow: var(--hp-shadow-sm, var(--hp-shadow));
+  color: var(--hp-fg);
+}
+
+.hp-live {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 * var(--u));
+  font-family: var(--hp-font-data);
+  font-size: calc(24 * var(--u));
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hp-live-dot {
+  width: calc(14 * var(--u));
+  height: calc(14 * var(--u));
+  border-radius: 50%;
+  background: var(--hp-live);
+  animation: hp-live 2s ease-in-out infinite;
+}
+
+.hp-channel {
+  display: inline-flex;
+  gap: calc(14 * var(--u));
+  padding-left: calc(18 * var(--u));
+  border-left: max(1px, calc(2 * var(--u))) solid var(--hp-line);
+  font-family: var(--hp-font-data);
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--hp-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.hp-channel-count {
+  color: var(--hp-fg);
+}
+
+.hp-wipe {
+  position: absolute;
+  opacity: 0;
+  background: var(--hp-wipe-bg, var(--hp-stripe));
+  will-change: transform;
+}
+
+.hp-wipe--x {
+  top: -5vh;
+  bottom: -5vh;
+  left: 0;
+  width: var(--hp-wipe-size, 22vw);
+}
+
+.hp-wipe--y {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--hp-wipe-size, 24vh);
+}
+
+// Ben-Day's halftone print: the deck shows only through dots of --hp-dot.
+.reveal.hp-printing > .slides,
+.reveal.hp-printing > .backgrounds {
+  mask-image: radial-gradient(circle, #000 var(--hp-dot), transparent calc(var(--hp-dot) + 1px));
+  mask-size: calc(48 * var(--u)) calc(48 * var(--u));
+  mask-position: center;
+}
+
+.hp-hijack {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  span {
+    padding: 0.2em 0.5em;
+    font-family: var(--hp-font-display);
+    font-size: calc(150 * var(--u));
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--hp-on-accent);
+    background: var(--hp-ok);
+    animation: hp-hijack 4s steps(1, end) both;
+  }
+}
+
+.hp-chrome--hijacked .hp-live-dot {
+  background: var(--hp-ok);
+}
+
+:root.hp-hijacked .reveal > .slides,
+:root.hp-hijacked .reveal > .backgrounds {
+  animation: hp-glitch 4s steps(1, end) both;
+}
+
+@keyframes hp-live {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes hp-hijack {
+  0% { transform: translate(-3%, 1%) skewX(8deg); }
+  4% { transform: translate(2%, -2%) skewX(-6deg); clip-path: inset(10% 0 40% 0); }
+  8% { transform: none; clip-path: none; }
+  70% { opacity: 1; }
+  74% { opacity: 0; }
+  78% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes hp-glitch {
+  0% { filter: hue-rotate(90deg) saturate(2); transform: translateX(-1.5%); }
+  5% { filter: invert(1); transform: translateX(2%); clip-path: inset(30% 0 20% 0); }
+  10% { filter: hue-rotate(-60deg) contrast(1.6); transform: none; clip-path: none; }
+  20% { filter: none; }
+  60% { filter: hue-rotate(140deg); }
+  62% { filter: none; }
+}
+
+// ── The verdict ─────────────────────────────────────────────────────────
+
+.hp-verdict {
+  --hp-verdict-color: var(--hp-granted);
+
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--hp-scrim);
+  backdrop-filter: var(--hp-scrim-filter, none);
+  font-size: calc(16 * var(--u));
+  color: var(--hp-verdict-fg, var(--hp-fg));
+  text-align: center;
+  animation: hp-verdict-scrim 220ms var(--hp-ease) both;
+}
+
+.hp-verdict--denied {
+  --hp-verdict-color: var(--hp-denied);
+}
+
+.hp-verdict-bars {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 34vh;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  background: var(--hp-verdict-band, var(--hp-stripe));
+  opacity: var(--hp-verdict-band-opacity, 0.16);
+  animation: hp-verdict-bars 900ms var(--hp-ease) 120ms both;
+}
+
+.hp-verdict--denied .hp-verdict-bars {
+  transform-origin: right center;
+  filter: grayscale(0.7);
+}
+
+.hp-verdict-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(22 * var(--u));
+  max-width: 90vw;
+  padding: 0 4vw;
+}
+
+.hp-verdict-image {
+  max-height: 26vh;
+  max-width: 40vw;
+  border: var(--hp-stroke) solid var(--hp-stroke-color) !important;
+  border-radius: var(--hp-radius) !important;
+  box-shadow: var(--hp-shadow) !important;
+  animation: hp-verdict-rise 600ms var(--hp-ease) 100ms both;
+}
+
+.hp-verdict-status {
+  margin: calc(8 * var(--u)) 0 0;
+  font-family: var(--hp-font-data);
+  font-size: calc(34 * var(--u));
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hp-verdict-muted, var(--hp-muted));
+  animation: hp-verdict-rise 500ms var(--hp-ease) 160ms both;
+}
+
+.hp-verdict-burst {
+  position: relative;
+  animation: var(--hp-burst-in, none) 700ms var(--hp-ease) 200ms both;
+}
+
+#{$s} .reveal h2.hp-verdict-headline,
+.hp-verdict-headline {
+  position: relative;
+  margin: 0;
+  font-family: var(--hp-font-verdict, var(--hp-font-display));
+  font-size: calc(170 * var(--u));
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: var(--hp-verdict-tracking, -0.03em);
+  text-transform: uppercase;
+  color: var(--hp-verdict-color);
+  text-wrap: balance;
+}
+
+.hp-verdict-names {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(6 * var(--u)) 0.9em;
+  margin: calc(6 * var(--u)) 0 0 !important;
+  padding: 0;
+  list-style: none;
+
+  li,
+  :root[data-theme] .reveal & li {
+    font-family: var(--hp-font-display);
+    font-size: calc(112 * var(--u));
+    font-weight: var(--hp-heading-weight);
+    line-height: 1.05;
+    letter-spacing: var(--hp-heading-tracking);
+    color: var(--hp-verdict-fg, var(--hp-fg));
+    animation: hp-verdict-rise 600ms var(--hp-ease) 650ms both;
+  }
+}
+
+.hp-verdict-answer {
+  margin: calc(10 * var(--u)) 0 0;
+  max-width: 34ch;
+  font-family: var(--hp-font-body);
+  font-size: calc(48 * var(--u));
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--hp-verdict-muted, var(--hp-muted));
+  animation: hp-verdict-rise 600ms var(--hp-ease) 1000ms both;
+}
+
+@keyframes hp-verdict-scrim {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes hp-verdict-bars {
+  to {
+    transform: translateY(-50%) scaleX(1);
+  }
+}
+
+@keyframes hp-verdict-rise {
+  from {
+    opacity: 0;
+    transform: translateY(calc(16 * var(--u)));
+  }
+}
+
+// ── Reduced motion: fewer, gentler; state still reads. ─────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  #{$s} .reveal .present h1,
+  #{$s} .hp-card,
+  #{$s} .hp-hurry,
+  .hp-title-card,
+  .hp-verdict-image,
+  .hp-verdict-status,
+  .hp-verdict-answer,
+  .hp-verdict-burst,
+  .hp-verdict-names li {
+    animation: hp-fade 150ms linear both;
+  }
+
+  #{$s} .hp-counter .counter,
+  #{$s} .hp-score .hp-score-value,
+  .hp-wordmark-cursor,
+  .hp-live-dot,
+  .hp-title-lines li,
+  .hp-title-tagline,
+  .hp-hijack span,
+  :root.hp-hijacked .reveal > .slides,
+  :root.hp-hijacked .reveal > .backgrounds {
+    animation: none;
+  }
+
+  .hp-verdict-bars {
+    animation: none;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes hp-fade {
+  from {
+    opacity: 0;
+  }
+}

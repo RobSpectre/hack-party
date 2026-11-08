@@ -1,18 +1,27 @@
 <template lang="pug">
 .reveal(class='theater' ref='presentation')
   slot
+  BroadcastChrome(v-if='stage && ready' :deck='deck')
 </template>
 
 <script>
 /* eslint-disable vue/multi-word-component-names */
 import Reveal from 'reveal.js'
 
+import BroadcastChrome from '@/components/base/BroadcastChrome.vue'
+import themed from '@/theme/mixin'
+
 export default {
   name: 'Reveal',
+  components: {
+    BroadcastChrome
+  },
+  mixins: [themed],
   emits: ['reveal-rendered', 'slide-changed'],
   data: function () {
     return {
       deck: undefined,
+      ready: false,
       alphabet: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
         'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     }
@@ -20,10 +29,14 @@ export default {
   mounted () {
     this.presentation = this.$refs.presentation
 
+    // Stage themes size a deck for a 1080p stream (see stage.scss).
+    document.documentElement.classList.add('hp-deck')
+
     this.waitToRenderReveal()
   },
   beforeUnmount () {
     this.presentation = null
+    document.documentElement.classList.remove('hp-deck')
 
     if (this.deck) {
       this.deck.destroy()
@@ -74,6 +87,7 @@ export default {
         window.deck = this.deck
         this.setShortcuts(window.deck.getCurrentSlide())
         this.setShortcutListener()
+        this.ready = true
       })
     },
     setShortcutListener () {

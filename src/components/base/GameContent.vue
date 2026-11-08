@@ -1,7 +1,7 @@
 <template lang='pug'>
 .flex.flex-grow.overflow-y-auto.w-full(class='focus:outline-hidden')
   .flex.flex-col.items-center.w-full.h-full
-    .flex-none.bg-blue
+    .hp-content-header.flex-none.bg-blue
       slot(name='header')
     .flex.flex-grow.items-center.justify-center.w-full
       slot(name='content')

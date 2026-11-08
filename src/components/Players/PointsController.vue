@@ -1,5 +1,5 @@
 <template lang='pug'>
-.flex.flex-col.items-center.justify-center
+.hp-points.flex.flex-col.items-center.justify-center
   .h-5.w-5.up-arrow(
     :class="darkBackground ? 'dark' : 'light'"
     v-on:click='incrementPlayerScore(playerName)'

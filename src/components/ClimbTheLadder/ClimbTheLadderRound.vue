@@ -20,13 +20,13 @@ GameContentWithSidebar(:players='computedPlayers')
       class="bg-[url('/images/climb_the_ladder_victory.jpg')]"
     )
       .flex.flex-col.mx-auto(class='w-2/5')
-        .flex.flex-col.rounded-lg.shadow-lg.overflow-hidden.bg-blue
+        .hp-card.flex.flex-col.rounded-lg.shadow-lg.overflow-hidden.bg-blue
           .flex-1.p-2.flex.flex-col.justify-between(
             v-for='player in playersByScoreDifference'
           )
             span.winner
               | {{ player.name }} #[strong {{ player.value }}]
-          .flex-1.bg-green.p-6.flex.flex-col.justify-between
+          .hp-card-foot.flex-1.bg-green.p-6.flex.flex-col.justify-between
             span.text-2xl.uppercase.leading-7.font-semibold.text-white
               | Points Gained
 </template>

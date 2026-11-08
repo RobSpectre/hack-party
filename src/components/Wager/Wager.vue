@@ -2,32 +2,32 @@
 GameSlide
   PlayersSidebar(:players='players')
   .relative.mt-12.mx-auto(v-if='!complete & !wagerComplete')
-    .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
+    .hp-card.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
       .flex-shrink-0
         .bg-blue.leading-7.uppercase.font-semibold.text-white.p-4 Make your wager
-      .flex-1.bg-white.p-6.flex.flex-col.justify-between
+      .hp-card-body.flex-1.bg-white.p-6.flex.flex-col.justify-between
         .flex-1
-          span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
+          span.hp-card-question.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
             | How much is your wager?
           .my-4.text-center
             input.shadow-sm.appearance-none.border.rounded-sm.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-hidden focus:shadow-outline' type='text' placeholder='Wager' v-model='wager' v-on:keydown.enter='addWager(currentPlayer, wager)')
-      .flex-1.bg-green.p-6.flex.flex-col.justify-between
+      .hp-card-foot.flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
   .relative.mt-12.mx-auto(v-if='!complete & wagerComplete')
-    .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
+    .hp-card.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
       .flex-shrink-0
         .bg-blue.leading-7.uppercase.font-semibold.text-white.p-4 Place your bet
-      .flex-1.bg-white.p-6.flex.flex-col.justify-between
+      .hp-card-body.flex-1.bg-white.p-6.flex.flex-col.justify-between
         .flex-1
-          span.block.text-lg.leading-7.font-semibold.text-gray-900
+          span.hp-card-question.block.text-lg.leading-7.font-semibold.text-gray-900
           | Where are you placing your bet?
           .my-2.text-center.flex.flex-col
             button.actionButton(
               v-for='(item, index) in items'
               @click='addGuess(currentPlayer, index)'
               ) {{ item.name }} {{ item.emoji }}
-      .flex-1.bg-green.p-6.flex.flex-col.justify-between
+      .hp-card-foot.flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.uppercase.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
 </template>

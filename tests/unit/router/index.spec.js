@@ -42,9 +42,10 @@ describe('Router', () => {
     expect(wrapper.find('.reveal').exists()).toBe(true)
   })
 
-  test('sends unknown paths back to the index', async () => {
-    const { router } = await mountAt('/no-such-game')
+  test('shows a 404 for unknown paths', async () => {
+    const { wrapper } = await mountAt('/no-such-game')
 
-    expect(router.currentRoute.value.path).toBe('/')
+    expect(wrapper.find('.hp-404').exists()).toBe(true)
+    expect(wrapper.text()).toContain('Game not found')
   })
 })

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import GamesIndex from '../views/GamesIndex.vue'
+import NotFound from '../views/NotFound.vue'
 import games from '../games'
 
 const routes = [
@@ -11,11 +12,13 @@ const routes = [
   ...games.map(game => ({
     path: `/${game.slug}`,
     name: game.slug,
-    component: game.component
+    component: game.component,
+    meta: { theme: game.theme }
   })),
   {
     path: '/:pathMatch(.*)*',
-    redirect: '/'
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

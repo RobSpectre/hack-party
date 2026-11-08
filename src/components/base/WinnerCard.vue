@@ -1,5 +1,12 @@
 <template lang='pug'>
-.fixed.bottom-0.inset-x-0.px-4.pb-6(class='sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center')
+Verdict(
+  v-if='stage'
+  kind='granted'
+  :names='winners || []'
+  :answer='answerLine'
+  :headerImage='headerImage'
+)
+.fixed.bottom-0.inset-x-0.px-4.pb-6(v-else class='sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center')
   .fixed.inset-0
     .absolute.inset-0.bg-gray-500.opacity-75
   transition(appear @before-enter='beforeEnter' @enter='enter' :css='false')
@@ -27,8 +34,15 @@
 <script>
 import gsap from 'gsap'
 
+import Verdict from '@/components/base/Verdict.vue'
+import themed from '@/theme/mixin'
+
 export default {
   name: 'WinnerCard',
+  components: {
+    Verdict
+  },
+  mixins: [themed],
   props: {
     winners: {
       type: Array,
@@ -53,6 +67,11 @@ export default {
     constrainHeaderImage: {
       type: Boolean,
       default: true
+    }
+  },
+  computed: {
+    answerLine () {
+      return this.answer !== '' ? this.answer : `${this.answerName} is ${this.answerValue}.`
     }
   },
   methods: {

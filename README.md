@@ -43,6 +43,17 @@ use lives in `public/images`, `public/sounds` and `public/video`.
 The help-computer games talk to the HelpComputer backend at `ws://localhost:8000/ws`. To use
 a backend somewhere else, set `VITE_HELP_COMPUTER_WS` in `.env.local`.
 
+## Themes
+
+hack.party has five looks. **Uplink**, the default, is a game show broadcast from the year
+2387. **Brutal** is neobrutalism at game-show volume. **Ben-Day** is a 1970s pop-art comic.
+**Stadium** is the 1972 summer games on public TV. **Classic** is the original look, kept
+exactly as the games were played. Every look but Classic is sized for a 4K window sent over
+Zoom at 1080p. Press `Shift+T` to switch, use the switch on the home page, or add
+`?theme=benday` (or `uplink`, `brutal`, `stadium`, `classic`) to a game's URL. A game can
+pick its own theme with `theme: 'classic'` in `src/games/index.js`.
+`DESIGN.md` explains the tokens and how to add a theme.
+
 ### Compiles and hot-reloads for development
 ```
 npm run dev 

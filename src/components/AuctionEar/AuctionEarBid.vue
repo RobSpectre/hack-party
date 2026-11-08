@@ -1,10 +1,10 @@
 <template lang='pug'>
-.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
+.hp-card.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
   .flex-shrink-0
     img.h-48.m-0.w-full.clear-reveal.object-cover(:src='image' alt='')
-  .flex-1.bg-white.p-6.flex.flex-col.justify-between
+  .hp-card-body.flex-1.bg-white.p-6.flex.flex-col.justify-between
     .flex-1
-      span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
+      span.hp-card-question.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
         | {{ prompt }}
       .my-4.text-center
         input.shadow-sm.appearance-none.border.rounded-sm.py-2.px-3.text-gray-700.leading-tight(
@@ -12,7 +12,7 @@
           :placeholder='placeholderInput'
           v-model='currentInput'
           v-on:keydown.enter='emitInput(currentPlayer, currentInput)')
-  .flex-1.bg-green.p-6.flex.flex-col.justify-between
+  .hp-card-foot.flex-1.bg-green.p-6.flex.flex-col.justify-between
     span.text-2xl.leading-7.font-semibold.text-white
       | {{ currentPlayer.name }}
 </template>

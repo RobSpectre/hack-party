@@ -1,0 +1,367 @@
+// Stadium: hack.party as the summer games of 1972, covered by a public
+// broadcaster with a Swiss design desk. Off-white paper, one grotesk in
+// sentence case, flat color fields, no shadows, no rounding. The ribbon of
+// six games colors is the world's only ornament; medals are the verdict.
+
+$t: ":root[data-theme][data-theme='stadium']";
+
+#{$t} {
+  --navy: #14263a;
+  --paper: #f4f3ee;
+  --sky: #1a73b5;
+  --sky-lt: #6fb6e3;
+  --grass: #21804a;
+  --grass-lt: #8cc152;
+  --orange: #f08a24;
+  --silver: #b9bdc1;
+  --gold: #d9a422;
+
+  --hp-bg: var(--paper);
+  --hp-bg-2: #ffffff;
+  --hp-surface: #ffffff;
+  --hp-surface-2: #e7e6e0;
+  --hp-line: #c9c8c0;
+  --hp-fg: var(--navy);
+  --hp-muted: #4b5a6a;
+  --hp-dim: #6b7885;
+  --hp-accent: var(--orange);
+  --hp-accent-text: #a5520a;
+  --hp-on-accent: var(--navy);
+  --hp-data: #0063b1;
+  --hp-on-data: #ffffff;
+  --hp-ok: var(--grass);
+  --hp-alert: #c8321a;
+  --hp-alert-bg: #fbe3d8;
+  --hp-live: #c8321a;
+  --hp-granted: var(--navy);
+  --hp-denied: var(--hp-muted);
+  --hp-keycap: rgb(20 38 58 / 0.14);
+  --hp-focus: #0063b1;
+
+  --hp-green: var(--grass);
+  --hp-blue: var(--sky);
+  --hp-orange: #c2560c;
+  --hp-darkgray: var(--navy);
+
+  --hp-font-body: 'Hanken Grotesk Variable', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-display: 'Hanken Grotesk Variable', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-data: 'Hanken Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --hp-heading-weight: 700;
+  --hp-heading-transform: none;
+  --hp-heading-tracking: -0.025em;
+  --hp-heading-leading: 1.04;
+  --hp-h2: 1.7em;
+
+  --hp-stroke: 0px;
+  --hp-stroke-color: transparent;
+  --hp-radius: 0px;
+  --hp-radius-control: 0px;
+  --hp-shadow: none;
+  --hp-shadow-sm: none;
+  --hp-ease: cubic-bezier(0.65, 0, 0.35, 1);
+
+  // The ribbon: six games colors in equal bands.
+  --hp-stripe: linear-gradient(90deg,
+    var(--sky-lt) 0 16.67%,
+    var(--sky) 0 33.33%,
+    var(--grass) 0 50%,
+    var(--grass-lt) 0 66.67%,
+    var(--orange) 0 83.33%,
+    var(--silver) 0);
+  --hp-stripe-h: calc(12 * var(--u));
+  --hp-progress-track: var(--hp-line);
+
+  --hp-label-bg: #ffffff;
+  --hp-label-text: var(--navy);
+  --hp-label-in: hp-lane;
+  --hp-card-in: hp-lane;
+  --hp-title-in: hp-lane;
+  --hp-burst-in: hp-medal;
+  --hp-rail-edge: none;
+  --hp-board-head-bg: var(--sky);
+  --hp-board-head-text: #ffffff;
+  --hp-rail-title: #ffffff;
+  --hp-feature-bg: #ffffff;
+  --hp-feature-stripe: calc(12 * var(--gu));
+  --hp-scrim: var(--paper);
+  --hp-verdict-band-opacity: 1;
+  --hp-verdict-tracking: -0.04em;
+  --hp-wipe-bg: linear-gradient(180deg, var(--sky) 0 50%, var(--grass) 0);
+  --hp-wipe-size: 30vh;
+  --hp-wordmark-tracking: -0.05em;
+  --hp-wordmark-weight: 800;
+  --hp-control-tracking: 0;
+  --hp-tagline-weight: 500;
+
+  color-scheme: light;
+}
+
+// Things run in from their lane: straight, quick, no bounce.
+@keyframes hp-lane {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(calc(-40 * var(--u)));
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+
+@keyframes hp-medal {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-60 * var(--u))) scale(0.9);
+  }
+}
+
+#{$t} .reveal h1,
+#{$t} .reveal h2,
+#{$t} .reveal h3,
+#{$t} .hp-card-body > .flex-1 {
+  text-transform: none;
+}
+
+#{$t} .reveal h1 {
+  font-weight: 700;
+  padding-top: 0.4em;
+}
+
+#{$t} .reveal h1::before {
+  inset: 0 0 auto 0;
+}
+
+#{$t} .actionButton {
+  font-weight: 650;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 calc(3 * var(--u)) var(--navy);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: none;
+  }
+}
+
+#{$t} .hp-card {
+  border-top: calc(12 * var(--u)) solid transparent;
+  border-image: var(--hp-stripe) 1;
+  border-image-width: calc(12 * var(--u)) 0 0 0;
+}
+
+#{$t} .hp-card-body > .flex-1 {
+  letter-spacing: -0.02em;
+}
+
+#{$t} .hp-card-foot {
+  background: var(--navy);
+
+  span {
+    color: #fff;
+  }
+}
+
+#{$t} .hp-rail {
+  background: #fff;
+}
+
+#{$t} .hp-rail-head {
+  background: var(--sky);
+}
+
+#{$t} .hp-rail-row {
+  border-bottom: 1px solid var(--hp-line);
+
+  &:first-child {
+    background: var(--orange);
+  }
+
+  &:first-child::before {
+    color: var(--navy);
+  }
+}
+
+#{$t} .hp-rail-row:first-child .hp-score {
+  color: var(--navy);
+}
+
+#{$t} .hp-score {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+#{$t} .hp-board-head span {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+#{$t} .hp-counter {
+  background: var(--navy);
+
+  .hp-counter-label {
+    color: var(--sky-lt);
+  }
+
+  .counter {
+    color: #fff;
+  }
+
+  .bg-darkgray {
+    border-top-color: rgb(255 255 255 / 0.18);
+
+    svg {
+      color: var(--sky-lt);
+    }
+  }
+}
+
+#{$t} .hp-hurry .hp-counter {
+  background: var(--hp-alert);
+
+  .counter,
+  .hp-counter-label {
+    color: #fff;
+  }
+}
+
+// The verdict: a medal on a ribbon.
+#{$t} .hp-verdict-bars {
+  top: 0;
+  height: 42vh;
+  width: calc(150 * var(--u));
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top center;
+  background: var(--hp-stripe);
+  animation-name: hp-ribbon;
+}
+
+#{$t} .hp-verdict--denied .hp-verdict-bars {
+  filter: grayscale(1) opacity(0.4);
+}
+
+@keyframes hp-ribbon {
+  to {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+#{$t} .hp-verdict-burst {
+  display: grid;
+  place-items: center;
+  width: calc(520 * var(--u));
+  aspect-ratio: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #f6d36a, var(--gold) 55%, #a87a10);
+    box-shadow: inset 0 0 0 calc(14 * var(--u)) rgb(255 255 255 / 0.25);
+  }
+}
+
+#{$t} .hp-verdict--denied .hp-verdict-burst::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 calc(10 * var(--u)) var(--silver);
+}
+
+#{$t} .hp-verdict-headline,
+#{$t} .reveal h2.hp-verdict-headline {
+  font-size: calc(150 * var(--u));
+  text-transform: none;
+  max-width: 3.2em;
+}
+
+#{$t} .hp-verdict-names li,
+#{$t} .reveal .hp-verdict-names li {
+  font-weight: 800;
+}
+
+#{$t} .hp-verdict-status {
+  position: relative;
+  z-index: 1;
+  padding: 0.15em 0.6em;
+  background: var(--paper);
+  font-family: var(--hp-font-body);
+  letter-spacing: 0;
+}
+
+#{$t} .hp-title-card {
+  background: #fff;
+  border-top: calc(16 * var(--u)) solid transparent;
+  border-image: var(--hp-stripe) 1;
+  border-image-width: calc(16 * var(--u)) 0 0 0;
+}
+
+#{$t} .hp-title-lines {
+  font-weight: 600;
+}
+
+#{$t} .hp-bug {
+  background: var(--navy);
+  color: #fff;
+}
+
+#{$t} .hp-live {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+#{$t} .hp-channel {
+  color: var(--sky-lt);
+  border-left-color: rgb(255 255 255 / 0.25);
+  letter-spacing: 0;
+}
+
+#{$t} .hp-channel-count {
+  color: #fff;
+}
+
+// Home page: the day's programme, printed on the back of a ticket.
+#{$t} .hp-guide-list .game-link {
+  border-radius: 0;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--orange);
+
+    .hp-ch,
+    .hp-date,
+    .hp-arrow {
+      color: var(--navy);
+    }
+  }
+}
+
+#{$t} .hp-feature {
+  border-radius: 0;
+}
+
+#{$t} .hp-feature-cta {
+  border-radius: 0;
+}
+
+#{$t} .hp-grep {
+  border-radius: 0;
+  background: #fff;
+}
+
+#{$t} .hp-guide-year {
+  color: var(--sky);
+  letter-spacing: 0.02em;
+  font-size: calc(18 * var(--gu));
+}
+
+#{$t} .hp-guide-hint kbd {
+  border-radius: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #{$t} .hp-verdict-bars {
+    animation: none;
+    transform: translateX(-50%);
+  }
+}

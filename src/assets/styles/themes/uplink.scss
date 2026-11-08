@@ -1,0 +1,90 @@
+// Uplink: hack.party as a game show broadcast live from 2387, with a
+// graphics package built from the 16 ANSI terminal colors. Violet ink lit by
+// solid color, never black with one neon glow. DESIGN.md has the reasons.
+
+$t: ":root[data-theme][data-theme='uplink']";
+
+#{$t} {
+  // Named colors of the world.
+  --ink: #100c24;
+  --signal: #ffd23f;
+  --cyan: #45e3ff;
+  --magenta: #ff4fae;
+  --lime: #3dff9a;
+  --red: #ff5a36;
+
+  // Semantic tokens (stage.scss).
+  --hp-bg: var(--ink);
+  --hp-bg-2: #161131;
+  --hp-surface: #1d1840;
+  --hp-surface-2: #2a2358;
+  --hp-line: #3a3270;
+  --hp-fg: #f5f2ff;
+  --hp-muted: #b8b0e6;
+  --hp-dim: #8a82bd;
+  --hp-accent: var(--signal);
+  --hp-on-accent: var(--ink);
+  --hp-data: var(--cyan);
+  --hp-on-data: var(--ink);
+  --hp-ok: var(--lime);
+  --hp-alert: var(--magenta);
+  --hp-alert-bg: #3a1238;
+  --hp-live: var(--red);
+  --hp-granted: var(--signal);
+  --hp-denied: var(--magenta);
+  --hp-keycap: rgb(16 12 36 / 0.35);
+
+  // Classic names, re-lit so white text on them still passes 4.5:1.
+  --hp-green: #007a50;
+  --hp-blue: #3346f0;
+  --hp-orange: #c8321a;
+  --hp-darkgray: var(--hp-surface-2);
+
+  --hp-font-body: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-display: 'Unbounded Variable', 'Atkinson Hyperlegible Next Variable', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-data: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --hp-heading-weight: 700;
+  --hp-heading-transform: uppercase;
+  --hp-heading-tracking: -0.02em;
+
+  --hp-stroke: 0px;
+  --hp-stroke-color: transparent;
+  --hp-radius: calc(16 * var(--u));
+  --hp-radius-control: calc(12 * var(--u));
+  --hp-shadow: 0 calc(24 * var(--u)) calc(48 * var(--u)) calc(-16 * var(--u)) rgb(4 2 14 / 0.75), 0 2px 6px rgb(4 2 14 / 0.4);
+  --hp-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  // The seven bars: the SMPTE order, re-cut from the ANSI bright set.
+  --hp-stripe: linear-gradient(90deg,
+    var(--hp-fg) 0 14.29%,
+    var(--signal) 0 28.57%,
+    var(--cyan) 0 42.86%,
+    var(--lime) 0 57.14%,
+    var(--magenta) 0 71.43%,
+    var(--red) 0 85.71%,
+    #3346f0 0);
+  --hp-stripe-h: calc(10 * var(--u));
+  --hp-progress-track: rgb(58 50 112 / 0.6);
+
+  // Two soft key lights on the ink, the way a studio floor is lit.
+  --hp-stage-bg:
+    radial-gradient(ellipse 60% 70% at 12% 0%, rgb(51 70 240 / 0.22), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, rgb(255 79 174 / 0.14), transparent 70%),
+    var(--ink);
+  --hp-feature-bg:
+    radial-gradient(ellipse 70% 120% at 0% 0%, rgb(51 70 240 / 0.45), transparent 70%),
+    var(--hp-surface);
+
+  --hp-bug-bg: rgb(16 12 36 / 0.78);
+  --hp-title-bg: rgb(16 12 36 / 0.8);
+  --hp-scrim: rgb(16 12 36 / 0.9);
+  --hp-scrim-filter: blur(10px) saturate(0.6);
+  --hp-cursor: inline-block;
+
+  color-scheme: dark;
+}
+
+#{$t} .hp-title-card,
+#{$t} .hp-bug {
+  backdrop-filter: blur(12px);
+}
