@@ -120,7 +120,7 @@ describe('ItemGuess', () => {
   })
 
   it('presents WinnerCard after reveal button is clicked', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinners')
+    const spy = vi.spyOn(wrapper.vm, 'findWinners')
 
     let buttons = await wrapper.findAll('button')
 
@@ -147,7 +147,7 @@ describe('ItemGuess', () => {
   })
 
   it('presents LoserCard if no correct answer is guessed', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinners')
+    const spy = vi.spyOn(wrapper.vm, 'findWinners')
 
     let buttons = await wrapper.findAll('button')
 
@@ -174,7 +174,7 @@ describe('ItemGuess', () => {
   })
 
   it('presents WinnerCard and awards contrarian bonus if only one player guesses correctly', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinners')
+    const spy = vi.spyOn(wrapper.vm, 'findWinners')
 
     let buttons = await wrapper.findAll('button')
 

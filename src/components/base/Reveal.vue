@@ -29,7 +29,7 @@ export default {
   methods: {
     waitToRenderReveal () {
       if (!(this.presentation.parentElement.clientWidth > 0)) {
-        setTimeout(window.requestAnimationFrame(this.waitToRenderReveal),
+        setTimeout(() => window.requestAnimationFrame(this.waitToRenderReveal),
           500)
       } else {
         this.renderReveal()

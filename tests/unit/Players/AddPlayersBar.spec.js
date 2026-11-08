@@ -4,7 +4,7 @@ import { createTestingPinia } from '@pinia/testing'
 
 import { useGameStore } from '@/store'
 
-import AddPlayersBar from '@/components/Players/AddPlayersBar'
+import AddPlayersBar from '@/components/Players/AddPlayersBar.vue'
 
 describe('AddPlayersBar props', () => {
   test('If addPlayersAllowed prop is true, show button to add player.', () => {
@@ -80,7 +80,7 @@ describe('AddPlayersBar UX', () => {
     expect(store.addPlayer).toHaveBeenCalledWith('Rick')
   }),
   test('If Add Player button is clicked with no input, no player is entered', async () => {
-    const spy = jest.spyOn(store, 'addPlayer')
+    const spy = vi.spyOn(store, 'addPlayer')
 
     const addPlayersButton = wrapper.find('button')
     await addPlayersButton.trigger('click')

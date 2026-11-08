@@ -114,7 +114,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('presents WinnerCard after reveal button is clicked', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('5')
@@ -139,7 +139,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('presents WinnerCard and adds bonus if player gets the price exactly right', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('6')
@@ -164,7 +164,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('presents LoserCard if all players are over the correct price', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('10')
@@ -237,7 +237,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('awards the correct winner with negative values', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('-5')
@@ -262,7 +262,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('awards the correct winner with negative values when positive numbers are close', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('-4')
@@ -287,7 +287,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('presents LoserCard if all players are all under a negative price', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('-10')
@@ -311,7 +311,7 @@ describe('CelebrityGuess', () => {
   })
 
   it('awards winner with positive guess when negative guesses are too low', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'findWinner')
+    const spy = vi.spyOn(wrapper.vm, 'findWinner')
 
     const input = await wrapper.find('input')
     await input.setValue('10')

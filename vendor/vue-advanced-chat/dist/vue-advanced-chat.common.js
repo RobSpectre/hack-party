@@ -42587,4 +42587,3 @@ Object.defineProperty(ChatWindow, 'install', {
 module.exports = __webpack_exports__;
 /******/ })()
 ;
-//# sourceMappingURL=vue-advanced-chat.common.js.map
