@@ -193,6 +193,7 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 
 .winner {

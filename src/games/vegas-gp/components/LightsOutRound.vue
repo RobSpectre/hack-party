@@ -331,15 +331,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 
 .classification {
   font-family: 'Faster One', cursive !important;
-  @apply mt-36 skew-x-6 skew-y-12 text-9xl text-green tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-36! skew-x-6! skew-y-12! text-9xl! text-green! tracking-tight! text-shadow! shadow-black!;
 }
 
 .classification-bounce {
   font-family: 'Faster One', cursive !important;
-  @apply mt-36 skew-x-6 skew-y-12 text-9xl text-green tracking-tight text-shadow shadow-black animate-bounce #{!important};
+  @apply mt-36! skew-x-6! skew-y-12! text-9xl! text-green! tracking-tight! text-shadow! shadow-black! animate-bounce!;
 }
 </style>

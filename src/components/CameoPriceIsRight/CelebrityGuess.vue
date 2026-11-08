@@ -10,14 +10,14 @@ GameSlide
           span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
           | {{ question }}
           .my-4.text-center
-            input.shadow.appearance-none.border.rounded.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-none focus:shadow-outline' type='text' placeholder='Guess' v-model='currentGuess' v-on:keydown.enter='addGuess(currentPlayer, currentGuess)')
+            input.shadow-sm.appearance-none.border.rounded-sm.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-hidden focus:shadow-outline' type='text' placeholder='Guess' v-model='currentGuess' v-on:keydown.enter='addGuess(currentPlayer, currentGuess)')
       .flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
   .mx-auto.align-middle(v-else='')
-    span.inline-flex.rounded-md.shadow-sm
+    span.inline-flex.rounded-md.shadow-xs
       button.inline-flex.items-center.px-6.py-3.border.border-transparent.text-base.leading-6.font-medium.rounded-md.text-white.bg-indigo-600.transition.ease-in-out.duration-150.mt-12(type='button'
-      class='hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700' @click='findWinner()'
+      class='hover:bg-indigo-500 focus:outline-hidden focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700' @click='findWinner()'
       accesskey='z')
         | Is The Price Right?&#x9;
         svg.ml-3.-mr-1.h-5.w-5(fill='currentColor' viewbox='0 0 20 20')

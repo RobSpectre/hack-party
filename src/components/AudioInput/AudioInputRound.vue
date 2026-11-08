@@ -17,8 +17,8 @@ GameSlide(v-if='game.players.length > 0')
               span.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase {{ question }}
               .my-4.text-center
                 form(@submit.prevent='submitAnswer')
-                  input.shadow.appearance-none.border.rounded.py-3.px-4.text-gray-700.text-xl.leading-tight(
-                    class='w-full focus:outline-none focus:shadow-outline'
+                  input.shadow-sm.appearance-none.border.rounded-sm.py-3.px-4.text-gray-700.text-xl.leading-tight(
+                    class='w-full focus:outline-hidden focus:shadow-outline'
                     type='text'
                     :placeholder='placeholder'
                     v-model.trim='currentAnswer'
@@ -338,6 +338,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../assets/styles/tailwind.css';
 input {
   font-size: 1.25rem;
 
@@ -353,7 +354,7 @@ input {
 }
 
 .actionButton {
-  @apply px-4 py-2 bg-blue text-white font-bold rounded hover:bg-opacity-90 transition-all duration-200;
+  @apply px-4 py-2 bg-blue text-white font-bold rounded-sm hover:bg-blue/90 transition-all duration-200;
 
   &:disabled {
     @apply opacity-50 cursor-not-allowed;

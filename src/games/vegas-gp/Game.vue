@@ -311,36 +311,37 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Press+Start+2P&family=Frederick+the+Great&family=Silkscreen&family=Zen+Dots&family=Monoton&display=swap');
 
 .title {
   font-family: 'Silkscreen', cursive !important;
-  @apply mt-48 text-6xl text-white #{!important};
+  @apply mt-48! text-6xl! text-white!;
 }
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .tennis {
   font-family: 'Fredericka the Great', cursive !important;
-  @apply mt-36 skew-x-6 skew-y-12 text-9xl text-white tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-36! skew-x-6! skew-y-12! text-9xl! text-white! tracking-tight! text-shadow! shadow-black!;
 }
 
 .steward {
   font-family: 'Zen Dots', cursive !important;
-  @apply mt-72 skew-y-12 text-7xl text-white tracking-tight uppercase text-shadow shadow-black #{!important};
+  @apply mt-72! skew-y-12! text-7xl! text-white! tracking-tight! uppercase! text-shadow! shadow-black!;
 }
 
 .engines {
   font-family: 'Monoton', cursive !important;
-  @apply mt-72 text-7xl text-white tracking-tight uppercase text-shadow shadow-black #{!important};
+  @apply mt-72! text-7xl! text-white! tracking-tight! uppercase! text-shadow! shadow-black!;
 }
 
 .lightsout {
   font-family: 'Faster One', cursive !important;
-  @apply mt-96 skew-x-6 skew-y-12 text-9xl text-white tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-96! skew-x-6! skew-y-12! text-9xl! text-white! tracking-tight! text-shadow! shadow-black!;
 }
 
 html {

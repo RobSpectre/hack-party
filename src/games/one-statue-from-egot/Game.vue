@@ -400,6 +400,7 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Bangers&family=Black+Ops+One&family=Press+Start+2P&display=swap');
 
 html {
@@ -408,21 +409,21 @@ html {
 
 .title {
   font-family: 'Aboreto', cursive !important;
-  @apply mt-64 text-9xl skew-y-12 text-white #{!important};
+  @apply mt-64! text-9xl! skew-y-12! text-white!;
 }
 
 .bossfight {
   font-family: 'Black Ops One', cursive !important;
-  @apply mt-64 text-9xl text-white #{!important};
+  @apply mt-64! text-9xl! text-white!;
 }
 
 .bangers {
   font-family: 'Bangers', cursive !important;
-  @apply mt-64 text-9xl text-white #{!important};
+  @apply mt-64! text-9xl! text-white!;
 }
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 </style>

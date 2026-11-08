@@ -443,21 +443,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Foldit:wght@700&family=Press+Start+2P&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Bruno Ace', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .bosstitle {
   font-family: 'Foldit', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 html {

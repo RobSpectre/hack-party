@@ -52,6 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../assets/styles/tailwind.css';
 .titleLogo {
   @apply flex grow-0;
 }

@@ -1,8 +1,8 @@
 <template lang="pug">
-.dice-roller.bg-gray-700.p-4.rounded.border.border-gray-600
+.dice-roller.bg-gray-700.p-4.rounded-sm.border.border-gray-600
   h3.text-xl.font-bold.mb-2 Dice Roller
   .grid.grid-cols-3.gap-2
-    button.bg-blue-600.hover_bg-blue-500.p-2.rounded.text-white.font-bold(
+    button.bg-blue-600.hover_bg-blue-500.p-2.rounded-sm.text-white.font-bold(
       v-for="d in [4, 6, 8, 10, 12, 20]"
       :key="d"
       @click="roll(d)"

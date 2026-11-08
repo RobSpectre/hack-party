@@ -1,5 +1,5 @@
 <template lang="pug">
-.stat-block.bg-gray-700.p-4.rounded.border.border-gray-600
+.stat-block.bg-gray-700.p-4.rounded-sm.border.border-gray-600
   h3.text-xl.font-bold.mb-2 {{ entity.name }}
   .grid.grid-cols-2.gap-2.mb-4
     .stat

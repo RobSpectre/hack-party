@@ -1,5 +1,5 @@
 <template lang="pug">
-.initiative-tracker.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+.initiative-tracker.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20(class='bg-gray-900/90')
   h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold.border-b.border-cyan-900.mb-2.pb-1 Initiative
   ul.flex-1.overflow-y-auto.mb-2
     li.flex.justify-between.items-center.p-1.mb-1.bg-black.border.border-gray-800(

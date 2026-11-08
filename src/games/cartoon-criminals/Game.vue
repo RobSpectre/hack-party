@@ -272,21 +272,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Black+Ops+One&family=Bruno+Ace&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Black Ops One', cursive !important;
-  @apply mt-36 origin-bottom-right skew-x-6 skew-y-6 text-9xl text-rose-600 text-shadow-lg tracking-tight shadow-black #{!important};
+  @apply mt-36! origin-bottom-right! skew-x-6! skew-y-6! text-9xl! text-rose-600! text-shadow-[0_8px_16px_var(--tw-shadow-color)]! tracking-tight! shadow-black!;
 }
 
 .bossfight {
   font-family: 'Bruno Ace', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 html {

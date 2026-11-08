@@ -110,8 +110,16 @@ export default {
 </script>
 
 <style src="@/../node_modules/reveal.js/dist/reveal.css"></style>
+<style>
+/*
+  Tailwind 3 pulled its utilities in through the reveal theme, so they loaded
+  again here, after each game's own styles. Games rely on that order.
+*/
+@import '../../assets/styles/tailwind.css';
+</style>
 <style lang="scss" src="../../assets/styles/reveal_theme.scss"></style>
 <style lang="scss">
+@reference '../../assets/styles/tailwind.css';
 .theater {
   @apply h-screen w-full;
 }

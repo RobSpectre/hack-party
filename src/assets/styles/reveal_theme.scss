@@ -5,11 +5,9 @@
 // Use @use for reveal.js files, and give them a namespace
 @use '/node_modules/reveal.js/css/theme/template/mixins' as reveal-mixins;
 @use '/node_modules/reveal.js/css/theme/template/settings' as reveal-settings;
-@import url('/node_modules/reveal.js/dist/theme/fonts/source-sans-pro/source-sans-pro.css');
+@import url('/node_modules/reveal.js/css/theme/fonts/source-sans-pro/source-sans-pro.css');
+@reference './tailwind.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 $childsafeGreen: #00bc70;
 $childsafeBlue: #00b1e1;

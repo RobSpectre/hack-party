@@ -271,21 +271,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Diplomata+SC&family=Amarante&family=Press+Start+2P&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .bossfight {
   font-family: 'Amarante', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Diplomata SC', cursive !important;
-  @apply mt-72 text-9xl skew-y-12 text-green #{!important};
+  @apply mt-72! text-9xl! skew-y-12! text-green!;
 }
 
 html {

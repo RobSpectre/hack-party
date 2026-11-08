@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@reference '../../assets/styles/tailwind.css';
 .passed {
   @apply bg-stone-500 text-white;
 }

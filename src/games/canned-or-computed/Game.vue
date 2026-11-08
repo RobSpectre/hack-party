@@ -234,21 +234,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Press+Start+2P&family=Silkscreen&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Silkscreen', cursive !important;
-  @apply mt-72 text-9xl text-black #{!important};
+  @apply mt-72! text-9xl! text-black!;
 }
 
 .bossfight {
   font-family: 'Coiny', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 html {

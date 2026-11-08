@@ -10,8 +10,8 @@ GameSlide
           span.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase {{ question }}
           .my-4.text-center
             form(@submit.prevent='submitGuess')
-              input.shadow.appearance-none.border.rounded.py-3.px-4.text-gray-700.text-xl.leading-tight(
-                class='w-full focus:outline-none focus:shadow-outline'
+              input.shadow-sm.appearance-none.border.rounded-sm.py-3.px-4.text-gray-700.text-xl.leading-tight(
+                class='w-full focus:outline-hidden focus:shadow-outline'
                 type='text'
                 :placeholder='placeholder'
                 v-model.trim='currentGuess'
@@ -38,10 +38,10 @@ GameSlide
       .flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.uppercase.leading-7.font-semibold.text-white {{ currentPlayer }}
   .mx-auto.align-middle(v-if='complete == true && winners.length <= 0 && losers.length <= 0')
-    span.inline-flex.rounded-md.shadow-sm
+    span.inline-flex.rounded-md.shadow-xs
       button.inline-flex.items-center.px-6.py-3.border.border-transparent.text-base.leading-6.font-medium.rounded-md.text-white.uppercase.bg-slate-400.transition.ease-in-out.duration-150.mt-12(
       type='button'
-      class='hover:bg-slate-700 focus:outline-none focus:border-slate-700 active:bg-slate-700'
+      class='hover:bg-slate-700 focus:outline-hidden focus:border-slate-700 active:bg-slate-700'
       @click='findWinners()'
       accesskey='z')
         | {{ revealButtonText }}
@@ -328,11 +328,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../assets/styles/tailwind.css';
 .actionButton {
-  @apply px-4 py-2 bg-blue text-white font-bold rounded transition-all duration-200;
+  @apply px-4 py-2 bg-blue text-white font-bold rounded-sm transition-all duration-200;
 
   &:hover:not(:disabled) {
-    @apply bg-opacity-90;
+    @apply bg-blue/90;
   }
 
   &:disabled {
