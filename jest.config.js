@@ -5,7 +5,8 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest'
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!node-fetch)/', //  **CRITICAL:  Allow node-fetch to be transformed**
+    // uuid ships ESM only, so let babel-jest compile it
+    '/node_modules/(?!uuid/)'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -13,7 +14,6 @@ module.exports = {
   },
   testEnvironment: 'jsdom',
   setupFiles: [
-    './tests/setupTests.js',
     'fake-indexeddb/auto'
   ],
   setupFilesAfterEnv: [
