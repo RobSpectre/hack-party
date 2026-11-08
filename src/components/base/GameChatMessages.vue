@@ -4,12 +4,15 @@ GameSlide
   GameContent
     template(v-slot:content)
       .h-screen.flex.items-center.justify-center(class='w-4/6')
-        ChatWindow(
+        vue-advanced-chat(
+          ref='chat'
           :current-user-id='currentUser'
-          :rooms='processedRooms'
-          :messages='processedMessages'
-          :rooms-loaded='true'
-          :messages-loaded='true'
+          :rooms='JSON.stringify(processedRooms)'
+          :messages='JSON.stringify(processedMessages)'
+          :styles='JSON.stringify(chatStyles)'
+          rooms-loaded='true'
+          :messages-loaded='String(messagesLoaded)'
+          @fetch-messages='onFetchMessages'
           height='1200px'
         )
 </template>
@@ -18,16 +21,34 @@ GameSlide
 import { mapGetters } from 'pinia'
 import { useGameStore } from '@/store'
 
-import ChatWindow from 'vue-advanced-chat'
+import { register } from 'vue-advanced-chat'
 
 import GameSlide from '@/components/base/GameSlide.vue'
 import GameContent from '@/components/base/GameContent.vue'
 import PlayersSidebar from '@/components/Players/PlayersSidebar.vue'
 
+// vue-advanced-chat 2.x is a web component, so register the tag once.
+register()
+
+const colors = {
+  green: '#00bc70',
+  blue: '#00b1e1',
+  white: '#ffffff',
+  darkgray: '#5b6670'
+}
+
+// The chat renders inside a shadow root, so page CSS can't size its text.
+// This sheet is added to the shadow root after mount instead.
+const chatTextStyles = `
+  .vac-message-wrapper .vac-format-message-wrapper { font-size: 1.5rem; line-height: 2rem; text-align: center; }
+  .vac-room-header .vac-room-name { font-size: 1.5rem; line-height: 2rem; }
+  .vac-room-container .vac-room-name { font-size: 1.25rem; line-height: 1.75rem; padding: 0.25rem 0; }
+  .vac-room-item { background-color: ${colors.darkgray}; }
+`
+
 export default {
   name: 'GameChatMessages',
   components: {
-    ChatWindow,
     GameSlide,
     GameContent,
     PlayersSidebar
@@ -38,6 +59,21 @@ export default {
     rooms: {
       default: () => [],
       type: Array
+    }
+  },
+  data () {
+    return {
+      messagesLoaded: false,
+      chatStyles: {
+        general: { color: colors.green },
+        sidemenu: { backgroundActive: colors.blue },
+        room: { colorUsername: colors.white },
+        message: {
+          background: colors.green,
+          backgroundMe: colors.blue,
+          color: colors.white
+        }
+      }
     }
   },
   computed: {
@@ -81,35 +117,25 @@ export default {
 
       return rooms
     }
+  },
+  methods: {
+    // 2.x shows a spinner when a room opens until messages-loaded turns
+    // true. All messages are already here, so flip it on each fetch.
+    onFetchMessages () {
+      this.messagesLoaded = false
+      this.$nextTick(() => {
+        this.messagesLoaded = true
+      })
+    }
+  },
+  mounted () {
+    const shadow = this.$refs.chat && this.$refs.chat.shadowRoot
+
+    if (shadow) {
+      const style = document.createElement('style')
+      style.textContent = chatTextStyles
+      shadow.appendChild(style)
+    }
   }
 }
 </script>
-
-<style lang='scss'>
-@import url('/node_modules/vue-advanced-chat/dist/vue-advanced-chat.css');
-
-.vac-chat-container {
-  --chat-message-bg-color: theme('colors.green');
-  --chat-message-color: theme('colors.white');
-  --chat-message-bg-color-me: theme('colors.blue');
-  --chat-color: theme('colors.green');
-  --chat-sidemenu-bg-color-active: theme('colors.blue');
-  --chat-room-color-username: theme('colors.white');
-}
-
-.vac-message-wrapper span {
-  @apply text-2xl text-left;
-}
-
-.vac-room-header .vac-room-name {
-  @apply text-2xl;
-}
-
-.vac-room-container .vac-room-name {
-  @apply text-xl py-1;
-}
-
-.vac-room-item {
-  @apply bg-darkgray;
-}
-</style>
