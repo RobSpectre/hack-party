@@ -9,11 +9,13 @@ jobs:
       - checkout
       - node/install:
           install-yarn: false
-          node-version: '20.11'
+          node-version: '26.13'
       - node/install-packages:
           cache-path: ~/hack-party/node_modules
-          override-ci-command: npm install --legacy-peer-deps
+          override-ci-command: npm ci
+      - run: npm run lint
       - run: npm run test
+      - run: npm run build
       - codecov/upload
 workflows:
   node-tests:

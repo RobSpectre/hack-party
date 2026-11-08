@@ -6,8 +6,11 @@ Quarantine friendly party games where everyone is welcome and anyone can play.
 
 
 ## Project setup
+
+Requires Node 26 (see `.nvmrc`; run `nvm use` if you use nvm).
+
 ```
-npm install
+npm ci
 ```
 
 ### Compiles and hot-reloads for development
