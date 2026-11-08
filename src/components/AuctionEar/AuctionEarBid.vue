@@ -7,8 +7,8 @@
       span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
         | {{ prompt }}
       .my-4.text-center
-        input.shadow.appearance-none.border.rounded.py-2.px-3.text-gray-700.leading-tight(
-          class='w-1/3 focus:outline-none focus:shadow-outline' type='text'
+        input.shadow-sm.appearance-none.border.rounded-sm.py-2.px-3.text-gray-700.leading-tight(
+          class='w-1/3 focus:outline-hidden focus:shadow-outline' type='text'
           :placeholder='placeholderInput'
           v-model='currentInput'
           v-on:keydown.enter='emitInput(currentPlayer, currentInput)')

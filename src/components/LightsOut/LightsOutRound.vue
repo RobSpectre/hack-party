@@ -57,7 +57,7 @@ GameContentWithSidebar(:players='players')
       .w-full.max-w-2xl
         .bg-white.rounded-lg.shadow-lg.p-6
           .space-y-3
-            .flex.items-center.p-3.rounded(
+            .flex.items-center.p-3.rounded-sm(
               v-for='(result, index) in sortedResults'
               :key='result.playerName'
               :class='getResultClass(index)'
@@ -353,6 +353,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../assets/styles/tailwind.css';
 .light-column {
   display: flex;
   flex-direction: column;

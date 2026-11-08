@@ -10,7 +10,7 @@ GameSlide
           span.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
             | How much is your wager?
           .my-4.text-center
-            input.shadow.appearance-none.border.rounded.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-none focus:shadow-outline' type='text' placeholder='Wager' v-model='wager' v-on:keydown.enter='addWager(currentPlayer, wager)')
+            input.shadow-sm.appearance-none.border.rounded-sm.py-2.px-3.text-gray-700.leading-tight(class='w-1/3 focus:outline-hidden focus:shadow-outline' type='text' placeholder='Wager' v-model='wager' v-on:keydown.enter='addWager(currentPlayer, wager)')
       .flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
@@ -120,7 +120,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@reference '../../assets/styles/tailwind.css';
 .actionButton {
-  @apply inline-flex justify-center px-6 py-3 border border-transparent leading-6 font-medium rounded-md text-white text-2xl uppercase bg-darkgray transition ease-in-out duration-150 my-2 hover:bg-slate-300 focus:outline-none focus:border-slate-300 active:bg-slate-300;
+  @apply inline-flex justify-center px-6 py-3 border border-transparent leading-6 font-medium rounded-md text-white text-2xl uppercase bg-darkgray transition ease-in-out duration-150 my-2 hover:bg-slate-300 focus:outline-hidden focus:border-slate-300 active:bg-slate-300;
 }
 </style>

@@ -373,11 +373,12 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 .title {
   font-family: 'Luckiest Guy', cursive !important;
-  @apply mt-36 skew-x-6 skew-y-12 text-9xl text-blue tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-36! skew-x-6! skew-y-12! text-9xl! text-blue! tracking-tight! text-shadow! shadow-black!;
 }
 
 html {

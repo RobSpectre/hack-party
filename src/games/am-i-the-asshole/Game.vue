@@ -379,20 +379,21 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&df&family=Climate+Crisis&family=Lobster&display=swap');
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Climate Crisis', cursive !important;
-  @apply mt-32 text-9xl text-white #{!important};
+  @apply mt-32! text-9xl! text-white!;
 }
 
 .lobster {
   font-family: 'Lobster', cursive;
-  @apply text-9xl text-white #{!important};
+  @apply text-9xl! text-white!;
 }
 
 html {

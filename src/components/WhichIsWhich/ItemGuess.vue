@@ -19,10 +19,10 @@ GameSlide
         span.text-2xl.uppercase.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
   .mx-auto.align-middle(v-if='complete == true && winners.length <= 0 && losers.length <= 0')
-    span.inline-flex.rounded-md.shadow-sm
+    span.inline-flex.rounded-md.shadow-xs
       button.inline-flex.items-center.px-6.py-3.border.border-transparent.text-base.leading-6.font-medium.rounded-md.text-white.uppercase.bg-slate-400.transition.ease-in-out.duration-150.mt-12(
       type='button'
-      class='hover:bg-slate-700 focus:outline-none focus:border-slate-700 active:bg-slate-700'
+      class='hover:bg-slate-700 focus:outline-hidden focus:border-slate-700 active:bg-slate-700'
       @click='findWinners()'
       accesskey='z')
         | Which is Which?
@@ -179,8 +179,9 @@ export default {
 </script>
 
 <style lang="scss">
+@reference '../../assets/styles/tailwind.css';
 .actionButton {
-  @apply inline-flex justify-center px-6 py-3 border border-transparent leading-6 font-medium rounded-md text-white text-2xl uppercase bg-darkgray transition ease-in-out duration-150 my-2 hover:bg-slate-300 focus:outline-none focus:border-slate-300 active:bg-slate-300;
+  @apply inline-flex justify-center px-6 py-3 border border-transparent leading-6 font-medium rounded-md text-white text-2xl uppercase bg-darkgray transition ease-in-out duration-150 my-2 hover:bg-slate-300 focus:outline-hidden focus:border-slate-300 active:bg-slate-300;
 }
 
 .reveal img {

@@ -431,21 +431,22 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Monoton&family=Chewy&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Chewy', cursive !important;
-  @apply mt-72 text-9xl text-white tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-72! text-9xl! text-white! tracking-tight! text-shadow! shadow-black!;
 }
 
 .bossfight {
   font-family: 'Monoton', cursive !important;
-  @apply mt-72 text-9xl text-rose-500 tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-72! text-9xl! text-rose-500! tracking-tight! text-shadow! shadow-black!;
 }
 
 html {

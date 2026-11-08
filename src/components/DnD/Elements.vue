@@ -1,15 +1,15 @@
 <template lang="pug">
-.elements-container.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+.elements-container.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20(class='bg-gray-900/90')
   h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold.border-b.border-cyan-900.mb-2.pb-1 Elements
   .flex.flex-col.gap-1.flex-1.overflow-y-auto
     slot
 
   // Lightbox
-  .fixed.inset-0.z-50.flex.items-center.justify-center.bg-black.bg-opacity-75(
+  .fixed.inset-0.z-50.flex.items-center.justify-center(class='bg-black/75'
     v-if="activeElement"
     @click.self="close"
   )
-    .bg-gray-800.p-6.rounded.max-w-4xl.w-full.max-h-screen.overflow-y-auto.text-white
+    .bg-gray-800.p-6.rounded-sm.max-w-4xl.w-full.max-h-screen.overflow-y-auto.text-white
       .flex.justify-between.items-center.mb-4
         h2.text-2xl.font-bold {{ activeElement.label }}
         button.text-gray-400.hover_text-white.text-2xl(@click="close") ✕
@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style>
+@reference '../../assets/styles/tailwind.css';
 .markdown-body {
   color: #e5e7eb;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

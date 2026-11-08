@@ -1,8 +1,8 @@
 <template lang="pug">
-.mobs-tracker.bg-gray-900.bg-opacity-90.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20
+.mobs-tracker.p-2.border.border-cyan-900.h-full.flex.flex-col.shadow-lg.shadow-cyan-900_20(class='bg-gray-900/90')
   .flex.justify-between.items-center.mb-2.border-b.border-cyan-900.pb-1
     h3.text-cyan-400.uppercase.tracking-widest.text-xs.font-bold Mobs
-    button.border.border-purple-500.text-purple-300.hover_bg-purple-900_50.text-xs.font-bold.px-2.py-0_5.rounded-sm(
+    button.border.border-purple-500.text-purple-300.hover_bg-purple-900_50.text-xs.font-bold.px-2.py-0_5.rounded-xs(
       @click="rollAllInitiative"
     ) Roll Init
   
@@ -10,39 +10,39 @@
   .mb-2.grid.grid-cols-2.gap-1
     .col-span-2
       label.block.text-xs.font-bold.mb-0_5.text-cyan-700 Name
-      input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
+      input.bg-black.border.border-gray-700.p-1.rounded-xs.text-cyan-300.text-xs.w-full.placeholder-gray-800(
         v-model="newMob.name"
         placeholder="Name"
       )
     .col-span-2.grid.grid-cols-3.gap-1
       div
         label.block.text-xs.font-bold.mb-0_5.text-cyan-700 AC
-        input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
+        input.bg-black.border.border-gray-700.p-1.rounded-xs.text-cyan-300.text-xs.w-full.placeholder-gray-800(
           type="number"
           v-model.number="newMob.ac"
           placeholder="AC"
         )
       div
         label.block.text-xs.font-bold.mb-0_5.text-cyan-700 HP
-        input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
+        input.bg-black.border.border-gray-700.p-1.rounded-xs.text-cyan-300.text-xs.w-full.placeholder-gray-800(
           type="number"
           v-model.number="newMob.hp"
           placeholder="HP"
         )
       div
         label.block.text-xs.font-bold.mb-0_5.text-cyan-700 Init
-        input.bg-black.border.border-gray-700.p-1.rounded-sm.text-cyan-300.text-xs.w-full.placeholder-gray-800(
+        input.bg-black.border.border-gray-700.p-1.rounded-xs.text-cyan-300.text-xs.w-full.placeholder-gray-800(
           type="number"
           v-model.number="newMob.initiative"
           placeholder="Init"
         )
-    button.border.border-red-600.text-red-400.hover_bg-red-900_50.text-xs.font-bold.p-1.rounded-sm.col-span-2.mt-1(
+    button.border.border-red-600.text-red-400.hover_bg-red-900_50.text-xs.font-bold.p-1.rounded-xs.col-span-2.mt-1(
       @click="addMob"
     ) Add Mob
 
   // Mob List
   ul.flex-1.overflow-y-auto.space-y-1
-    li.flex.justify-between.items-center.p-1.bg-black.border.border-gray-800.rounded-sm(
+    li.flex.justify-between.items-center.p-1.bg-black.border.border-gray-800.rounded-xs(
       v-for="m in mobs"
       :key="m.id"
     )
@@ -51,7 +51,7 @@
           v-if="editingId !== m.id || editingField !== 'name'"
           @click="startEdit(m, 'name')"
         ) {{ m.name }}
-        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-sm.w-32.border.border-gray-700(
+        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-xs.w-32.border.border-gray-700(
           v-else-if="editingId === m.id && editingField === 'name'"
           v-model="editValue"
           @blur="saveEdit"
@@ -66,7 +66,7 @@
           @click="startEdit(m, 'hp')"
           :class="getHpClass(m)"
         ) HP: {{ m.hp }}/{{ m.maxHp }}
-        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-sm.w-12.border.border-gray-700(
+        input.bg-gray-900.text-white.text-xs.p-0_5.rounded-xs.w-12.border.border-gray-700(
           v-else-if="editingId === m.id && editingField === 'hp'"
           v-model="editValue"
           @blur="saveEdit"

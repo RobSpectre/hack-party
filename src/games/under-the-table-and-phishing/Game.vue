@@ -340,16 +340,17 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee+Spice&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Bungee Spice', cursive !important;
-  @apply mt-32 text-9xl text-white #{!important};
+  @apply mt-32! text-9xl! text-white!;
 }
 html {
   font-size: 36px;

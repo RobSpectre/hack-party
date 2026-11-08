@@ -1,12 +1,12 @@
 <template lang="pug">
-.bg-white.shadow.overflow-hidden.mt-5.mx-20(class='sm:rounded-md' v-if='getPlayersByScore.length > 0')
+.bg-white.shadow-sm.overflow-hidden.mt-5.mx-20(class='sm:rounded-md' v-if='getPlayersByScore.length > 0')
   .bg-green.px-2.py-2.border-b.border-gray-200(class='sm:px-6')
     .-ml-2.-mt-1.flex.items-center.justify-between.flex-wrap(class='sm:flex-no-wrap')
       .ml-2.mt-1
         span.reset-this.text-lg.leading-6.font-semibold.text-white
           | Players
   div(v-for='player in getPlayersByScore')
-    span.transition.duration-150.ease-in-out(class='hover:bg-gray-50 focus:outline-none focus:bg-gray-50')
+    span.transition.duration-150.ease-in-out(class='hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50')
       .bg-white
         .px-6.py-6.flex.items-center
           .flex-1(class='sm:flex sm:items-center sm:justify-between')

@@ -309,6 +309,7 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import
 url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Mono&family=Fugaz+One&family=Henny+Penny&display=swap');
 
@@ -324,17 +325,17 @@ button .emoji,
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white uppercase tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-72! text-9xl! text-white! uppercase! tracking-tight! text-shadow! shadow-black!;
 }
 
 .monotitle {
   font-family: 'IBM Plex Mono', monospace !important;
-  @apply mt-72 text-9xl text-white uppercase tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-72! text-9xl! text-white! uppercase! tracking-tight! text-shadow! shadow-black!;
 }
 
 .title {
   font-family: 'Henny Penny', cursive !important;
-  @apply mt-72 text-9xl text-white uppercase tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-72! text-9xl! text-white! uppercase! tracking-tight! text-shadow! shadow-black!;
 }
 
 html {

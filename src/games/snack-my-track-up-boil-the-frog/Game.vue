@@ -419,22 +419,23 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import
 url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Slackey&family=Unbounded:wght@900&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-72 text-9xl text-white #{!important};
+  @apply mt-72! text-9xl! text-white!;
 }
 
 .title {
   font-family: 'Unbounded', cursive !important;
-  @apply mt-72 text-9xl skew-y-12 text-white normal-case #{!important};
+  @apply mt-72! text-9xl! skew-y-12! text-white! normal-case!;
 }
 
 .loser {
   font-family: 'Slackey', cursive !important;
-  @apply mt-72 text-9xl skew-y-12 text-white normal-case #{!important};
+  @apply mt-72! text-9xl! skew-y-12! text-white! normal-case!;
 }
 
 html {

@@ -396,16 +396,17 @@ export default {
 </script>
 
 <style lang='scss'>
+@reference '../../assets/styles/tailwind.css';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&i&family=Caprasimo&display=swap');
 
 .nintendo {
   font-family: 'Press Start 2P', cursive !important;
-  @apply mt-36 text-9xl text-white #{!important};
+  @apply mt-36! text-9xl! text-white!;
 }
 
 .bossfight {
   font-family: 'Caprasimo', cursive !important;
-  @apply mt-12 skew-y-12 text-9xl text-white tracking-tight text-shadow shadow-black #{!important};
+  @apply mt-12! skew-y-12! text-9xl! text-white! tracking-tight! text-shadow! shadow-black!;
 }
 
 html {

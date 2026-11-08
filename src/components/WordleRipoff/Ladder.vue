@@ -19,6 +19,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@reference '../../assets/styles/tailwind.css';
 .ladder {
   display: grid;
   grid-template-rows: repeat(6, 1fr);

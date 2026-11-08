@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@reference '../../assets/styles/tailwind.css';
 .dark {
   @apply text-slate-500 hover:text-slate-100;
 }

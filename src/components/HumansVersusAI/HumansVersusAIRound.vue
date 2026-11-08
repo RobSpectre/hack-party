@@ -10,7 +10,7 @@ GameContentWithSidebar(:players='players')
       // Use flex container to place input and button side-by-side
       .w-full.flex.items-center.mb-8(class="max-w-2xl")
         // Input takes remaining space
-        input.flex-grow.appearance-none.outline-none.form-input.block.w-full.border.border-gray-300.rounded-l-md.rounded-r-none.px-4.py-2.text-gray-900.placeholder-gray-500.transition.ease-in-out.duration-150(
+        input.flex-grow.appearance-none.outline-hidden.form-input.block.w-full.border.border-gray-300.rounded-l-md.rounded-r-none.px-4.py-2.text-gray-900.placeholder-gray-500.transition.ease-in-out.duration-150(
           class='focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
           placeholder='Input human answer'
           v-model='answerInput'
@@ -18,8 +18,8 @@ GameContentWithSidebar(:players='players')
           aria-label="Your Answer"
         )
         // Button attached to the right
-        button.inline-flex.items-center.px-4.py-2.border.border-l-0.border-indigo-600.bg-indigo-600.text-white.rounded-r-md.text-sm.font-medium.shadow-sm(
-          class='hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap'
+        button.inline-flex.items-center.px-4.py-2.border.border-l-0.border-indigo-600.bg-indigo-600.text-white.rounded-r-md.text-sm.font-medium.shadow-xs(
+          class='hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 whitespace-nowrap'
           v-on:click='answerQuestion(answerInput)'
           type="button"
         )
@@ -31,7 +31,7 @@ GameContentWithSidebar(:players='players')
       .mx-auto.mt-6(class="w-3/4")
         .flex.flex-wrap.items-center.justify-center.gap-4(class="sm:gap-6")
           .flex.flex-col.items-center(v-for='model in models' :key='model.model_key')
-            .w-64.h-64.bg-cover.bg-center.shadow-sm(
+            .w-64.h-64.bg-cover.bg-center.shadow-xs(
               :style="{ backgroundImage: 'url(' + model.model_icon + ')' }"
               :title="model.model_key"
               role="img"
