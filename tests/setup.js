@@ -33,3 +33,7 @@ window.AudioContext = window.AudioContext || function () {
     close: vi.fn()
   }
 }
+
+// Most specs check the Classic markup and copy; Uplink specs switch themes themselves.
+import { applyTheme } from '@/theme'
+applyTheme('classic')

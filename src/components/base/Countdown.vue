@@ -1,8 +1,8 @@
 <template lang='pug'>
-.flex.flex-none.text-center.items-center.justify-center
+.flex.flex-none.text-center.items-center.justify-center(:class='{ "hp-hurry": hurriedUp }')
   CounterBox(
     :counter='timeRemaining'
-    :label='label'
+    :label='displayLabel'
   )
     template(v-slot:footer)
       .flex.flex-row.bg-darkgray.rounded-b-lg
@@ -32,6 +32,7 @@
 import { PlayIcon, PauseIcon, ArrowPathIcon } from '@heroicons/vue/24/solid'
 
 import CounterBox from '@/components/base/CounterBox.vue'
+import themed from '@/theme/mixin'
 
 /* eslint-disable vue/multi-word-component-names */
 export default {
@@ -42,6 +43,7 @@ export default {
     PauseIcon,
     ArrowPathIcon
   },
+  mixins: [themed],
   props: {
     timer: {
       type: Number,
@@ -63,6 +65,11 @@ export default {
       playing: false,
       countdownInterval: null,
       hurriedUp: false
+    }
+  },
+  computed: {
+    displayLabel () {
+      return this.uplink && this.label === 'Timer' ? 'T-minus' : this.label
     }
   },
   methods: {

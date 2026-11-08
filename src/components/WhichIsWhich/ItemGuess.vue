@@ -2,12 +2,12 @@
 GameSlide
   PlayersSidebar(:players='players')
   .relative.mt-12.mx-auto(v-if='!complete')
-    .flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
+    .hp-card.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
       .flex-shrink-0
         img(:class='headerImageClass' :src='headerImage' alt='')
-      .flex-1.bg-white.p-6.flex.flex-col.justify-between
+      .hp-card-body.flex-1.bg-white.p-6.flex.flex-col.justify-between
         .flex-1
-          span.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase
+          span.hp-card-question.block.text-lg.leading-7.font-semibold.text-gray-900.uppercase
           | {{ question }}
           .my-2.text-center.flex.flex-col
             button.actionButton(
@@ -15,7 +15,7 @@ GameSlide
               @click='guessItem(currentPlayer, index)'
               :class='{ fragment: fragmentItemReveal }'
               ) {{ item.name }} {{ item.emoji }}
-      .flex-1.bg-green.p-6.flex.flex-col.justify-between
+      .hp-card-foot.flex-1.bg-green.p-6.flex.flex-col.justify-between
         span.text-2xl.uppercase.leading-7.font-semibold.text-white
           | {{ currentPlayer }}
   .mx-auto.align-middle(v-if='complete == true && winners.length <= 0 && losers.length <= 0')

@@ -4,8 +4,9 @@ VideoSlide(
   :background='background'
 )
   .h-full.flex.items-center.justify-center
+    TitleBoot(v-if='uplink && heading === defaultLogo')
     img(
-      v-if='headingType === "image"'
+      v-else-if='headingType === "image"'
       class='titleLogo'
       :src='heading'
     )
@@ -23,13 +24,19 @@ BackgroundImageSlide(v-else)
 <script>
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
+import TitleBoot from '@/components/base/TitleBoot.vue'
+import themed from '@/theme/mixin'
+
+const defaultLogo = '/images/hackparty_logo.png'
 
 export default {
   name: 'GameTitle',
   components: {
     VideoSlide,
-    BackgroundImageSlide
+    BackgroundImageSlide,
+    TitleBoot
   },
+  mixins: [themed],
   props: {
     background: {
       type: String,
@@ -41,11 +48,16 @@ export default {
     },
     heading: {
       type: String,
-      default: '/images/hackparty_logo.png'
+      default: defaultLogo
     },
     headingType: {
       type: String,
       default: 'image'
+    }
+  },
+  data () {
+    return {
+      defaultLogo
     }
   }
 }

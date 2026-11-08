@@ -1,5 +1,12 @@
 <template lang='pug'>
-.fixed.bottom-0.inset-x-0.px-4.pb-6.transition.ease-in-out.duration-700(class='sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center')
+Verdict(
+  v-if='uplink'
+  kind='denied'
+  :names='[]'
+  :answer='answerLine'
+  :headerImage='headerImage'
+)
+.fixed.bottom-0.inset-x-0.px-4.pb-6.transition.ease-in-out.duration-700(v-else class='sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center')
   .fixed.inset-0.transition-opacity
     .absolute.inset-0.bg-gray-500.opacity-75
   transition(appear @before-enter='beforeEnter' @enter='enter' :css='false')
@@ -20,8 +27,15 @@
 <script>
 import gsap from 'gsap'
 
+import Verdict from '@/components/base/Verdict.vue'
+import themed from '@/theme/mixin'
+
 export default {
   name: 'LoserCard',
+  components: {
+    Verdict
+  },
+  mixins: [themed],
   props: {
     losers: {
       type: Array,
@@ -46,6 +60,11 @@ export default {
     constrainHeaderImage: {
       type: Boolean,
       default: true
+    }
+  },
+  computed: {
+    answerLine () {
+      return this.answer !== '' ? this.answer : `${this.answerName} is ${this.answerValue}`
     }
   },
   methods: {

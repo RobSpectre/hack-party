@@ -43,6 +43,14 @@ use lives in `public/images`, `public/sounds` and `public/video`.
 The help-computer games talk to the HelpComputer backend at `ws://localhost:8000/ws`. To use
 a backend somewhere else, set `VITE_HELP_COMPUTER_WS` in `.env.local`.
 
+## Themes
+
+hack.party has two looks. **Uplink**, the default, is a game show broadcast from the year
+2387. **Classic** is the original look, kept exactly as the games were played. Press
+`Shift+T` to switch, use the switch on the home page, or add `?theme=classic` to a game's
+URL. A game can pick its own theme with `theme: 'classic'` in `src/games/index.js`.
+`DESIGN.md` explains the tokens and how to add a theme.
+
 ### Compiles and hot-reloads for development
 ```
 npm run dev 
