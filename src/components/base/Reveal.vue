@@ -38,6 +38,10 @@ export default {
     this.waitToRenderReveal()
   },
   beforeUnmount () {
+    // A deck that never got a size is still polling for one; stop it, so no
+    // timer outlives the page (or a test's window).
+    clearTimeout(this.renderTimer)
+    window.cancelAnimationFrame(this.renderFrame)
     this.presentation = null
     document.documentElement.classList.remove('hp-deck')
 
@@ -53,8 +57,12 @@ export default {
       }
 
       if (!(this.presentation.parentElement.clientWidth > 0)) {
-        setTimeout(() => window.requestAnimationFrame(this.waitToRenderReveal),
-          500)
+        this.renderTimer = setTimeout(() => {
+          // A test's window can be gone before a deck that was never unmounted.
+          if (typeof window !== 'undefined') {
+            this.renderFrame = window.requestAnimationFrame(this.waitToRenderReveal)
+          }
+        }, 500)
       } else {
         this.renderReveal()
       }
