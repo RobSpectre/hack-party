@@ -11,7 +11,8 @@ const routes = [
   ...games.map(game => ({
     path: `/${game.slug}`,
     name: game.slug,
-    component: game.component
+    component: game.component,
+    meta: { theme: game.theme }
   })),
   {
     path: '/:pathMatch(.*)*',

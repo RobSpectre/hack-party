@@ -9,31 +9,27 @@
 @reference './tailwind.css';
 
 
-$childsafeGreen: #00bc70;
-$childsafeBlue: #00b1e1;
-$childsafeOrange: #f36c3f;
-$childsafeWhite: #fffff9;
-$childsafeDarkGray: #5b6670;
-$childsafeGray: #cfd2d3;
-$childsafeBlack: #232323;
+// Every value here comes from the active theme's --hp-* tokens
+// (src/assets/styles/themes/). Classic holds the original values.
+$childsafeGreen: var(--hp-green);
+$childsafeBlue: var(--hp-blue);
+$childsafeOrange: var(--hp-orange);
+$childsafeWhite: var(--hp-white);
+$childsafeDarkGray: var(--hp-darkgray);
+$childsafeGray: var(--hp-gray);
+$childsafeBlack: var(--hp-black);
 
-
-// Override theme settings (see ../template/settings.scss)
 $backgroundColor: $childsafeWhite;
 
-$mainColor: $childsafeBlack;
-$headingColor: $childsafeBlack;
+$mainColor: var(--hp-text);
+$headingColor: var(--hp-heading);
 
 $mainFontSize: 38px;
-$mainFont: 'Source Sans Pro', Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-$headingFont: 'Source Sans Pro', Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-$headingTextShadow: none;
-$headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
-$headingFontWeight: 600;
-$linkColor: $childsafeBlue;
-$linkColorHover: color.scale($linkColor, $lightness: 15%);  // Use color.scale
-$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%); // Use color.scale
+$mainFont: var(--hp-font-body);
+$headingFont: var(--hp-font-display);
+$headingLetterSpacing: var(--hp-heading-tracking);
+$headingTextTransform: var(--hp-heading-transform);
+$headingFontWeight: var(--hp-heading-weight);
 $blockMargin: 0;
 $headingMargin: 0;
 
@@ -85,7 +81,7 @@ $heading4Size: 1.0em;
 }
 
 .reveal .progress {
-    color: $childsafeBlue;
+    color: var(--hp-progress);
 }
 
 // Apply heading sizes from variables
@@ -135,8 +131,8 @@ h4 {
 
 // Special styling for h1 with background
 .reveal h1 {
-    background: $childsafeGreen;
-    color: #fff;
+    background: var(--hp-label-bg);
+    color: var(--hp-label-text);
     @apply absolute inset-x-0 bottom-0;
     margin-bottom: 0;
 }

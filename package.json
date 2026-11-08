@@ -18,6 +18,9 @@
     "npm": ">=11"
   },
   "dependencies": {
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/unbounded": "^5.3.0",
     "@heroicons/vue": "^2.2.0",
     "axios": "^1.21.0",
     "gsap": "^3.15.1",

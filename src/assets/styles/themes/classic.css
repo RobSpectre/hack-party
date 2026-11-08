@@ -1,0 +1,29 @@
+/*
+  Classic: the look every game was originally played in. These values are the
+  defaults, so a page with no data-theme at all looks exactly like Classic.
+  Keep them pixel-identical to the pre-theming app.
+*/
+:root,
+:root[data-theme='classic'] {
+  --hp-green: #00bc70;
+  --hp-blue: #00b1e1;
+  --hp-orange: #f36c3f;
+  --hp-darkgray: #5b6670;
+  --hp-white: #fffff9;
+  --hp-gray: #cfd2d3;
+  --hp-black: #232323;
+
+  --hp-text: var(--hp-black);
+  --hp-heading: var(--hp-black);
+  --hp-link: var(--hp-blue);
+  --hp-progress: var(--hp-blue);
+
+  --hp-font-body: 'Source Sans Pro', Helvetica, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --hp-font-display: var(--hp-font-body);
+  --hp-heading-weight: 600;
+  --hp-heading-transform: uppercase;
+  --hp-heading-tracking: normal;
+
+  --hp-label-bg: var(--hp-green);
+  --hp-label-text: #fff;
+}

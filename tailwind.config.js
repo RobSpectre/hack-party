@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: '#00bc70',
-        blue: '#00b1e1',
-        orange: '#f36c3f',
-        darkgray: '#5b6670'
+        green: 'var(--hp-green)',
+        blue: 'var(--hp-blue)',
+        orange: 'var(--hp-orange)',
+        darkgray: 'var(--hp-darkgray)'
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
