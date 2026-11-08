@@ -16,19 +16,13 @@ export default defineConfig({
     template: {
       // Leave /images/... and other public URLs as plain strings. Game media
       // is fetched on demand, so it may not be on disk.
-      transformAssetUrls: { includeAbsolute: false }
+      transformAssetUrls: { includeAbsolute: false },
+      compilerOptions: {
+        // vue-advanced-chat 2.x ships as web components.
+        isCustomElement: tag => tag === 'vue-advanced-chat' || tag === 'emoji-picker'
+      }
     }
   }), gameMedia()],
-  // The vendored vue-advanced-chat build is CommonJS outside node_modules,
-  // so tell Vite to convert it like a regular dependency.
-  optimizeDeps: {
-    include: ['vue-advanced-chat']
-  },
-  build: {
-    commonjsOptions: {
-      include: [/node_modules/, /vendor\/vue-advanced-chat/]
-    }
-  },
   css: {
     preprocessorOptions: {
       scss: {

@@ -24,3 +24,12 @@ window.matchMedia = window.matchMedia || vi.fn().mockImplementation(function (qu
     removeListener: vi.fn()
   }
 })
+
+// jsdom has no Web Audio; vue-advanced-chat builds an AudioContext on import
+window.AudioContext = window.AudioContext || function () {
+  return {
+    createAnalyser: vi.fn(),
+    createMediaStreamSource: vi.fn(),
+    close: vi.fn()
+  }
+}

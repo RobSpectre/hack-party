@@ -54,4 +54,22 @@ describe('GameChatMessages', () => {
     const players = await wrapper.vm.players
     expect(players.length).toBe(3)
   })
+
+  it('passes rooms and messages to the chat web component', () => {
+    const chat = wrapper.find('vue-advanced-chat')
+
+    expect(chat.exists()).toBe(true)
+    expect(chat.element.shadowRoot).not.toBeNull()
+
+    const rooms = wrapper.vm.processedRooms
+    expect(rooms.map(room => room.roomName)).toEqual(['Morty', 'Alpha', 'Beta', 'Charlie'])
+    expect(wrapper.vm.processedMessages[1]).toMatchObject({ senderId: 'Morty', content: 'Oh jeez.' })
+  })
+
+  it('adds the text size styles inside the chat shadow root', () => {
+    const shadow = wrapper.find('vue-advanced-chat').element.shadowRoot
+    const styles = Array.from(shadow.querySelectorAll('style')).map(style => style.textContent).join('')
+
+    expect(styles).toContain('.vac-room-header .vac-room-name')
+  })
 })

@@ -35,7 +35,7 @@ GameContentWithSidebar(:dataState='word')
 </template>
 
 <script>
-import { useToast } from 'vue-toastification'
+import { toast } from 'vue3-toastify'
 
 import { mapState, mapActions } from 'pinia'
 
@@ -137,7 +137,7 @@ export default {
       this.word = getWord()
     }
 
-    this.toast = useToast()
+    this.toast = toast
   },
   methods: {
     onKey (key) {
@@ -181,7 +181,7 @@ export default {
         if (!allWords.includes(guess) && guess !== this.word) {
           this.shake()
 
-          this.toast.error('Not in word list', { timeout: 2500 })
+          this.toast.error('Not in word list', { autoClose: 2500 })
 
           return
         }
@@ -268,7 +268,7 @@ export default {
         }
       } else {
         this.shake()
-        this.toast.error('Not enough letters', { timeout: 2500 })
+        this.toast.error('Not enough letters', { autoClose: 2500 })
       }
     },
     pushPlayerToHistory () {
