@@ -1,0 +1,359 @@
+// The host's settings page, one down arrow below any game. It shows on the
+// stream too, so it is sized in 1080p stream pixels on every theme, Classic
+// included. Stage themes color it with their tokens; Classic falls back to
+// its own darkgray and green.
+
+$p: ":root[data-theme] .reveal .hp-settings";
+
+.hp-settings {
+  --su: min(calc(100vw / 1920), calc(100vh / 1080));
+  --s-bg: var(--hp-stage-bg, var(--hp-bg, var(--hp-darkgray)));
+  --s-surface: var(--hp-surface, rgb(255 255 255 / 0.1));
+  --s-input: var(--hp-bg-2, rgb(0 0 0 / 0.22));
+  --s-fg: var(--hp-fg, #fff);
+  --s-muted: var(--hp-muted, var(--hp-gray));
+  --s-line: var(--hp-line, rgb(255 255 255 / 0.25));
+  --s-accent: var(--hp-accent, var(--hp-green));
+  --s-on-accent: var(--hp-on-accent, #fff);
+  --s-alert: var(--hp-alert, var(--hp-orange));
+  --s-radius: var(--hp-radius, calc(12 * var(--su)));
+  --s-radius-control: var(--hp-radius-control, calc(8 * var(--su)));
+  --s-edge: var(--hp-stroke, 0px) solid var(--hp-stroke-color, transparent);
+  --s-ease: var(--hp-ease, cubic-bezier(0.16, 1, 0.3, 1));
+
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: calc(32 * var(--su));
+  padding: calc(48 * var(--su)) calc(72 * var(--su)) calc(56 * var(--su));
+  overflow-y: auto;
+  background: var(--s-bg);
+  color: var(--s-fg);
+  font-family: var(--hp-font-body);
+  font-size: calc(30 * var(--su));
+  line-height: 1.3;
+  text-align: left;
+  text-transform: none;
+  outline: none;
+  animation: hp-settings-in 320ms var(--s-ease) both;
+
+  button {
+    cursor: pointer;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+// One arrow down: the page rises from below the deck.
+@keyframes hp-settings-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(60 * var(--su)));
+  }
+}
+
+.hp-settings-head {
+  display: flex;
+  align-items: center;
+  gap: calc(28 * var(--su));
+}
+
+#{$p} .hp-settings-title,
+.hp-settings-title {
+  margin: 0;
+  font-family: var(--hp-font-display);
+  font-size: calc(72 * var(--su));
+  font-weight: var(--hp-heading-weight, 700);
+  line-height: 1;
+  letter-spacing: var(--hp-heading-tracking, normal);
+  text-transform: var(--hp-heading-transform, none);
+  color: var(--s-fg);
+}
+
+.hp-settings-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0 0 0 auto;
+  color: var(--s-muted);
+  font-size: calc(26 * var(--su));
+
+  kbd {
+    padding: 0.05em 0.4em;
+    border-radius: calc(6 * var(--su));
+    background: var(--s-surface);
+    box-shadow: inset 0 calc(-2 * var(--su)) 0 var(--s-line);
+    font-family: var(--hp-font-data, var(--hp-font-body));
+    color: var(--s-fg);
+  }
+}
+
+.hp-settings-close {
+  display: grid;
+  place-items: center;
+  width: calc(72 * var(--su));
+  height: calc(72 * var(--su));
+  border: var(--s-edge);
+  border-radius: var(--s-radius-control);
+  background: var(--s-surface);
+  color: var(--s-fg);
+  font-size: calc(36 * var(--su));
+
+  &:hover,
+  &:focus-visible {
+    background: var(--s-accent);
+    color: var(--s-on-accent);
+  }
+}
+
+.hp-settings-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: calc(40 * var(--su));
+  align-items: start;
+}
+
+.hp-settings-side {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: calc(40 * var(--su));
+}
+
+.hp-settings-section {
+  padding: calc(32 * var(--su)) calc(36 * var(--su));
+  border: var(--s-edge);
+  border-radius: var(--s-radius);
+  background: var(--s-surface);
+  box-shadow: var(--hp-shadow, none);
+}
+
+#{$p} .hp-settings-label,
+.hp-settings-label {
+  margin: 0 0 calc(20 * var(--su));
+  font-family: var(--hp-font-display);
+  font-size: calc(36 * var(--su));
+  font-weight: var(--hp-heading-weight, 700);
+  line-height: 1.1;
+  letter-spacing: var(--hp-heading-tracking, normal);
+  text-transform: var(--hp-heading-transform, none);
+  color: var(--hp-accent-text, var(--s-fg));
+}
+
+// The add bar is the same prompt as the player board's, at settings size.
+.hp-settings .hp-prompt {
+  margin: 0 0 calc(20 * var(--su));
+
+  input {
+    font-size: calc(30 * var(--su));
+  }
+
+  input::placeholder {
+    color: var(--hp-dim, #9ca3af);
+  }
+
+  button {
+    font-size: calc(26 * var(--su));
+    white-space: nowrap;
+  }
+}
+
+.hp-settings-roster {
+  display: grid;
+  gap: calc(10 * var(--su));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hp-settings-player {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: calc(16 * var(--su));
+}
+
+.hp-settings-player input,
+.hp-settings select {
+  min-width: 0;
+  padding: calc(10 * var(--su)) calc(16 * var(--su));
+  border: var(--s-edge);
+  border-radius: var(--s-radius-control);
+  background: var(--s-input);
+  color: var(--s-fg);
+  font: inherit;
+  box-shadow: inset 0 0 0 1px var(--s-line);
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 calc(3 * var(--su)) var(--s-accent);
+  }
+}
+
+.hp-settings select option {
+  background: var(--hp-surface, #fff);
+  color: var(--hp-fg, #232323);
+}
+
+.hp-settings-name {
+  font-family: var(--hp-font-display) !important;
+  font-size: calc(36 * var(--su)) !important;
+  font-weight: var(--hp-heading-weight, 600) !important;
+}
+
+.hp-settings-score {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--su));
+
+  input {
+    width: 3.2em;
+    text-align: center;
+    font-family: var(--hp-font-data, var(--hp-font-body));
+    font-size: calc(36 * var(--su));
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--hp-data, var(--s-fg));
+    appearance: textfield;
+  }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  button {
+    display: grid;
+    place-items: center;
+    width: calc(52 * var(--su));
+    height: calc(52 * var(--su));
+    border: var(--s-edge);
+    border-radius: var(--s-radius-control);
+    background: var(--hp-surface-2, rgb(255 255 255 / 0.15));
+    color: var(--s-fg);
+    font-size: calc(26 * var(--su));
+    transition: background-color 120ms var(--s-ease), color 120ms var(--s-ease);
+  }
+
+  button:hover,
+  button:focus-visible {
+    background: var(--s-accent);
+    color: var(--s-on-accent);
+  }
+}
+
+.hp-settings-remove {
+  display: grid;
+  place-items: center;
+  width: calc(52 * var(--su));
+  height: calc(52 * var(--su));
+  color: var(--s-muted);
+  font-size: calc(30 * var(--su));
+  transition: color 120ms var(--s-ease);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--s-alert);
+  }
+}
+
+.hp-settings-empty,
+.hp-settings-note {
+  margin: calc(12 * var(--su)) 0 0;
+  color: var(--s-muted);
+  font-size: calc(24 * var(--su));
+}
+
+.hp-settings-game {
+  display: flex;
+  gap: calc(14 * var(--su));
+
+  select {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.hp-settings-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0 calc(26 * var(--su));
+  border: var(--s-edge);
+  border-radius: var(--s-radius-control);
+  background: var(--s-accent);
+  color: var(--s-on-accent);
+  font-family: var(--hp-font-control, var(--hp-font-body));
+  font-weight: 700;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.hp-settings-themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(300 * var(--su)), 1fr));
+  gap: calc(12 * var(--su));
+}
+
+.hp-settings-theme {
+  display: grid;
+  gap: calc(4 * var(--su));
+  padding: calc(16 * var(--su)) calc(20 * var(--su));
+  border: var(--s-edge);
+  border-radius: var(--s-radius-control);
+  background: var(--s-input);
+  color: var(--s-fg);
+  text-align: left;
+  box-shadow: inset 0 0 0 1px var(--s-line);
+  transition: background-color 120ms var(--s-ease), color 120ms var(--s-ease);
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 calc(3 * var(--su)) var(--s-accent);
+  }
+
+  &[aria-checked='true'] {
+    background: var(--s-accent);
+    color: var(--s-on-accent);
+    box-shadow: none;
+  }
+}
+
+.hp-settings-theme-name {
+  font-family: var(--hp-font-display);
+  font-size: calc(32 * var(--su));
+  font-weight: var(--hp-heading-weight, 700);
+  line-height: 1.1;
+}
+
+.hp-settings-theme-desc {
+  font-size: calc(22 * var(--su));
+  line-height: 1.25;
+  opacity: 0.85;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .hp-settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-settings {
+    animation: hp-settings-fade 150ms linear both;
+  }
+}
+
+@keyframes hp-settings-fade {
+  from {
+    opacity: 0;
+  }
+}

@@ -29,6 +29,7 @@ import '@/assets/styles/themes/uplink.scss'
 import '@/assets/styles/themes/brutal.scss'
 import '@/assets/styles/themes/benday.scss'
 import '@/assets/styles/themes/stadium.scss'
+import '@/assets/styles/settings.scss'
 
 import { applyTheme, resolveTheme } from '@/theme'
 

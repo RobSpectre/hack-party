@@ -71,6 +71,15 @@ Every stage theme sets these under `:root[data-theme][data-theme='<id>']`.
 4. Check it as the stream sees it, and check Classic is still identical: screenshot a few
    games with `?theme=classic` before and after, and compare them.
 
+## Settings page
+
+The down arrow during a game raises the host's settings page over the deck
+(`SettingsPanel.vue`, styled in `src/assets/styles/settings.scss`). It shows on the stream,
+so it is sized in stream pixels on every theme, Classic included, and colored by the
+theme's tokens with Classic fallbacks. While it is open the deck's keyboard is off; the up
+arrow or `Esc` hands it back. It never takes the down arrow from a game's own vertical
+slide or from the Konami code.
+
 ## Uplink
 
 Violet ink (#100c24) lit by two soft key lights, never black with one neon accent. Signal
