@@ -7,7 +7,7 @@ GameSlide
       h3.fragment.text-white {{ hint2 }}
       h3.fragment.text-white {{ hint3 }}
     template(v-slot:content)
-      img.fragment(:src='image')
+      img.fragment(v-if='image' :src='image')
     template(v-slot:footer)
       h1.fragment {{ celebrity }}
 </template>

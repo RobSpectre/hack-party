@@ -4,7 +4,7 @@ GameSlide
   .relative.mt-12.mx-auto(v-if='!complete')
     .hp-card.flex.flex-col.mx-32.rounded-lg.shadow-lg.overflow-hidden.text-left
       .flex-shrink-0
-        img.h-48.m-0.w-full.clear-reveal.object-cover(:src='image' alt='')
+        img.h-48.m-0.w-full.clear-reveal.object-cover(v-if='image' :src='image' alt='')
       .hp-card-body.flex-1.bg-white.p-6.flex.flex-col.justify-between
         .flex-1
           span.hp-card-question.block.mt-2.text-xl.leading-7.font-semibold.text-gray-900
@@ -77,6 +77,14 @@ export default {
       type: String,
       default: '$'
     },
+    suffix: {
+      type: String,
+      default: ''
+    },
+    separators: {
+      type: Boolean,
+      default: false
+    },
     question: {
       type: String,
       default: 'How much is this talent on Cameo?'
@@ -112,7 +120,8 @@ export default {
       return this.guessesByPrice.map(player => ({
         ...player,
         name: player.playerName,
-        value: '$' + player.guess
+        // Older games always showed guesses in dollars here; keep that look.
+        value: this.separators || this.suffix ? this.dollarify(player.guess) : '$' + player.guess
       }))
     }
   },
@@ -120,7 +129,7 @@ export default {
     addGuess (playerName, guess) {
       this.guesses.push({
         playerName: playerName,
-        guess: parseInt(guess)
+        guess: this.parseGuess(guess)
       })
 
       this.currentGuess = ''
@@ -190,7 +199,12 @@ export default {
       this.increasePlayerButton()
     },
     dollarify (value) {
-      return this.denomination + value
+      const number = this.separators ? Number(value).toLocaleString('en-US') : value
+      return this.denomination + number + this.suffix
+    },
+    parseGuess (guess) {
+      // Accept "12,345" and "$12,345" as well as "12345".
+      return parseInt(String(guess).replace(/[^\d.-]/g, ''))
     },
     ...mapActions(useGameStore, ['increasePlayerScore',
       'increasePlayerButton',

@@ -11,7 +11,8 @@
     "test": "vitest run --coverage",
     "prepare": "simple-git-hooks",
     "test:watch": "vitest",
-    "media": "node scripts/fetch-media.mjs"
+    "media": "node scripts/fetch-media.mjs",
+    "new-game": "node scripts/new-game.mjs"
   },
   "engines": {
     "node": ">=26",

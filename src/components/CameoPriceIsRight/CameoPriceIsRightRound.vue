@@ -1,8 +1,13 @@
 <template lang='pug'>
 celebrity-intro(:celebrity='celebrity' :hint1='hint1' :hint2='hint2' :hint3='hint3' :image='image')
 slot(name='post-intro')
+game-you-tube(
+  v-if='youtube'
+  :video='youtube'
+  :title='youtubeTitle || celebrity'
+)
 celebrity-video(
-  v-if='video.length > 0'
+  v-else-if='video.length > 0'
   :celebrity='celebrity'
   :video='video'
 )
@@ -14,6 +19,8 @@ celebrity-guess(
   :prize='prize'
   :question='question'
   :denomination='denomination'
+  :suffix='suffix'
+  :separators='separators'
 )
 </template>
 
@@ -21,13 +28,15 @@ celebrity-guess(
 import CelebrityIntro from './CelebrityIntro.vue'
 import CelebrityVideo from './CelebrityVideo.vue'
 import CelebrityGuess from './CelebrityGuess.vue'
+import GameYouTube from '@/components/base/GameYouTube.vue'
 
 export default {
   name: 'CameoPriceIsRightRound',
   components: {
     CelebrityIntro,
     CelebrityVideo,
-    CelebrityGuess
+    CelebrityGuess,
+    GameYouTube
   },
   props: {
     celebrity: {
@@ -62,9 +71,28 @@ export default {
       type: Number,
       default: undefined
     },
+    // A YouTube video id to play instead of `video`.
+    youtube: {
+      type: String,
+      default: ''
+    },
+    youtubeTitle: {
+      type: String,
+      default: undefined
+    },
     denomination: {
       type: String,
       default: '$'
+    },
+    // Shown after the answer and each guess, e.g. ' votes'.
+    suffix: {
+      type: String,
+      default: ''
+    },
+    // Show numbers with thousands separators (12,345).
+    separators: {
+      type: Boolean,
+      default: false
     },
     question: {
       type: String,
