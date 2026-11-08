@@ -27,13 +27,28 @@ export default {
     GameSlide,
     GameContent
   },
-  props: [
-    'celebrity',
-    'hint1',
-    'hint2',
-    'hint3',
-    'image'
-  ],
+  props: {
+    celebrity: {
+      type: String,
+      default: undefined
+    },
+    hint1: {
+      type: String,
+      default: undefined
+    },
+    hint2: {
+      type: String,
+      default: undefined
+    },
+    hint3: {
+      type: String,
+      default: undefined
+    },
+    image: {
+      type: String,
+      default: undefined
+    }
+  },
   computed: {
     ...mapGetters(useGameStore, ['getPlayersByScore']),
     players () {

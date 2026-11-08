@@ -25,9 +25,12 @@ export default {
     PlayersSidebar,
     GameContent
   },
-  props: [
-    'item'
-  ],
+  props: {
+    item: {
+      type: Object,
+      default: undefined
+    }
+  },
   computed: {
     ...mapGetters(useGameStore, ['getPlayersByScore']),
     players () {

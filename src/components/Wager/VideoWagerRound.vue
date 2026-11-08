@@ -43,17 +43,21 @@ export default {
     ActionButton
   },
   props: {
-    video: String,
+    video: {
+      type: String,
+      default: undefined
+    },
     limit: {
       type: Number,
       default: 0
     },
-    items: Array,
-    winnerIndex: Number
-  },
-  computed: {
-    correctGuess () {
-      return this.items[this.winnerIndex]
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndex: {
+      type: Number,
+      default: undefined
     }
   },
   data () {
@@ -61,6 +65,11 @@ export default {
       bets: [],
       winners: [],
       losers: []
+    }
+  },
+  computed: {
+    correctGuess () {
+      return this.items[this.winnerIndex]
     }
   },
   methods: {

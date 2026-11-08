@@ -57,9 +57,18 @@ export default {
     LoserCard
   },
   props: {
-    celebrity: String,
-    image: String,
-    price: Number,
+    celebrity: {
+      type: String,
+      default: undefined
+    },
+    image: {
+      type: String,
+      default: undefined
+    },
+    price: {
+      type: Number,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1

@@ -22,8 +22,11 @@ export default {
   components: {
     PointsController
   },
-  props: [
-    'players'
-  ]
+  props: {
+    players: {
+      type: Array,
+      default: undefined
+    }
+  }
 }
 </script>

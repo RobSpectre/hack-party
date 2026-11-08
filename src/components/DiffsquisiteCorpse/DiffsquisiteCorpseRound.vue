@@ -28,14 +28,14 @@ export default {
     GenerateCorpse
   },
   props: {
-    hints: Array,
+    hints: {
+      type: Array,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1
     }
-  },
-  computed: {
-    ...mapGetters(useGameStore, ['getPlayersFromButton'])
   },
   data () {
     return {
@@ -44,6 +44,9 @@ export default {
       prompt: '',
       completed: false
     }
+  },
+  computed: {
+    ...mapGetters(useGameStore, ['getPlayersFromButton'])
   },
   methods: {
     handleImageGenerated (event) {

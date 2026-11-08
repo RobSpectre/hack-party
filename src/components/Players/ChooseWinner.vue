@@ -66,7 +66,7 @@ export default {
     },
     heading: {
       default: 'Pick the winner',
-      string: String
+      type: String
     }
   },
   data () {

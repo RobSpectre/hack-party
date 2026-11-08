@@ -14,7 +14,10 @@
 export default {
   name: 'Keyboard',
   props: {
-    letterStates: Object
+    letterStates: {
+      type: Object,
+      default: undefined
+    }
   },
   data () {
     return {

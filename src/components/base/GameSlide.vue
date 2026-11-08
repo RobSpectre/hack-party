@@ -13,10 +13,12 @@ export default {
   name: 'GameSlide',
   props: {
     heading: {
-      type: String
+      type: String,
+      default: undefined
     },
     classes: {
-      type: String
+      type: String,
+      default: undefined
     },
     dataState: {
       type: String,

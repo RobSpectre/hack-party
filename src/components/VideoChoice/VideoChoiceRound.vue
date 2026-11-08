@@ -46,13 +46,22 @@ export default {
     ChooseItemModal
   },
   props: {
-    video: String,
+    video: {
+      type: String,
+      default: undefined
+    },
     limit: {
       type: Number,
       default: 0
     },
-    items: Array,
-    winnerIndex: Number,
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndex: {
+      type: Number,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1
@@ -64,6 +73,13 @@ export default {
     question: {
       type: String,
       default: 'Find Winners'
+    }
+  },
+  data () {
+    return {
+      guesses: [],
+      winners: [],
+      losers: []
     }
   },
   computed: {
@@ -92,13 +108,6 @@ export default {
       return players
     },
     ...mapState(useGameStore, ['game'])
-  },
-  data () {
-    return {
-      guesses: [],
-      winners: [],
-      losers: []
-    }
   },
   methods: {
     handleGuess (guess) {

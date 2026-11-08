@@ -37,9 +37,18 @@ export default {
     WinnerCard
   },
   props: {
-    images: Array,
-    title: String,
-    prize: Number,
+    images: {
+      type: Array,
+      default: undefined
+    },
+    title: {
+      type: String,
+      default: undefined
+    },
+    prize: {
+      type: Number,
+      default: undefined
+    },
     congratulation: {
       type: String,
       default: 'a dead ringer'

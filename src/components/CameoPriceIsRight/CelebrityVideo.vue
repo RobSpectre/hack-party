@@ -21,10 +21,16 @@ export default {
     GameSlide,
     GameVideo
   },
-  props: [
-    'celebrity',
-    'video'
-  ],
+  props: {
+    celebrity: {
+      type: String,
+      default: undefined
+    },
+    video: {
+      type: String,
+      default: undefined
+    }
+  },
   computed: {
     ...mapGetters(useGameStore, ['getPlayersByScore']),
     players () {

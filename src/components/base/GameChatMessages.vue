@@ -54,8 +54,14 @@ export default {
     PlayersSidebar
   },
   props: {
-    currentUser: String,
-    messages: Array,
+    currentUser: {
+      type: String,
+      default: undefined
+    },
+    messages: {
+      type: Array,
+      default: undefined
+    },
     rooms: {
       default: () => [],
       type: Array
@@ -118,6 +124,15 @@ export default {
       return rooms
     }
   },
+  mounted () {
+    const shadow = this.$refs.chat && this.$refs.chat.shadowRoot
+
+    if (shadow) {
+      const style = document.createElement('style')
+      style.textContent = chatTextStyles
+      shadow.appendChild(style)
+    }
+  },
   methods: {
     // 2.x shows a spinner when a room opens until messages-loaded turns
     // true. All messages are already here, so flip it on each fetch.
@@ -126,15 +141,6 @@ export default {
       this.$nextTick(() => {
         this.messagesLoaded = true
       })
-    }
-  },
-  mounted () {
-    const shadow = this.$refs.chat && this.$refs.chat.shadowRoot
-
-    if (shadow) {
-      const style = document.createElement('style')
-      style.textContent = chatTextStyles
-      shadow.appendChild(style)
     }
   }
 }

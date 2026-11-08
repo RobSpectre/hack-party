@@ -65,10 +65,22 @@ export default {
     LoserCard
   },
   props: {
-    tracks: Array,
-    items: Array,
-    winnerIndex: Number,
-    answer: String,
+    tracks: {
+      type: Array,
+      default: undefined
+    },
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndex: {
+      type: Number,
+      default: undefined
+    },
+    answer: {
+      type: String,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1

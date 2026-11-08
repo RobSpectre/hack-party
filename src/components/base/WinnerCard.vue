@@ -30,7 +30,10 @@ import gsap from 'gsap'
 export default {
   name: 'WinnerCard',
   props: {
-    winners: Array,
+    winners: {
+      type: Array,
+      default: undefined
+    },
     answer: {
       type: String,
       default: ''

@@ -15,7 +15,10 @@ span.text-2xl.font-semibold.uppercase.text-white.bg-green.rounded-t-md {{ ladder
 export default {
   name: 'Ladder',
   props: {
-    items: Array,
+    items: {
+      type: Array,
+      default: undefined
+    },
     ascending: {
       type: Boolean,
       default: false

@@ -9,8 +9,12 @@ button.actionButton(
 export default {
   name: 'ActionButton',
   props: {
-    label: String
+    label: {
+      type: String,
+      default: undefined
+    }
   },
+  emits: ['clicked'],
   methods: {
     click () {
       this.$emit('clicked')

@@ -115,9 +115,21 @@ import Elements from '@/components/DnD/Elements.vue'
 import Element from '@/components/DnD/Element.vue'
 import { useCampaignStore } from '@/store/campaign'
 
-/* eslint-disable vue/multi-word-component-names */
+ 
 export default {
   name: 'SundayServiceDndCampaign2025',
+  components: {
+    Reveal,
+    DnDScene,
+    StatBlock,
+    InitiativeTracker,
+    QuickNotes,
+    PlayerTracker,
+    Mobs,
+    NPCs,
+    Elements,
+    Element
+  },
   setup() {
     const store = useCampaignStore()
     
@@ -134,18 +146,6 @@ export default {
     }
 
     return { handleSlideChange }
-  },
-  components: {
-    Reveal,
-    DnDScene,
-    StatBlock,
-    InitiativeTracker,
-    QuickNotes,
-    PlayerTracker,
-    Mobs,
-    NPCs,
-    Elements,
-    Element
   }
 }
 </script>

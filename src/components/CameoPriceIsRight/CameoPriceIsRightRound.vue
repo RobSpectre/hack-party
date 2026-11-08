@@ -30,17 +30,38 @@ export default {
     CelebrityGuess
   },
   props: {
-    celebrity: String,
-    hint1: String,
-    hint2: String,
-    hint3: String,
+    celebrity: {
+      type: String,
+      default: undefined
+    },
+    hint1: {
+      type: String,
+      default: undefined
+    },
+    hint2: {
+      type: String,
+      default: undefined
+    },
+    hint3: {
+      type: String,
+      default: undefined
+    },
     video: {
       type: String,
       default: ''
     },
-    image: String,
-    price: Number,
-    prize: Number,
+    image: {
+      type: String,
+      default: undefined
+    },
+    price: {
+      type: Number,
+      default: undefined
+    },
+    prize: {
+      type: Number,
+      default: undefined
+    },
     denomination: {
       type: String,
       default: '$'

@@ -64,6 +64,7 @@ export default {
       default: ''
     }
   },
+  emits: ['guess'],
   computed: {
     ...mapState(useGameStore, ['game']),
     currentPlayer () {

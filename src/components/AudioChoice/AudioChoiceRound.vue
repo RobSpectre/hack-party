@@ -71,9 +71,18 @@ export default {
     LoserCard
   },
   props: {
-    src: String,
-    items: Array,
-    winnerIndex: Number,
+    src: {
+      type: String,
+      default: undefined
+    },
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndex: {
+      type: Number,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1

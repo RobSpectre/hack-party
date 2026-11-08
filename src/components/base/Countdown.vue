@@ -56,6 +56,7 @@ export default {
       default: '/sounds/wrong_sound.mp3'
     }
   },
+  emits: ['countedDown'],
   data () {
     return {
       timeRemaining: this.timer,

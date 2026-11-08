@@ -40,6 +40,9 @@ npm run media                       # every game (several GB)
 Round components shared by every game live in `src/components`, and media those components
 use lives in `public/images`, `public/sounds` and `public/video`.
 
+The help-computer games talk to the HelpComputer backend at `ws://localhost:8000/ws`. To use
+a backend somewhere else, set `VITE_HELP_COMPUTER_WS` in `.env.local`.
+
 ### Compiles and hot-reloads for development
 ```
 npm run dev 

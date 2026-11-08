@@ -55,9 +55,18 @@ export default {
     ActionButton
   },
   props: {
-    items: Array,
-    winnerIndice: Array,
-    question: String,
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndice: {
+      type: Array,
+      default: undefined
+    },
+    question: {
+      type: String,
+      default: undefined
+    },
     prize: {
       default: 1,
       type: Number

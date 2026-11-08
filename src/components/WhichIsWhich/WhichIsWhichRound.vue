@@ -23,10 +23,22 @@ export default {
     ItemGuess
   },
   props: {
-    items: Array,
-    winnerIndex: Number,
-    prize: Number,
-    question: String,
+    items: {
+      type: Array,
+      default: undefined
+    },
+    winnerIndex: {
+      type: Number,
+      default: undefined
+    },
+    prize: {
+      type: Number,
+      default: undefined
+    },
+    question: {
+      type: String,
+      default: undefined
+    },
     headerImage: {
       default: '/images/which_is_which_cover.jpg',
       type: String

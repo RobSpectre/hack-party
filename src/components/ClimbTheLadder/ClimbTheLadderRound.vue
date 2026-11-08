@@ -81,6 +81,17 @@ export default {
       default: 'lowestScoreFirst'
     }
   },
+  data () {
+    return {
+      complete: false,
+      playerIndex: 0,
+      players: [],
+      items: [
+        { name: 'Correct', emoji: '👍️' }
+      ],
+      timeRemaining: this.timer
+    }
+  },
   computed: {
     currentPlayer () {
       if (this.players.length > 0) {
@@ -144,17 +155,6 @@ export default {
       return playersByScoreDifference.sort((a, b) => (a.value > b.value) ? 1 : -1)
     },
     ...mapGetters(useGameStore, ['getPlayersByScore'])
-  },
-  data () {
-    return {
-      complete: false,
-      playerIndex: 0,
-      players: [],
-      items: [
-        { name: 'Correct', emoji: '👍️' }
-      ],
-      timeRemaining: this.timer
-    }
   },
   created () {
     this.players = this.computedPlayers

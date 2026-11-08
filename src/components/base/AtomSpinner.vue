@@ -1,15 +1,30 @@
 <template>
-<div class="atom-spinner" :style="spinnerStyle">
-  <div class="spinner-inner">
-    <div class="spinner-line" :style="lineStyle"></div>
-    <div class="spinner-line" :style="lineStyle"></div>
-    <div class="spinner-line" :style="lineStyle"></div>
-    <!--Chrome renders little circles malformed :(-->
-    <div class="spinner-circle" :style="circleStyle">
-      &#9679;
+  <div
+    class="atom-spinner"
+    :style="spinnerStyle"
+  >
+    <div class="spinner-inner">
+      <div
+        class="spinner-line"
+        :style="lineStyle"
+      />
+      <div
+        class="spinner-line"
+        :style="lineStyle"
+      />
+      <div
+        class="spinner-line"
+        :style="lineStyle"
+      />
+      <!--Chrome renders little circles malformed :(-->
+      <div
+        class="spinner-circle"
+        :style="circleStyle"
+      >
+        &#9679;
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>

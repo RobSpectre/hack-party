@@ -25,9 +25,18 @@ export default {
     ItemGuess
   },
   props: {
-    wrongAnswers: Array,
-    rightAnswers: Array,
-    question: String,
+    wrongAnswers: {
+      type: Array,
+      default: undefined
+    },
+    rightAnswers: {
+      type: Array,
+      default: undefined
+    },
+    question: {
+      type: String,
+      default: undefined
+    },
     answersLength: {
       type: Number,
       default: 3

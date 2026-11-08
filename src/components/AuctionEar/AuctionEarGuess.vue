@@ -21,8 +21,14 @@
 export default {
   name: 'AuctionEarGuess',
   props: {
-    items: Array,
-    currentPlayer: Object,
+    items: {
+      type: Array,
+      default: undefined
+    },
+    currentPlayer: {
+      type: Object,
+      default: undefined
+    },
     prompt: {
       type: String,
       default: 'What is your guess?'
@@ -32,6 +38,7 @@ export default {
       default: '/images/auctionear_header.png'
     }
   },
+  emits: ['guess'],
   data () {
     return {
       alphabet: ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',

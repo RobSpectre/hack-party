@@ -50,8 +50,14 @@ export default {
     AtomSpinner
   },
   props: {
-    comparisonImage: String,
-    playerName: String,
+    comparisonImage: {
+      type: String,
+      default: undefined
+    },
+    playerName: {
+      type: String,
+      default: undefined
+    },
     currentPrompt: {
       type: String,
       default: ''

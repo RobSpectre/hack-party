@@ -29,9 +29,18 @@ export default {
     GameContentWithSidebar
   },
   props: {
-    currentPrompt: String,
-    playerName: String,
-    hints: Array
+    currentPrompt: {
+      type: String,
+      default: undefined
+    },
+    playerName: {
+      type: String,
+      default: undefined
+    },
+    hints: {
+      type: Array,
+      default: undefined
+    }
   },
   emits: ['imageGenerated'],
   data () {

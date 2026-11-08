@@ -40,7 +40,10 @@ export default {
     PauseIcon
   },
   props: {
-    src: String,
+    src: {
+      type: String,
+      default: undefined
+    },
     chunks: {
       type: Number,
       default: 0
@@ -64,9 +67,6 @@ export default {
       duration: 0,
       checkCurrentTimeInterval: false
     }
-  },
-  mounted () {
-    this.initializeAudioContextObject()
   },
   computed: {
     chunkPercentages () {
@@ -117,6 +117,9 @@ export default {
     durationLimit () {
       return this.chunkPercentages[this.chunkIndex] * this.duration
     }
+  },
+  mounted () {
+    this.initializeAudioContextObject()
   },
   methods: {
     styleChunk (chunk) {
