@@ -1,0 +1,32 @@
+{
+  "tag": "archive/muppet-guessr",
+  "branch": "muppet-guessr",
+  "files": {
+    "images/animal_in_paris.png": "public/images/animal_in_paris.png",
+    "images/ape_1294.avif": "public/images/ape_1294.avif",
+    "images/ape_3001.avif": "public/images/ape_3001.avif",
+    "images/ape_7990.avif": "public/images/ape_7990.avif",
+    "images/apecoin.png": "public/images/apecoin.png",
+    "images/beaker_in_amsterdam.png": "public/images/beaker_in_amsterdam.png",
+    "images/big_bird_in_buenos_aires.png": "public/images/big_bird_in_buenos_aires.png",
+    "images/dr._teeth_if_he_grew_up_in_cairo.png": "public/images/dr._teeth_if_he_grew_up_in_cairo.png",
+    "images/elmo_in_boston.png": "public/images/elmo_in_boston.png",
+    "images/fozzie_in_east_berlin.png": "public/images/fozzie_in_east_berlin.png",
+    "images/geoguessr_": "public/images/geoguessr_",
+    "images/gonzo_in_anchorage.png": "public/images/gonzo_in_anchorage.png",
+    "images/kermit_in_monaco.png": "public/images/kermit_in_monaco.png",
+    "images/midjourney_release.png": "public/images/midjourney_release.png",
+    "images/miss_piggy_in_capetown.png": "public/images/miss_piggy_in_capetown.png",
+    "images/oscar_in_shanghai.png": "public/images/oscar_in_shanghai.png",
+    "images/rizzo_the_rat_in_morocco.png": "public/images/rizzo_the_rat_in_morocco.png",
+    "images/rowlf_in_rio_de_janiero.png": "public/images/rowlf_in_rio_de_janiero.png",
+    "images/sam_the_eagle_in_rome.png": "public/images/sam_the_eagle_in_rome.png",
+    "images/statler_and_waldorf_in_pyongyang.png": "public/images/statler_and_waldorf_in_pyongyang.png",
+    "images/swedish_chef_in_stockholm.png": "public/images/swedish_chef_in_stockholm.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/cart_narcs.mp4": "public/video/cart_narcs.mp4",
+    "video/geoguessr.mp4": "public/video/geoguessr.mp4",
+    "video/mtg.mp4": "public/video/mtg.mp4",
+    "video/nftglasses.mp4": "public/video/nftglasses.mp4"
+  }
+}

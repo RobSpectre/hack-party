@@ -1,0 +1,10 @@
+{
+  "tag": "archive/wordle-bands",
+  "branch": "wordle-bands",
+  "files": {
+    "video/bands.mp4": "public/video/bands.mp4",
+    "video/peaches.mp4": "public/video/peaches.mp4",
+    "video/scott_mass_effect.mp4": "public/video/scott_mass_effect.mp4",
+    "video/wordle_tutorial_cut.mp4": "public/video/wordle_tutorial_cut.mp4"
+  }
+}

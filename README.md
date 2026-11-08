@@ -6,9 +6,39 @@ Quarantine friendly party games where everyone is welcome and anyone can play.
 
 
 ## Project setup
+
+Requires Node 26 (see `.nvmrc`; run `nvm use` if you use nvm).
+
 ```
-npm install
+npm ci
 ```
+
+## Games
+
+Each game lives in its own folder:
+
+* `src/games/<slug>/Game.vue` is the show: the slides and rounds in order.
+* `public/games/<slug>/` holds its images, sounds, video and data. Git ignores these.
+* `src/games/<slug>/media.json` says where each of those files lives in the game's
+  `archive/<slug>` tag, which is the old branch the game was played from.
+* `src/games/index.js` lists every game. Add an entry there to make a game show up on the
+  home page and at `/<slug>`.
+
+`npm run dev` fetches media for you: the first time a slide asks for a file, the dev server
+copies it out of git history (the first file of an old game can take a moment while its
+branch is fetched). To fetch ahead of time, for example before `npm run build` or a party
+without internet:
+
+```
+npm run media -- christmas-2025     # one or more games
+npm run media                       # every game (several GB)
+```
+
+`node scripts/media-manifest.mjs <slug>` rebuilds a game's `media.json` from the paths its
+`Game.vue` uses.
+
+Round components shared by every game live in `src/components`, and media those components
+use lives in `public/images`, `public/sounds` and `public/video`.
 
 ### Compiles and hot-reloads for development
 ```

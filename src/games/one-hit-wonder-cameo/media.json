@@ -1,0 +1,29 @@
+{
+  "tag": "archive/one-hit-wonder-cameo",
+  "branch": "one-hit-wonder-cameo",
+  "files": {
+    "images/cameo_price_is_right.png": "public/images/cameo_price_is_right.png",
+    "video/blackdahlia.mp4": "public/video/blackdahlia.mp4",
+    "video/bonethugs_cut.mp4": "public/video/bonethugs_cut.mp4",
+    "video/crucialtaunt.mp4": "public/video/crucialtaunt.mp4",
+    "video/cypresshill.mp4": "public/video/cypresshill.mp4",
+    "video/deesnider_cut.mp4": "public/video/deesnider_cut.mp4",
+    "video/devo.mp4": "public/video/devo.mp4",
+    "video/everclear.mp4": "public/video/everclear.mp4",
+    "video/get_what_you_give.mp4": "public/video/get_what_you_give.mp4",
+    "video/googoodolls.mp4": "public/video/googoodolls.mp4",
+    "video/kidnplay.mp4": "public/video/kidnplay.mp4",
+    "video/lessthanjake.mp4": "public/video/lessthanjake.mp4",
+    "video/lisaloeb.mp4": "public/video/lisaloeb.mp4",
+    "video/montelljordan.mp4": "public/video/montelljordan.mp4",
+    "video/musicvideos.mp4": "public/video/musicvideos.mp4",
+    "video/oneders.mp4": "public/video/oneders.mp4",
+    "video/onyx.mp4": "public/video/onyx.mp4",
+    "video/price_is_right.mp4": "public/video/price_is_right.mp4",
+    "video/sugarhill.mp4": "public/video/sugarhill.mp4",
+    "video/sugarray.mp4": "public/video/sugarray.mp4",
+    "video/toto.mp4": "public/video/toto.mp4",
+    "video/vanilla_ice.mp4": "public/video/vanilla_ice.mp4",
+    "video/wheatus.mp4": "public/video/wheatus.mp4"
+  }
+}

@@ -21,10 +21,22 @@ export default {
 
     this.waitToRenderReveal()
   },
+  beforeUnmount () {
+    this.presentation = null
+
+    if (this.deck) {
+      this.deck.destroy()
+    }
+  },
   methods: {
     waitToRenderReveal () {
+      // Stop waiting if the deck was unmounted before it ever got a size.
+      if (!this.presentation || !this.presentation.parentElement) {
+        return
+      }
+
       if (!(this.presentation.parentElement.clientWidth > 0)) {
-        setTimeout(window.requestAnimationFrame(this.waitToRenderReveal),
+        setTimeout(() => window.requestAnimationFrame(this.waitToRenderReveal),
           500)
       } else {
         this.renderReveal()
@@ -65,6 +77,7 @@ export default {
     },
     setShortcutListener () {
       window.deck.on('slidechanged', event => {
+        this.$emit('slide-changed', event)
         this.setShortcuts(event.currentSlide)
       })
     },

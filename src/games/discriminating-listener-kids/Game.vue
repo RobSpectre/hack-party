@@ -1,0 +1,37 @@
+<template lang="pug">
+Reveal
+  .slides
+    GameTitle
+</template>
+
+<script>
+import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
+import Reveal from '@/components/base/Reveal.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
+import Slide from '@/components/base/Slide.vue'
+import VideoSlide from '@/components/base/VideoSlide.vue'
+import ActionButton from '@/components/base/ActionButton.vue'
+import GameVideo from '@/components/base/GameVideo.vue'
+
+import PlayerBoard from '@/components/Players/PlayerBoard.vue'
+
+export default {
+  name: 'DiscriminatingListenerKidsGame',
+  components: {
+    PlayerBoard,
+    GameTitle,
+    Slide,
+    Reveal,
+    BackgroundImageSlide,
+    VideoSlide,
+    ActionButton,
+    GameVideo
+  }
+}
+</script>
+
+<style lang='scss'>
+html {
+  font-size: 36px;
+}
+</style>

@@ -249,7 +249,7 @@ describe('AuctionEarRound Bid For Chunk Mode', () => {
   })
 
   it('players bid then answer each chunk', async () => {
-    const spy = jest.spyOn(wrapper.vm, 'nextChunk')
+    const spy = vi.spyOn(wrapper.vm, 'nextChunk')
 
     await wrapper.vm.handleBid({ player: wrapper.vm.game.players[0], value: 30 })
     await wrapper.vm.handleBid({ player: wrapper.vm.game.players[1], value: 30 })

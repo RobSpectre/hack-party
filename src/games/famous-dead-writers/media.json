@@ -1,0 +1,10 @@
+{
+  "tag": "archive/famous-dead-writers",
+  "branch": "famous-dead-writers",
+  "files": {
+    "images/famous_dead_writers.webp": "public/images/famous_dead_writers.webp",
+    "video/action_league.mp4": "public/video/action_league.mp4",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/prometheus_and_bob.mp4": "public/video/prometheus_and_bob.mp4"
+  }
+}

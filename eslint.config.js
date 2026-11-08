@@ -2,13 +2,12 @@ import eslintPluginVue from 'eslint-plugin-vue'
 import vueParser from 'vue-eslint-parser'
 
 export default [
+  {
+    ignores: ['dist/**', 'coverage/**', 'vendor/**', 'node_modules/**']
+  },
   ...eslintPluginVue.configs['flat/recommended'],
   {
     files: ['**/*.{js,vue}'],
-    ignores: [
-      'src/components/ui/*',
-      'src/components/ui/**/*'
-    ],
     languageOptions: {
       parser: vueParser,
       parserOptions: {

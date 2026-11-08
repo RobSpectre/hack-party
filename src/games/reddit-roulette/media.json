@@ -1,0 +1,33 @@
+{
+  "tag": "archive/reddit-roulette",
+  "branch": "reddit-roulette",
+  "files": {
+    "video/anthill.mp4": "public/video/anthill.mp4",
+    "video/badoutcome.mp4": "public/video/badoutcome.mp4",
+    "video/bearscare.mp4": "public/video/bearscare.mp4",
+    "video/car_cliff.mp4": "public/video/car_cliff.mp4",
+    "video/cats_and_bird.mp4": "public/video/cats_and_bird.mp4",
+    "video/childswing.mp4": "public/video/childswing.mp4",
+    "video/column_drop.mp4": "public/video/column_drop.mp4",
+    "video/cruddy_couple.mp4": "public/video/cruddy_couple.mp4",
+    "video/excavator.mp4": "public/video/excavator.mp4",
+    "video/fail_compilation.mp4": "public/video/fail_compilation.mp4",
+    "video/fatguy_waterslide.mp4": "public/video/fatguy_waterslide.mp4",
+    "video/gator.mp4": "public/video/gator.mp4",
+    "video/goal_header.mp4": "public/video/goal_header.mp4",
+    "video/goodoutcome.mp4": "public/video/goodoutcome.mp4",
+    "video/holdmybeer.mp4": "public/video/holdmybeer.mp4",
+    "video/joseph_ball.mp4": "public/video/joseph_ball.mp4",
+    "video/justdoit.mp4": "public/video/justdoit.mp4",
+    "video/landslide.mp4": "public/video/landslide.mp4",
+    "video/lunch_feeder.mp4": "public/video/lunch_feeder.mp4",
+    "video/mindthegap.mp4": "public/video/mindthegap.mp4",
+    "video/motorcycle_flip.mp4": "public/video/motorcycle_flip.mp4",
+    "video/motorcycle_pushups.mp4": "public/video/motorcycle_pushups.mp4",
+    "video/penguin.mp4": "public/video/penguin.mp4",
+    "video/poker.mp4": "public/video/poker.mp4",
+    "video/robbing_alcohol.mp4": "public/video/robbing_alcohol.mp4",
+    "video/stove_fire.mp4": "public/video/stove_fire.mp4",
+    "video/wolves.mp4": "public/video/wolves.mp4"
+  }
+}

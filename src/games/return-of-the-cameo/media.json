@@ -1,0 +1,24 @@
+{
+  "tag": "archive/return-of-the-cameo",
+  "branch": "return-of-the-cameo",
+  "files": {
+    "images/backpack_kid_bad_review.png": "public/images/backpack_kid_bad_review.png",
+    "images/cameo_api.png": "public/images/cameo_api.png",
+    "images/cameo_avg_rating_histogram.png": "public/images/cameo_avg_rating_histogram.png",
+    "images/cameo_price_is_right.png": "public/images/cameo_price_is_right.png",
+    "images/cameo_totals.png": "public/images/cameo_totals.png",
+    "images/maddux_bad_review.png": "public/images/maddux_bad_review.png",
+    "images/miriam_haart.png": "public/images/miriam_haart.png",
+    "video/aaron_carter_video_cut.mp4": "public/video/aaron_carter_video_cut.mp4",
+    "video/backpack_kid.mp4": "public/video/backpack_kid.mp4",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/brandon_cut.mp4": "public/video/brandon_cut.mp4",
+    "video/daddy_long_neck_vice_cut.mov": "public/video/daddy_long_neck_vice_cut.mov",
+    "video/floyd_mayweather.mp4": "public/video/floyd_mayweather.mp4",
+    "video/lil_esco.mp4": "public/video/lil_esco.mp4",
+    "video/lil_jiggy.mp4": "public/video/lil_jiggy.mp4",
+    "video/mick_foley.mp4": "public/video/mick_foley.mp4",
+    "video/perry.mp4": "public/video/perry.mp4",
+    "video/price_is_right.mp4": "public/video/price_is_right.mp4"
+  }
+}

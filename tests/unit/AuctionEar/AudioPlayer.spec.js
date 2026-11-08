@@ -6,7 +6,7 @@ import { flushPromises } from 'flush-promises'
 
 import AudioPlayer from '@/components/AuctionEar/AudioPlayer.vue'
 
-jest.useFakeTimers()
+vi.useFakeTimers()
 
 describe('AudioPlayer', () => {
   let wrapper

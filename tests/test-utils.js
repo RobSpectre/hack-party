@@ -1,9 +1,9 @@
 /* eslint no-undef: "off" */
 export const mocks = {
   Audio: {
-    pause: jest.fn(),
-    play: jest.fn(),
-    addEventListener: jest.fn().mockImplementationOnce((event, callback) => {
+    pause: vi.fn(),
+    play: vi.fn(),
+    addEventListener: vi.fn().mockImplementationOnce((event, callback) => {
       callback()
     }),
     currentTime: 12,

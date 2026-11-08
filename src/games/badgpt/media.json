@@ -1,0 +1,10 @@
+{
+  "tag": "archive/badgpt",
+  "branch": "badgpt",
+  "files": {
+    "sounds/baby_shark_metal.mp3": "public/sounds/baby_shark_metal.mp3",
+    "sounds/jump_around_clean.mp3": "public/sounds/jump_around_clean.mp3",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/code.mp4": "public/video/code.mp4"
+  }
+}

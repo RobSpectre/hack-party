@@ -1,0 +1,26 @@
+{
+  "tag": "archive/reddit-roulette-roll-the-dice",
+  "branch": "reddit-roulette-roll-the-dice",
+  "files": {
+    "video/alligator.mp4": "public/video/alligator.mp4",
+    "video/atv_fail.mp4": "public/video/atv_fail.mp4",
+    "video/beat_saber.mp4": "public/video/beat_saber.mp4",
+    "video/brick_fail.mp4": "public/video/brick_fail.mp4",
+    "video/bridge_fail.mp4": "public/video/bridge_fail.mp4",
+    "video/broken_lid.mp4": "public/video/broken_lid.mp4",
+    "video/burning_wood.mp4": "public/video/burning_wood.mp4",
+    "video/burnout_fail.mp4": "public/video/burnout_fail.mp4",
+    "video/button_push.mp4": "public/video/button_push.mp4",
+    "video/close_truck_call.mp4": "public/video/close_truck_call.mp4",
+    "video/cougar_attack.mp4": "public/video/cougar_attack.mp4",
+    "video/fake_kidnap.mp4": "public/video/fake_kidnap.mp4",
+    "video/gas_station_arson.mp4": "public/video/gas_station_arson.mp4",
+    "video/ghost_ride.mp4": "public/video/ghost_ride.mp4",
+    "video/monkey_bite.mp4": "public/video/monkey_bite.mp4",
+    "video/mtg_on_american_idol.mp4": "public/video/mtg_on_american_idol.mp4",
+    "video/quad_win.mp4": "public/video/quad_win.mp4",
+    "video/wild_horse.mp4": "public/video/wild_horse.mp4",
+    "video/windmill_dunk.mp4": "public/video/windmill_dunk.mp4",
+    "video/youtube_individual.mp4": "public/video/youtube_individual.mp4"
+  }
+}

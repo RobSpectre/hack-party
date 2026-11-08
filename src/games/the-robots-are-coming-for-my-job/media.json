@@ -1,0 +1,18 @@
+{
+  "tag": "archive/the-robots-are-coming-for-my-job",
+  "branch": "the-robots-are-coming-for-my-job",
+  "files": {
+    "images/boss_fight_idea.png": "public/images/boss_fight_idea.png",
+    "images/gameHeader.png": "public/images/gameHeader.png",
+    "images/garth_brooks_question.png": "public/images/garth_brooks_question.png",
+    "images/garth_brooks_question_2.png": "public/images/garth_brooks_question_2.png",
+    "images/garth_brooks_question_3.png": "public/images/garth_brooks_question_3.png",
+    "images/garth_brooks_question_4.png": "public/images/garth_brooks_question_4.png",
+    "images/robot_take_the_wheel.jpeg": "public/images/robot_take_the_wheel.jpeg",
+    "images/the_verge_headline.png": "public/images/the_verge_headline.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/flight_of_the_conchords.mp4": "public/video/flight_of_the_conchords.mp4",
+    "video/robot_jox.mp4": "public/video/robot_jox.mp4",
+    "video/robots_take_my_job.mp4": "public/video/robots_take_my_job.mp4"
+  }
+}

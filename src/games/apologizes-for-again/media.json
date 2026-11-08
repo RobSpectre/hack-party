@@ -1,0 +1,30 @@
+{
+  "tag": "archive/apologizes-for-again",
+  "branch": "apologizes-for-again",
+  "files": {
+    "images/bachelorette.png": "public/images/bachelorette.png",
+    "images/britney_fat_shame.png": "public/images/britney_fat_shame.png",
+    "images/broncos.png": "public/images/broncos.png",
+    "images/chickfila_article.png": "public/images/chickfila_article.png",
+    "images/chickfila_tweet.png": "public/images/chickfila_tweet.png",
+    "images/elephant.png": "public/images/elephant.png",
+    "images/hamilton.png": "public/images/hamilton.png",
+    "images/japan.png": "public/images/japan.png",
+    "images/jill_biden.png": "public/images/jill_biden.png",
+    "images/nursing_home_stripper.png": "public/images/nursing_home_stripper.png",
+    "images/oathkeepers.png": "public/images/oathkeepers.png",
+    "images/party_photo.png": "public/images/party_photo.png",
+    "images/podcast_movement.png": "public/images/podcast_movement.png",
+    "images/queen.png": "public/images/queen.png",
+    "images/sorry1.jpg": "public/images/sorry1.jpg",
+    "images/sorry2.webp": "public/images/sorry2.webp",
+    "images/thirst_trap.png": "public/images/thirst_trap.png",
+    "images/timberlake.png": "public/images/timberlake.png",
+    "images/wizards.png": "public/images/wizards.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/queen_hoon.mp4": "public/video/queen_hoon.mp4",
+    "video/staten_island.mp4": "public/video/staten_island.mp4",
+    "video/still_alive.mp4": "public/video/still_alive.mp4",
+    "video/tammy_faye_cut.mp4": "public/video/tammy_faye_cut.mp4"
+  }
+}

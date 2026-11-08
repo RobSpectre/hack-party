@@ -32,7 +32,7 @@ describe('WordleRipoffRound', () => {
   let wrapper
 
   beforeEach(() => {
-    jest.useFakeTimers()
+    vi.useFakeTimers()
 
     wrapper = mount(WordleRipoffRound, {
       props: {
@@ -100,7 +100,7 @@ describe('WordleRipoffRound', () => {
   it('awards 1 point for 1 present letter', async () => {
     enterWord('trunk', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.game.players[0].score).toBe(1)
   })
@@ -108,7 +108,7 @@ describe('WordleRipoffRound', () => {
   it('awards 2 points for 1 correct letter', async () => {
     enterWord('rinds', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.game.players[0].score).toBe(2)
   })
@@ -116,7 +116,7 @@ describe('WordleRipoffRound', () => {
   it('awards max points for correct answer', async () => {
     enterWord('racer', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.game.players[0].score).toBe(14)
   })
@@ -124,7 +124,7 @@ describe('WordleRipoffRound', () => {
   it('does not allow entry that is not a word', async () => {
     enterWord('asdfe', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.board[0][0].state).toBe(0)
   })
@@ -132,7 +132,7 @@ describe('WordleRipoffRound', () => {
   it('does not allow entry that is less than 5 letters', async () => {
     enterWord('asdf', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.board[0][0].state).toBe(0)
   })
@@ -140,24 +140,24 @@ describe('WordleRipoffRound', () => {
   it('does not award points for no letters', async () => {
     enterWord('zygon', wrapper)
 
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.game.players[0].score).toBe(0)
   })
 
   it('displays LoserCard if correct guess is not submitted after six times', async () => {
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
     enterWord('zygon', wrapper)
-    jest.advanceTimersByTime(3000)
+    vi.advanceTimersByTime(3000)
 
     expect(wrapper.vm.game.players[0].score).toBe(0)
     expect(wrapper.vm.losers.length).toBe(3)

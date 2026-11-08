@@ -1,0 +1,30 @@
+{
+  "tag": "archive/cake-or-fake",
+  "branch": "cake-or-fake",
+  "files": {
+    "images/oligarchs.png": "public/images/oligarchs.png",
+    "images/ricky.png": "public/images/ricky.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/cake_10_0.mp4": "public/video/cake_10_0.mp4",
+    "video/cake_11_0.mp4": "public/video/cake_11_0.mp4",
+    "video/cake_12_1.mp4": "public/video/cake_12_1.mp4",
+    "video/cake_13_1.mp4": "public/video/cake_13_1.mp4",
+    "video/cake_14_1.mp4": "public/video/cake_14_1.mp4",
+    "video/cake_15_0.mp4": "public/video/cake_15_0.mp4",
+    "video/cake_16_1.mp4": "public/video/cake_16_1.mp4",
+    "video/cake_17_1.mp4": "public/video/cake_17_1.mp4",
+    "video/cake_1_0.mp4": "public/video/cake_1_0.mp4",
+    "video/cake_2_0.mp4": "public/video/cake_2_0.mp4",
+    "video/cake_3_1.mp4": "public/video/cake_3_1.mp4",
+    "video/cake_4_0.mp4": "public/video/cake_4_0.mp4",
+    "video/cake_5_1.mp4": "public/video/cake_5_1.mp4",
+    "video/cake_6_0.mp4": "public/video/cake_6_0.mp4",
+    "video/cake_7_0.mp4": "public/video/cake_7_0.mp4",
+    "video/cake_8_0.mp4": "public/video/cake_8_0.mp4",
+    "video/cake_9_0.mp4": "public/video/cake_9_0.mp4",
+    "video/cake_trailer.mp4": "public/video/cake_trailer.mp4",
+    "video/helicopter.mp4": "public/video/helicopter.mp4",
+    "video/oligarchs.mp4": "public/video/oligarchs.mp4",
+    "video/ultimate.mp4": "public/video/ultimate.mp4"
+  }
+}

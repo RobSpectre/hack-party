@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 import path from 'path'
 
+import gameMedia from './scripts/vite-plugin-game-media.mjs'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -10,12 +12,39 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src/')
     }
   },
-  plugins: [vue()],
+  plugins: [vue({
+    template: {
+      // Leave /images/... and other public URLs as plain strings. Game media
+      // is fetched on demand, so it may not be on disk.
+      transformAssetUrls: { includeAbsolute: false }
+    }
+  }), gameMedia()],
+  // The vendored vue-advanced-chat build is CommonJS outside node_modules,
+  // so tell Vite to convert it like a regular dependency.
+  optimizeDeps: {
+    include: ['vue-advanced-chat']
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/, /vendor\/vue-advanced-chat/]
+    }
+  },
   css: {
     preprocessorOptions: {
       scss: {
         quietDeps: true
       }
+    }
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['fake-indexeddb/auto', './tests/setup.js'],
+    include: ['tests/unit/**/*.spec.js'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.{js,vue}'],
+      reporter: ['html', 'text-summary', 'json']
     }
   }
 })

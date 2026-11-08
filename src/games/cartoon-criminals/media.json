@@ -1,0 +1,29 @@
+{
+  "tag": "archive/cartoon-criminals",
+  "branch": "cartoon-criminals",
+  "files": {
+    "images/beavis_operating_an_unlicensed_distillery.png": "public/images/beavis_operating_an_unlicensed_distillery.png",
+    "images/bugs_bunny_running_a_cryptocurrency_ponzi_scheme.png": "public/images/bugs_bunny_running_a_cryptocurrency_ponzi_scheme.png",
+    "images/carl_fredricksen_doing_a_hit_and_run.png": "public/images/carl_fredricksen_doing_a_hit_and_run.png",
+    "images/cartoon-criminals-header.png": "public/images/cartoon-criminals-header.png",
+    "images/cartoon_criminals_full.png": "public/images/cartoon_criminals_full.png",
+    "images/cartoon_criminals_header.png": "public/images/cartoon_criminals_header.png",
+    "images/charlie_brown_piracy_on_the_high_seas.png": "public/images/charlie_brown_piracy_on_the_high_seas.png",
+    "images/elsa_murdering_the_mascot_at_a_chiefs_game.png": "public/images/elsa_murdering_the_mascot_at_a_chiefs_game.png",
+    "images/eric_cartman_treason_and_sedition.png": "public/images/eric_cartman_treason_and_sedition.png",
+    "images/fred_flintstone_selling_counterfeit_baseball_memorabilia.png": "public/images/fred_flintstone_selling_counterfeit_baseball_memorabilia.png",
+    "images/header_space.png": "public/images/header_space.png",
+    "images/homer_simpson_rustling_cattle.png": "public/images/homer_simpson_rustling_cattle.png",
+    "images/pink_panther_failing_to_register_as_an_agent_for_a_foreign_intelligence_service.png": "public/images/pink_panther_failing_to_register_as_an_agent_for_a_foreign_intelligence_service.png",
+    "images/popeye_violating_sanctions_by_selling_russia_computer_chips.png": "public/images/popeye_violating_sanctions_by_selling_russia_computer_chips.png",
+    "images/rick_sanchez_impersonating_a_police_officer.png": "public/images/rick_sanchez_impersonating_a_police_officer.png",
+    "images/shrek_ostrich_beastiality.png": "public/images/shrek_ostrich_beastiality.png",
+    "images/spongebob_willfully_retaining_top_secret_government_documents.png": "public/images/spongebob_willfully_retaining_top_secret_government_documents.png",
+    "images/stewie_griffin_distributing_meth_in_monster_energy_drinks.png": "public/images/stewie_griffin_distributing_meth_in_monster_energy_drinks.png",
+    "images/woody_running_a_torrent_website.png": "public/images/woody_running_a_torrent_website.png",
+    "video/aliens.mp4": "public/video/aliens.mp4",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/calm_down.mp4": "public/video/calm_down.mp4",
+    "video/maga_rap.mp4": "public/video/maga_rap.mp4"
+  }
+}

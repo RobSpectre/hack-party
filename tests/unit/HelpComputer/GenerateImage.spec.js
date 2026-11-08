@@ -23,7 +23,7 @@ describe('GenerateImage', () => {
   })
 
   it('it sends a message over web socket on input', async () => {
-    wrapper.vm.connection.send = jest.fn()
+    wrapper.vm.connection.send = vi.fn()
 
     const input = await wrapper.find('input')
     await input.setValue('Max Verstappen wins the Dutch GP')
@@ -54,7 +54,7 @@ describe('GenerateImage', () => {
   it('ignores an event it does not recognize', async () => {
     const event = { data: '{ "id": 1, "name": "blergh" }' }
 
-    const log = jest.spyOn(console, 'log').mockImplementation(() => {})
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {})
 
     wrapper.vm.handleMessage(event)
 

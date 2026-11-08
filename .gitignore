@@ -23,4 +23,9 @@ yarn-error.log*
 
 running
 
-package-lock.json
+
+# Game media is pulled from each game's archive/<slug> tag by `npm run media`
+/public/games/*/images/
+/public/games/*/sounds/
+/public/games/*/video/
+/public/games/*/data/

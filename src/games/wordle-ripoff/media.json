@@ -1,0 +1,16 @@
+{
+  "tag": "archive/wordle-ripoff",
+  "branch": "wordle-ripoff",
+  "files": {
+    "images/education_header.png": "public/images/education_header.png",
+    "images/finance_header.png": "public/images/finance_header.png",
+    "images/housing_header.png": "public/images/housing_header.png",
+    "images/housing_market.png": "public/images/housing_market.png",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/goodfellas_cut.mp4": "public/video/goodfellas_cut.mp4",
+    "video/late_stage_capitalism_cut.mp4": "public/video/late_stage_capitalism_cut.mp4",
+    "video/surfin_Bird.mp4": "public/video/surfin_Bird.mp4",
+    "video/wordle_sketch.mp4": "public/video/wordle_sketch.mp4",
+    "video/wordle_tutorial_cut.mp4": "public/video/wordle_tutorial_cut.mp4"
+  }
+}

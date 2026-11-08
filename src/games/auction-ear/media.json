@@ -1,0 +1,32 @@
+{
+  "tag": "archive/auction-ear",
+  "branch": "auction-ear",
+  "files": {
+    "images/auction.gif": "public/images/auction.gif",
+    "images/heardle.png": "public/images/heardle.png",
+    "images/namethattune.gif": "public/images/namethattune.gif",
+    "images/supermax.gif": "public/images/supermax.gif",
+    "sounds/all_i_ask_of_you_cut.mp3": "public/sounds/all_i_ask_of_you_cut.mp3",
+    "sounds/big_girls_dont_cry_cut.mp3": "public/sounds/big_girls_dont_cry_cut.mp3",
+    "sounds/come_as_you_are_cut.mp3": "public/sounds/come_as_you_are_cut.mp3",
+    "sounds/drown_cut.mp3": "public/sounds/drown_cut.mp3",
+    "sounds/evenflow_cut.mp3": "public/sounds/evenflow_cut.mp3",
+    "sounds/fly_by_night_cut.mp3": "public/sounds/fly_by_night_cut.mp3",
+    "sounds/glycerine_cut.mp3": "public/sounds/glycerine_cut.mp3",
+    "sounds/honky_tonk_woman_cut.mp3": "public/sounds/honky_tonk_woman_cut.mp3",
+    "sounds/la_resistance_cut.mp3": "public/sounds/la_resistance_cut.mp3",
+    "sounds/man_in_the_box_cut.mp3": "public/sounds/man_in_the_box_cut.mp3",
+    "sounds/my_name_is_mud_cut.mp3": "public/sounds/my_name_is_mud_cut.mp3",
+    "sounds/pretty_fly_for_a_white_guy_cut.mp3": "public/sounds/pretty_fly_for_a_white_guy_cut.mp3",
+    "sounds/rain_king_cut.mp3": "public/sounds/rain_king_cut.mp3",
+    "sounds/say_you_love_me_cut.mp3": "public/sounds/say_you_love_me_cut.mp3",
+    "sounds/seasons_of_love_cut.mp3": "public/sounds/seasons_of_love_cut.mp3",
+    "sounds/spoonman_cut.mp3": "public/sounds/spoonman_cut.mp3",
+    "sounds/torn_cut.mp3": "public/sounds/torn_cut.mp3",
+    "sounds/youll_be_back_cut.mp3": "public/sounds/youll_be_back_cut.mp3",
+    "sounds/younger_than_springtime_cut.mp3": "public/sounds/younger_than_springtime_cut.mp3",
+    "video/the_emo_test.mp4": "public/video/the_emo_test.mp4",
+    "video/traffas_auctioning.mp4": "public/video/traffas_auctioning.mp4",
+    "video/wrapping_cables.mp4": "public/video/wrapping_cables.mp4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "tag": "archive/fun-at-the-dmv",
+  "branch": "fun-at-the-dmv",
+  "files": {
+    "images/4_nugnug.jpeg": "public/images/4_nugnug.jpeg",
+    "images/byrne_it.jpeg": "public/images/byrne_it.jpeg",
+    "images/dmv.jpg": "public/images/dmv.jpg",
+    "images/dmv_bot_github.png": "public/images/dmv_bot_github.png",
+    "images/dngbeetle.jpeg": "public/images/dngbeetle.jpeg",
+    "images/fnmules.jpeg": "public/images/fnmules.jpeg",
+    "images/frnky69.jpeg": "public/images/frnky69.jpeg",
+    "images/gtpepe.jpeg": "public/images/gtpepe.jpeg",
+    "images/h8pvmnt.jpeg": "public/images/h8pvmnt.jpeg",
+    "images/homboys.jpeg": "public/images/homboys.jpeg",
+    "images/jagerbm.jpeg": "public/images/jagerbm.jpeg",
+    "images/lmfx911.jpeg": "public/images/lmfx911.jpeg",
+    "images/luv_h8trs.jpeg": "public/images/luv_h8trs.jpeg",
+    "images/njyabwl.jpeg": "public/images/njyabwl.jpeg",
+    "images/s8tan.jpeg": "public/images/s8tan.jpeg",
+    "images/shrk_fn.jpeg": "public/images/shrk_fn.jpeg",
+    "images/trypsyc.jpeg": "public/images/trypsyc.jpeg",
+    "images/turd_pwr.jpeg": "public/images/turd_pwr.jpeg",
+    "images/xinyou.jpeg": "public/images/xinyou.jpeg",
+    "images/xl_stuft.jpeg": "public/images/xl_stuft.jpeg",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/dmv.mp4": "public/video/dmv.mp4",
+    "video/primus.mp4": "public/video/primus.mp4",
+    "video/wordle_tutorial_cut.mp4": "public/video/wordle_tutorial_cut.mp4"
+  }
+}

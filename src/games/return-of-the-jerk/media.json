@@ -1,0 +1,27 @@
+{
+  "tag": "archive/return-of-the-jerk",
+  "branch": "return-of-the-jerk",
+  "files": {
+    "images/aita_header.jpeg": "public/images/aita_header.jpeg",
+    "sounds/diamond.mp3": "public/sounds/diamond.mp3",
+    "sounds/everyone_dislikes_your_fiance.mp3": "public/sounds/everyone_dislikes_your_fiance.mp3",
+    "sounds/flight.mp3": "public/sounds/flight.mp3",
+    "sounds/girlfriend_a_cow.mp3": "public/sounds/girlfriend_a_cow.mp3",
+    "sounds/hair_color.mp3": "public/sounds/hair_color.mp3",
+    "sounds/hot_sauce.mp3": "public/sounds/hot_sauce.mp3",
+    "sounds/isis.mp3": "public/sounds/isis.mp3",
+    "sounds/jeff_bezos.mp3": "public/sounds/jeff_bezos.mp3",
+    "sounds/pants.mp3": "public/sounds/pants.mp3",
+    "sounds/rebrand.mp3": "public/sounds/rebrand.mp3",
+    "sounds/screen_poking.mp3": "public/sounds/screen_poking.mp3",
+    "sounds/snap_tutor.mp3": "public/sounds/snap_tutor.mp3",
+    "sounds/tacos.mp3": "public/sounds/tacos.mp3",
+    "sounds/ten_minutes.mp3": "public/sounds/ten_minutes.mp3",
+    "sounds/thrown_pillow.mp3": "public/sounds/thrown_pillow.mp3",
+    "sounds/tossing_salad.mp3": "public/sounds/tossing_salad.mp3",
+    "video/bossfight.mp4": "public/video/bossfight.mp4",
+    "video/cart_narcs.webm": "public/video/cart_narcs.webm",
+    "video/isis_toyota.mp4": "public/video/isis_toyota.mp4",
+    "video/lebowski_cut.mp4": "public/video/lebowski_cut.mp4"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "tag": "archive/the-cameo-strikes-back",
+  "branch": "the-cameo-strikes-back",
+  "files": {
+    "images/cameo_price_is_right.png": "public/images/cameo_price_is_right.png",
+    "video/price_is_right.mp4": "public/video/price_is_right.mp4",
+    "video/the_question_song.mp4": "public/video/the_question_song.mp4"
+  }
+}

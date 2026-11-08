@@ -1,0 +1,16 @@
+{
+  "tag": "archive/whose-text-is-it-anyway",
+  "branch": "whose-text-is-it-anyway",
+  "files": {
+    "images/dc_trip.jpg": "public/images/dc_trip.jpg",
+    "images/qanon_shaman-720x500.png": "public/images/qanon_shaman-720x500.png",
+    "images/whose_text_is_it_anyway.png": "public/images/whose_text_is_it_anyway.png",
+    "video/biden_wh_correspondents_dinner.webm": "public/video/biden_wh_correspondents_dinner.webm",
+    "video/billburr_fenway.mp4": "public/video/billburr_fenway.mp4",
+    "video/capitol.mp4": "public/video/capitol.mp4",
+    "video/meadows.mp4": "public/video/meadows.mp4",
+    "video/phone_jack.mp4": "public/video/phone_jack.mp4",
+    "video/steal_phones_cut.mp4": "public/video/steal_phones_cut.mp4",
+    "video/whose_line.mp4": "public/video/whose_line.mp4"
+  }
+}
