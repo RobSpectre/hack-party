@@ -47,7 +47,7 @@ export default {
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.04em;
-  color: var(--hp-signal, var(--hp-orange));
+  color: var(--hp-accent-text, var(--hp-accent, var(--hp-orange)));
 }
 
 .hp-404-message {
@@ -61,8 +61,8 @@ export default {
   margin-top: 12px;
   padding: 12px 20px;
   border-radius: 12px;
-  background: var(--hp-signal, var(--hp-blue));
-  color: var(--hp-ink, #fff);
+  background: var(--hp-accent, var(--hp-blue));
+  color: var(--hp-on-accent, #fff);
   font-weight: 800;
   text-decoration: none;
 }

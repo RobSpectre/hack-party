@@ -1,6 +1,6 @@
 <template lang='pug'>
 Verdict(
-  v-if='uplink'
+  v-if='stage'
   kind='denied'
   :names='[]'
   :answer='answerLine'

@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { createTestingPinia } from '@pinia/testing'
 
-import { applyTheme, currentTheme, cycleTheme, defaultTheme, resolveTheme, setTheme } from '@/theme'
+import { applyTheme, currentTheme, cycleTheme, defaultTheme, resolveTheme, setTheme, themes } from '@/theme'
 
 import AddPlayersBar from '@/components/Players/AddPlayersBar.vue'
 import ScoreChip from '@/components/Players/ScoreChip.vue'
@@ -44,8 +44,16 @@ describe('themes', () => {
 
   test('cycling moves to the next theme and remembers it', () => {
     applyTheme('uplink')
-    expect(cycleTheme()).toBe('classic')
-    expect(window.localStorage.getItem('hp-theme')).toBe('classic')
+    expect(cycleTheme()).toBe('brutal')
+    expect(window.localStorage.getItem('hp-theme')).toBe('brutal')
+
+    applyTheme('classic')
+    expect(cycleTheme()).toBe('uplink')
+  })
+
+  test('there are five themes and only Classic is off the stage', () => {
+    expect(themes.map(theme => theme.id)).toEqual(['uplink', 'brutal', 'benday', 'stadium', 'classic'])
+    expect(themes.filter(theme => !theme.stage).map(theme => theme.id)).toEqual(['classic'])
   })
 })
 
@@ -90,5 +98,35 @@ describe('Uplink components', () => {
 
     expect(titles.length).toBeGreaterThan(0)
     titles.forEach(title => expect(title.toLowerCase()).toContain('christmas'))
+  })
+})
+
+describe.each([
+  ['brutal', 'Add player', 'Correct.', 'Wrong.'],
+  ['benday', 'Add contestant', 'Kapow!', 'Oh no…'],
+  ['stadium', 'Add competitor', 'Gold', 'No medal']
+])('%s components', (id, addPlayer, granted, denied) => {
+  beforeEach(() => applyTheme(id))
+  afterEach(() => applyTheme('classic'))
+
+  test('the add bar uses the theme voice', () => {
+    const wrapper = mount(AddPlayersBar, { global: { plugins: [createTestingPinia()] } })
+
+    expect(wrapper.find('button').text()).toBe(addPlayer)
+  })
+
+  test('scores have no hex value', () => {
+    const wrapper = mount(ScoreChip, { props: { value: 12 } })
+
+    expect(wrapper.find('.hp-score-value').text()).toBe('12')
+    expect(wrapper.find('.hp-hex').exists()).toBe(false)
+  })
+
+  test('the verdict speaks the theme', () => {
+    const win = mount(WinnerCard, { props: { winners: ['Rick'], answerName: 'Life', answerValue: '42' } })
+    const lose = mount(LoserCard, { props: { answerName: 'Life', answerValue: '42' } })
+
+    expect(win.find('.hp-verdict-headline').text()).toBe(granted)
+    expect(lose.find('.hp-verdict-headline').text()).toBe(denied)
   })
 })

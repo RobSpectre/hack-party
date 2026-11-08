@@ -7,7 +7,8 @@ span.hp-wordmark(:class='`hp-wordmark--${size}`' role='img' aria-label='hack.par
 <script>
 import { decrypt } from '@/theme/decrypt'
 
-// The Uplink wordmark: hack.party with a blinking block cursor.
+// The hack.party wordmark. Each stage theme letters it in its own face;
+// Uplink adds a blinking block cursor and can decrypt it in.
 /* eslint-disable vue/multi-word-component-names */
 export default {
   name: 'Wordmark',
@@ -34,50 +35,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.hp-wordmark {
-  display: inline-flex;
-  align-items: baseline;
-  font-family: var(--hp-font-display);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: var(--hp-fg);
-  text-transform: none;
-  white-space: nowrap;
-}
-
-.hp-wordmark--small {
-  font-size: 26px;
-}
-
-.hp-wordmark--medium {
-  font-size: 40px;
-}
-
-.hp-wordmark--large {
-  font-size: clamp(40px, 11vw, 140px);
-}
-
-.hp-wordmark-cursor {
-  display: inline-block;
-  width: 0.42em;
-  height: 0.7em;
-  margin-left: 0.08em;
-  background: var(--hp-signal);
-  animation: hp-cursor 1.06s steps(1, end) infinite;
-}
-
-@keyframes hp-cursor {
-  50% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hp-wordmark-cursor {
-    animation: none;
-  }
-}
-</style>

@@ -34,13 +34,17 @@ host who codes. It is a hacker's party, not a commercial trivia product.
   prefetched with `npm run media` before a party without internet.
 - The host drives slides with the keyboard; buttons on a slide get letter shortcuts.
 - 60 games live in `src/games/<slug>/`, each with its own fonts and art.
+- Games are broadcast over Zoom: a 4K browser window sent as a 1080p feed. Type must stay
+  big and crisp after that downscale and Zoom's compression, so deck chrome is sized in
+  1080p stream pixels, and fine textures (thin lines, small dots) are avoided.
 
 ## Capabilities and Constraints
 
 - Vue 3, reveal.js 6, Tailwind 4, Pinia, Vite, Vitest.
 - Shared round components in `src/components` are used by many games, so changes to them
   must keep old games working.
-- Themes: Uplink (default) and Classic (the original look, kept pixel-identical).
+- Themes: Uplink (default), Brutal, Ben-Day, Stadium, and Classic (the original look, kept
+  pixel-identical).
 
 ## Brand Commitments
 

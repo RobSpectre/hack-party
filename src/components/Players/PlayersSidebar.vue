@@ -2,7 +2,7 @@
 .hidden(class='md:flex md:flex-shrink-0')
   .hp-rail.flex.flex-col.w-64
     .hp-rail-head.flex.h-24.py-4.green
-      h2.hp-rail-title(v-if='uplink') Scoreboard
+      h2.hp-rail-title(v-if='stage') {{ copy.board }}
       img.px-3(v-else src='/images/hackparty_logo.png')
     .h-0.flex-1.flex.flex-col.overflow-hidden
       nav.hp-rail-list.flex-1.px-2.py-4.bg-gray-800

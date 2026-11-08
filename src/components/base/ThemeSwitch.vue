@@ -63,14 +63,19 @@ export default {
   }
 }
 
-:root[data-theme='uplink'] .hp-theme-switch {
-  background: var(--hp-panel);
-  box-shadow: inset 0 0 0 1px var(--hp-rule);
-  font-family: var(--hp-font-data);
-  font-size: 13px;
+:root[data-theme]:not([data-theme='classic']) .hp-theme-switch {
+  flex-wrap: wrap;
+  background: var(--hp-surface);
+  border: max(2px, calc(var(--hp-stroke) * 0.6)) solid var(--hp-stroke-color);
+  border-radius: var(--hp-radius-control);
+  box-shadow: inset 0 0 0 1px var(--hp-line);
+  font-family: var(--hp-font-control, var(--hp-font-data));
+  font-size: calc(14 * var(--gu));
   letter-spacing: 0.04em;
 
   button {
+    padding: calc(6 * var(--gu)) calc(14 * var(--gu));
+    border-radius: var(--hp-radius-control);
     color: var(--hp-muted);
     opacity: 1;
   }
@@ -80,8 +85,8 @@ export default {
   }
 
   button[aria-checked='true'] {
-    background: var(--hp-signal);
-    color: var(--hp-ink);
+    background: var(--hp-accent);
+    color: var(--hp-on-accent);
   }
 }
 </style>

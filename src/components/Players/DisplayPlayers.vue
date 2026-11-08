@@ -4,7 +4,7 @@
     .-ml-2.-mt-1.flex.items-center.justify-between.flex-wrap(class='sm:flex-no-wrap')
       .ml-2.mt-1
         span.reset-this.text-lg.leading-6.font-semibold.text-white
-          | Players
+          | {{ stage ? copy.players : 'Players' }}
   div(v-for='player in getPlayersByScore')
     span.transition.duration-150.ease-in-out(class='hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50')
       .hp-board-row.bg-white
@@ -28,6 +28,7 @@ import { TrashIcon } from '@heroicons/vue/24/solid'
 
 import PointsController from '@/components/Players/PointsController.vue'
 import ScoreChip from '@/components/Players/ScoreChip.vue'
+import themed from '@/theme/mixin'
 
 export default {
   name: 'DisplayPlayers',
@@ -36,6 +37,7 @@ export default {
     PointsController,
     ScoreChip
   },
+  mixins: [themed],
   computed: {
     ...mapGetters(useGameStore, ['getPlayersByScore'])
   },

@@ -4,7 +4,7 @@ div
   .hp-prompt.my-2.bg-white.flex.rounded-md.shadow-xs.mx-20
     .relative.flex-grow(class='focus-within:z-10')
       .absolute.inset-y-0.left-0.pl-3.flex.items-center.pointer-events-none
-        span.hp-prompt-sigil(v-if='uplink') $
+        span.hp-prompt-sigil(v-if='stage') {{ copy.prompt }}
         UserIcon.h-5.w-5.text-gray-400(v-else)
       input.my-2.outline-hidden.form-input.block.w-full.rounded-none.pl-10.transition.ease-in-out.duration-150(class='sm:text-sm sm:leading-5' :placeholder='placeholder' v-model='inputName' v-on:keydown.enter='handleAddPlayer(inputName)')
     button.rounded-r-md(v-if='addPlayersAllowed && !addTeamsAllowed'
@@ -28,10 +28,6 @@ import { useGameStore } from '@/store'
 import { UserIcon, UserPlusIcon, UserGroupIcon } from '@heroicons/vue/24/solid'
 
 import themed from '@/theme/mixin'
-
-// Uplink suggests a new handle after every player, starting with the classic.
-const handles = ['Shrimply Pibbles', 'Zero Cool', 'Acid Burn', 'Crash Override',
-  'Cereal Killer', 'Lord Nikon', 'The Phantom Phreak']
 
 export default {
   name: 'AddPlayersBar',
@@ -59,13 +55,14 @@ export default {
   },
   computed: {
     placeholder () {
-      return this.uplink ? handles[this.handleIndex % handles.length] : 'Shrimply Pibbles'
+      // Stage themes suggest a new handle after every player.
+      return this.stage ? this.copy.handles[this.handleIndex % this.copy.handles.length] : 'Shrimply Pibbles'
     },
     addLabel () {
-      return this.uplink ? 'sudo useradd' : 'Add'
+      return this.stage ? this.copy.addPlayer : 'Add'
     },
     addTeamLabel () {
-      return this.uplink ? 'sudo groupadd' : 'Add Team'
+      return this.stage ? this.copy.addTeam : 'Add Team'
     }
   },
   methods: {

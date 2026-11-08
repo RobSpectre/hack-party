@@ -69,7 +69,7 @@ export default {
   },
   computed: {
     displayLabel () {
-      return this.uplink && this.label === 'Timer' ? 'T-minus' : this.label
+      return this.stage && this.label === 'Timer' ? this.copy.timer : this.label
     }
   },
   methods: {

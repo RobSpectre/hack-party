@@ -1,8 +1,8 @@
 <template lang="pug">
-div(:class='{ "hp-score": uplink }')
-  template(v-if='uplink && isNumber')
+div(:class='{ "hp-score": stage }')
+  template(v-if='stage && isNumber')
     span.hp-score-value(:key='value') {{ value }}
-    span.hp-hex {{ hex }}
+    span.hp-hex(v-if='copy.hex') {{ hex }}
   template(v-else) {{ value }}
 </template>
 

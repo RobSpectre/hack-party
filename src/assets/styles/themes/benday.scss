@@ -1,0 +1,470 @@
+// Ben-Day: a 1970s Saturday-night game show printed as a pop-art comic.
+// Cream newsprint, four process inks, fat black panel lines, caption boxes,
+// speech balloons and a starburst for every verdict. The dots stay big and
+// pale and live only on the backdrop, so a Zoom feed never turns them to moiré.
+
+$t: ":root[data-theme][data-theme='benday']";
+
+#{$t} {
+  --ink: #151515;
+  --cream: #fff6dc;
+  --red: #d42a1f;
+  --yellow: #ffd400;
+  --blue: #1f5fd1;
+  --dot: #f4cdb4;
+
+  --hp-bg: var(--cream);
+  --hp-bg-2: #ffffff;
+  --hp-surface: #ffffff;
+  --hp-surface-2: #ffffff;
+  --hp-line: var(--ink);
+  --hp-fg: var(--ink);
+  --hp-muted: #3d3a33;
+  --hp-dim: #5e594d;
+  --hp-accent: var(--yellow);
+  --hp-accent-text: var(--red);
+  --hp-on-accent: var(--ink);
+  --hp-data: var(--blue);
+  --hp-on-data: #ffffff;
+  --hp-ok: #0f7a3d;
+  --hp-alert: var(--red);
+  --hp-alert-bg: var(--yellow);
+  --hp-live: var(--red);
+  --hp-granted: var(--yellow);
+  --hp-denied: #ffffff;
+  --hp-keycap: var(--ink);
+  --hp-focus: var(--blue);
+
+  --hp-green: #0f7a3d;
+  --hp-blue: var(--blue);
+  --hp-orange: var(--red);
+  --hp-darkgray: #1d3f9e;
+
+  --hp-font-body: 'Comic Neue', 'Comic Sans MS', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-display: 'Bangers', 'Comic Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-data: 'Bangers', 'Comic Neue', sans-serif;
+  --hp-font-control: 'Bangers', 'Comic Neue', sans-serif;
+  --hp-font-wordmark: 'Shrikhand', 'Bangers', serif;
+  --hp-font-verdict: 'Bangers', sans-serif;
+  --hp-heading-weight: 400;
+  --hp-heading-transform: uppercase;
+  --hp-heading-tracking: 0.03em;
+  --hp-heading-leading: 1;
+  --hp-h2: 1.9em;
+  --hp-h3: 1.5em;
+
+  --hp-stroke: calc(5 * var(--u));
+  --hp-stroke-color: var(--ink);
+  --hp-radius: 0px;
+  --hp-radius-control: 999px;
+  --hp-label-radius: 0px;
+  --hp-shadow: calc(10 * var(--u)) calc(10 * var(--u)) 0 var(--ink);
+  --hp-shadow-sm: calc(6 * var(--u)) calc(6 * var(--u)) 0 var(--ink);
+  --hp-shadow-press: 0 0 0 var(--ink);
+  --hp-press: translate(calc(6 * var(--u)), calc(6 * var(--u)));
+  --hp-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --hp-stripe: var(--red);
+  --hp-stripe-h: 0px;
+  --hp-progress-track: rgb(21 21 21 / 0.12);
+
+  // Newsprint: pale, wide dots that read as texture, never as detail.
+  --hp-stage-bg:
+    radial-gradient(circle, var(--dot) calc(7 * var(--u)), transparent calc(7.5 * var(--u))) 0 0 / calc(32 * var(--u)) calc(32 * var(--u)),
+    var(--cream);
+  --hp-feature-bg: var(--yellow);
+  --hp-feature-stripe: 0px;
+  --hp-label-bg: var(--yellow);
+  --hp-label-text: var(--ink);
+  --hp-label-in: hp-pow;
+  --hp-card-in: hp-pow;
+  --hp-title-in: hp-pow;
+  --hp-burst-in: hp-burst;
+  --hp-rail-edge: none;
+  --hp-board-head-bg: var(--red);
+  --hp-board-head-text: #ffffff;
+  --hp-prompt-edge: none;
+  --hp-scrim:
+    radial-gradient(circle, rgb(255 255 255 / 0.28) calc(9 * var(--u)), transparent calc(9.5 * var(--u))) 0 0 / calc(40 * var(--u)) calc(40 * var(--u)),
+    var(--blue);
+  --hp-verdict-fg: #ffffff;
+  --hp-verdict-muted: #ffffff;
+  --hp-verdict-band-opacity: 0;
+  --hp-verdict-tracking: 0.02em;
+  --hp-wipe-bg: var(--red);
+  --hp-wordmark-transform: none;
+  --hp-wordmark-tracking: 0;
+  --hp-wordmark-weight: 400;
+  --hp-wordmark-color: var(--yellow);
+  --hp-control-tracking: 0.05em;
+  --hp-tagline-weight: 700;
+
+  color-scheme: light;
+}
+
+#{$t} .hp-verdict--denied {
+  background:
+    radial-gradient(circle, rgb(255 255 255 / 0.18) calc(9 * var(--u)), transparent calc(9.5 * var(--u))) 0 0 / calc(40 * var(--u)) calc(40 * var(--u)),
+    #151515;
+}
+
+// A panel arrives the way a comic panel lands: overshoot, then settle.
+@keyframes hp-pow {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-4deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.04) rotate(1deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes hp-burst {
+  0% {
+    transform: scale(0.2) rotate(-25deg);
+  }
+
+  65% {
+    transform: scale(1.12) rotate(4deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+#{$t} body {
+  font-weight: 700;
+}
+
+#{$t} .reveal {
+  font-weight: 700;
+}
+
+#{$t} .reveal h1,
+#{$t} .reveal h2,
+#{$t} .reveal h3 {
+  font-family: var(--hp-font-display);
+}
+
+// The caption box: Lichtenstein's yellow rectangle, set in the narrator's hand.
+#{$t} .reveal h1 {
+  font-family: var(--hp-font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+#{$t} .reveal h2 {
+  color: var(--ink);
+  text-shadow: calc(5 * var(--u)) calc(5 * var(--u)) 0 var(--yellow);
+}
+
+#{$t} .reveal .darkgray h2,
+#{$t} .reveal .blue h2,
+#{$t} .reveal .green h2,
+#{$t} .reveal section[data-background-video] h2,
+#{$t} .reveal section[data-background-image] h2 {
+  color: #fff;
+  text-shadow: calc(5 * var(--u)) calc(5 * var(--u)) 0 var(--ink);
+}
+
+// Buttons are speech balloons.
+#{$t} .actionButton {
+  text-transform: uppercase;
+
+  &[accesskey]::after {
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: rotate(-2deg) scale(1.03);
+  }
+}
+
+#{$t} .hp-card-body > .flex-1 {
+  font-family: var(--hp-font-body);
+  font-weight: 700;
+  font-size: calc(52 * var(--u));
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+#{$t} .hp-card-foot {
+  background: var(--red);
+
+  span {
+    color: #fff;
+  }
+}
+
+#{$t} .hp-rail {
+  background: #fff;
+}
+
+#{$t} .hp-rail-head {
+  background: var(--yellow);
+  border-bottom: var(--hp-stroke) solid var(--ink);
+
+  .hp-rail-title {
+    color: var(--ink);
+  }
+}
+
+#{$t} .hp-rail-row:first-child {
+  background: var(--yellow);
+  box-shadow: inset 0 0 0 var(--hp-stroke) var(--ink);
+}
+
+#{$t} .hp-rail-row::before {
+  color: var(--ink);
+}
+
+#{$t} .hp-score {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+#{$t} .hp-board-head {
+  border-bottom: var(--hp-stroke) solid var(--ink);
+}
+
+#{$t} .hp-counter {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  padding: calc(20 * var(--u));
+  background: var(--yellow);
+
+  .counter {
+    color: var(--ink);
+  }
+
+  .bg-darkgray {
+    border-top: 0;
+    margin: 0;
+  }
+}
+
+#{$t} .hp-hurry .hp-counter {
+  background: var(--red);
+
+  .counter,
+  .hp-counter-label {
+    color: #fff;
+  }
+}
+
+// The verdict: a starburst behind the word, flat ink, halftone sky.
+#{$t} .hp-verdict-burst::before {
+  content: '';
+  position: absolute;
+  inset: -30% -16%;
+  z-index: -1;
+  background: var(--red);
+  border: 0;
+  clip-path: polygon(50% 0%, 57% 22%, 73% 6%, 72% 29%, 95% 18%, 82% 39%, 100% 50%, 82% 61%, 95% 82%, 72% 71%, 73% 94%, 57% 78%, 50% 100%, 43% 78%, 27% 94%, 28% 71%, 5% 82%, 18% 61%, 0% 50%, 18% 39%, 5% 18%, 28% 29%, 27% 6%, 43% 22%);
+  filter: drop-shadow(0 0 0 var(--ink));
+}
+
+#{$t} .hp-verdict--denied .hp-verdict-burst::before {
+  background: var(--blue);
+}
+
+#{$t} .hp-verdict-headline,
+#{$t} .reveal h2.hp-verdict-headline {
+  font-size: calc(260 * var(--u));
+  -webkit-text-stroke: calc(6 * var(--u)) var(--ink);
+  paint-order: stroke fill;
+  text-shadow: calc(12 * var(--u)) calc(12 * var(--u)) 0 var(--ink);
+  transform: rotate(-4deg);
+}
+
+#{$t} .hp-verdict-names li,
+#{$t} .reveal .hp-verdict-names li {
+  padding: 0.05em 0.4em;
+  background: #fff;
+  color: var(--ink);
+  border: var(--hp-stroke) solid var(--ink);
+  border-radius: 999px;
+  box-shadow: var(--hp-shadow);
+  animation-name: hp-pow;
+}
+
+#{$t} .hp-verdict-status,
+#{$t} .hp-verdict-answer {
+  font-family: var(--hp-font-body);
+  font-weight: 700;
+}
+
+#{$t} .hp-verdict-status {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  background: var(--yellow);
+  color: var(--ink);
+  border: var(--hp-stroke) solid var(--ink);
+  text-transform: uppercase;
+}
+
+#{$t} .hp-verdict-answer {
+  padding: 0.4em 0.8em;
+  background: #fff;
+  color: var(--ink);
+  border: var(--hp-stroke) solid var(--ink);
+}
+
+// The wordmark: yellow letters, black keyline, a red print offset.
+#{$t} .hp-wordmark {
+  -webkit-text-stroke: 0.06em var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0.06em 0.06em 0 var(--red), 0.1em 0.1em 0 var(--ink);
+}
+
+#{$t} .hp-wordmark--small,
+#{$t} .hp-wordmark--medium {
+  -webkit-text-stroke-width: 0.08em;
+}
+
+#{$t} .hp-title-card {
+  background: #fff;
+  transform: rotate(-1.5deg);
+}
+
+#{$t} .hp-title-lines {
+  font-family: var(--hp-font-body);
+  font-weight: 700;
+  color: var(--ink);
+
+  li {
+    padding: 0.15em 0.5em;
+    background: var(--yellow);
+    border: calc(3 * var(--u)) solid var(--ink);
+  }
+}
+
+#{$t} .hp-title-ok {
+  color: var(--red);
+}
+
+#{$t} .hp-title-tagline {
+  font-family: var(--hp-font-display);
+  color: var(--red);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+#{$t} .hp-bug {
+  background: #fff;
+}
+
+#{$t} .hp-live,
+#{$t} .hp-channel {
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+#{$t} .hp-channel {
+  border-left: calc(3 * var(--u)) solid var(--ink);
+  color: var(--ink);
+}
+
+// Home page: the TV listings page of the Sunday funnies.
+#{$t} .hp-guide {
+  font-weight: 700;
+}
+
+#{$t} .hp-guide-list .game-link {
+  border-radius: 0;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--yellow);
+    box-shadow: inset 0 0 0 calc(4 * var(--gu)) var(--ink);
+
+    .hp-ch {
+      color: var(--red);
+    }
+  }
+}
+
+#{$t} .hp-guide-list li + li {
+  box-shadow: 0 calc(-3 * var(--gu)) 0 var(--ink);
+}
+
+#{$t} .hp-feature {
+  border-width: calc(5 * var(--gu));
+  border-radius: 0;
+  box-shadow: calc(12 * var(--gu)) calc(12 * var(--gu)) 0 var(--ink);
+}
+
+#{$t} .hp-feature-title {
+  font-family: var(--hp-font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-shadow: calc(4 * var(--gu)) calc(4 * var(--gu)) 0 #fff;
+}
+
+#{$t} .hp-feature-meta {
+  color: var(--ink);
+}
+
+#{$t} .hp-feature-cta {
+  background: var(--red);
+  color: #fff;
+  border: calc(4 * var(--gu)) solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--hp-font-display);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+#{$t} .hp-grep {
+  background: #fff;
+  border: calc(4 * var(--gu)) solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--hp-font-body);
+}
+
+#{$t} .hp-guide-heading {
+  font-family: var(--hp-font-display);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: calc(40 * var(--gu));
+}
+
+#{$t} .hp-guide-year {
+  display: inline-block;
+  padding: calc(4 * var(--gu)) calc(12 * var(--gu));
+  background: var(--yellow);
+  border: calc(3 * var(--gu)) solid var(--ink);
+  color: var(--ink);
+  font-family: var(--hp-font-display);
+  font-size: calc(20 * var(--gu));
+  font-weight: 400;
+}
+
+#{$t} .hp-ch,
+#{$t} .hp-date {
+  font-family: var(--hp-font-display);
+  font-size: calc(18 * var(--gu));
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #{$t} .hp-title-card,
+  #{$t} .hp-verdict-headline {
+    transform: none;
+  }
+}

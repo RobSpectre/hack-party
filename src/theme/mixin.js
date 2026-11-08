@@ -1,10 +1,17 @@
-import { currentTheme } from '@/theme'
+import { currentTheme, themeById } from '@/theme'
 
-// Components that render differently in Uplink mix this in and check `uplink`.
+// Components that look different on stage themes mix this in. `stage` is
+// true for every theme but Classic; `theme` holds the active theme's words.
 export default {
   computed: {
-    uplink () {
-      return currentTheme.value === 'uplink'
+    theme () {
+      return themeById(currentTheme.value)
+    },
+    stage () {
+      return this.theme.stage
+    },
+    copy () {
+      return this.theme.copy
     }
   }
 }

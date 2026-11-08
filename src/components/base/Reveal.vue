@@ -1,7 +1,7 @@
 <template lang="pug">
 .reveal(class='theater' ref='presentation')
   slot
-  BroadcastChrome(v-if='uplink && ready' :deck='deck')
+  BroadcastChrome(v-if='stage && ready' :deck='deck')
 </template>
 
 <script>
@@ -29,10 +29,14 @@ export default {
   mounted () {
     this.presentation = this.$refs.presentation
 
+    // Stage themes size a deck for a 1080p stream (see stage.scss).
+    document.documentElement.classList.add('hp-deck')
+
     this.waitToRenderReveal()
   },
   beforeUnmount () {
     this.presentation = null
+    document.documentElement.classList.remove('hp-deck')
 
     if (this.deck) {
       this.deck.destroy()

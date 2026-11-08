@@ -1,0 +1,391 @@
+// The home page on stage themes: a guide to every game, billed like a show.
+// Sized in --gu so it scales up for a 4K stream but never shrinks on a phone.
+.hp-guide {
+  min-height: 100vh;
+  width: 100%;
+  max-width: calc(1200 * var(--gu));
+  margin: 0 auto;
+  padding: calc(56 * var(--gu)) calc(40 * var(--gu)) calc(40 * var(--gu));
+  color: var(--hp-fg);
+  font-family: var(--hp-font-body);
+  font-size: calc(18 * var(--gu));
+}
+
+.hp-guide-masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: calc(24 * var(--gu)) calc(40 * var(--gu));
+  margin-bottom: calc(56 * var(--gu));
+}
+
+.hp-guide-wordmark {
+  margin: 0;
+  max-width: 100%;
+}
+
+// Big enough to bill the show, small enough to never leave the column.
+.hp-guide-wordmark .hp-wordmark.hp-wordmark--large {
+  font-size: clamp(calc(52 * var(--gu)), 13vw, calc(132 * var(--gu)));
+}
+
+.hp-guide-tagline {
+  margin: calc(18 * var(--gu)) 0 0;
+  max-width: 46ch;
+  font-size: calc(20 * var(--gu));
+  line-height: 1.45;
+  color: var(--hp-muted);
+}
+
+.hp-guide-tools {
+  display: flex;
+  align-items: center;
+  gap: calc(14 * var(--gu));
+}
+
+.hp-guide-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(4 * var(--gu));
+  font-family: var(--hp-font-data);
+  font-size: calc(12 * var(--gu));
+  color: var(--hp-dim);
+
+  kbd {
+    padding: calc(2 * var(--gu)) calc(6 * var(--gu));
+    border-radius: calc(6 * var(--gu));
+    font-family: inherit;
+    color: var(--hp-muted);
+    background: var(--hp-surface);
+    box-shadow: inset 0 -2px 0 var(--hp-line);
+  }
+}
+
+// The next show, billed like one.
+.hp-feature {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: calc(18 * var(--gu)) calc(32 * var(--gu));
+  padding: calc(36 * var(--gu)) calc(40 * var(--gu)) calc(40 * var(--gu));
+  margin-bottom: calc(64 * var(--gu));
+  overflow: hidden;
+  border-radius: calc(18 * var(--gu));
+  background: var(--hp-feature-bg, var(--hp-surface));
+  border: var(--hp-stroke) solid var(--hp-stroke-color);
+  box-shadow: var(--hp-shadow);
+  color: var(--hp-fg);
+  text-decoration: none;
+  animation: hp-guide-rise 700ms var(--hp-ease) 250ms both;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: var(--hp-feature-stripe, calc(8 * var(--gu)));
+    background: var(--hp-stripe);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: hp-guide-bars 900ms var(--hp-ease) 450ms forwards;
+  }
+
+  &:hover .hp-feature-cta,
+  &:focus-visible .hp-feature-cta {
+    background: var(--hp-data);
+    color: var(--hp-on-data, var(--hp-bg));
+  }
+
+  &:hover .hp-feature-arrow {
+    transform: translateX(calc(4 * var(--gu)));
+  }
+}
+
+.hp-feature-meta {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 * var(--gu));
+  font-family: var(--hp-font-data);
+  font-size: calc(14 * var(--gu));
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--hp-muted);
+
+  .hp-live-dot {
+    width: calc(9 * var(--gu));
+    height: calc(9 * var(--gu));
+    border-radius: 50%;
+    background: var(--hp-live);
+  }
+}
+
+.hp-feature-title {
+  font-family: var(--hp-font-display);
+  font-size: clamp(calc(36 * var(--gu)), 5.4vw, calc(72 * var(--gu)));
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.hp-feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 * var(--gu));
+  padding: calc(14 * var(--gu)) calc(22 * var(--gu));
+  border-radius: calc(12 * var(--gu));
+  background: var(--hp-accent);
+  color: var(--hp-on-accent);
+  font-weight: 800;
+  font-size: calc(18 * var(--gu));
+  white-space: nowrap;
+  transition: background-color 150ms var(--hp-ease);
+}
+
+.hp-feature-arrow {
+  width: calc(22 * var(--gu));
+  height: calc(22 * var(--gu));
+  transition: transform 150ms var(--hp-ease);
+}
+
+.hp-guide-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 * var(--gu)) calc(24 * var(--gu));
+  margin-bottom: calc(8 * var(--gu));
+}
+
+.hp-guide-heading {
+  margin: 0;
+  font-family: var(--hp-font-display);
+  font-size: calc(28 * var(--gu));
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hp-grep {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--gu));
+  min-width: min(100%, calc(420 * var(--gu)));
+  padding: calc(10 * var(--gu)) calc(14 * var(--gu));
+  border-radius: calc(12 * var(--gu));
+  background: var(--hp-bg-2);
+  box-shadow: inset 0 0 0 calc(1 * var(--gu)) var(--hp-line);
+  font-family: var(--hp-font-data);
+  font-size: calc(15 * var(--gu));
+  transition: box-shadow 150ms var(--hp-ease);
+
+  &:focus-within {
+    box-shadow: inset 0 0 0 calc(2 * var(--gu)) var(--hp-accent);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    color: var(--hp-fg);
+    font: inherit;
+    outline: none;
+  }
+
+  input::placeholder {
+    color: var(--hp-dim);
+  }
+
+  input::-webkit-search-cancel-button {
+    filter: invert(1);
+  }
+}
+
+.hp-grep-sigil {
+  color: var(--hp-ok);
+  white-space: nowrap;
+}
+
+.hp-grep-count {
+  color: var(--hp-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hp-guide-year {
+  margin: calc(40 * var(--gu)) 0 calc(10 * var(--gu));
+  font-family: var(--hp-font-data);
+  font-size: calc(14 * var(--gu));
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--hp-accent-text, var(--hp-accent));
+}
+
+.hp-guide-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    animation: hp-guide-rise 450ms var(--hp-ease) both;
+    animation-delay: calc(400ms + var(--i, 0) * 22ms);
+  }
+
+  li + li {
+    box-shadow: 0 -1px 0 var(--hp-line);
+  }
+}
+
+.hp-guide-list .game-link {
+  display: grid;
+  grid-template-columns: calc(76 * var(--gu)) 1fr auto calc(24 * var(--gu));
+  align-items: center;
+  gap: calc(20 * var(--gu));
+  padding: calc(16 * var(--gu)) calc(16 * var(--gu));
+  border-radius: calc(12 * var(--gu));
+  color: var(--hp-fg);
+  text-decoration: none;
+  transition: background-color 150ms var(--hp-ease);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--hp-surface);
+
+    .hp-ch {
+      color: var(--hp-accent-text, var(--hp-accent));
+    }
+
+    .hp-arrow {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.hp-ch,
+.hp-date {
+  font-family: var(--hp-font-data);
+  font-size: calc(14 * var(--gu));
+  color: var(--hp-dim);
+  font-variant-numeric: tabular-nums;
+  transition: color 150ms var(--hp-ease);
+}
+
+.hp-date {
+  color: var(--hp-muted);
+}
+
+.hp-title {
+  font-size: calc(22 * var(--gu));
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.hp-arrow {
+  width: calc(20 * var(--gu));
+  height: calc(20 * var(--gu));
+  color: var(--hp-accent-text, var(--hp-accent));
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 150ms var(--hp-ease), transform 150ms var(--hp-ease);
+}
+
+.hp-guide-empty {
+  margin: calc(32 * var(--gu)) 0;
+  font-family: var(--hp-font-data);
+  color: var(--hp-alert);
+}
+
+.hp-guide-footer {
+  margin-top: calc(72 * var(--gu));
+  padding-top: calc(24 * var(--gu));
+  box-shadow: 0 -1px 0 var(--hp-line);
+  font-size: calc(15 * var(--gu));
+  color: var(--hp-dim);
+}
+
+@keyframes hp-guide-rise {
+  from {
+    opacity: 0;
+    transform: translateY(calc(10 * var(--gu)));
+  }
+}
+
+@keyframes hp-guide-bars {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .hp-guide {
+    padding: calc(32 * var(--gu)) calc(16 * var(--gu));
+    font-size: calc(16 * var(--gu));
+  }
+
+  .hp-guide-masthead {
+    margin-bottom: calc(36 * var(--gu));
+  }
+
+  .hp-guide-tagline {
+    font-size: calc(17 * var(--gu));
+  }
+
+  .hp-guide-hint {
+    display: none;
+  }
+
+  .hp-feature {
+    grid-template-columns: 1fr;
+    padding: calc(28 * var(--gu)) calc(22 * var(--gu)) calc(24 * var(--gu));
+    margin-bottom: calc(44 * var(--gu));
+  }
+
+  .hp-feature-cta {
+    justify-self: start;
+  }
+
+  .hp-guide-list .game-link {
+    grid-template-columns: 1fr auto;
+    gap: calc(4 * var(--gu)) calc(12 * var(--gu));
+    padding: calc(14 * var(--gu)) calc(8 * var(--gu));
+  }
+
+  .hp-guide-list .hp-ch {
+    grid-row: 1;
+  }
+
+  .hp-guide-list .hp-title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: calc(19 * var(--gu));
+  }
+
+  .hp-guide-list .hp-date {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .hp-arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-feature,
+  .hp-guide-list li {
+    animation: hp-guide-fade 150ms linear both;
+  }
+
+  .hp-feature::before {
+    animation: none;
+    transform: none;
+  }
+}
+
+@keyframes hp-guide-fade {
+  from {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,291 @@
+// Brutal: neobrutalism at game-show volume. Raw paper, black 4px ink, hard
+// slab shadows, flat yellow and pink, type that shouts. Nothing glows,
+// nothing blurs, nothing eases gently: things slam into place.
+
+$t: ":root[data-theme][data-theme='brutal']";
+
+#{$t} {
+  --ink: #111111;
+  --paper: #f2ede1;
+  --yellow: #ffd60a;
+  --pink: #ff6b57;
+
+  --hp-bg: var(--paper);
+  --hp-bg-2: #ffffff;
+  --hp-surface: #ffffff;
+  --hp-surface-2: #ffffff;
+  --hp-line: var(--ink);
+  --hp-fg: var(--ink);
+  --hp-muted: #4a4538;
+  --hp-dim: #6b6555;
+  --hp-accent: var(--yellow);
+  --hp-accent-text: var(--ink);
+  --hp-on-accent: var(--ink);
+  --hp-data: #2b4cff;
+  --hp-on-data: #ffffff;
+  --hp-ok: #0a7d45;
+  --hp-alert: #d92316;
+  --hp-alert-bg: var(--pink);
+  --hp-live: #d92316;
+  --hp-granted: var(--ink);
+  --hp-denied: var(--ink);
+  --hp-keycap: var(--ink);
+  --hp-focus: #2b4cff;
+
+  --hp-green: #0a7d45;
+  --hp-blue: #2b4cff;
+  --hp-orange: #c93c0c;
+  --hp-darkgray: var(--ink);
+
+  --hp-font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-display: 'Archivo Black', 'Archivo Variable', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+  --hp-font-data: 'Archivo Black', 'Archivo Variable', sans-serif;
+  --hp-font-control: 'Archivo Black', 'Archivo Variable', sans-serif;
+  --hp-heading-weight: 400;
+  --hp-heading-transform: uppercase;
+  --hp-heading-tracking: -0.02em;
+  --hp-heading-leading: 0.98;
+  --hp-h2: 1.75em;
+  --hp-h3: 1.4em;
+
+  --hp-stroke: calc(5 * var(--u));
+  --hp-stroke-color: var(--ink);
+  --hp-radius: 0px;
+  --hp-radius-control: 0px;
+  --hp-shadow: calc(14 * var(--u)) calc(14 * var(--u)) 0 var(--ink);
+  --hp-shadow-sm: calc(8 * var(--u)) calc(8 * var(--u)) 0 var(--ink);
+  --hp-shadow-press: 0 0 0 var(--ink);
+  --hp-press: translate(calc(8 * var(--u)), calc(8 * var(--u)));
+  --hp-ease: cubic-bezier(0.2, 0.9, 0.1, 1);
+
+  --hp-stripe: var(--ink);
+  --hp-stripe-h: 0px;
+  --hp-progress-track: rgb(17 17 17 / 0.15);
+  --hp-label-bg: var(--yellow);
+  --hp-label-text: var(--ink);
+  --hp-label-in: hp-slam;
+  --hp-card-in: hp-slam;
+  --hp-title-in: hp-slam;
+  --hp-rail-edge: none;
+  --hp-board-head-bg: var(--yellow);
+  --hp-board-head-text: var(--ink);
+  --hp-prompt-edge: none;
+  --hp-feature-bg: var(--yellow);
+  --hp-feature-stripe: 0px;
+  --hp-scrim: var(--yellow);
+  --hp-verdict-fg: var(--ink);
+  --hp-verdict-muted: var(--ink);
+  --hp-verdict-band-opacity: 0;
+  --hp-wipe-bg: linear-gradient(90deg, var(--ink) 0 calc(6 * var(--u)), var(--yellow) 0 calc(100% - calc(6 * var(--u))), var(--ink) 0);
+  --hp-wipe-size: 34vw;
+  --hp-wordmark-transform: uppercase;
+  --hp-wordmark-tracking: -0.04em;
+  --hp-wordmark-weight: 400;
+  --hp-control-tracking: 0.01em;
+
+  color-scheme: light;
+}
+
+// A slab lands: no fade, no float, it arrives already solid.
+@keyframes hp-slam {
+  0% {
+    transform: translate(calc(-18 * var(--u)), calc(-18 * var(--u)));
+    box-shadow: 0 0 0 var(--ink);
+  }
+
+  60% {
+    transform: translate(calc(3 * var(--u)), calc(3 * var(--u)));
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+#{$t} .reveal h1 {
+  font-family: var(--hp-font-display);
+}
+
+#{$t} .reveal h2,
+#{$t} .reveal h3 {
+  font-family: var(--hp-font-display);
+}
+
+#{$t} .hp-card-body > .flex-1 {
+  font-size: calc(52 * var(--u));
+}
+
+// Buttons are stickers: white slab, black edge, hard shadow, pressed flat.
+#{$t} .actionButton {
+  text-transform: uppercase;
+
+  &[accesskey]::after {
+    color: #fff;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translate(calc(-3 * var(--u)), calc(-3 * var(--u)));
+    box-shadow: calc(11 * var(--u)) calc(11 * var(--u)) 0 var(--ink);
+  }
+}
+
+#{$t} .hp-card-foot {
+  background: var(--pink);
+}
+
+#{$t} .hp-rail {
+  background: #fff;
+  border-right-width: var(--hp-stroke);
+}
+
+#{$t} .hp-rail-head {
+  background: var(--ink);
+
+  .hp-rail-title {
+    color: var(--yellow);
+  }
+}
+
+#{$t} .hp-rail-row {
+  border: var(--hp-stroke) solid transparent;
+
+  &:first-child {
+    background: var(--yellow);
+    border-color: var(--ink);
+  }
+
+  &::before {
+    color: var(--ink);
+  }
+}
+
+#{$t} .hp-score {
+  font-weight: 400;
+}
+
+#{$t} .hp-board-head {
+  border-bottom: var(--hp-stroke) solid var(--ink);
+}
+
+#{$t} .hp-counter .counter {
+  color: var(--ink);
+}
+
+#{$t} .hp-hurry .hp-counter .counter {
+  color: var(--ink);
+}
+
+// The verdict floods the screen with one flat color.
+#{$t} .hp-verdict--denied {
+  background: var(--pink);
+}
+
+#{$t} .hp-verdict-headline,
+#{$t} .reveal h2.hp-verdict-headline {
+  font-size: calc(250 * var(--u));
+  letter-spacing: -0.04em;
+}
+
+#{$t} .hp-verdict-names li,
+#{$t} .reveal .hp-verdict-names li {
+  padding: 0.05em 0.35em;
+  background: #fff;
+  border: var(--hp-stroke) solid var(--ink);
+  box-shadow: var(--hp-shadow);
+  animation-name: hp-slam;
+}
+
+#{$t} .hp-verdict-burst {
+  --hp-burst-in: hp-slam;
+}
+
+#{$t} .hp-verdict-status {
+  font-family: var(--hp-font-display);
+  text-transform: uppercase;
+}
+
+#{$t} .hp-title-card {
+  background: #fff;
+}
+
+#{$t} .hp-title-tagline {
+  font-family: var(--hp-font-display);
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+#{$t} .hp-title-mark .hp-wordmark--large {
+  font-size: calc(200 * var(--u));
+}
+
+#{$t} .hp-bug {
+  background: #fff;
+}
+
+#{$t} .hp-live,
+#{$t} .hp-channel {
+  font-family: var(--hp-font-display);
+  font-weight: 400;
+}
+
+#{$t} .hp-channel {
+  border-left: var(--hp-stroke) solid var(--ink);
+}
+
+// Home page: a stack of slabs.
+#{$t} .hp-guide-list .game-link {
+  border: calc(4 * var(--gu)) solid transparent;
+  border-radius: 0;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--yellow);
+    border-color: var(--ink);
+    box-shadow: calc(8 * var(--gu)) calc(8 * var(--gu)) 0 var(--ink);
+  }
+}
+
+#{$t} .hp-guide-list li + li {
+  box-shadow: 0 calc(-3 * var(--gu)) 0 var(--ink);
+}
+
+#{$t} .hp-feature {
+  border-width: calc(5 * var(--gu));
+  border-radius: 0;
+  box-shadow: calc(14 * var(--gu)) calc(14 * var(--gu)) 0 var(--ink);
+}
+
+#{$t} .hp-feature-cta {
+  background: var(--ink);
+  color: var(--yellow);
+  border-radius: 0;
+}
+
+#{$t} .hp-grep {
+  background: #fff;
+  border: calc(4 * var(--gu)) solid var(--ink);
+  border-radius: 0;
+  box-shadow: calc(6 * var(--gu)) calc(6 * var(--gu)) 0 var(--ink);
+}
+
+#{$t} .hp-guide-year {
+  display: inline-block;
+  padding: calc(4 * var(--gu)) calc(10 * var(--gu));
+  background: var(--ink);
+  color: var(--yellow);
+  font-family: var(--hp-font-display);
+}
+
+#{$t} .hp-ch,
+#{$t} .hp-date {
+  font-family: var(--hp-font-display);
+  color: var(--ink);
+}
+
+#{$t} .hp-guide-heading,
+#{$t} .hp-feature-title {
+  font-family: var(--hp-font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+}
