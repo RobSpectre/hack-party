@@ -305,9 +305,6 @@ export default {
     AuctionEarRound,
     VideoWagerRound
   },
-  computed: {
-    ...mapState(useGameStore, ['game'])
-  },
   data () {
     return {
       bossfight: [
@@ -315,6 +312,9 @@ export default {
         { name: 'Fail', emoji: '👎️' }
       ]
     }
+  },
+  computed: {
+    ...mapState(useGameStore, ['game'])
   },
   methods: {
     chargePlayers () {

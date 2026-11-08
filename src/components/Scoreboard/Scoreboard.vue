@@ -26,7 +26,10 @@ export default {
     ChooseItemModal
   },
   props: {
-    question: String,
+    question: {
+      type: String,
+      default: undefined
+    },
     prize: {
       default: 1,
       type: Number

@@ -244,7 +244,7 @@ import AudioInputRound from '@/components/AudioInput/AudioInputRound.vue'
 
 import StringGuess from '@/components/base/StringGuess.vue'
 
-/* eslint-disable vue/multi-word-component-names */
+ 
 export default {
   name: 'LasVegasGp2025',
   components: {

@@ -28,8 +28,14 @@ export default {
     GameContent
   },
   props: {
-    title: String,
-    video: String,
+    title: {
+      type: String,
+      default: undefined
+    },
+    video: {
+      type: String,
+      default: undefined
+    },
     videoType: {
       type: String,
       default: 'video/mp4'

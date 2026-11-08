@@ -49,8 +49,12 @@ export default {
     PlayersSidebar
   },
   props: {
-    items: Array
+    items: {
+      type: Array,
+      default: undefined
+    }
   },
+  emits: ['bet'],
   data () {
     return {
       wager: 0,

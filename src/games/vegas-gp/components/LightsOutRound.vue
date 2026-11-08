@@ -85,32 +85,6 @@ export default {
       default: false
     }
   },
-  mounted () {
-    this.uuid = uuidv4()
-
-    this.mouseEvent = addEventListener('mousedown', event => {
-      if (event.button === 0) {
-        const slide = window.deck.getCurrentSlide()
-        console.log(slide)
-
-        if (slide.querySelector('#lightsout') && !this.complete) {
-          this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
-          this.tap(event)
-        }
-      }
-    }, { passive: false })
-
-    this.keyEvent = addEventListener('keydown', event => {
-      if (event.key === ' ') {
-        const slide = window.deck.getCurrentSlide()
-
-        if (slide.querySelector('#lightsout') && !this.complete) {
-          this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
-          this.tap(event)
-        }
-      }
-    }, { passive: false })
-  },
   data () {
     return {
       reactionTimes: [],
@@ -154,6 +128,32 @@ export default {
       return this.formatTime(this.time)
     },
     ...mapState(useGameStore, ['game'])
+  },
+  mounted () {
+    this.uuid = uuidv4()
+
+    this.mouseEvent = addEventListener('mousedown', event => {
+      if (event.button === 0) {
+        const slide = window.deck.getCurrentSlide()
+        console.log(slide)
+
+        if (slide.querySelector('#lightsout') && !this.complete) {
+          this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
+          this.tap(event)
+        }
+      }
+    }, { passive: false })
+
+    this.keyEvent = addEventListener('keydown', event => {
+      if (event.key === ' ') {
+        const slide = window.deck.getCurrentSlide()
+
+        if (slide.querySelector('#lightsout') && !this.complete) {
+          this.lights = Array.prototype.slice.call(slide.querySelectorAll('.light-strip'))
+          this.tap(event)
+        }
+      }
+    }, { passive: false })
   },
   methods: {
     formatTime (time) {

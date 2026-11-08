@@ -23,7 +23,10 @@ import gsap from 'gsap'
 export default {
   name: 'LoserCard',
   props: {
-    losers: Array,
+    losers: {
+      type: Array,
+      default: undefined
+    },
     answer: {
       type: String,
       default: ''

@@ -76,8 +76,14 @@ export default {
     CounterBox
   },
   props: {
-    src: String,
-    answer: String,
+    src: {
+      type: String,
+      default: undefined
+    },
+    answer: {
+      type: String,
+      default: undefined
+    },
     chunks: {
       type: Number,
       default: 5

@@ -19,7 +19,10 @@ section(
 export default {
   name: 'VideoSlide',
   props: {
-    background: String,
+    background: {
+      type: String,
+      default: undefined
+    },
     muted: {
       type: Boolean,
       default: true

@@ -53,8 +53,14 @@ export default {
     Slide
   },
   props: {
-    questions: Array,
-    prize: Number,
+    questions: {
+      type: Array,
+      default: undefined
+    },
+    prize: {
+      type: Number,
+      default: undefined
+    },
     bonus: {
       type: Number,
       default: 5

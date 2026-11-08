@@ -10,7 +10,10 @@
 export default {
   name: 'CounterBox',
   props: {
-    counter: Number,
+    counter: {
+      type: Number,
+      default: undefined
+    },
     label: {
       type: String,
       default: 'Total'

@@ -18,8 +18,14 @@ export default {
     GameContentWithSidebar
   },
   props: {
-    image: String,
-    title: String
+    image: {
+      type: String,
+      default: undefined
+    },
+    title: {
+      type: String,
+      default: undefined
+    }
   }
 }
 </script>

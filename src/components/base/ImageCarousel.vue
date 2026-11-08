@@ -16,7 +16,10 @@ export default {
     GameContentWithSidebar
   },
   props: {
-    images: Array
+    images: {
+      type: Array,
+      default: undefined
+    }
   }
 }
 </script>

@@ -21,7 +21,10 @@
 export default {
   name: 'AuctionEarBid',
   props: {
-    currentPlayer: Object,
+    currentPlayer: {
+      type: Object,
+      default: undefined
+    },
     image: {
       type: String,
       default: '/images/auctionear_header.png'
@@ -35,6 +38,7 @@ export default {
       default: 'Bid'
     }
   },
+  emits: ['output'],
   data () {
     return {
       currentInput: ''

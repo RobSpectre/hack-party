@@ -13,7 +13,10 @@
 export default {
   name: 'Ladder',
   props: {
-    items: Array
+    items: {
+      type: Array,
+      default: undefined
+    }
   }
 }
 </script>

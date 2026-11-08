@@ -50,7 +50,10 @@ export default {
     LoserCard
   },
   props: {
-    src: String,
+    src: {
+      type: String,
+      default: undefined
+    },
     correctIndex: {
       type: Number,
       default: 0

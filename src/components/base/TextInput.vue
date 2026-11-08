@@ -37,6 +37,7 @@ export default {
       default: '#00b1e1'
     }
   },
+  emits: ['inputEvent'],
   data () {
     return {
       inputText: ''

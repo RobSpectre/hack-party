@@ -12,10 +12,12 @@ export default {
   name: 'Slide',
   props: {
     heading: {
-      type: String
+      type: String,
+      default: undefined
     },
     classes: {
-      type: String
+      type: String,
+      default: undefined
     }
   }
 }

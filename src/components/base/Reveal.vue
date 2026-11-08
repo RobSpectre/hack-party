@@ -9,6 +9,7 @@ import Reveal from 'reveal.js'
 
 export default {
   name: 'Reveal',
+  emits: ['reveal-rendered', 'slide-changed'],
   data: function () {
     return {
       deck: undefined,

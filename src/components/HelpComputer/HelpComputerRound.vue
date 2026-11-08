@@ -32,15 +32,18 @@ export default {
     ChooseWinner
   },
   props: {
-    image: String,
-    title: String,
+    image: {
+      type: String,
+      default: undefined
+    },
+    title: {
+      type: String,
+      default: undefined
+    },
     prize: {
       type: Number,
       default: 1
     }
-  },
-  computed: {
-    ...mapGetters(useGameStore, ['getPlayersFromButton'])
   },
   data () {
     return {
@@ -48,6 +51,9 @@ export default {
       winner: null,
       completed: false
     }
+  },
+  computed: {
+    ...mapGetters(useGameStore, ['getPlayersFromButton'])
   },
   methods: {
     handleImageGenerated (event) {

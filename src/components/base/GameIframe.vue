@@ -22,7 +22,10 @@ export default {
     GameContent
   },
   props: {
-    iframe: String
+    iframe: {
+      type: String,
+      default: undefined
+    }
   },
   computed: {
     ...mapGetters(useGameStore, ['getPlayersByScore']),

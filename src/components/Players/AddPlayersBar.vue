@@ -33,11 +33,6 @@ export default {
     UserPlusIcon,
     UserGroupIcon
   },
-  data: function () {
-    return {
-      inputName: ''
-    }
-  },
   props: {
     addPlayersAllowed: {
       type: Boolean,
@@ -46,6 +41,11 @@ export default {
     addTeamsAllowed: {
       type: Boolean,
       default: true
+    }
+  },
+  data: function () {
+    return {
+      inputName: ''
     }
   },
   methods: {

@@ -191,9 +191,6 @@ export default {
     GameVideo,
     VideoWagerRound
   },
-  computed: {
-    ...mapState(useGameStore, ['game'])
-  },
   data () {
     return {
       items: [
@@ -201,6 +198,9 @@ export default {
         { name: 'Fail', emoji: '👎️' }
       ]
     }
+  },
+  computed: {
+    ...mapState(useGameStore, ['game'])
   },
   methods: {
     chargePlayers () {

@@ -25,7 +25,10 @@ export default {
     ArrowDownIcon
   },
   props: {
-    playerName: String,
+    playerName: {
+      type: String,
+      default: undefined
+    },
     darkBackground: {
       type: Boolean,
       default: false

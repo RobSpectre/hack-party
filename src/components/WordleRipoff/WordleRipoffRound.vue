@@ -67,6 +67,23 @@ export default {
       default: null
     }
   },
+  data () {
+    return {
+      letterStates: {},
+      currentRowIndex: 0,
+      board: [],
+      message: '',
+      grid: '',
+      shakeRowIndex: -1,
+      success: false,
+      word: '',
+      allowInput: true,
+      pastPlayers: [],
+      loopInterval: 0,
+      loop: false,
+      losers: []
+    }
+  },
   computed: {
     ...mapState(useGameStore, ['game']),
     currentPlayer () {
@@ -100,23 +117,6 @@ export default {
     },
     presentLetters () {
       return Object.keys(Object.fromEntries(Object.entries(this.letterStates).filter(item => item[1] === 'present')))
-    }
-  },
-  data () {
-    return {
-      letterStates: {},
-      currentRowIndex: 0,
-      board: [],
-      message: '',
-      grid: '',
-      shakeRowIndex: -1,
-      success: false,
-      word: '',
-      allowInput: true,
-      pastPlayers: [],
-      loopInterval: 0,
-      loop: false,
-      losers: []
     }
   },
   mounted () {
