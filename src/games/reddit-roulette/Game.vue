@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     VideoSlide(background='/games/reddit-roulette/video/poker.mp4')
     VideoSlide(background='/games/reddit-roulette/video/fail_compilation.mp4')
     Slide(class='darkgray')
@@ -168,7 +168,7 @@ import { useGameStore } from '@/store'
 
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -182,7 +182,7 @@ export default {
   name: 'RedditRouletteGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

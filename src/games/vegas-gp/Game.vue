@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     VideoSlide(background='/games/vegas-gp/video/money.mp4')
     VideoSlide(background='/games/vegas-gp/video/costcap.mp4')
     VideoSlide(background='/games/vegas-gp/video/money.mp4')
@@ -253,7 +253,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -276,7 +276,7 @@ export default {
   name: 'VegasGpGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

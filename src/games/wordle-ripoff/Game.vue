@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     VideoSlide(background='/games/wordle-ripoff/video/goodfellas_cut.mp4')
     VideoSlide(
       background='/games/wordle-ripoff/video/wordle_tutorial_cut.mp4'
@@ -121,7 +121,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -137,7 +137,7 @@ export default {
   name: 'WordleRipoffGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

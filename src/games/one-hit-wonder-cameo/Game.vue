@@ -1,8 +1,8 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
-    Title(
+    GameTitle
+    GameTitle(
       background='/games/one-hit-wonder-cameo/video/price_is_right.mp4'
       heading='/games/one-hit-wonder-cameo/images/cameo_price_is_right.png'
     )
@@ -292,7 +292,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 
@@ -304,7 +304,7 @@ export default {
   name: 'OneHitWonderCameoGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

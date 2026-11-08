@@ -1,13 +1,13 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     VideoSlide(background='/games/whose-text-is-it-anyway/video/capitol.mp4')
     VideoSlide(background='/games/whose-text-is-it-anyway/video/meadows.mp4')
     BackgroundImageSlide(background='/games/whose-text-is-it-anyway/images/dc_trip.jpg')
     VideoSlide(background='/games/whose-text-is-it-anyway/video/steal_phones_cut.mp4')
     VideoSlide(background='/games/whose-text-is-it-anyway/video/phone_jack.mp4')
-    Title(
+    GameTitle(
       background='/games/whose-text-is-it-anyway/video/whose_line.mp4'
       heading='/games/whose-text-is-it-anyway/images/whose_text_is_it_anyway.png'
     )
@@ -271,7 +271,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -284,7 +284,7 @@ export default {
   name: 'WhoseTextIsItAnywayGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

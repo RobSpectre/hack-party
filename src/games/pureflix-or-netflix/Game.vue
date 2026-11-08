@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     BackgroundImageSlide(background='/games/pureflix-or-netflix/images/pureflix_website.png')
       h1 Thanks Keegan!
     VideoSlide(background='/games/pureflix-or-netflix/video/tammy_faye_cut.mp4')
@@ -349,7 +349,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -365,7 +365,7 @@ export default {
   name: 'PureflixOrNetflixGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     VideoSlide(background='/games/two-lies-and-one-more-lie/video/title_video_cut.mp4')
     VideoSlide(background='/games/two-lies-and-one-more-lie/video/title_video_cut.mp4')
       .title Two Lies and... another total lie(ish)
@@ -101,7 +101,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -117,7 +117,7 @@ export default {
   name: 'TwoLiesAndOneMoreLieGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,

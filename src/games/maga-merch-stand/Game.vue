@@ -1,7 +1,7 @@
 <template lang="pug">
 Reveal
   .slides
-    Title
+    GameTitle
     BackgroundImageSlide(background='/games/maga-merch-stand/images/mtg_store.png')
     BackgroundImageSlide(background='/games/maga-merch-stand/images/mtg_store.png')
       .title MAGA Merch Stand
@@ -72,7 +72,7 @@ Reveal
     )
     VideoSlide(background='/games/maga-merch-stand/video/bossfight.mp4')
       h2.nintendo(style='margin-top: 24rem;') Boss Fight!!
-    Title(
+    GameTitle(
       background='/games/maga-merch-stand/video/whose_line.mp4'
       heading='/games/maga-merch-stand/images/whose_text_is_it_anyway.png'
     )
@@ -290,7 +290,7 @@ Reveal
 <script>
 import BackgroundImageSlide from '@/components/base/BackgroundImageSlide.vue'
 import Reveal from '@/components/base/Reveal.vue'
-import Title from '@/components/base/GameTitle.vue'
+import GameTitle from '@/components/base/GameTitle.vue'
 import Slide from '@/components/base/Slide.vue'
 import VideoSlide from '@/components/base/VideoSlide.vue'
 import ActionButton from '@/components/base/ActionButton.vue'
@@ -308,7 +308,7 @@ export default {
   name: 'MagaMerchStandGame',
   components: {
     PlayerBoard,
-    Title,
+    GameTitle,
     Slide,
     Reveal,
     BackgroundImageSlide,
