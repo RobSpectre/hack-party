@@ -2,6 +2,7 @@
 .reveal(class='theater' ref='presentation')
   slot
   BroadcastChrome(v-if='stage && ready' :deck='deck')
+  SettingsPanel(v-if='ready' :deck='deck')
 </template>
 
 <script>
@@ -9,12 +10,14 @@
 import Reveal from 'reveal.js'
 
 import BroadcastChrome from '@/components/base/BroadcastChrome.vue'
+import SettingsPanel from '@/components/base/SettingsPanel.vue'
 import themed from '@/theme/mixin'
 
 export default {
   name: 'Reveal',
   components: {
-    BroadcastChrome
+    BroadcastChrome,
+    SettingsPanel
   },
   mixins: [themed],
   emits: ['reveal-rendered', 'slide-changed'],

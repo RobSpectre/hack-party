@@ -52,6 +52,11 @@ exactly as the games were played. Every look but Classic is sized for a 4K windo
 Zoom at 1080p. Press `Shift+T` to switch, use the switch on the home page, or add
 `?theme=benday` (or `uplink`, `brutal`, `stadium`, `classic`) to a game's URL. A game can
 pick its own theme with `theme: 'classic'` in `src/games/index.js`.
+During a game, press the down arrow for the settings page: switch games (players and
+scores come along), add, remove and rename players, set any score, and pick the theme.
+The up arrow or `Esc` goes back to the game where you left it. A game's own vertical
+slides keep the down arrow, and so does the Konami code.
+
 `DESIGN.md` explains the tokens and how to add a theme.
 
 ### Compiles and hot-reloads for development
