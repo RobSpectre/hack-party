@@ -24,7 +24,10 @@ Each game lives in its own folder:
 * `src/games/index.js` lists every game. Add an entry there to make a game show up on the
   home page and at `/<slug>`.
 
-Fetch a game's media before playing it:
+`npm run dev` fetches media for you: the first time a slide asks for a file, the dev server
+copies it out of git history (the first file of an old game can take a moment while its
+branch is fetched). To fetch ahead of time, for example before `npm run build` or a party
+without internet:
 
 ```
 npm run media -- christmas-2025     # one or more games
