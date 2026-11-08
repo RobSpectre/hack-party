@@ -25,7 +25,7 @@
     "pinia": "^4.1.0",
     "pinia-plugin-persistedstate": "^4.7.1",
     "pug": "^3.0.4",
-    "reveal.js": "^5.2.1",
+    "reveal.js": "^6.0.2",
     "uuid": "^14.0.3",
     "vue": "^3.5.45",
     "vue-advanced-chat": "^2.1.2",
