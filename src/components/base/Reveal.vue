@@ -21,6 +21,11 @@ export default {
 
     this.waitToRenderReveal()
   },
+  beforeUnmount () {
+    if (this.deck) {
+      this.deck.destroy()
+    }
+  },
   methods: {
     waitToRenderReveal () {
       if (!(this.presentation.parentElement.clientWidth > 0)) {
@@ -65,6 +70,7 @@ export default {
     },
     setShortcutListener () {
       window.deck.on('slidechanged', event => {
+        this.$emit('slide-changed', event)
         this.setShortcuts(event.currentSlide)
       })
     },

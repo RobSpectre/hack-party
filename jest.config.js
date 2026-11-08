@@ -5,8 +5,8 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest'
   },
   transformIgnorePatterns: [
-    // uuid ships ESM only, so let babel-jest compile it
-    '/node_modules/(?!uuid/)'
+    // uuid and marked ship ESM only, so let babel-jest compile them
+    '/node_modules/(?!(uuid|marked)/)'
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',

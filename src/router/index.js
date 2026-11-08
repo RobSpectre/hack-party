@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import GamesIndex from '../views/GamesIndex.vue'
+import games from '../games'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'GamesIndex',
+    component: GamesIndex
+  },
+  ...games.map(game => ({
+    path: `/${game.slug}`,
+    name: game.slug,
+    component: game.component
+  })),
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/'
   }
 ]
 

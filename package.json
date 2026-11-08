@@ -11,7 +11,8 @@
     "test": "jest --maxWorkers=2",
     "test:clearCache": "jest --clearCache",
     "test:inspect": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "media": "node scripts/fetch-media.mjs"
   },
   "engines": {
     "node": ">=26",
@@ -21,6 +22,7 @@
     "@heroicons/vue": "^2.2.0",
     "axios": "^1.21.0",
     "gsap": "^3.15.1",
+    "marked": "^17.0.6",
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
     "pug": "^3.0.4",
