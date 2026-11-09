@@ -67,6 +67,7 @@ Reveal.gop-loser
           :prize='bossFights[round.number].points'
           denomination=''
           :headerImage='bossFights[round.number].setup ? media("images", bossFights[round.number].setup) : undefined'
+          headerImageClass='m-0 w-full clear-reveal object-cover object-top'
           :question='q.question'
         )
         PlayerBoard
@@ -74,6 +75,7 @@ Reveal.gop-loser
         v-if='bossFights[round.number].after'
         :background='media("video", bossFights[round.number].after)'
         :muted='false'
+        size='contain'
       )
 </template>
 
