@@ -8,6 +8,15 @@ describe('The Biggest GOPdamn Loser races', () => {
     expect(rounds.map(round => round.points)).toEqual([1, 2, 3])
   })
 
+  test('the setup never names the Republican before the reveal', () => {
+    races.forEach(race => {
+      const surname = race.republican.replace(/,? Jr\.$/, '').split(' ').pop()
+      expect(race.place).not.toContain(surname)
+      expect(race.seat).not.toContain(surname)
+      expect(race.before.winner || '').not.toContain(surname)
+    })
+  })
+
   test('every race is a Democratic win with a source', () => {
     races.forEach(race => {
       expect(margin(race)).toBeGreaterThan(0)
@@ -32,7 +41,8 @@ describe('The Biggest GOPdamn Loser ads', () => {
 
     Object.entries(ads).forEach(([key, ad]) => {
       expect(keys).toContain(key)
-      expect(ad.id).toMatch(/^[\w-]{11}$/)
+      // A YouTube id, or the page the video came from when it isn't on YouTube.
+      expect(ad.id || ad.url).toMatch(/^([\w-]{11}|https:\/\/.+)$/)
       expect(ad.file).toBe(`video/${key}.mp4`)
     })
   })

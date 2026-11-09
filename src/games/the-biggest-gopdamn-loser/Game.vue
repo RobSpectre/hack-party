@@ -31,6 +31,7 @@ Reveal
         :celebrity='race.republican'
         :hint1='race.place'
         :hint2='race.seat'
+        :image='photo(race)'
         :video='adFile(race)'
         :youtube='adFile(race) ? "" : race.ad || ""'
         :youtubeTitle='race.republican'
@@ -82,10 +83,13 @@ export default {
   methods: {
     margin,
     number,
-    // Who won the seat last time: the Republican's surname, or whoever held
-    // an open seat.
+    // Who won the seat last time, without naming this year's Republican
+    // before the reveal: whoever held an open seat, or "the Republican".
     lastWinner (race) {
-      return race.before.winner || race.republican.replace(/,? Jr\.$/, '').split(' ').pop()
+      return race.before.winner || 'the Republican'
+    },
+    photo (race) {
+      return race.photo ? `/games/the-biggest-gopdamn-loser/images/${race.photo}` : ''
     },
     // The downloaded ad, if fetch-ads.mjs has fetched one.
     adFile (race) {

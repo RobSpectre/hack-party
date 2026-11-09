@@ -6,7 +6,8 @@
 //   result:  the 2026 count, from Decision Desk HQ (or Ballotpedia where
 //            noted). These are unofficial until each state certifies.
 //   channel: the Republican's campaign YouTube channel
-//   ad:      a YouTube id that overrides the channel's most-viewed video
+//   ad:      a YouTube id (or a page URL) that overrides the channel's top video
+//   photo:   the Republican's photo, revealed with their name
 //
 // The ads themselves are downloaded by fetch-ads.mjs (see the top of that
 // file) into public/games/the-biggest-gopdamn-loser/video/ and listed in
@@ -26,7 +27,7 @@ export const rounds = [
       {
         key: 'ny-17',
         place: "New York's 17th District",
-        seat: 'U.S. House: Rep. Mike Lawler (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Mike Lawler',
         democrat: 'Cait Conley',
         before: { year: 2024, votes: 23946, points: 6.3, source: ballotpedia("New_York's_17th_Congressional_District_election,_2024") },
@@ -34,12 +35,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCASxpnAtPPLtzry38pIs_yQ',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'pa-01',
         place: "Pennsylvania's 1st District",
-        seat: 'U.S. House: Rep. Brian Fitzpatrick (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Brian Fitzpatrick',
         democrat: 'Bob Harvie',
         before: { year: 2024, votes: 59348, points: 12.8, source: ballotpedia("Pennsylvania's_1st_Congressional_District_election,_2026") },
@@ -49,12 +52,14 @@ export const rounds = [
         // and his House office channel has only floor speeches.
         channel: 'https://www.youtube.com/channel/UCFAtbrGANIiTQ74Zh4Wkxhg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'mo-02',
         place: "Missouri's 2nd District",
-        seat: 'U.S. House: Rep. Ann Wagner (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Ann Wagner',
         democrat: 'Fred Wellman',
         before: { year: 2024, votes: 51388, points: 12.0, source: ballotpedia("Missouri's_2nd_Congressional_District_election,_2024") },
@@ -62,12 +67,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCMsyU0EuZdzoN_W4ZKnCi0g',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'va-02',
         place: "Virginia's 2nd District",
-        seat: 'U.S. House: Rep. Jen Kiggans (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Jen Kiggans',
         democrat: 'Elaine Luria',
         before: { year: 2024, votes: 15702, points: 3.8, source: ballotpedia("Virginia's_2nd_Congressional_District_election,_2024") },
@@ -75,12 +82,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCW3bW8IMz1s3QK2f5o9hI4w',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'pa-08',
         place: "Pennsylvania's 8th District",
-        seat: 'U.S. House: Rep. Rob Bresnahan Jr. (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Rob Bresnahan Jr.',
         democrat: 'Paige Cognetti',
         before: { year: 2024, votes: 6252, points: 1.6, source: ballotpedia("Pennsylvania's_8th_Congressional_District_election,_2024") },
@@ -88,7 +97,9 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCfvFndA3KJE1yG2NRJ5rzLg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       }
     ]
   },
@@ -100,7 +111,7 @@ export const rounds = [
       {
         key: 'pa-10',
         place: "Pennsylvania's 10th District",
-        seat: 'U.S. House: Rep. Scott Perry (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Scott Perry',
         democrat: 'Janelle Stelson',
         before: { year: 2024, votes: 5133, points: 1.2, source: ballotpedia("Pennsylvania's_10th_Congressional_District_election,_2024") },
@@ -110,12 +121,15 @@ export const rounds = [
         // No campaign channel found; his official channel (UCzgrU5PT_HHRgf5hXPen4dQ) has only legislative updates, no ads.
         channel: null,
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        // Rob's pick: Perry's attack ad on Stelson, as aired in a news report.
+        ad: '1J4urH2iWVo',
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'az-06',
         place: "Arizona's 6th District",
-        seat: 'U.S. House: Rep. Juan Ciscomani (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Juan Ciscomani',
         democrat: 'JoAnna Mendoza',
         before: { year: 2024, votes: 10822, points: 2.5, source: ballotpedia("Arizona's_6th_Congressional_District_election,_2024") },
@@ -123,12 +137,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCRg1ca9cx03cE98HgxnojPQ',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'wi-03',
         place: "Wisconsin's 3rd District",
-        seat: 'U.S. House: Rep. Derrick Van Orden (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Derrick Van Orden',
         democrat: 'Rebecca Cooke',
         before: { year: 2024, votes: 11256, points: 2.7, source: ballotpedia("Wisconsin's_3rd_Congressional_District_election,_2024") },
@@ -136,12 +152,15 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCuH-KwQagDN0sxrl3NXiMQg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        // The full 'Socialism Sucks' (1.2M views), not the Short cut that tops the channel.
+        ad: 'Q-09fjOMqWI',
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'co-08',
         place: "Colorado's 8th District",
-        seat: 'U.S. House: Rep. Gabe Evans (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Gabe Evans',
         democrat: 'Manny Rutinel',
         before: { year: 2024, votes: 2449, points: 0.8, source: ballotpedia("Colorado's_8th_Congressional_District_election,_2024") },
@@ -149,12 +168,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCAGUU2muThWIpgCdZ04XtIg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'ia-01',
         place: "Iowa's 1st District",
-        seat: 'U.S. House: Rep. Mariannette Miller-Meeks (R)',
+        seat: 'U.S. House, held by a Republican',
         republican: 'Mariannette Miller-Meeks',
         democrat: 'Christina Bohannan',
         before: { year: 2024, votes: 799, points: 0.2, source: ballotpedia("Iowa's_1st_Congressional_District_election,_2024") },
@@ -162,7 +183,9 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCU4Gi50TTKqebUthOHBIl-Q',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       }
     ]
   },
@@ -174,7 +197,7 @@ export const rounds = [
       {
         key: 'me-sen',
         place: 'Maine',
-        seat: 'U.S. Senate: Sen. Susan Collins (R)',
+        seat: 'U.S. Senate, held by a Republican',
         republican: 'Susan Collins',
         democrat: 'Troy Jackson',
         before: { year: 2020, votes: 70422, points: 8.6, source: ballotpedia('United_States_Senate_election_in_Maine,_2020') },
@@ -182,12 +205,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCXfC-oAXdCXDkp_1pnjQEYg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'ks-sen',
         place: 'Kansas',
-        seat: 'U.S. Senate: Sen. Roger Marshall (R)',
+        seat: 'U.S. Senate, held by a Republican',
         republican: 'Roger Marshall',
         democrat: 'Adam Hamilton',
         before: { year: 2020, votes: 156432, points: 11.4, source: ballotpedia('United_States_Senate_election_in_Kansas,_2020') },
@@ -196,12 +221,15 @@ export const rounds = [
         // No campaign channel with 2025-2026 ads: Kansans for Marshall stopped posting in 2022 and the Senate office channel has no ads.
         channel: null,
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        // Rob's pick: a re-upload, since the campaign channel has no 2025-2026 ads.
+        ad: 'YBxnyL01gKg',
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'oh-sen',
         place: 'Ohio',
-        seat: 'U.S. Senate special: Sen. Jon Husted (R)',
+        seat: 'U.S. Senate special election, held by a Republican',
         republican: 'Jon Husted',
         democrat: 'Sherrod Brown',
         before: { year: 2022, winner: 'J.D. Vance', votes: 252625, points: 6.1, source: ballotpedia('United_States_Senate_election_in_Ohio,_2022') },
@@ -209,12 +237,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCaoAdDAmh0I0442wlrunx4A',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'nc-sen',
         place: 'North Carolina',
-        seat: 'U.S. Senate: open, Thom Tillis (R) retired',
+        seat: 'U.S. Senate, open Republican seat',
         republican: 'Michael Whatley',
         democrat: 'Roy Cooper',
         before: { year: 2020, winner: 'Thom Tillis', votes: 95633, points: 1.8, source: ballotpedia('United_States_Senate_election_in_North_Carolina,_2020') },
@@ -222,12 +252,14 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UCD4LqG10yahi9XGA6q2RyEQ',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       },
       {
         key: 'tx-sen',
         place: 'Texas',
-        seat: 'U.S. Senate: open, John Cornyn (R) lost his primary',
+        seat: 'U.S. Senate, open Republican seat',
         republican: 'Ken Paxton',
         democrat: 'James Talarico',
         before: { year: 2020, winner: 'John Cornyn', votes: 1074219, points: 9.6, source: ballotpedia('United_States_Senate_election_in_Texas,_2020') },
@@ -235,7 +267,9 @@ export const rounds = [
         // The campaign's YouTube channel, e.g. 'https://www.youtube.com/@handle'.
         channel: 'https://www.youtube.com/channel/UC3qG7nbgPg9ccXm2cBE-Xkw',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null
+        ad: null,
+        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
+        photo: null
       }
     ]
   }

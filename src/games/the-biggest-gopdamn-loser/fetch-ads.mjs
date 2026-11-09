@@ -113,6 +113,9 @@ for (const race of races) {
     continue
   }
 
+  // `ad` can also be the URL of a page with the video, when it isn't on YouTube.
+  const isUrl = /^https?:\/\//.test(pick.id)
+  const target = isUrl ? pick.id : `https://www.youtube.com/watch?v=${pick.id}`
   const file = `video/${race.key}.mp4`
   const out = join(root, 'public/games', slug, file)
   if (values.force || !existsSync(out)) {
@@ -123,14 +126,15 @@ for (const race of races) {
       '--no-playlist',
       '-o', out,
       '--force-overwrites',
-      `https://www.youtube.com/watch?v=${pick.id}`
+      target
     ])
   }
 
   // Fill in details the channel listing didn't have.
-  const details = pick.title && pick.upload_date ? pick : listing(['--skip-download', `https://www.youtube.com/watch?v=${pick.id}`])[0]
+  const details = pick.title && pick.upload_date ? pick : listing(['--skip-download', '--no-playlist', target])[0]
   ads[race.key] = {
-    id: pick.id,
+    id: isUrl ? null : pick.id,
+    url: isUrl ? pick.id : undefined,
     title: details.title,
     views: details.view_count ?? null,
     uploaded: details.upload_date ?? null,
