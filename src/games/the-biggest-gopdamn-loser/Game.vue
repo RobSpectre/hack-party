@@ -18,7 +18,7 @@ Reveal.gop-loser
       h2.fragment Round 2: 2 points a race
       h2.fragment Round 3: 3 points a race
       h2.fragment Exactly right? Double points
-      h2.fragment Boss fights: 3, 5, then 10 points a question
+      h2.fragment Boss fight after each round: 3, 5, then 10 points
       h1 Scoring
     PlayerBoard
     template(v-for='round in rounds' :key='round.number')
@@ -66,7 +66,7 @@ Reveal.gop-loser
           :winnerIndex='q.answer'
           :prize='bossFights[round.number].points'
           denomination=''
-          :headerImage='bossFights[round.number].setup ? media("images", bossFights[round.number].setup) : undefined'
+          :headerImage='bossFights[round.number].image ? media("images", bossFights[round.number].image) : undefined'
           headerImageClass='m-0 w-full clear-reveal object-cover object-top'
           :question='q.question'
         )

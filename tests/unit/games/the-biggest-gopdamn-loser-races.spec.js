@@ -49,10 +49,11 @@ describe('The Biggest GOPdamn Loser ads', () => {
 })
 
 describe('The Biggest GOPdamn Loser boss fights', () => {
-  test('one per round, worth 3, 5 and 10 points a question', async () => {
+  test('one question closes each round, worth 3, 5 and 10 points', async () => {
     const { bossFights } = await import('@/games/the-biggest-gopdamn-loser/bossfights.js')
 
     expect(rounds.map(round => bossFights[round.number].points)).toEqual([3, 5, 10])
+    expect(rounds.map(round => bossFights[round.number].questions.length)).toEqual([1, 1, 1])
     Object.values(bossFights).forEach(fight => {
       fight.questions.forEach(q => {
         expect(q.choices.length).toBeGreaterThan(1)
