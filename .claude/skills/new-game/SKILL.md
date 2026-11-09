@@ -93,18 +93,25 @@ shared component for one game, and keep the Classic theme looking exactly as it 
   person which ones aren't final.
 - Images, sounds and video go in `public/games/<slug>/...` and are referenced as
   `/games/<slug>/images/foo.png`. Prefer files you download over hotlinks, which break.
-- YouTube: store the 11-character video id. To find a channel's most-viewed videos,
-  run this where YouTube is reachable (the person's machine, or a cloud environment that
-  allows www.youtube.com):
+- YouTube: download the video into `public/games/<slug>/video/` with `yt-dlp` and play
+  it with the `video` prop or `GameVideo`, so the game doesn't depend on the network or
+  on whether the uploader allows embedding. (`GameYouTube` and the `youtube` prop embed
+  a video by id, as a fallback.) Run yt-dlp where YouTube is reachable: the person's
+  machine, or a cloud environment that allows www.youtube.com. To find a channel's
+  most-viewed videos:
 
   ```
-  yt-dlp --flat-playlist --print "%(view_count)s %(id)s %(title)s" \
+  yt-dlp --flat-playlist --extractor-args youtubetab:approximate_date \
+    --print "%(view_count)s %(upload_date)s %(id)s %(title)s" \
     "https://www.youtube.com/@<handle>/videos" | sort -rn | head -20
+  yt-dlp -S res:1080,ext:mp4:m4a --merge-output-format mp4 \
+    -o public/games/<slug>/video/<name>.mp4 "https://www.youtube.com/watch?v=<id>"
   ```
 
-  Then check the top results' upload dates (`yt-dlp --print "%(upload_date)s" <id>`)
-  so the pick is from the right cycle or season. Never guess an id, a channel or a view
-  count: leave the field `null` (the round skips the slide) and say what's missing.
+  For many videos, write a script next to the game, like
+  `src/games/the-biggest-gopdamn-loser/fetch-ads.mjs`, that records what it picked
+  (id, title, views, date) in a JSON file. Never guess an id, a channel or a view count:
+  leave it out (the round skips the slide) and say what's missing.
 
 ## 5. Check it
 

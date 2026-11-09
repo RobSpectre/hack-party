@@ -1,5 +1,8 @@
 <template lang='pug'>
 celebrity-intro(:celebrity='celebrity' :hint1='hint1' :hint2='hint2' :hint3='hint3' :image='image')
+  //- A game can pass hint1-3 slots to style a hint, e.g. highlight a number.
+  template(v-for='name in hintSlots' :key='name' #[name])
+    slot(:name='name')
 slot(name='post-intro')
 game-you-tube(
   v-if='youtube'
@@ -97,6 +100,11 @@ export default {
     question: {
       type: String,
       default: 'What is the rate on Cameo?'
+    }
+  },
+  computed: {
+    hintSlots () {
+      return ['hint1', 'hint2', 'hint3'].filter(name => this.$slots[name])
     }
   }
 }

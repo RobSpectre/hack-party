@@ -27,13 +27,13 @@ Reveal
         h2.text-white {{ round.points }} {{ round.points === 1 ? 'point' : 'points' }} a race
       CameoPriceIsRightRound(
         v-for='race in round.races'
-        :key='race.place'
+        :key='race.key'
         :celebrity='race.republican'
         :hint1='race.place'
         :hint2='race.seat'
-        :hint3='lastWin(race)'
-        :youtube='race.ad || ""'
-        :youtubeTitle='race.republican + " for " + race.place'
+        :video='adFile(race)'
+        :youtube='adFile(race) ? "" : race.ad || ""'
+        :youtubeTitle='race.republican'
         :price='margin(race)'
         :prize='round.points'
         denomination=''
@@ -41,6 +41,12 @@ Reveal
         separators
         :question='"By how many votes did " + race.democrat + " beat " + race.republican + "?"'
       )
+        template(#hint3)
+          | In {{ race.before.year }} {{ lastWinner(race) }} won by
+          |
+          span.gop-votes {{ number(race.before.votes) }} votes
+          |
+          | ({{ race.before.points }}%)
       //- The round's boss fight goes here.
       PlayerBoard
 </template>
@@ -55,6 +61,7 @@ import PlayerBoard from '@/components/Players/PlayerBoard.vue'
 import CameoPriceIsRightRound from '@/components/CameoPriceIsRight/CameoPriceIsRightRound.vue'
 
 import { rounds, margin } from './races.js'
+import ads from './ads.json'
 
 const number = value => value.toLocaleString('en-US')
 
@@ -74,11 +81,16 @@ export default {
   },
   methods: {
     margin,
-    // "In 2024 Lawler won by 23,946 votes (6.3 points)"
-    lastWin (race) {
-      const { year, winner, votes, points } = race.before
-      const who = winner || race.republican.replace(/,? Jr\.$/, '').split(' ').pop()
-      return `In ${year} ${who} won by ${number(votes)} votes (${points} points)`
+    number,
+    // Who won the seat last time: the Republican's surname, or whoever held
+    // an open seat.
+    lastWinner (race) {
+      return race.before.winner || race.republican.replace(/,? Jr\.$/, '').split(' ').pop()
+    },
+    // The downloaded ad, if fetch-ads.mjs has fetched one.
+    adFile (race) {
+      const ad = ads[race.key]
+      return ad && ad.file ? `/games/the-biggest-gopdamn-loser/${ad.file}` : ''
     }
   }
 }
@@ -87,5 +99,15 @@ export default {
 <style lang="scss">
 html {
   font-size: 36px;
+}
+
+// The vote count in each race's last-win hint.
+.gop-votes {
+  display: inline-block;
+  padding: 0 0.3em;
+  border-radius: var(--hp-radius-control, 0.15em);
+  background: var(--hp-data, #fde047);
+  color: var(--hp-on-data, #111827);
+  font-variant-numeric: tabular-nums;
 }
 </style>

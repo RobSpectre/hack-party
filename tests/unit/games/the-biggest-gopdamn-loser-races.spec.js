@@ -17,9 +17,23 @@ describe('The Biggest GOPdamn Loser races', () => {
     })
   })
 
-  test('ads are YouTube ids when set', () => {
+  test('race keys are unique and ad overrides are YouTube ids', () => {
+    expect(new Set(races.map(race => race.key)).size).toBe(races.length)
     races.filter(race => race.ad).forEach(race => {
       expect(race.ad).toMatch(/^[\w-]{11}$/)
+    })
+  })
+})
+
+describe('The Biggest GOPdamn Loser ads', () => {
+  test('every downloaded ad belongs to a race and says where it came from', async () => {
+    const { default: ads } = await import('@/games/the-biggest-gopdamn-loser/ads.json')
+    const keys = rounds.flatMap(round => round.races).map(race => race.key)
+
+    Object.entries(ads).forEach(([key, ad]) => {
+      expect(keys).toContain(key)
+      expect(ad.id).toMatch(/^[\w-]{11}$/)
+      expect(ad.file).toBe(`video/${key}.mp4`)
     })
   })
 })
