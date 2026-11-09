@@ -1,5 +1,5 @@
 <template lang="pug">
-Reveal
+Reveal.gop-loser
   .slides
     GameTitle(
       heading='The Biggest GOPdamn Loser'
@@ -103,6 +103,12 @@ export default {
 <style lang="scss">
 html {
   font-size: 36px;
+}
+
+// Keep each candidate's photo clear of the name label at the bottom.
+.gop-loser img.fragment {
+  max-height: 46vh;
+  width: auto;
 }
 
 // The vote count in each race's last-win hint.
