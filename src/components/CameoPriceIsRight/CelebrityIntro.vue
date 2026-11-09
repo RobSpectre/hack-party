@@ -3,11 +3,14 @@ GameSlide
   PlayersSidebar(:players='players')
   GameContent
     template(v-slot:header)
-      h3.fragment.text-white {{ hint1 }}
-      h3.fragment.text-white {{ hint2 }}
-      h3.fragment.text-white {{ hint3 }}
+      h3.fragment.text-white
+        slot(name='hint1') {{ hint1 }}
+      h3.fragment.text-white
+        slot(name='hint2') {{ hint2 }}
+      h3.fragment.text-white
+        slot(name='hint3') {{ hint3 }}
     template(v-slot:content)
-      img.fragment(:src='image')
+      img.fragment(v-if='image' :src='image')
     template(v-slot:footer)
       h1.fragment {{ celebrity }}
 </template>

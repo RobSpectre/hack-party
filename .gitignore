@@ -29,3 +29,9 @@ running
 /public/games/*/sounds/
 /public/games/*/video/
 /public/games/*/data/
+
+# The Biggest GOPdamn Loser: a new game, so its media is committed
+!/public/games/the-biggest-gopdamn-loser/images/
+!/public/games/the-biggest-gopdamn-loser/sounds/
+!/public/games/the-biggest-gopdamn-loser/video/
+!/public/games/the-biggest-gopdamn-loser/data/

@@ -3,6 +3,12 @@
 // Newest first: the first game is the default on the home page.
 const games = [
   {
+    slug: 'the-biggest-gopdamn-loser',
+    title: 'The Biggest GOPdamn Loser',
+    date: '2026-11-08',
+    component: () => import('./the-biggest-gopdamn-loser/Game.vue')
+  },
+  {
     slug: 'sunday-service-dnd-campaign-2025',
     title: 'Sunday Service DnD Campaign 2025',
     date: '2025-12-27',

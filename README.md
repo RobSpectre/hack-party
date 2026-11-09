@@ -37,6 +37,17 @@ npm run media                       # every game (several GB)
 `node scripts/media-manifest.mjs <slug>` rebuilds a game's `media.json` from the paths its
 `Game.vue` uses.
 
+To start a new game:
+
+```
+npm run new-game -- my-new-game --title "My New Game" --date 2026-11-08
+```
+
+That makes the game's folder, its registry entry, a smoke test and `public/games/my-new-game/`.
+A new game's media is committed like any other file, so it doesn't need `media.json`. Claude
+Code users can ask for a new game and the `new-game` skill in `.claude/skills/` walks through
+the rest.
+
 Round components shared by every game live in `src/components`, and media those components
 use lives in `public/images`, `public/sounds` and `public/video`.
 
