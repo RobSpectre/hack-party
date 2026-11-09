@@ -26,10 +26,10 @@ describe('The Biggest GOPdamn Loser races', () => {
     })
   })
 
-  test('race keys are unique and ad overrides are YouTube ids', () => {
+  test('race keys are unique and ad overrides are YouTube ids or page URLs', () => {
     expect(new Set(races.map(race => race.key)).size).toBe(races.length)
     races.filter(race => race.ad).forEach(race => {
-      expect(race.ad).toMatch(/^[\w-]{11}$/)
+      expect(race.ad).toMatch(/^([\w-]{11}|https:\/\/\S+)$/)
     })
   })
 })

@@ -45,9 +45,9 @@
     "file": "video/az-06.mp4"
   },
   "wi-03": {
-    "id": "EOKKZaoFY8o",
-    "title": "Socialism Sucks (Short)",
-    "views": 1900000,
+    "id": "Q-09fjOMqWI",
+    "title": "Socialism Sucks",
+    "views": 1200000,
     "uploaded": "20260909",
     "channel": "https://www.youtube.com/channel/UCuH-KwQagDN0sxrl3NXiMQg",
     "checked": "2026-11-09",
@@ -100,11 +100,39 @@
   },
   "tx-sen": {
     "id": "MtR4fLsIXP4",
-    "title": "Paxton for Senate new ad “Hypocrite”",
+    "title": "Paxton for Senate new ad \u201cHypocrite\u201d",
     "views": 99000,
     "uploaded": "20260709",
     "channel": "https://www.youtube.com/channel/UC3qG7nbgPg9ccXm2cBE-Xkw",
     "checked": "2026-11-09",
     "file": "video/tx-sen.mp4"
+  },
+  "pa-01": {
+    "id": null,
+    "url": "https://cdn.jwplayer.com/v2/media/kgPdcjyC",
+    "title": "At-Risk Republican Humiliated With Brutal Typo in TV Ad",
+    "views": null,
+    "uploaded": "20261029",
+    "channel": null,
+    "checked": "2026-11-09",
+    "file": "video/pa-01.mp4"
+  },
+  "pa-10": {
+    "id": "1J4urH2iWVo",
+    "title": "Stelson campaign denies allegations in Scott Perry attack ad",
+    "views": 3060,
+    "uploaded": "20261021",
+    "channel": "https://www.youtube.com/channel/UCaqEHP76q9TblVUO3sHFSQQ",
+    "checked": "2026-11-09",
+    "file": "video/pa-10.mp4"
+  },
+  "ks-sen": {
+    "id": "YBxnyL01gKg",
+    "title": "Roger Marshall",
+    "views": 9136,
+    "uploaded": "20261101",
+    "channel": "https://www.youtube.com/channel/UCC44AAGNGy36ebXGWyvgojg",
+    "checked": "2026-11-09",
+    "file": "video/ks-sen.mp4"
   }
 }

@@ -36,8 +36,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCASxpnAtPPLtzry38pIs_yQ',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Rep._Mike_Lawler_official_photo.jpg (public domain)
+        photo: 'ny-17.jpg'
       },
       {
         key: 'pa-01',
@@ -52,9 +52,10 @@ export const rounds = [
         // and his House office channel has only floor speeches.
         channel: 'https://www.youtube.com/channel/UCFAtbrGANIiTQ74Zh4Wkxhg',
         // A YouTube id to use instead of the channel's most-viewed video.
-        ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // CLF's 15-second "Pennsylavania" spot, embedded (JW Player) in The Daily Beast's Oct 29, 2026 story; not on YouTube.
+        ad: 'https://cdn.jwplayer.com/v2/media/kgPdcjyC',
+        // Photo: https://commons.wikimedia.org/wiki/File:Brian_Fitzpatrick_official_congressional_photo.jpg (public domain)
+        photo: 'pa-01.jpg'
       },
       {
         key: 'mo-02',
@@ -68,8 +69,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCMsyU0EuZdzoN_W4ZKnCi0g',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://unitedstates.github.io/images/congress/original/W000812.jpg (official portrait, public domain)
+        photo: 'mo-02.jpg'
       },
       {
         key: 'va-02',
@@ -83,8 +84,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCW3bW8IMz1s3QK2f5o9hI4w',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Kiggans_Jen_118th_Congress.jpg (public domain)
+        photo: 'va-02.jpg'
       },
       {
         key: 'pa-08',
@@ -98,8 +99,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCfvFndA3KJE1yG2NRJ5rzLg',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Rep._Rob_Bresnahan_official_photo,_119th_Congress.jpg (public domain)
+        photo: 'pa-08.jpg'
       }
     ]
   },
@@ -123,8 +124,8 @@ export const rounds = [
         // A YouTube id to use instead of the channel's most-viewed video.
         // Rob's pick: Perry's attack ad on Stelson, as aired in a news report.
         ad: '1J4urH2iWVo',
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Rep._Scott_Perry,_official_portrait,_118th_Congress.jpg (public domain)
+        photo: 'pa-10.jpg'
       },
       {
         key: 'az-06',
@@ -138,8 +139,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCRg1ca9cx03cE98HgxnojPQ',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Rep._Juan_Ciscomani_official_photo,_118th_Congress.jpg (public domain)
+        photo: 'az-06.jpg'
       },
       {
         key: 'wi-03',
@@ -154,8 +155,8 @@ export const rounds = [
         // A YouTube id to use instead of the channel's most-viewed video.
         // The full 'Socialism Sucks' (1.2M views), not the Short cut that tops the channel.
         ad: 'Q-09fjOMqWI',
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Congressman_dvo_(1).jpg (public domain)
+        photo: 'wi-03.jpg'
       },
       {
         key: 'co-08',
@@ -169,8 +170,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCAGUU2muThWIpgCdZ04XtIg',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Rep._Gabe_Evans_official_photo,_119th_Congress.jpg (public domain)
+        photo: 'co-08.jpg'
       },
       {
         key: 'ia-01',
@@ -184,8 +185,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCU4Gi50TTKqebUthOHBIl-Q',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Mariannette_Miller-Meeks_117th_U.S_Congress.jpg (public domain)
+        photo: 'ia-01.jpg'
       }
     ]
   },
@@ -206,8 +207,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCXfC-oAXdCXDkp_1pnjQEYg',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Senator_Susan_Collins_2014_official_portrait.jpg (public domain)
+        photo: 'me-sen.jpg'
       },
       {
         key: 'ks-sen',
@@ -223,8 +224,8 @@ export const rounds = [
         // A YouTube id to use instead of the channel's most-viewed video.
         // Rob's pick: a re-upload, since the campaign channel has no 2025-2026 ads.
         ad: 'YBxnyL01gKg',
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Roger_Marshall_117th_Congress_portrait.jpg (public domain)
+        photo: 'ks-sen.jpg'
       },
       {
         key: 'oh-sen',
@@ -238,8 +239,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCaoAdDAmh0I0442wlrunx4A',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Sen._Jon_Husted_official_portrait,_119th_Congress.jpg (public domain)
+        photo: 'oh-sen.jpg'
       },
       {
         key: 'nc-sen',
@@ -253,8 +254,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UCD4LqG10yahi9XGA6q2RyEQ',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:Michael_Whatley_(54670563614)_(cropped).jpg (CC BY-SA 4.0, Gage Skidmore)
+        photo: 'nc-sen.jpg'
       },
       {
         key: 'tx-sen',
@@ -268,8 +269,8 @@ export const rounds = [
         channel: 'https://www.youtube.com/channel/UC3qG7nbgPg9ccXm2cBE-Xkw',
         // A YouTube id to use instead of the channel's most-viewed video.
         ad: null,
-        // The Republican's photo in public/games/the-biggest-gopdamn-loser/images/
-        photo: null
+        // Photo: https://commons.wikimedia.org/wiki/File:K_Paxton.jpg (CC BY-SA 4.0, Gage Skidmore)
+        photo: 'tx-sen.jpg'
       }
     ]
   }
